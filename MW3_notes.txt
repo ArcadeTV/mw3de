@@ -159,6 +159,7 @@ CLOSE   00
 COLOR   01 XX (Orange:A0, White:80)
 FAST    02
 SPEED   03 XX (Where 00 sets the text without animation and 09 brings each char slowly on the stage)
+SPACE   04 XX Write XX spaces or margin?
 WAIT    05
 ?       06
 ?       08 -timer?

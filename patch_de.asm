@@ -58,6 +58,11 @@ cc_newline                  equ $09
     move.l  #(vdp_cmd_vram_write)|((\1)&$3FFF)<<16|(\1)>>14,vdp_control
     endm
 
+    macro writePointer
+    dc.b    $\1
+    dc.l    \2-base_PointerTable_Dialogues
+    endm
+
 
 ; =================================================================================================
 ; OVERWRITES
@@ -73,18 +78,6 @@ cc_newline                  equ $09
     
     org $8DE
 jumpBack:                                   ; only for Label
-
-    org     $1670                           ; Trying to move dialogue text to the left
-    nop 
-    nop
-    org     $16B2                           ; Trying to move dialogue text to the left
-    nop 
-    nop
-    ;org     $16BE                           ; Trying to move dialogue text to the left
-    ;nop 
-    ;nop 
-    ;org     $1DF25
-    ;dc.b    $00
 
     org     $1882                           ; Cheat: Unl. Gold (do not decrease)
     nop
@@ -241,8 +234,10 @@ writePlanemap_Loop:
 ; =================================================================================================
 
 base_PointerTable_Dialogues:
-    dc.b $00,$01,$89 
-    dc.b $01,$02,$65 
+    dc.b $00
+    dc.w text1-base_PointerTable_Dialogues
+    dc.b $01
+    dc.w text2-base_PointerTable_Dialogues
     dc.b $00,$02,$7A 
     dc.b $01,$03,$59 
     dc.b $01,$03,$71 
@@ -375,7 +370,8 @@ base_PointerTable_Dialogues:
 
 textData_Dialogues:
 text1:
-    dc.b $0B,$11,$10,$00,$A5,$03,$06,$0A,$02,$04,$02,$07
+    ;                                      ^       ^
+    dc.b $0B,$11,$10,$00,$A5,$03,$06,$0A,$01,$04,$01,$07
     ; Monster World war|einst ein friedvoller|Ort.
     dc.b $0C,$54," ",$0C,$67," war",cc_newline,"einst ein friedvoller",cc_newline,"Ort."
     dc.b cc_wait,cc_newline,cc_newline,cc_newline
@@ -387,6 +383,10 @@ text1:
     dc.b "und seinem Land",cc_newline,"den Frieden",cc_newline,"zur",$F5,"ckzubringen.",cc_wait
     dc.b cc_close
 text1_end:
+text2:
+    dc.b $03,$08,$04,$02,"Willkommen in",$02,$04,$07,$0C,$54,$20,$0C,$67,$21,$20,cc_wait
+    dc.b cc_close
+text2_end:
 
 newSpriteTable_logo:
         ; ss: size, 

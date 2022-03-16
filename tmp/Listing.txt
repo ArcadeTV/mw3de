@@ -1,119 +1,1462 @@
-F00:0001           rept    $20
-F00:0003       
-F01:0001           dc.b    $FF;
-               S01:00000000:  FF
+F00:0001       ; #################################################################################################
+F00:0002       ; #                                   Translation (DE) / ROMHACK                                  #
+F00:0003       ; #                            Wonder Boy in Monster World (USA, Europe)                          #
+F00:0004       ; #                           for SEGA GENESIS - v0.1 2022-03-12, ArcadeTV                        #
+F00:0005       ; #################################################################################################
+F00:0006       ; =================================================================================================
+F00:0007       ; CHANGELOG
+F00:0008       ; =================================================================================================
+F00:0009       ; v1.1 : 2022-03-11
+F00:0010       ; - Moved planes A and B down a bit
+F00:0011       ; - Moved copyright text and icons down a bit
+F00:0012       ;
+F00:0013       ; v1.0 : 2022-03-09
+F00:0014       ; - Draw an entirely new logo on the title screen
+F00:0015       ; #################################################################################################
+F00:0016       
+F00:0017       
+F00:0018       
+F00:0019       ; =================================================================================================
+F00:0020       ; CONSTANTS
+F00:0021       ; =================================================================================================
+F00:0022       
+F00:0023       ; Utility
+F00:0024       size_word                   equ 2
+F00:0025       size_long                   equ 4
+F00:0026       
+F00:0027       ; VDP port addresses
+F00:0028       vdp_control                 equ $00C00004
+F00:0029       vdp_data                    equ $00C00000
+F00:0030       
+F00:0031       ; VDP commands
+F00:0032       vdp_cmd_vram_write          equ $40000000
+F00:0033       
+F00:0034       ; VDP memory addresses
+F00:0035       vram_addr_tiles             equ $0000
+F00:0036       vram_addr_plane_a           equ $C000
+F00:0037       vram_addr_plane_b           equ $E000
+F00:0038       
+F00:0039       ; Locations
+F00:0040       locSpriteTable_logo         equ $A0E00
+F00:0041       locSpriteTable_newGame      equ $A18A8
+F00:0042       locSpriteTable_continue     equ $A18B8
+F00:0043       locSpriteTable_pressStart   equ $A18C8
+F00:0044       locSpriteTable_arrow        equ $A18E7
+F00:0045       
+F00:0046       ; Control Codes:
+F00:0047       cc_close                    equ $00
+F00:0048       cc_wait                     equ $05
+F00:0049       cc_newline                  equ $09
+F00:0050       
+F00:0051       
+F00:0052       ; =================================================================================================
+F00:0053       ; MACROS
+F00:0054       ; =================================================================================================
+F00:0055       
+F00:0056       ; Set the VRAM (video RAM) address to write to next
+F00:0057           macro SetVRAMWrite
+F00:0059       
+F00:0060       
+F00:0061           macro writePointer
+F00:0064       
+F00:0065       
+F00:0066       
+F00:0067       ; =================================================================================================
+F00:0068       ; OVERWRITES
+F00:0069       ; =================================================================================================
+F00:0070           
+F00:0071           org $1B2
+F00:0072           dc.b    $F0,$20                         ; SRAM Fix 1/2
+               S01:000001B2:  F0
+               S01:000001B3:  20
+F00:0073           org $1BB
+F00:0074           dc.b    $81                             ; SRAM Fix 2/2
+               S02:000001BB:  81
+F00:0075       
+F00:0076           org $8D8
+F00:0077           jmp     bypassSpriteTableAddress
+               S03:000008D8:  4E F9 00 0A 4C 80
+F00:0078           
+F00:0079           org $8DE
+F00:0080       jumpBack:                                   ; only for Label
+F00:0081       
+F00:0082           ;org     $1670                           ; Trying to move dialogue text to the left
+F00:0083           ;nop 
+F00:0084           ;nop
+F00:0085           ;org     $16B2                           ; Trying to move dialogue text to the left
+F00:0086           ;nop 
+F00:0087           ;nop
+F00:0088           ;;org     $16BE                           ; Trying to move dialogue text to the left
+F00:0089           ;;nop 
+F00:0090           ;;nop 
+F00:0091           ;;org     $1DF25
+F00:0092           ;;dc.b    $00
+F00:0093       
+F00:0094           org     $1882                           ; Cheat: Unl. Gold (do not decrease)
+F00:0095           nop
+               S05:00001882:  4E 71
+F00:0096           nop 
+               S05:00001884:  4E 71
+F00:0097           org     $8E46                           ; Cheat: Have more Gold upon New Game start
+F00:0098           dc.b    $0F,$42,$3F                     ; 1st Nybble: Starting location (0=Shion's House, 1=Alsedo, 2=Castle, 3=Lily
+               S06:00008E46:  0F
+               S06:00008E47:  42
+               S06:00008E48:  3F
+F00:0099                                                   ; 2nd Nybble + 2 Bytes = 999999 Gold
+F00:0100           org     $8E4A                           ; Cheat: Have all Hearts upon New Game start
+F00:0101           ;dc.b    $8
+F00:0102           org     $E0A4                           ; Cheat: Unl. Energy (do not decrease)
+F00:0103           ;nop
+F00:0104           ;nop 
+F00:0105       
+F00:0106           org     $70E6
+F00:0107           jsr     writePlanemaps
+               S09:000070E6:  4E B9 00 0A 4C DA
+F00:0108           rept    $B                              ; overwrite $70E6-$7102: ($1C/#28 bytes = $E/#14 words) - 6 Bytes for the JS
+F00:0110       
+F01:0001           nop                                     ; with nops
+               S09:000070EC:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000001:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070EE:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000002:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070F0:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000003:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070F2:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000004:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070F4:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000005:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070F6:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000006:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070F8:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000007:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070FA:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000008:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070FC:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000009:  FF
+F01:0001           nop                                     ; with nops
+               S09:000070FE:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000000A:  FF
+F01:0001           nop                                     ; with nops
+               S09:00007100:  4E 71
 F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000000B:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000000C:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000000D:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000000E:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000000F:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000010:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000011:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000012:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000013:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000014:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000015:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000016:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000017:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000018:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:00000019:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000001A:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000001B:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000001C:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000001D:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000001E:  FF
-F01:0002           
-F01:0001           dc.b    $FF;
-               S01:0000001F:  FF
-F01:0002           
-F00:0004       
-F00:0005       tableStart:
-F00:0006           dc.w    tableStart
-               S01:00000020:  00 20 [R]
+F00:0111                                                   ; (i) $70F0.w: Skip SubRoutine to Load Plane A Map to C000-CFFF
+F00:0112                                                   ; (i) $70FE.w: Skip SubRoutine to Load Plane B Map to E000-EFFF
+F00:0113                                                   
+F00:0114           org     $77D7
+F00:0115           ;dc.b    $F7                             ; Increase Menu Text Length
+F00:0116       
+F00:0117           ; Menu Hacks:
+F00:0118           org     $84DE
+F00:0119           dc.b    $F8,$F9,$00                     ; Replace AP (Attack Points) with custom icon
+               S11:000084DE:  F8
+               S11:000084DF:  F9
+               S11:000084E0:  00
+F00:0120           dc.b    $FA,$FB,$00                     ; Replace DP (Defense Points) with custom icon
+               S11:000084E1:  FA
+               S11:000084E2:  FB
+               S11:000084E3:  00
+F00:0121           dc.b    $FC,$FD,$00                     ; Replace SP (Speed Points) with custom icon
+               S11:000084E4:  FC
+               S11:000084E5:  FD
+               S11:000084E6:  00
+F00:0122       
+F00:0123           ; Dialogue Text:
+F00:0124           org     $1CC14
+F00:0125           dc.l    base_PointerTable_Dialogues
+               S12:0001CC14:  00 0A 4D 1E
+F00:0126       
+F00:0127           ; Replace GFX data pointers:
+F00:0128           ; Font:
+F00:0129           org     $4101C
+F00:0130           dc.l    fontGFX_pack+$02000000          ; was 02 0423FA
+               S13:0004101C:  02 0A 7B 7D
+F00:0131       
+F00:0132           ; Logo:
+F00:0133           org     $4155C
+F00:0134           dc.l    newLogoGFX_pack1+$02000000      ; was 02 068930
+               S14:0004155C:  02 0A 70 6C
+F00:0135       
+F00:0136           org     $41560
+F00:0137           dc.l    newLogoGFX_pack2+$02000000      ; was 02 068ADA
+               S15:00041560:  02 0A 72 2F
+F00:0138       
+F00:0139           org     $41564
+F00:0140           dc.l    newLogoGFX_pack3+$02000000      ; was 02 068C8A
+               S16:00041564:  02 0A 73 C5
+F00:0141       
+F00:0142           org     $41568
+F00:0143           dc.l    newLogoGFX_pack4+$02000000      ; was 02 068E5C
+               S17:00041568:  02 0A 75 2E
+F00:0144       
+F00:0145           org     $4156C
+F00:0146           dc.l    newLogoGFX_pack5+$02000000      ; was 02 068FEC
+               S18:0004156C:  02 0A 76 7C
+F00:0147       
+F00:0148           org     $41570
+F00:0149           dc.l    newLogoGFX_pack6+$02000000      ; was 02 0691F5
+               S19:00041570:  02 0A 77 EC
+F00:0150       
+F00:0151           ; Titlescreen Text GFX: Press Start Button, New Game, Continue and Arrow
+F00:0152           org     $41598                
+F00:0153           dc.l    newTitleTxtGFX_pack1+$02000000  ; was 02 06A2C9
+               S20:00041598:  02 0A 78 6F
+F00:0154       
+F00:0155           org     $4159C 
+F00:0156           dc.l    newTitleTxtGFX_pack2+$02000000  ; was 02 06A3F5
+               S21:0004159C:  02 0A 79 9C
+F00:0157       
+F00:0158           org     $415A0 
+F00:0159           dc.l    newTitleTxtGFX_pack3+$02000000  ; was 02 06A4FE
+               S22:000415A0:  02 0A 7A A5
+F00:0160       
+F00:0161           ; Replace Sprite Table Values for re-positioning:
+F00:0162           org     $A0E4C                          ; Sprite Table for Copyright Stuff
+F00:0163                 ; ss: size, 
+F00:0164                 ; ff: flag+1st id-nybble
+F00:0165                 ; ii: 2nd id-nybble
+F00:0166                 ; xx: xpos
+F00:0167                 ; yy: ypos
+F00:0168                 ; ----------------------
+F00:0169                 ; ss, ff, ii, xx, yy
+F00:0170                 ; ˅   ˅   ˅   ˅   ˅
+F00:0171           dc.b    $00,$63,$BD,$4C,$1C 
+               S23:000A0E4C:  00
+               S23:000A0E4D:  63
+               S23:000A0E4E:  BD
+               S23:000A0E4F:  4C
+               S23:000A0E50:  1C
+F00:0172           dc.b    $0C,$63,$B9,$2C,$1C 
+               S23:000A0E51:  0C
+               S23:000A0E52:  63
+               S23:000A0E53:  B9
+               S23:000A0E54:  2C
+               S23:000A0E55:  1C
+F00:0173           dc.b    $05,$63,$B5,$1C,$18 
+               S23:000A0E56:  05
+               S23:000A0E57:  63
+               S23:000A0E58:  B5
+               S23:000A0E59:  1C
+               S23:000A0E5A:  18
+F00:0174           dc.b    $0D,$63,$AD,$FC,$18 
+               S23:000A0E5B:  0D
+               S23:000A0E5C:  63
+               S23:000A0E5D:  AD
+               S23:000A0E5E:  FC
+               S23:000A0E5F:  18
+F00:0175           dc.b    $0D,$63,$A5,$DC,$18 
+               S23:000A0E60:  0D
+               S23:000A0E61:  63
+               S23:000A0E62:  A5
+               S23:000A0E63:  DC
+               S23:000A0E64:  18
+F00:0176           dc.b    $05,$62,$DB,$CD,$19 
+               S23:000A0E65:  05
+               S23:000A0E66:  62
+               S23:000A0E67:  DB
+               S23:000A0E68:  CD
+               S23:000A0E69:  19
+F00:0177           dc.b    $0D,$62,$D3,$AD,$19 
+               S23:000A0E6A:  0D
+               S23:000A0E6B:  62
+               S23:000A0E6C:  D3
+               S23:000A0E6D:  AD
+               S23:000A0E6E:  19
+F00:0178           dc.b    $09,$62,$C9,$14,$08 
+               S23:000A0E6F:  09
+               S23:000A0E70:  62
+               S23:000A0E71:  C9
+               S23:000A0E72:  14
+               S23:000A0E73:  08
+F00:0179           dc.b    $09,$62,$C3,$14,$F8 
+               S23:000A0E74:  09
+               S23:000A0E75:  62
+               S23:000A0E76:  C3
+               S23:000A0E77:  14
+               S23:000A0E78:  F8
+F00:0180           dc.b    $0F,$61,$F0,$F4,$F8 
+               S23:000A0E79:  0F
+               S23:000A0E7A:  61
+               S23:000A0E7B:  F0
+               S23:000A0E7C:  F4
+               S23:000A0E7D:  F8
+F00:0181           dc.b    $0F,$61,$E0,$D4,$F8 
+               S23:000A0E7E:  0F
+               S23:000A0E7F:  61
+               S23:000A0E80:  E0
+               S23:000A0E81:  D4
+               S23:000A0E82:  F8
+F00:0182           dc.b    $FF
+               S23:000A0E83:  FF
+F00:0183       
+F00:0184       ; =================================================================================================
+F00:0185       ; INSTRUCTIONS
+F00:0186       ; =================================================================================================
+F00:0187       
+F00:0188           org     $A4C80 ; Free Space in ROM from here --------------------------------------------------
+F00:0189           align   2
+F00:0190       bypassSpriteTableAddress:                   ; Extra Routine to replace the sprite table address
+F00:0191           add.l   a0,d1                           ; Adopt original instruction
+               S24:000A4C80:  D2 88
+F00:0192           cmp.l   #locSpriteTable_logo,d1         ; Compare address in D1 to original sprite table location
+               S24:000A4C82:  B2 BC 00 0A 0E 00
+F00:0193           beq     setNewSpriteTable_logo          ; If it matches, branch to set a custom address
+               S24:000A4C88:  67 22
+F00:0194           cmp.l   #locSpriteTable_arrow,d1        ; Compare address in D1 to original sprite table location
+               S24:000A4C8A:  B2 BC 00 0A 18 E7
+F00:0195           beq     setNewSpriteTable_arrow         ; If it matches, branch to set a custom address
+               S24:000A4C90:  67 22
+F00:0196           cmp.l   #locSpriteTable_pressStart,d1   ; Compare address in D1 to original sprite table location
+               S24:000A4C92:  B2 BC 00 0A 18 C8
+F00:0197           beq     setNewSpriteTable_pressStart    ; If it matches, branch to set a custom address
+               S24:000A4C98:  67 22
+F00:0198           cmp.l   #locSpriteTable_newGame,d1      ; Compare address in D1 to original sprite table location
+               S24:000A4C9A:  B2 BC 00 0A 18 A8
+F00:0199           beq     setNewSpriteTable_newGame       ; If it matches, branch to set a custom address
+               S24:000A4CA0:  67 22
+F00:0200           cmp.l   #locSpriteTable_continue,d1     ; Compare address in D1 to original sprite table location
+               S24:000A4CA2:  B2 BC 00 0A 18 B8
+F00:0201           beq     setNewSpriteTable_continue      ; If it matches, branch to set a custom address
+               S24:000A4CA8:  67 22
+F00:0202           bra.s   ret_bypassSpriteTableAddress    ; If no matches found, return
+               S24:000A4CAA:  60 26
+F00:0203       setNewSpriteTable_logo:
+F00:0204           move.l  #newSpriteTable_logo,d1         ; If found, load our own address into D1
+               S24:000A4CAC:  22 3C 00 0A 4F B6
+F00:0205           bra.s   ret_bypassSpriteTableAddress
+               S24:000A4CB2:  60 1E
+F00:0206       setNewSpriteTable_arrow:
+F00:0207           move.l  #newSpriteTable_arrow,d1        ; If found, load our own address into D1
+               S24:000A4CB4:  22 3C 00 0A 50 64
+F00:0208           bra.s   ret_bypassSpriteTableAddress
+               S24:000A4CBA:  60 16
+F00:0209       setNewSpriteTable_pressStart:
+F00:0210           move.l  #newSpriteTable_pressStart,d1   ; If found, load our own address into D1
+               S24:000A4CBC:  22 3C 00 0A 50 25
+F00:0211           bra.s   ret_bypassSpriteTableAddress
+               S24:000A4CC2:  60 0E
+F00:0212       setNewSpriteTable_newGame:
+F00:0213           move.l  #newSpriteTable_newGame,d1      ; If found, load our own address into D1
+               S24:000A4CC4:  22 3C 00 0A 50 3A
+F00:0214           bra.s   ret_bypassSpriteTableAddress
+               S24:000A4CCA:  60 06
+F00:0215       setNewSpriteTable_continue:
+F00:0216           move.l  #newSpriteTable_continue,d1     ; If found, load our own address into D1
+               S24:000A4CCC:  22 3C 00 0A 50 4F
+F00:0217       ret_bypassSpriteTableAddress:
+F00:0218           move.l  d1,$FFFFC100(a4)                ; Adopt original instruction
+               S24:000A4CD2:  29 41 C1 00
+F00:0219           jmp     jumpBack                        ; Return to original location
+               S24:000A4CD6:  4E F8 08 DE
+F00:0220       
+F00:0221       
+F00:0222       writePlanemaps:                             ; write custom tilemaps to VRAM:
+F00:0223       writePlanemapA:                             ; Plane A C000-CFFF, Plane B E000-EFFF
+F00:0224           movem.l d0-d1/a0-a1,-(sp)               ; save registers
+               S24:000A4CDA:  48 E7 C0 C0
+F00:0225           SetVRAMWrite vram_addr_plane_a          ; Call macro to set address for writing to VRAM
+F02:0001           move.l  #(vdp_cmd_vram_write)|((vram_addr_plane_a)&$3FFF)<<16|(vram_addr_plane_a)>>14,vdp_control
+               S24:000A4CDE:  23 FC 40 00 00 03 00 C0 00 04
+F00:0226           lea     planeMapA,a0                    ; Move the address of the first graphics tile into a0
+               S24:000A4CE8:  41 FA 03 82
+F00:0227           move.l  #(64*64)-1,d0                   ; Loop counter (-1 for DBRA loop)
+               S24:000A4CEC:  20 3C 00 00 0F FF
+F00:0228           jsr     writePlanemap_Loop
+               S24:000A4CF2:  61 1C
+F00:0229       writePlanemapB:
+F00:0230           SetVRAMWrite vram_addr_plane_b          ; Call macro to set address for writing to VRAM
+F03:0001           move.l  #(vdp_cmd_vram_write)|((vram_addr_plane_b)&$3FFF)<<16|(vram_addr_plane_b)>>14,vdp_control
+               S24:000A4CF4:  23 FC 60 00 00 03 00 C0 00 04
+F00:0231           lea     planeMapB,a0                    ; Move the address of the first graphics tile into a0
+               S24:000A4CFE:  41 FA 13 6C
+F00:0232           move.l  #(64*64)-1,d0                   ; Loop counter (-1 for DBRA loop)
+               S24:000A4D02:  20 3C 00 00 0F FF
+F00:0233           jsr     writePlanemap_Loop
+               S24:000A4D08:  61 06
+F00:0234           movem.l (sp)+,d0-d1/a0-a1               ; restore registers
+               S24:000A4D0A:  4C DF 03 03
+F00:0235           rts
+               S24:000A4D0E:  4E 75
+F00:0236       writePlanemap_Loop:
+F00:0237           move.w  (a0)+,d1                        ; Start of loop
+               S24:000A4D10:  32 18
+F00:0238           move.w  d1,vdp_data                     ; Write tile line (4 bytes per line), and post-increment address
+               S24:000A4D12:  33 C1 00 C0 00 00
+F00:0239           dbra    d0,writePlanemap_Loop           ; Decrement d0 and loop until finished (when d0 reaches -1)
+               S24:000A4D18:  51 C8 FF F6
+F00:0240           rts
+               S24:000A4D1C:  4E 75
+F00:0241       
+F00:0242       
+F00:0243       
+F00:0244       ; =================================================================================================
+F00:0245       ; DATA
+F00:0246       ; =================================================================================================
+F00:0247       
+F00:0248       base_PointerTable_Dialogues:
+F00:0249           dc.b $00
+               S24:000A4D1E:  00
+F00:0250           dc.w text1-base_PointerTable_Dialogues
+               S24:000A4D1F:  01 89
+F00:0251           dc.b $01
+               S24:000A4D21:  01
+F00:0252           dc.w text2-base_PointerTable_Dialogues
+               S24:000A4D22:  02 7B
+F00:0253           dc.b $00,$02,$7A 
+               S24:000A4D24:  00
+               S24:000A4D25:  02
+               S24:000A4D26:  7A
+F00:0254           dc.b $01,$03,$59 
+               S24:000A4D27:  01
+               S24:000A4D28:  03
+               S24:000A4D29:  59
+F00:0255           dc.b $01,$03,$71 
+               S24:000A4D2A:  01
+               S24:000A4D2B:  03
+               S24:000A4D2C:  71
+F00:0256           dc.b $01,$03,$88 
+               S24:000A4D2D:  01
+               S24:000A4D2E:  03
+               S24:000A4D2F:  88
+F00:0257           dc.b $01,$03,$A9 
+               S24:000A4D30:  01
+               S24:000A4D31:  03
+               S24:000A4D32:  A9
+F00:0258           dc.b $01,$03,$BE 
+               S24:000A4D33:  01
+               S24:000A4D34:  03
+               S24:000A4D35:  BE
+F00:0259           dc.b $01,$03,$DC 
+               S24:000A4D36:  01
+               S24:000A4D37:  03
+               S24:000A4D38:  DC
+F00:0260           dc.b $01,$03,$FD 
+               S24:000A4D39:  01
+               S24:000A4D3A:  03
+               S24:000A4D3B:  FD
+F00:0261           dc.b $00,$04,$19 
+               S24:000A4D3C:  00
+               S24:000A4D3D:  04
+               S24:000A4D3E:  19
+F00:0262           dc.b $00,$04,$1F 
+               S24:000A4D3F:  00
+               S24:000A4D40:  04
+               S24:000A4D41:  1F
+F00:0263           dc.b $00,$04,$25 
+               S24:000A4D42:  00
+               S24:000A4D43:  04
+               S24:000A4D44:  25
+F00:0264           dc.b $00,$04,$2B 
+               S24:000A4D45:  00
+               S24:000A4D46:  04
+               S24:000A4D47:  2B
+F00:0265           dc.b $00,$04,$31 
+               S24:000A4D48:  00
+               S24:000A4D49:  04
+               S24:000A4D4A:  31
+F00:0266           dc.b $00,$04,$37 
+               S24:000A4D4B:  00
+               S24:000A4D4C:  04
+               S24:000A4D4D:  37
+F00:0267           dc.b $00,$04,$3D 
+               S24:000A4D4E:  00
+               S24:000A4D4F:  04
+               S24:000A4D50:  3D
+F00:0268           dc.b $00,$04,$43 
+               S24:000A4D51:  00
+               S24:000A4D52:  04
+               S24:000A4D53:  43
+F00:0269           dc.b $00,$04,$49 
+               S24:000A4D54:  00
+               S24:000A4D55:  04
+               S24:000A4D56:  49
+F00:0270           dc.b $00,$04,$4F 
+               S24:000A4D57:  00
+               S24:000A4D58:  04
+               S24:000A4D59:  4F
+F00:0271           dc.b $00,$04,$55 
+               S24:000A4D5A:  00
+               S24:000A4D5B:  04
+               S24:000A4D5C:  55
+F00:0272           dc.b $00,$04,$5B 
+               S24:000A4D5D:  00
+               S24:000A4D5E:  04
+               S24:000A4D5F:  5B
+F00:0273           dc.b $00,$04,$61 
+               S24:000A4D60:  00
+               S24:000A4D61:  04
+               S24:000A4D62:  61
+F00:0274           dc.b $00,$04,$67 
+               S24:000A4D63:  00
+               S24:000A4D64:  04
+               S24:000A4D65:  67
+F00:0275           dc.b $00,$04,$6D 
+               S24:000A4D66:  00
+               S24:000A4D67:  04
+               S24:000A4D68:  6D
+F00:0276           dc.b $00,$04,$73 
+               S24:000A4D69:  00
+               S24:000A4D6A:  04
+               S24:000A4D6B:  73
+F00:0277           dc.b $00,$04,$79 
+               S24:000A4D6C:  00
+               S24:000A4D6D:  04
+               S24:000A4D6E:  79
+F00:0278           dc.b $00,$04,$7F 
+               S24:000A4D6F:  00
+               S24:000A4D70:  04
+               S24:000A4D71:  7F
+F00:0279           dc.b $00,$04,$85 
+               S24:000A4D72:  00
+               S24:000A4D73:  04
+               S24:000A4D74:  85
+F00:0280           dc.b $00,$04,$8B 
+               S24:000A4D75:  00
+               S24:000A4D76:  04
+               S24:000A4D77:  8B
+F00:0281           dc.b $00,$04,$91 
+               S24:000A4D78:  00
+               S24:000A4D79:  04
+               S24:000A4D7A:  91
+F00:0282           dc.b $00,$04,$97 
+               S24:000A4D7B:  00
+               S24:000A4D7C:  04
+               S24:000A4D7D:  97
+F00:0283           dc.b $00,$04,$9D 
+               S24:000A4D7E:  00
+               S24:000A4D7F:  04
+               S24:000A4D80:  9D
+F00:0284           dc.b $00,$04,$A3 
+               S24:000A4D81:  00
+               S24:000A4D82:  04
+               S24:000A4D83:  A3
+F00:0285           dc.b $00,$04,$A9 
+               S24:000A4D84:  00
+               S24:000A4D85:  04
+               S24:000A4D86:  A9
+F00:0286           dc.b $00,$04,$AF 
+               S24:000A4D87:  00
+               S24:000A4D88:  04
+               S24:000A4D89:  AF
+F00:0287           dc.b $00,$04,$B5 
+               S24:000A4D8A:  00
+               S24:000A4D8B:  04
+               S24:000A4D8C:  B5
+F00:0288           dc.b $00,$04,$BB 
+               S24:000A4D8D:  00
+               S24:000A4D8E:  04
+               S24:000A4D8F:  BB
+F00:0289           dc.b $00,$04,$C1 
+               S24:000A4D90:  00
+               S24:000A4D91:  04
+               S24:000A4D92:  C1
+F00:0290           dc.b $00,$04,$C7 
+               S24:000A4D93:  00
+               S24:000A4D94:  04
+               S24:000A4D95:  C7
+F00:0291           dc.b $01,$04,$CD 
+               S24:000A4D96:  01
+               S24:000A4D97:  04
+               S24:000A4D98:  CD
+F00:0292           dc.b $00,$04,$F6 
+               S24:000A4D99:  00
+               S24:000A4D9A:  04
+               S24:000A4D9B:  F6
+F00:0293           dc.b $00,$04,$FC 
+               S24:000A4D9C:  00
+               S24:000A4D9D:  04
+               S24:000A4D9E:  FC
+F00:0294           dc.b $00,$05,$02 
+               S24:000A4D9F:  00
+               S24:000A4DA0:  05
+               S24:000A4DA1:  02
+F00:0295           dc.b $00,$05,$08 
+               S24:000A4DA2:  00
+               S24:000A4DA3:  05
+               S24:000A4DA4:  08
+F00:0296           dc.b $00,$05,$0E 
+               S24:000A4DA5:  00
+               S24:000A4DA6:  05
+               S24:000A4DA7:  0E
+F00:0297           dc.b $00,$05,$14 
+               S24:000A4DA8:  00
+               S24:000A4DA9:  05
+               S24:000A4DAA:  14
+F00:0298           dc.b $00,$05,$1A 
+               S24:000A4DAB:  00
+               S24:000A4DAC:  05
+               S24:000A4DAD:  1A
+F00:0299           dc.b $00,$05,$20 
+               S24:000A4DAE:  00
+               S24:000A4DAF:  05
+               S24:000A4DB0:  20
+F00:0300           dc.b $00,$05,$26 
+               S24:000A4DB1:  00
+               S24:000A4DB2:  05
+               S24:000A4DB3:  26
+F00:0301           dc.b $00,$05,$8A 
+               S24:000A4DB4:  00
+               S24:000A4DB5:  05
+               S24:000A4DB6:  8A
+F00:0302           dc.b $00,$05,$E0 
+               S24:000A4DB7:  00
+               S24:000A4DB8:  05
+               S24:000A4DB9:  E0
+F00:0303           dc.b $00,$06,$2C 
+               S24:000A4DBA:  00
+               S24:000A4DBB:  06
+               S24:000A4DBC:  2C
+F00:0304           dc.b $00,$06,$E1 
+               S24:000A4DBD:  00
+               S24:000A4DBE:  06
+               S24:000A4DBF:  E1
+F00:0305           dc.b $00,$06,$E7 
+               S24:000A4DC0:  00
+               S24:000A4DC1:  06
+               S24:000A4DC2:  E7
+F00:0306           dc.b $00,$07,$7E 
+               S24:000A4DC3:  00
+               S24:000A4DC4:  07
+               S24:000A4DC5:  7E
+F00:0307           dc.b $00,$08,$0A 
+               S24:000A4DC6:  00
+               S24:000A4DC7:  08
+               S24:000A4DC8:  0A
+F00:0308           dc.b $02,$08,$A6 
+               S24:000A4DC9:  02
+               S24:000A4DCA:  08
+               S24:000A4DCB:  A6
+F00:0309           dc.b $00,$09,$9A 
+               S24:000A4DCC:  00
+               S24:000A4DCD:  09
+               S24:000A4DCE:  9A
+F00:0310           dc.b $00,$09,$DE 
+               S24:000A4DCF:  00
+               S24:000A4DD0:  09
+               S24:000A4DD1:  DE
+F00:0311           dc.b $00,$09,$E4 
+               S24:000A4DD2:  00
+               S24:000A4DD3:  09
+               S24:000A4DD4:  E4
+F00:0312           dc.b $00,$0A,$B7 
+               S24:000A4DD5:  00
+               S24:000A4DD6:  0A
+               S24:000A4DD7:  B7
+F00:0313           dc.b $00,$0B,$19 
+               S24:000A4DD8:  00
+               S24:000A4DD9:  0B
+               S24:000A4DDA:  19
+F00:0314           dc.b $00,$0B,$99 
+               S24:000A4DDB:  00
+               S24:000A4DDC:  0B
+               S24:000A4DDD:  99
+F00:0315           dc.b $00,$0D,$49 
+               S24:000A4DDE:  00
+               S24:000A4DDF:  0D
+               S24:000A4DE0:  49
+F00:0316           dc.b $00,$0E,$59 
+               S24:000A4DE1:  00
+               S24:000A4DE2:  0E
+               S24:000A4DE3:  59
+F00:0317           dc.b $00,$0E,$5F 
+               S24:000A4DE4:  00
+               S24:000A4DE5:  0E
+               S24:000A4DE6:  5F
+F00:0318           dc.b $00,$0F,$03 
+               S24:000A4DE7:  00
+               S24:000A4DE8:  0F
+               S24:000A4DE9:  03
+F00:0319           dc.b $00,$0F,$4C 
+               S24:000A4DEA:  00
+               S24:000A4DEB:  0F
+               S24:000A4DEC:  4C
+F00:0320           dc.b $00,$10,$C0 
+               S24:000A4DED:  00
+               S24:000A4DEE:  10
+               S24:000A4DEF:  C0
+F00:0321           dc.b $00,$12,$5E 
+               S24:000A4DF0:  00
+               S24:000A4DF1:  12
+               S24:000A4DF2:  5E
+F00:0322           dc.b $00,$13,$1E 
+               S24:000A4DF3:  00
+               S24:000A4DF4:  13
+               S24:000A4DF5:  1E
+F00:0323           dc.b $00,$13,$93 
+               S24:000A4DF6:  00
+               S24:000A4DF7:  13
+               S24:000A4DF8:  93
+F00:0324           dc.b $05,$14,$2B 
+               S24:000A4DF9:  05
+               S24:000A4DFA:  14
+               S24:000A4DFB:  2B
+F00:0325           dc.b $00,$16,$A1 
+               S24:000A4DFC:  00
+               S24:000A4DFD:  16
+               S24:000A4DFE:  A1
+F00:0326           dc.b $00,$17,$2A 
+               S24:000A4DFF:  00
+               S24:000A4E00:  17
+               S24:000A4E01:  2A
+F00:0327           dc.b $00,$17,$99 
+               S24:000A4E02:  00
+               S24:000A4E03:  17
+               S24:000A4E04:  99
+F00:0328           dc.b $00,$18,$20 
+               S24:000A4E05:  00
+               S24:000A4E06:  18
+               S24:000A4E07:  20
+F00:0329           dc.b $00,$18,$F7 
+               S24:000A4E08:  00
+               S24:000A4E09:  18
+               S24:000A4E0A:  F7
+F00:0330           dc.b $01,$1A,$A4 
+               S24:000A4E0B:  01
+               S24:000A4E0C:  1A
+               S24:000A4E0D:  A4
+F00:0331           dc.b $00,$1A,$B4 
+               S24:000A4E0E:  00
+               S24:000A4E0F:  1A
+               S24:000A4E10:  B4
+F00:0332           dc.b $03,$1D,$03 
+               S24:000A4E11:  03
+               S24:000A4E12:  1D
+               S24:000A4E13:  03
+F00:0333           dc.b $01,$1D,$16 
+               S24:000A4E14:  01
+               S24:000A4E15:  1D
+               S24:000A4E16:  16
+F00:0334           dc.b $00,$1D,$2F 
+               S24:000A4E17:  00
+               S24:000A4E18:  1D
+               S24:000A4E19:  2F
+F00:0335           dc.b $03,$1E,$5D 
+               S24:000A4E1A:  03
+               S24:000A4E1B:  1E
+               S24:000A4E1C:  5D
+F00:0336           dc.b $00,$1E,$6D 
+               S24:000A4E1D:  00
+               S24:000A4E1E:  1E
+               S24:000A4E1F:  6D
+F00:0337           dc.b $00,$1E,$BD 
+               S24:000A4E20:  00
+               S24:000A4E21:  1E
+               S24:000A4E22:  BD
+F00:0338           dc.b $00,$1E,$FF 
+               S24:000A4E23:  00
+               S24:000A4E24:  1E
+               S24:000A4E25:  FF
+F00:0339           dc.b $00,$21,$1F 
+               S24:000A4E26:  00
+               S24:000A4E27:  21
+               S24:000A4E28:  1F
+F00:0340           dc.b $00,$22,$7A 
+               S24:000A4E29:  00
+               S24:000A4E2A:  22
+               S24:000A4E2B:  7A
+F00:0341           dc.b $01,$22,$D5 
+               S24:000A4E2C:  01
+               S24:000A4E2D:  22
+               S24:000A4E2E:  D5
+F00:0342           dc.b $04,$22,$EE 
+               S24:000A4E2F:  04
+               S24:000A4E30:  22
+               S24:000A4E31:  EE
+F00:0343           dc.b $00,$25,$F8 
+               S24:000A4E32:  00
+               S24:000A4E33:  25
+               S24:000A4E34:  F8
+F00:0344           dc.b $01,$26,$AF 
+               S24:000A4E35:  01
+               S24:000A4E36:  26
+               S24:000A4E37:  AF
+F00:0345           dc.b $00,$26,$BF 
+               S24:000A4E38:  00
+               S24:000A4E39:  26
+               S24:000A4E3A:  BF
+F00:0346           dc.b $03,$28,$47 
+               S24:000A4E3B:  03
+               S24:000A4E3C:  28
+               S24:000A4E3D:  47
+F00:0347           dc.b $01,$28,$55 
+               S24:000A4E3E:  01
+               S24:000A4E3F:  28
+               S24:000A4E40:  55
+F00:0348           dc.b $01,$28,$76 
+               S24:000A4E41:  01
+               S24:000A4E42:  28
+               S24:000A4E43:  76
+F00:0349           dc.b $00,$28,$8F 
+               S24:000A4E44:  00
+               S24:000A4E45:  28
+               S24:000A4E46:  8F
+F00:0350           dc.b $00,$29,$2D 
+               S24:000A4E47:  00
+               S24:000A4E48:  29
+               S24:000A4E49:  2D
+F00:0351           dc.b $00,$29,$83 
+               S24:000A4E4A:  00
+               S24:000A4E4B:  29
+               S24:000A4E4C:  83
+F00:0352           dc.b $00,$29,$89 
+               S24:000A4E4D:  00
+               S24:000A4E4E:  29
+               S24:000A4E4F:  89
+F00:0353           dc.b $00,$2B,$43 
+               S24:000A4E50:  00
+               S24:000A4E51:  2B
+               S24:000A4E52:  43
+F00:0354           dc.b $03,$2C,$B4 
+               S24:000A4E53:  03
+               S24:000A4E54:  2C
+               S24:000A4E55:  B4
+F00:0355           dc.b $03,$2C,$CA 
+               S24:000A4E56:  03
+               S24:000A4E57:  2C
+               S24:000A4E58:  CA
+F00:0356           dc.b $07,$2C,$E0 
+               S24:000A4E59:  07
+               S24:000A4E5A:  2C
+               S24:000A4E5B:  E0
+F00:0357           dc.b $07,$2C,$F5 
+               S24:000A4E5C:  07
+               S24:000A4E5D:  2C
+               S24:000A4E5E:  F5
+F00:0358           dc.b $00,$2D,$14 
+               S24:000A4E5F:  00
+               S24:000A4E60:  2D
+               S24:000A4E61:  14
+F00:0359           dc.b $00,$2D,$45 
+               S24:000A4E62:  00
+               S24:000A4E63:  2D
+               S24:000A4E64:  45
+F00:0360           dc.b $00,$2D,$76 
+               S24:000A4E65:  00
+               S24:000A4E66:  2D
+               S24:000A4E67:  76
+F00:0361           dc.b $00,$2D,$EA 
+               S24:000A4E68:  00
+               S24:000A4E69:  2D
+               S24:000A4E6A:  EA
+F00:0362           dc.b $00,$2E,$7D 
+               S24:000A4E6B:  00
+               S24:000A4E6C:  2E
+               S24:000A4E6D:  7D
+F00:0363           dc.b $00,$2F,$31 
+               S24:000A4E6E:  00
+               S24:000A4E6F:  2F
+               S24:000A4E70:  31
+F00:0364           dc.b $00,$2F,$68 
+               S24:000A4E71:  00
+               S24:000A4E72:  2F
+               S24:000A4E73:  68
+F00:0365           dc.b $00,$2F,$A6 
+               S24:000A4E74:  00
+               S24:000A4E75:  2F
+               S24:000A4E76:  A6
+F00:0366           dc.b $01,$30,$38 
+               S24:000A4E77:  01
+               S24:000A4E78:  30
+               S24:000A4E79:  38
+F00:0367           dc.b $01,$30,$9D 
+               S24:000A4E7A:  01
+               S24:000A4E7B:  30
+               S24:000A4E7C:  9D
+F00:0368           dc.b $00,$30,$D2 
+               S24:000A4E7D:  00
+               S24:000A4E7E:  30
+               S24:000A4E7F:  D2
+F00:0369           dc.b $00,$31,$08 
+               S24:000A4E80:  00
+               S24:000A4E81:  31
+               S24:000A4E82:  08
+F00:0370           dc.b $03,$31,$AF 
+               S24:000A4E83:  03
+               S24:000A4E84:  31
+               S24:000A4E85:  AF
+F00:0371           dc.b $07,$31,$C2 
+               S24:000A4E86:  07
+               S24:000A4E87:  31
+               S24:000A4E88:  C2
+F00:0372           dc.b $00,$31,$D7 
+               S24:000A4E89:  00
+               S24:000A4E8A:  31
+               S24:000A4E8B:  D7
+F00:0373           dc.b $06,$32,$0F 
+               S24:000A4E8C:  06
+               S24:000A4E8D:  32
+               S24:000A4E8E:  0F
+F00:0374           dc.b $06,$32,$4C 
+               S24:000A4E8F:  06
+               S24:000A4E90:  32
+               S24:000A4E91:  4C
+F00:0375           dc.b $06,$32,$8D 
+               S24:000A4E92:  06
+               S24:000A4E93:  32
+               S24:000A4E94:  8D
+F00:0376           dc.b $06,$32,$C8 
+               S24:000A4E95:  06
+               S24:000A4E96:  32
+               S24:000A4E97:  C8
+F00:0377           dc.b $06,$33,$1A 
+               S24:000A4E98:  06
+               S24:000A4E99:  33
+               S24:000A4E9A:  1A
+F00:0378           dc.b $06,$33,$62 
+               S24:000A4E9B:  06
+               S24:000A4E9C:  33
+               S24:000A4E9D:  62
+F00:0379           dc.b $01,$33,$B6 
+               S24:000A4E9E:  01
+               S24:000A4E9F:  33
+               S24:000A4EA0:  B6
+F00:0380           dc.b $01,$33,$D8 
+               S24:000A4EA1:  01
+               S24:000A4EA2:  33
+               S24:000A4EA3:  D8
+F00:0381           dc.b $01,$33,$F7
+               S24:000A4EA4:  01
+               S24:000A4EA5:  33
+               S24:000A4EA6:  F7
+F00:0382       
+F00:0383       textData_Dialogues:
+F00:0384       text1:
+F00:0385           ;                                      ^       ^
+F00:0386           dc.b $0B,$11,$10,$00,$A5,$03,$06,$0A,$01,$04,$01,$07
+               S24:000A4EA7:  0B
+               S24:000A4EA8:  11
+               S24:000A4EA9:  10
+               S24:000A4EAA:  00
+               S24:000A4EAB:  A5
+               S24:000A4EAC:  03
+               S24:000A4EAD:  06
+               S24:000A4EAE:  0A
+               S24:000A4EAF:  01
+               S24:000A4EB0:  04
+               S24:000A4EB1:  01
+               S24:000A4EB2:  07
+F00:0387           ; Monster World war|einst ein friedvoller|Ort.
+F00:0388           dc.b $0C,$54," ",$0C,$67," war",cc_newline,"einst ein friedvoller",cc_newline,"Ort."
+               S24:000A4EB3:  0C
+               S24:000A4EB4:  54
+               S24:000A4EB5:  20
+               S24:000A4EB6:  0C
+               S24:000A4EB7:  67
+               S24:000A4EB8:  20 77 61 72
+               S24:000A4EBC:  09
+               S24:000A4EBD:  65 69 6E 73 74 20 65 69 6E 20 66 72 69 65 64 76
+               S24:000A4ECD:  6F 6C 6C 65 72
+               S24:000A4ED2:  09
+               S24:000A4ED3:  4F 72 74 2E
+F00:0389           dc.b cc_wait,cc_newline,cc_newline,cc_newline
+               S24:000A4ED7:  05
+               S24:000A4ED8:  09
+               S24:000A4ED9:  09
+               S24:000A4EDA:  09
+F00:0390           ; Doch der Frieden|wurde gestört, als|die Monster das Land|wie eine Armee|überfielen.
+F00:0391           dc.b "Doch der Frieden",cc_newline,"wurde gest",$F4,"rt, als",cc_newline,"die Monster das Land",cc_wait,cc_newline
+               S24:000A4EDB:  44 6F 63 68 20 64 65 72 20 46 72 69 65 64 65 6E
+               S24:000A4EEB:  09
+               S24:000A4EEC:  77 75 72 64 65 20 67 65 73 74
+               S24:000A4EF6:  F4
+               S24:000A4EF7:  72 74 2C 20 61 6C 73
+               S24:000A4EFE:  09
+               S24:000A4EFF:  64 69 65 20 4D 6F 6E 73 74 65 72 20 64 61 73 20
+               S24:000A4F0F:  4C 61 6E 64
+               S24:000A4F13:  05
+               S24:000A4F14:  09
+F00:0392           dc.b "wie eine Armee",cc_newline,$F5,"berfielen.",cc_wait,cc_newline,cc_newline,cc_newline
+               S24:000A4F15:  77 69 65 20 65 69 6E 65 20 41 72 6D 65 65
+               S24:000A4F23:  09
+               S24:000A4F24:  F5
+               S24:000A4F25:  62 65 72 66 69 65 6C 65 6E 2E
+               S24:000A4F2F:  05
+               S24:000A4F30:  09
+               S24:000A4F31:  09
+               S24:000A4F32:  09
+F00:0393           ; Ein junger Mann|namens Shion gelobte,|sie zu besiegen und|seinem Land|den Frieden|zurückzubringen.
+F00:0394           dc.b "Ein junger Mann",cc_newline,"namens ",$01,$A0,$0E,$00,$01,$80," gelobte,",cc_newline,"sie zu besiegen",cc_wait
+               S24:000A4F33:  45 69 6E 20 6A 75 6E 67 65 72 20 4D 61 6E 6E
+               S24:000A4F42:  09
+               S24:000A4F43:  6E 61 6D 65 6E 73 20
+               S24:000A4F4A:  01
+               S24:000A4F4B:  A0
+               S24:000A4F4C:  0E
+               S24:000A4F4D:  00
+               S24:000A4F4E:  01
+               S24:000A4F4F:  80
+               S24:000A4F50:  20 67 65 6C 6F 62 74 65 2C
+               S24:000A4F59:  09
+               S24:000A4F5A:  73 69 65 20 7A 75 20 62 65 73 69 65 67 65 6E
+               S24:000A4F69:  05
+               S24:000A4F6A:  09
+F00:0395           dc.b "und seinem Land",cc_newline,"den Frieden",cc_newline,"zur",$F5,"ckzubringen.",cc_wait
+               S24:000A4F6B:  75 6E 64 20 73 65 69 6E 65 6D 20 4C 61 6E 64
+               S24:000A4F7A:  09
+               S24:000A4F7B:  64 65 6E 20 46 72 69 65 64 65 6E
+               S24:000A4F86:  09
+               S24:000A4F87:  7A 75 72
+               S24:000A4F8A:  F5
+               S24:000A4F8B:  63 6B 7A 75 62 72 69 6E 67 65 6E 2E
+               S24:000A4F97:  05
+F00:0396           dc.b cc_close
+               S24:000A4F98:  00
+F00:0397       text1_end:
+F00:0398       text2:
+F00:0399           dc.b $03,$08,$04,$02,"Willkommen in",$02,$04,$07,$0C,$54,$20,$0C,$67,$21,$20,cc_wait
+               S24:000A4F99:  03
+               S24:000A4F9A:  08
+               S24:000A4F9B:  04
+               S24:000A4F9C:  02
+               S24:000A4F9D:  57 69 6C 6C 6B 6F 6D 6D 65 6E 20 69 6E
+               S24:000A4FAA:  02
+               S24:000A4FAB:  04
+               S24:000A4FAC:  07
+               S24:000A4FAD:  0C
+               S24:000A4FAE:  54
+               S24:000A4FAF:  20
+               S24:000A4FB0:  0C
+               S24:000A4FB1:  67
+               S24:000A4FB2:  21
+               S24:000A4FB3:  20
+               S24:000A4FB4:  05
+F00:0400           dc.b cc_close
+               S24:000A4FB5:  00
+F00:0401       text2_end:
+F00:0402       
+F00:0403       newSpriteTable_logo:
+F00:0404               ; ss: size, 
+F00:0405               ; ff: flag+1st id-nybble
+F00:0406               ; ii: 2nd id-nybble
+F00:0407               ; xx: xpos
+F00:0408               ; yy: ypos
+F00:0409               ; ----------------------
+F00:0410               ; ss, ff, ii, xx, yy
+F00:0411               ; ˅   ˅   ˅   ˅   ˅
+F00:0412           dc.b $0D,$62,$E0,$A8,$D8 ; 8 Tiles, 32x16
+               S24:000A4FB6:  0D
+               S24:000A4FB7:  62
+               S24:000A4FB8:  E0
+               S24:000A4FB9:  A8
+               S24:000A4FBA:  D8
+F00:0413           dc.b $0D,$62,$E8,$C8,$D8 ; 8 Tiles, 32x16
+               S24:000A4FBB:  0D
+               S24:000A4FBC:  62
+               S24:000A4FBD:  E8
+               S24:000A4FBE:  C8
+               S24:000A4FBF:  D8
+F00:0414           dc.b $0D,$62,$F0,$E8,$D8 ; 8 Tiles, 32x16
+               S24:000A4FC0:  0D
+               S24:000A4FC1:  62
+               S24:000A4FC2:  F0
+               S24:000A4FC3:  E8
+               S24:000A4FC4:  D8
+F00:0415           dc.b $0D,$62,$F8,$08,$D8 ; 8 Tiles, 32x16
+               S24:000A4FC5:  0D
+               S24:000A4FC6:  62
+               S24:000A4FC7:  F8
+               S24:000A4FC8:  08
+               S24:000A4FC9:  D8
+F00:0416           dc.b $0D,$63,$00,$28,$D8 ; 8 Tiles, 32x16
+               S24:000A4FCA:  0D
+               S24:000A4FCB:  63
+               S24:000A4FCC:  00
+               S24:000A4FCD:  28
+               S24:000A4FCE:  D8
+F00:0417           dc.b $0D,$63,$08,$48,$D8 ; 8 Tiles, 32x16
+               S24:000A4FCF:  0D
+               S24:000A4FD0:  63
+               S24:000A4FD1:  08
+               S24:000A4FD2:  48
+               S24:000A4FD3:  D8
+F00:0418           dc.b $04,$63,$10,$68,$D8 ; 2 Tiles, 16x8
+               S24:000A4FD4:  04
+               S24:000A4FD5:  63
+               S24:000A4FD6:  10
+               S24:000A4FD7:  68
+               S24:000A4FD8:  D8
+F00:0419       
+F00:0420           dc.b $00,$63,$12,$C0,$E8 ; 1 Tiles, 8x8
+               S24:000A4FD9:  00
+               S24:000A4FDA:  63
+               S24:000A4FDB:  12
+               S24:000A4FDC:  C0
+               S24:000A4FDD:  E8
+F00:0421           dc.b $05,$63,$13,$B8,$F0 ; 4 Tiles, 16x16
+               S24:000A4FDE:  05
+               S24:000A4FDF:  63
+               S24:000A4FE0:  13
+               S24:000A4FE1:  B8
+               S24:000A4FE2:  F0
+F00:0422           dc.b $09,$63,$17,$B0,$00 ; 6 Tiles, 24x16
+               S24:000A4FE3:  09
+               S24:000A4FE4:  63
+               S24:000A4FE5:  17
+               S24:000A4FE6:  B0
+               S24:000A4FE7:  00
+F00:0423           dc.b $0C,$63,$1D,$A8,$10 ; 4 Tiles, 32x8
+               S24:000A4FE8:  0C
+               S24:000A4FE9:  63
+               S24:000A4FEA:  1D
+               S24:000A4FEB:  A8
+               S24:000A4FEC:  10
+F00:0424       
+F00:0425           dc.b $0F,$63,$21,$C8,$E8 ; 16 Tiles, 32x32
+               S24:000A4FED:  0F
+               S24:000A4FEE:  63
+               S24:000A4FEF:  21
+               S24:000A4FF0:  C8
+               S24:000A4FF1:  E8
+F00:0426           dc.b $0F,$63,$31,$E8,$E8 ; 16 Tiles, 32x32
+               S24:000A4FF2:  0F
+               S24:000A4FF3:  63
+               S24:000A4FF4:  31
+               S24:000A4FF5:  E8
+               S24:000A4FF6:  E8
+F00:0427           dc.b $0F,$63,$41,$08,$E8 ; 16 Tiles, 32x32
+               S24:000A4FF7:  0F
+               S24:000A4FF8:  63
+               S24:000A4FF9:  41
+               S24:000A4FFA:  08
+               S24:000A4FFB:  E8
+F00:0428           dc.b $0F,$63,$51,$28,$E8 ; 16 Tiles, 32x32
+               S24:000A4FFC:  0F
+               S24:000A4FFD:  63
+               S24:000A4FFE:  51
+               S24:000A4FFF:  28
+               S24:000A5000:  E8
+F00:0429       
+F00:0430           dc.b $0D,$63,$61,$C8,$08 ; 8 Tiles, 32x16
+               S24:000A5001:  0D
+               S24:000A5002:  63
+               S24:000A5003:  61
+               S24:000A5004:  C8
+               S24:000A5005:  08
+F00:0431           dc.b $0D,$63,$69,$E8,$08 ; 8 Tiles, 32x16
+               S24:000A5006:  0D
+               S24:000A5007:  63
+               S24:000A5008:  69
+               S24:000A5009:  E8
+               S24:000A500A:  08
+F00:0432           dc.b $0D,$63,$71,$08,$08 ; 8 Tiles, 32x16
+               S24:000A500B:  0D
+               S24:000A500C:  63
+               S24:000A500D:  71
+               S24:000A500E:  08
+               S24:000A500F:  08
+F00:0433           dc.b $0D,$63,$79,$28,$08 ; 8 Tiles, 32x16
+               S24:000A5010:  0D
+               S24:000A5011:  63
+               S24:000A5012:  79
+               S24:000A5013:  28
+               S24:000A5014:  08
+F00:0434       
+F00:0435           dc.b $08,$63,$81,$48,$E8 ; 3 Tiles, 24x8
+               S24:000A5015:  08
+               S24:000A5016:  63
+               S24:000A5017:  81
+               S24:000A5018:  48
+               S24:000A5019:  E8
+F00:0436           dc.b $05,$63,$84,$48,$F0 ; 4 Tiles, 16x16
+               S24:000A501A:  05
+               S24:000A501B:  63
+               S24:000A501C:  84
+               S24:000A501D:  48
+               S24:000A501E:  F0
+F00:0437           dc.b $02,$63,$88,$48,$00 ; 3 Tiles, 8x24
+               S24:000A501F:  02
+               S24:000A5020:  63
+               S24:000A5021:  88
+               S24:000A5022:  48
+               S24:000A5023:  00
+F00:0438           dc.b $FF
+               S24:000A5024:  FF
+F00:0439       
+F00:0440       
+F00:0441       newSpriteTable_pressStart:
+F00:0442               ; ss: size, 
+F00:0443               ; ff: flag+1st id-nybble
+F00:0444               ; ii: 2nd id-nybble
+F00:0445               ; xx: xpos
+F00:0446               ; yy: ypos
+F00:0447               ; ----------------------
+F00:0448               ; ss, ff, ii, xx, yy
+F00:0449               ; ˅   ˅   ˅   ˅   ˅
+F00:0450           dc.b $0D,$63,$C0,$C8,$F1 ; 8 Tiles, 32x16
+               S24:000A5025:  0D
+               S24:000A5026:  63
+               S24:000A5027:  C0
+               S24:000A5028:  C8
+               S24:000A5029:  F1
+F00:0451           dc.b $0D,$63,$C8,$E8,$F1 ; 8 Tiles, 32x16
+               S24:000A502A:  0D
+               S24:000A502B:  63
+               S24:000A502C:  C8
+               S24:000A502D:  E8
+               S24:000A502E:  F1
+F00:0452           dc.b $0D,$63,$D0,$08,$F1 ; 8 Tiles, 32x16
+               S24:000A502F:  0D
+               S24:000A5030:  63
+               S24:000A5031:  D0
+               S24:000A5032:  08
+               S24:000A5033:  F1
+F00:0453           dc.b $05,$63,$D8,$28,$F1 ; 4 Tiles, 16x16
+               S24:000A5034:  05
+               S24:000A5035:  63
+               S24:000A5036:  D8
+               S24:000A5037:  28
+               S24:000A5038:  F1
+F00:0454           dc.b $FF
+               S24:000A5039:  FF
+F00:0455       
+F00:0456       
+F00:0457       newSpriteTable_newGame:
+F00:0458               ; ss: size, 
+F00:0459               ; ff: flag+1st id-nybble
+F00:0460               ; ii: 2nd id-nybble
+F00:0461               ; xx: xpos
+F00:0462               ; yy: ypos
+F00:0463               ; ----------------------
+F00:0464               ; ss, ff, ii, xx, yy
+F00:0465               ; ˅   ˅   ˅   ˅   ˅
+F00:0466           dc.b $01,$63,$DC,$CD,$F9 ; 2 Tiles, 8x16
+               S24:000A503A:  01
+               S24:000A503B:  63
+               S24:000A503C:  DC
+               S24:000A503D:  CD
+               S24:000A503E:  F9
+F00:0467           dc.b $0D,$63,$DE,$D5,$F9 ; 8 Tiles, 32x16 
+               S24:000A503F:  0D
+               S24:000A5040:  63
+               S24:000A5041:  DE
+               S24:000A5042:  D5
+               S24:000A5043:  F9
+F00:0468           dc.b $0D,$63,$E6,$F5,$F9 ; 8 Tiles, 32x16
+               S24:000A5044:  0D
+               S24:000A5045:  63
+               S24:000A5046:  E6
+               S24:000A5047:  F5
+               S24:000A5048:  F9
+F00:0469           dc.b $0D,$63,$EE,$15,$F9 ; 8 Tiles, 32x16
+               S24:000A5049:  0D
+               S24:000A504A:  63
+               S24:000A504B:  EE
+               S24:000A504C:  15
+               S24:000A504D:  F9
+F00:0470           dc.b $FF
+               S24:000A504E:  FF
+F00:0471       
+F00:0472       
+F00:0473       newSpriteTable_continue:
+F00:0474               ; ss: size, 
+F00:0475               ; ff: flag+1st id-nybble
+F00:0476               ; ii: 2nd id-nybble
+F00:0477               ; xx: xpos
+F00:0478               ; yy: ypos
+F00:0479               ; ----------------------
+F00:0480               ; ss, ff, ii, xx, yy
+F00:0481               ; ˅   ˅   ˅   ˅   ˅
+F00:0482           dc.b $01,$63,$F8,$CD,$F9 ; 2 Tiles, 8x16
+               S24:000A504F:  01
+               S24:000A5050:  63
+               S24:000A5051:  F8
+               S24:000A5052:  CD
+               S24:000A5053:  F9
+F00:0483           dc.b $0D,$63,$FA,$D5,$F9 ; 8 Tiles, 32x16 
+               S24:000A5054:  0D
+               S24:000A5055:  63
+               S24:000A5056:  FA
+               S24:000A5057:  D5
+               S24:000A5058:  F9
+F00:0484           dc.b $0D,$64,$02,$F5,$F9 ; 8 Tiles, 32x16
+               S24:000A5059:  0D
+               S24:000A505A:  64
+               S24:000A505B:  02
+               S24:000A505C:  F5
+               S24:000A505D:  F9
+F00:0485           dc.b $0D,$64,$0A,$15,$F9 ; 8 Tiles, 32x16
+               S24:000A505E:  0D
+               S24:000A505F:  64
+               S24:000A5060:  0A
+               S24:000A5061:  15
+               S24:000A5062:  F9
+F00:0486           dc.b $FF
+               S24:000A5063:  FF
+F00:0487       
+F00:0488       
+F00:0489       newSpriteTable_arrow:
+F00:0490               ; ss: size, 
+F00:0491               ; ff: flag+1st id-nybble
+F00:0492               ; ii: 2nd id-nybble
+F00:0493               ; xx: xpos
+F00:0494               ; yy: ypos
+F00:0495               ; ----------------------
+F00:0496               ; ss, ff, ii, xx, yy
+F00:0497               ; ˅   ˅   ˅   ˅   ˅
+F00:0498           dc.b $05,$64,$12,$ED,$F9 ; 4 Tiles, 16x16
+               S24:000A5064:  05
+               S24:000A5065:  64
+               S24:000A5066:  12
+               S24:000A5067:  ED
+               S24:000A5068:  F9
+F00:0499           dc.b $FF
+               S24:000A5069:  FF
+F00:0500       
+F00:0501           
+F00:0502           ; TILE MAPS:
+F00:0503           align 2
+F00:0504       planeMapA:
+F00:0505           incbin  "bin/maps/planeA_map_shifted[C000-CFFF].bin"
+               S24:000A506C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S24:000A507C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+F00:0506       planeMapB:
+F00:0507           incbin  "bin/maps/planeB_map_shifted[E000-EFFF].bin"
+               S24:000A606C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S24:000A607C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+F00:0508       
+F00:0509       
+F00:0510           ; GFX PACKS:
+F00:0511           align 2
+F00:0512       newLogoGFX_pack1:
+F00:0513           incbin "bin/gfx/pack1.cbin"
+               S24:000A706C:  F8 02 33 51 82 13 C7 1F CB F1 57 04 41 F4 1E 19
+               S24:000A707C:  C5 F3 DA 22 1E 78 00 1F 9F F7 FE 1F 0D E0 1A 1E
+F00:0514       newLogoGFX_pack2:
+F00:0515           incbin "bin/gfx/pack2.cbin"
+               S24:000A722F:  DF E7 8D 0C 44 11 F9 9A 6F 02 38 03 03 C1 C0 3B
+               S24:000A723F:  41 E1 10 8B 13 C7 5C A2 33 26 E9 E0 00 70 7F 3D
+F00:0516       newLogoGFX_pack3:
+F00:0517           incbin "bin/gfx/pack3.cbin"
+               S24:000A73C5:  FC 2A 2A A6 08 44 01 F1 D8 78 96 29 01 F7 FC F1
+               S24:000A73D5:  80 08 74 B0 05 11 FF 41 E0 D0 37 28 93 02 38 0E
+F00:0518       newLogoGFX_pack4:
+F00:0519           incbin "bin/gfx/pack4.cbin"
+               S24:000A752E:  F3 C7 44 05 4A 24 70 7C 03 7F E0 04 01 5E 07 4F
+               S24:000A753E:  F8 22 87 DF 07 F8 0E 08 44 41 17 8E 85 0C AA 3D
+F00:0520       newLogoGFX_pack5:
+F00:0521           incbin "bin/gfx/pack5.cbin"
+               S24:000A767C:  F8 FE 66 EF 87 43 73 37 A3 B1 82 3B E0 1C 80 01
+               S24:000A768C:  E0 FE 7A 1A 20 8E 83 9D A8 E9 51 4F 1A 48 3C 1B
+F00:0522       newLogoGFX_pack6:
+F00:0523           incbin "bin/gfx/pack6.cbin"
+               S24:000A77EC:  C0 0E 78 82 20 1B EE 07 41 04 28 2F E3 BC FF 88
+               S24:000A77FC:  82 7F 77 DE EC 75 AB 8E 9F A3 B1 53 F4 7D F7 93
+F00:0524       
+F00:0525       newTitleTxtGFX_pack1:
+F00:0526           incbin "bin/gfx/pack7.cbin"
+               S24:000A786F:  F3 C4 01 83 F8 36 E0 03 C1 1A 2B 14 90 01 0D FD
+               S24:000A787F:  06 08 47 F0 1F 03 CF FA 38 16 09 B2 EC 99 8B DF
+F00:0527       newTitleTxtGFX_pack2:
+F00:0528           incbin "bin/gfx/pack8.cbin"
+               S24:000A799C:  DF E0 05 25 B0 1F 3C 60 3C 13 06 F4 10 43 46 E0
+               S24:000A79AC:  03 C1 1A 18 16 1F E0 0A 28 3E 7F A2 93 33 2B ED
+F00:0529       newTitleTxtGFX_pack3:
+F00:0530           incbin "bin/gfx/pack9.cbin"
+               S24:000A7AA5:  F3 C4 1F 00 38 7E 8F 02 C0 F8 36 20 20 BF E0 18
+               S24:000A7AB5:  21 7C 7F F0 1D 10 22 84 D2 1E B3 B6 7A 3D E9 1C
+F00:0531       
+F00:0532       fontGFX_pack:
+F00:0533           incbin "bin/gfx/fonthack.cbin"
+               S24:000A7B7D:  FC DE 4E 58 1E 39 DD 00 54 51 80 7A 19 FE 90 11
+               S24:000A7B8D:  F8 42 2F 83 E8 38 0E 06 CD D0 02 8A 96 1F 94 EF
+F00:0534       
 
 
 Sections:
-S01  CODE
+S01  seg1b2
+S02  seg1bb
+S03  seg8d8
+S04  seg8de
+S05  seg1882
+S06  seg8e46
+S07  seg8e4a
+S08  sege0a4
+S09  seg70e6
+S10  seg77d7
+S11  seg84de
+S12  seg1cc14
+S13  seg4101c
+S14  seg4155c
+S15  seg41560
+S16  seg41564
+S17  seg41568
+S18  seg4156c
+S19  seg41570
+S20  seg41598
+S21  seg4159c
+S22  seg415a0
+S23  sega0e4c
+S24  sega4c80
 
 
 Sources:
-F00  test.asm
-F01  REPEAT:test.asm:line 3
+F00  .\patch_de.asm
+F01  REPEAT:.\patch_de.asm:line 110
+F02  SetVRAMWrite
+F03  SetVRAMWrite
 
 
 Symbols:
-tableStart LAB (0x20) REF sec=CODE 
-__LINE__ EXPR(6=0x6) INTERNAL 
+text2_end EXPR(675766=0xa4fb6) UNUSED ABS 
+text1_end EXPR(675737=0xa4f99) UNUSED ABS 
+textData_Dialogues EXPR(675495=0xa4ea7) UNUSED ABS 
+text2 EXPR(675737=0xa4f99) ABS 
+text1 EXPR(675495=0xa4ea7) ABS 
+planeMapB EXPR(680044=0xa606c) ABS 
+writePlanemapB EXPR(675060=0xa4cf4) UNUSED ABS 
+writePlanemap_Loop EXPR(675088=0xa4d10) ABS 
+planeMapA EXPR(675948=0xa506c) ABS 
+CARG EXPR(0=0x0) INTERNAL 
+writePlanemapA EXPR(675034=0xa4cda) UNUSED ABS 
+newSpriteTable_continue EXPR(675919=0xa504f) ABS 
+newSpriteTable_newGame EXPR(675898=0xa503a) ABS 
+newSpriteTable_pressStart EXPR(675877=0xa5025) ABS 
+newSpriteTable_arrow EXPR(675940=0xa5064) ABS 
+newSpriteTable_logo EXPR(675766=0xa4fb6) ABS 
+ret_bypassSpriteTableAddress EXPR(675026=0xa4cd2) ABS 
+setNewSpriteTable_continue EXPR(675020=0xa4ccc) ABS 
+setNewSpriteTable_newGame EXPR(675012=0xa4cc4) ABS 
+setNewSpriteTable_pressStart EXPR(675004=0xa4cbc) ABS 
+setNewSpriteTable_arrow EXPR(674996=0xa4cb4) ABS 
+setNewSpriteTable_logo EXPR(674988=0xa4cac) ABS 
+newTitleTxtGFX_pack3 EXPR(686757=0xa7aa5) ABS 
+newTitleTxtGFX_pack2 EXPR(686492=0xa799c) ABS 
+newTitleTxtGFX_pack1 EXPR(686191=0xa786f) ABS 
+newLogoGFX_pack6 EXPR(686060=0xa77ec) ABS 
+newLogoGFX_pack5 EXPR(685692=0xa767c) ABS 
+newLogoGFX_pack4 EXPR(685358=0xa752e) ABS 
+newLogoGFX_pack3 EXPR(684997=0xa73c5) ABS 
+newLogoGFX_pack2 EXPR(684591=0xa722f) ABS 
+newLogoGFX_pack1 EXPR(684140=0xa706c) ABS 
+fontGFX_pack EXPR(686973=0xa7b7d) ABS 
+base_PointerTable_Dialogues EXPR(675102=0xa4d1e) ABS 
+writePlanemaps EXPR(675034=0xa4cda) ABS 
+jumpBack EXPR(2270=0x8de) ABS 
+bypassSpriteTableAddress EXPR(674944=0xa4c80) ABS 
+cc_newline EXPR(9=0x9) EQU 
+cc_wait EXPR(5=0x5) EQU 
+cc_close EXPR(0=0x0) EQU 
+locSpriteTable_arrow EXPR(661735=0xa18e7) EQU 
+locSpriteTable_pressStart EXPR(661704=0xa18c8) EQU 
+locSpriteTable_continue EXPR(661688=0xa18b8) EQU 
+locSpriteTable_newGame EXPR(661672=0xa18a8) EQU 
+locSpriteTable_logo EXPR(658944=0xa0e00) EQU 
+vram_addr_plane_b EXPR(57344=0xe000) EQU 
+vram_addr_plane_a EXPR(49152=0xc000) EQU 
+vram_addr_tiles EXPR(0=0x0) UNUSED EQU 
+vdp_cmd_vram_write EXPR(1073741824=0x40000000) EQU 
+vdp_data EXPR(12582912=0xc00000) EQU 
+vdp_control EXPR(12582916=0xc00004) EQU 
+size_long EXPR(4=0x4) UNUSED EQU 
+size_word EXPR(2=0x2) UNUSED EQU 
+__LINE__ EXPR(534=0x216) INTERNAL 
 __FO EXPR(0=0x0) INTERNAL 
 __RS EXPR(0=0x0) INTERNAL 
 REPTN EXPR(-1=0xffffffff) INTERNAL 
