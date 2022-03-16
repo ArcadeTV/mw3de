@@ -1,0 +1,124 @@
+F00:0001           rept    $20
+F00:0003       
+F01:0001           dc.b    $FF;
+               S01:00000000:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000001:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000002:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000003:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000004:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000005:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000006:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000007:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000008:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000009:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000000A:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000000B:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000000C:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000000D:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000000E:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000000F:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000010:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000011:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000012:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000013:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000014:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000015:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000016:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000017:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000018:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:00000019:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000001A:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000001B:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000001C:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000001D:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000001E:  FF
+F01:0002           
+F01:0001           dc.b    $FF;
+               S01:0000001F:  FF
+F01:0002           
+F00:0004       
+F00:0005       tableStart:
+F00:0006           dc.w    tableStart
+               S01:00000020:  00 20 [R]
+
+
+Sections:
+S01  CODE
+
+
+Sources:
+F00  test.asm
+F01  REPEAT:test.asm:line 3
+
+
+Symbols:
+tableStart LAB (0x20) REF sec=CODE 
+__LINE__ EXPR(6=0x6) INTERNAL 
+__FO EXPR(0=0x0) INTERNAL 
+__RS EXPR(0=0x0) INTERNAL 
+REPTN EXPR(-1=0xffffffff) INTERNAL 
+__VASM EXPR(1=0x1) INTERNAL 
+BuildGEN EXPR(1=0x1) UNUSED 
+vasm EXPR(1=0x1) UNUSED 
+
+There have been no errors.

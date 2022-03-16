@@ -1,0 +1,445 @@
+MW3 Notes
+++++++++++++++++++++++++++++++++++++++++++++
+
+SRAM FIX
+            original ->     fixed
+000001B2:   E8 40    ->     F0 20
+000001BB:   01       ->     81
+               ^
+               B
+
+B)
+RAM Type according to header-specifications:
+$20 - SRAM
+$40 - I2C EEPROM (24Cxx)
+$80 - MicroWire EEPROM (93Cxx)
+
+++++++++++++++++++++++++++++++++++++++++++++
+
+CHAR TABLE
+
+A   10 (Button reference icon)
+B   11 (Button reference icon)
+C   12 (Button reference icon)
+^   13 (Arrow icon)
+[]  14 (Textbox corner icon)
+¯   15 (Macron)
+|   16 (Vertical bar)
+X   17 (Cross icon)
+*   18 (Blue star icon)
+
+I   19 (Roman Numeral 1)
+II  1A (Roman Numeral 2)
+III 1B (Roman Numeral 3)
+V   1C (Roman Numeral 5)
+X   1D (Roman Numeral 10)
+L   1E (Roman Numeral 50)
+M   1F (Roman Numeral 1000)
+
+    20
+!   21
+"   22
+#   23
+$   24
+%   25
+&   26
+'   27
+(   28
+)   29
+*   2A
++   2B
+,   2C
+-   2D
+.   2E
+/   2F
+
+0   30
+1   31
+2   32
+3   33
+4   34
+5   35
+6   36
+7   37
+8   38
+9   39
+
+:   3A
+;   3B
+<   3C
+=   3D
+>   3E
+?   3F
+@   40
+
+A   41
+B   42
+C   43
+D   44
+E   45
+F   46
+G   47
+H   48
+I   49
+J   4A
+K   4B
+L   4C
+M   4D
+N   4E
+O   4F
+P   50
+Q   51
+R   52
+S   53
+T   54
+U   55
+V   56
+W   57
+X   58
+Y   59
+Z   5A
+
+[   5B
+
+a   61
+b   62
+c   63
+d   64
+e   65
+f   66
+g   67
+h   68
+i   69
+j   6A
+k   6B
+l   6C
+m   6D
+n   6E
+o   6F
+p   70
+q   71
+r   72
+s   73
+t   74
+u   75
+v   76
+w   77
+x   78
+y   79
+z   7A
+
+-   7B (short thick)
+
+CUSTOM CHARACTERS:
+
+F0  Ä
+F1  Ö
+F2  Ü
+F3  ä
+F4  ö
+F5  ü
+F6  ß
+
+F8  AP Icon left side
+F9  AP Icon right side
+
+FA  DP Icon left side
+FB  DP Icon right side
+
+FC  SP Icon left side
+FD  SP Icon right side
+
+RELOCATION of CUSTOM CHARS!
+from $0423FA to $0FFE50
+is defined at $4101D
+
+CONTROLLERS
+
+CLOSE   00
+COLOR   01 XX (Orange:A0, White:80)
+FAST    02
+SPEED   03 XX (Where 00 sets the text without animation and 09 brings each char slowly on the stage)
+WAIT    05
+?       06
+?       08 -timer?
+NL      09
+
+0B 02 AA BB P1P2    Sets the Curser for Selection (e.g. YES/NO)
+                    AA (00-18)  Left Option-Arrow placement
+                    BB (00-18)  Right Option-Arrow placement
+                    0 equals the alignment of the text inside the textbox.
+                    Pointer (2 Bytes), relative: To NO-Answer-Text. 
+
+0B 19 XX            Plays Sound, scheme: 0B19(\w\w) 
+                    35  Zonk (eG not enough money)
+
+Assumtions:
+02 04 07    used to CENTER the Text in 1st sign "Monster"
+
+VARIABLES
+
+0C 00   YES NO (Options menu)
+0C 02   Legend Sword (orange)
+0C 03   19800 GOLD
+0C 06   __ (2x Space)
+0C 7A   monsters
+0C 54   MONSTER
+0C E0   was
+0C 67   WORLD
+0C D3   the
+0E 00   Shion
+0E 01   Alsedo (orange)
+0E 02   Maugham Desert (orange)
+0E 03   Lilypad (orange)
+0E 04   Begonia (orange)
+0E 05   Childam (orange)
+0F 00   __You have a[09]discriminating eye.[05] (@21B7E)
+
+FORMATTERS
+
+01 A0 ... 01 80     orange
+
+
+LOCATIONS
+
+Absolute Pointer references Block @0001CC00:
+0001CC00: 000224C2  (Pointer-Table, NOT text-related!)
+0001CC04: 0001CC6C  (0001CC78) Directly following after this block of addresses.
+0001CC08: 00022920  some Data? 10 60 10 10 10 60 00 00 00 00 00 ...
+0001CC0C: 0001DCA2  some Data? 00 28 00 29 00 31 00 36 00 39 00 42 ...
+0001CC10: 000211CA  4 absolute Pointers! ->TEXT-POINTER-TABLE-BASES!!!<- 0211DA (Snippets), 021720 (Item-Names), 021A06 (Names[0E]), 211FCA (? higher than highest rom address!)
+0001CC14: 0001DD94  General-Text Pointer-Table-Base for 131 Entries. 
+                    (Different Format!!) 
+                    XX AA BB, where 01DD94+AA+BB points to the beginning of the text. 
+                    XX is the Textbox-Type. (00 - 07)
+                    00 - 3 lines, 21 chars, centered on the screen (most common)
+                    01 - 2 lines, 21 chars
+                    02 - 3 lines, 21 chars, left aligned on screen with a little space
+                    03 - 1 line,  15 chars, centered on the screen
+                    04 - 5 lines, 15 chars, left aligned on screen with no space
+                    05 - 3 lines, 17 chars, left aligned on screen with no space
+                    06 - 3 lines, 21 chars, bottom aligned on screen with a little space
+                    07 - 1 line,  24 chars, centered on the screen
+0001CC18: 0001DD74  some Data? 04 01 17 03 04 05 17 02 01 01 15 03
+0001CC1C: 00022460  some Data? 00 02 67 D2 00 02 6C 78 36 35 0E 68 00
+0001CC20: 00023794  some Data? 00 02 00 01 01 01 00 01 00 48 01 01
+0001CC24: 00023AB6  some Data? 
+0001CC28: 00026538  some Data? 
+0001CC2C: 00027786  some Data? 
+0001CC30: 00028154  some Data? 
+0001CC34: 00029E5A  some Data? 
+0001CC38: 0002B108  some Data? 
+0001CC3C: 0002C6B8  some Data? 
+0001CC40: 00024130  some Data? 
+0001CC44: 0002E4C6  some Data? 
+0001CC48: 0003058A  some Data? 
+0001CC4C: 00032170  some Data? 
+0001CC50: 00033AF0  some Data? 
+0001CC54: 00035918  some Data? 
+0001CC58: 000371B0  some Data? 
+0001CC5C: 00038140  some Data? 
+0001CC60: 0003BA98  some Data? 
+0001CC64: 0003CBAE  some Data? 
+0001CC68: 0003E9F8  some Data? 
+0001CC6C: 0001CC78  some Data? 
+0001CC70: 0001D190  some Data? 
+0001CC74: 0001D794  some Data? 
+
+00001D72    Time's up.(@1D6D) Incorrect.(@1D7D) Correct.(@1D88)
+00001FE6    Found the..(@1FE6) Found..(@1FF1) GOLD..(@1FF8)
+00002B59    Shion plays the Ocarina...
+00007BFE    Pointers -> Magic Items Names
+00007C0C    Magic Items Names (maybe 7C0A)
+0001ABD0    Credits Strings
+0001DF29    First appearing Text from engine (Pointers from 1DCA2 ??)
+0001DFF9    First Sign: Welcome to Monster Word
+00021720    Pointers -> Variables (Word) [first:0082->000217A2 Legend Sword]
+000217A2    Variable-Strings start (begins with Legend Sword)
+00021A06    Pointers -> Variables (Word) [first:0056->00021A5C Shion]
+00021FEA    Dictionary (begins with 05[wait])
+
+000082B6    Menu Strings Pointer Table start
+000082C4    Menu Strings start
+
+Absolute Pointer references @0211CB?
+0211DA
+021720
+021A06
+021FCA
+
+0211DA Pointers for Dictionary?
+
+41000 - 42B3F   absolute GFX adresses! (3F000 in JP Version)
+
+POINTER FORMAT:
+
+@Base-Address:  0001 0002 0003 0004...
+Base-Address + Pointer-Value = Text-Start-Address
+Pointer-Value#2 - Pointer-Value#1 = Text-Length
+
+
+POSSIBLE FIXES:
+
+00004DF3    3 Bytes:    00 4E 64 
+                     -> 0A AA 00
+000077F2    12 Bytes:   10 18 53 00 11 C0 96 24 11 D8 96 25 
+                     -> 11 D8 96 24 4E F9 00 01 C8 18 4E 71
+
+GETTING STARTED
+Text Box 19x3:
+
+[MONSTER] [WORLD] [was][nl]
+once a [peaceful][nl]
+region.[wait]
+
+[nl][nl]Then, the peace was[nl]
+shattered by an[nl]
+invading army of[wait]
+
+[nl]monsters.[nl]
+[nl]
+A young man named[nl]
+[orange]Shion[/orange] vowed to[nl]
+defeat them and make[wait]
+
+[nl]his land peaceful[nl]
+again.[08][wait][close]
+
+
+INTERACTIVE DIALOGS:
+
+Question?[0C 00]    ;brings YES NO options into textbox
+0B 02 03 08 00 27 
+            ^  ^    jumps to NO-answer-text
+09 03 06 0B 03 
+00 68 0B 07 0B 08 FF (0B 09)
+^  ^                jumps to Condition-was-FALSE-answer-text
+Text when YES was selected and Condition was TRUE (@21BED)
+Text when NO was selected (@21C05)
+Text when YES was selected and Condition was FALSE (@21C4D)
+
+This works:
+Question? [0C 00] [(0B 02) 03 08] [pointer to NO answer: 2 Bytes] [YES-answer-text] [NO-answer-text]
+
+
+
+DEBUG:
+
+GAME-START:
+
+1st address found in trace: 01DF1D
+2nd: 01DEF0
+
+Text-Engine main tables @ 01CC00 ???
+
+A1=000211CA from rom @ 0001CC10 (pointer table start?) ABSOLUTE POINTERS!!!!!!!
+A1=0001DD94 from rom @ 0001CC14
+A1=0001DD74 from rom @ 0001CC18
+
+
+0001DFF9    First Sign: Welcome to Monster Word
+            03 08 04 01 0C65 20 74 6F 02 04 07 0C54 20 0C67 21 20 05 00 
+                        welc    t  o           MONS    WORL !     ^  ED
+
+
+MAIN MENU:
+
+GOLD in Menu:   $84E7
+
+Reads
+from    to      value
+++++++++++++++++++++++++++++++++++
+77A2    77A3    0008
+77AD            16
+77A4    77A5    0010
+77B8            01
+77A8    77A9    0020
+77C8            00
+779E            09
+779F            0D
+77A0            0B
+82B6    82B7    000E <-----|First Pointertable entry
+82B2    82B3    1004        #16 #4 <-----|change: 10 -> 0F to shift headline 1 tile to the left
+82C4...         TEXT ...    SELECT
+7D6E    7D6F    0F07        #15 #7 <-----|change: 0F -> 0E to shift left column of items 1 tile to the left
+82CB...         TEXT ...    WEAPON
+7D70    7D71    1807        #24 #7 <-----|change: 18 -> 17 to shift right column of items 1 tile to the left
+82D2...         TEXT ...    ARMOR
+7D72    7D73    0F0A        #15 #10<-----|change: 0F -> 0E to shift left column of items 1 tile to the left
+82D9...         TEXT ...    SHIELD
+7D74    7D75    180A        #24 #10<-----|change: 18 -> 17 to shift right column of items 1 tile to the left
+82E0...         TEXT ...    BOOTS
+7D76    7D77    0F0D        #15 #13<-----|change: 0F -> 0E to shift left column of items 1 tile to the left
+82E7...         TEXT ...    ITEM
+7D78    7D79    180D        #24 #13<-----|change: 18 -> 17 to shift right column of items 1 tile to the left
+82EC...         TEXT ...    MAGIC
+7D6E            0F          #15
+7D6F            07          #7
+------------------------ Menu almost open, texts appearing
+7D49
+7D48
+7D47
+7D46
+7D49
+
+
+Translation Notes:
+
+SELECT  6   INVENTAR    8
+WEAPON  6   WAFFE       5       ARMOR   5       RÜSTUNG     7
+SHIELD  6   SCHILD      6       BOOTS   5       STIEFEL     7
+ITEM    4   ITEMS       5       MAGIC   5       MAGIE       5
+
+Look for: 6 6 5 6 5 4 5
+
+Pointer Table Base: $82B6 (7 Entries)
+Relocation Address for Strings: $1C610
+-------------------------------------------------------------
+
+    offset  value
+AP  84DE    58 50
+DP  84E1    40 50
+SP  84E4    53 50
+
+SUBMENU 
+    WEAPON etc STRING LENGTH: max 15(+1)
+    ITEMS STRING LENGTH: max 8(+1 on right column)
+
+MAGIC MENU
+Pointer Table Base: $7BFB
+Strings Start:      $7C0A
+
+[03][06]FIRE STORM[0]  10
+[12][06]QUAKE[0]       5
+[03][09]THUNDER[0]     7
+[12][09]POWER[0]       5
+[03][0C]SHIELD[0]      6
+[12][0C]RETURN[0]      6
+
+FEUERSTURM  10
+BEBEN       5
+DONNER      6
+KRAFT       5
+SCHILD      6
+RÜCKZUG     7
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+TITLE SCREEN:
+Testing Placements in Title:
+
+$6D1C ...
+$7300 ~69DA
+
+Sp#1(nr14(0E), 2FC) x144(90) y168(A8) link15 pal3 pvh 
+Clues: $26D72: 0004200002FC     
+
+In VRAM: first logo-tile offset: 5C00, id:2E0
+
+TITLE MUSIC: $718B is 14.
+Refer to music.txt to change, e.g. 05 for Purapril Castle
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Z80 Sound Code
+$98000
+
+Sound Pointer Table?
+$A0000
