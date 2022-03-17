@@ -102,13 +102,41 @@ jumpBack:                                   ; only for Label
     org     $77D7
     ;dc.b    $F7                             ; Increase Menu Text Length
 
+
     ; Menu Hacks:
+
+    org     $7D6E
+    dc.b    $0E                             ;change: 0F -> 0E to shift left column of items 1 tile to the left
+    org     $7D70
+    dc.b    $17                             ;change: 18 -> 17 to shift right column of items 1 tile to the left
+    org     $7D72
+    dc.b    $0E                             ;change: 0F -> 0E to shift left column of items 1 tile to the left
+    org     $7D74
+    dc.b    $17                             ;change: 18 -> 17 to shift right column of items 1 tile to the left
+    org     $7D76
+    dc.b    $0E                             ;change: 0F -> 0E to shift left column of items 1 tile to the left
+    org     $7D78
+    dc.b    $17                             ;change: 18 -> 17 to shift right column of items 1 tile to the left
+
+    org     $77D4
+    jmp     bypassMenuTableAddress_Items
+jumpBackMenuTableAddress_Items:
+
+    org     $8276
+    jmp     bypassMenuTableAddress_Headline
+jumpBackMenuTableAddress_Headline:
+
+    org     $82B2
+    dc.b    $0F                             ; change: 10 -> 0F to shift headline 1 tile to the left
+
     org     $84DE
     dc.b    $F8,$F9,$00                     ; Replace AP (Attack Points) with custom icon
     dc.b    $FA,$FB,$00                     ; Replace DP (Defense Points) with custom icon
     dc.b    $FC,$FD,$00                     ; Replace SP (Speed Points) with custom icon
 
+
     ; Dialogue Text:
+    
     org     $1CC14
     dc.l    base_PointerTable_Dialogues
 
@@ -174,7 +202,17 @@ jumpBack:                                   ; only for Label
 ; =================================================================================================
 
     org     $A4C80 ; Free Space in ROM from here --------------------------------------------------
-    align   2
+
+bypassMenuTableAddress_Headline:
+    add.w   d0,d0
+    lea     base_PointerTable_MenuItems,a1
+    jmp     jumpBackMenuTableAddress_Headline
+
+bypassMenuTableAddress_Items:
+    lea     item2,a1                        ; "WEAPON"
+    moveq   #5,d2                           ; Adopt original instruction
+    jmp     jumpBackMenuTableAddress_Items
+
 bypassSpriteTableAddress:                   ; Extra Routine to replace the sprite table address
     add.l   a0,d1                           ; Adopt original instruction
     cmp.l   #locSpriteTable_logo,d1         ; Compare address in D1 to original sprite table location
@@ -232,7 +270,31 @@ writePlanemap_Loop:
 ; =================================================================================================
 ; DATA
 ; =================================================================================================
+base_PointerTable_MenuItems:
+    dc.w item1-base_PointerTable_MenuItems
+    dc.w item2-base_PointerTable_MenuItems
+    dc.w item3-base_PointerTable_MenuItems
+    dc.w item4-base_PointerTable_MenuItems
+    dc.w item5-base_PointerTable_MenuItems
+    dc.w item6-base_PointerTable_MenuItems
+    dc.w item7-base_PointerTable_MenuItems
 
+item1:
+    dc.b "INVENTAR",$00
+item2:
+    dc.b "WAFFE",$00
+item3:
+    dc.b "R",$F2,"STUNG",$00
+item4:
+    dc.b "SCHILD",$00
+item5:
+    dc.b "SCHUHE",$00
+item6:
+    dc.b "ITEMS",$00
+item7:
+    dc.b "MAGIE",$00
+
+    align 2
 base_PointerTable_Dialogues:
     dc.b $00
     dc.w text1-base_PointerTable_Dialogues
