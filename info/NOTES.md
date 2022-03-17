@@ -5,6 +5,7 @@
 
 | Address     | Length | Type          | Description                                                                                                                  |
 | :---------- | :----- | :------------ | :--------------------------------------------------------------------------------------------------------------------------- |
+| 7BFE        | 6*w    | Pointer Table | relative Pointers to Child Menu Items of "WEAPON", starting at $82C4, format: base.l+value.w                                 |
 | 82B6        | 6*w    | Pointer Table | relative Pointers to Menu Items starting at $82C4, format: base.l+value.w                                                    |
 | 1DD94       | $189   | Pointer Table | relative Pointers to Dialogues starting at $1DF1D, format: textboxtype.b+length.w                                            |
 | 211DA       | $1D0   | Pointer Table | relative Pointers to Dictionary starting at $213A9                                                                           |

@@ -136,7 +136,7 @@ jumpBackMenuTableAddress_Headline:
 
 
     ; Dialogue Text:
-    
+
     org     $1CC14
     dc.l    base_PointerTable_Dialogues
 
@@ -282,15 +282,15 @@ base_PointerTable_MenuItems:
 item1:
     dc.b "INVENTAR",$00
 item2:
-    dc.b "WAFFE",$00
+    dc.b "WAFFE   ",$00
 item3:
-    dc.b "R",$F2,"STUNG",$00
+    dc.b "R",$F2,"STUNG ",$00
 item4:
-    dc.b "SCHILD",$00
+    dc.b "SCHILD   ",$00
 item5:
-    dc.b "SCHUHE",$00
+    dc.b "SCHUHE  ",$00
 item6:
-    dc.b "ITEMS",$00
+    dc.b "TASCHE",$00
 item7:
     dc.b "MAGIE",$00
 
@@ -300,7 +300,8 @@ base_PointerTable_Dialogues:
     dc.w text1-base_PointerTable_Dialogues
     dc.b $01
     dc.w text2-base_PointerTable_Dialogues
-    dc.b $00,$02,$7A 
+    dc.b $00
+    dc.w text3-base_PointerTable_Dialogues
     dc.b $01,$03,$59 
     dc.b $01,$03,$71 
     dc.b $01,$03,$88 
@@ -430,8 +431,18 @@ base_PointerTable_Dialogues:
     dc.b $01,$33,$D8 
     dc.b $01,$33,$F7
 
+; Custom Chars:
+; F0  Ä
+; F1  Ö
+; F2  Ü
+; F3  ä
+; F4  ö
+; F5  ü
+; F6  ß
+;
 textData_Dialogues:
-text1:
+text1: ; First textbox that pops up automatically upon game start in the house
+    ;                                      left    margins
     ;                                      ^       ^
     dc.b $0B,$11,$10,$00,$A5,$03,$06,$0A,$01,$04,$01,$07
     ; Monster World war|einst ein friedvoller|Ort.
@@ -444,11 +455,23 @@ text1:
     dc.b "Ein junger Mann",cc_newline,"namens ",$01,$A0,$0E,$00,$01,$80," gelobte,",cc_newline,"sie zu besiegen",cc_wait,cc_newline
     dc.b "und seinem Land",cc_newline,"den Frieden",cc_newline,"zur",$F5,"ckzubringen.",cc_wait
     dc.b cc_close
-text1_end:
-text2:
+
+text2: ; First sign after leaving the house
     dc.b $03,$08,$04,$02,"Willkommen in",$02,$04,$07,$0C,$54,$20,$0C,$67,$21,$20,cc_wait
     dc.b cc_close
-text2_end:
+
+text3: ; Old lady in the tree
+    dc.b $0C,$06,$0B,$12,$36
+text3_pointer1:
+    dc.w text3_target1-text3_pointer1
+    dc.b $0B,$14,$36,"Wieder einmal ist",cc_newline,"unsere Welt bedroht.",cc_newline,cc_wait
+    dc.b "Die Prinzessin wurde",cc_newline,"aus Schlo",$F6," Purapril",cc_newline,"entf",$F5,"hrt.",cc_wait,cc_newline,cc_newline
+    dc.b "Du solltest besser",cc_newline,"vorsichtig sein.",cc_newline,cc_wait,cc_newline
+    dc.b "Hier, ein ",$0B,$0A,$2A,$0C,$02,cc_newline,"und ein ",$0B,$08,$FF,$0B,$0A,$20,$0C,$02,$0B,$08,$FF,".",cc_newline,cc_wait
+    dc.b "Nimm sie mit Dir.",cc_wait
+    dc.b cc_newline,cc_newline,"Du mu",$F6,"t jederzeit",cc_newline,"bereit sein,",cc_newline,"Magie einzusetzen!",cc_wait,cc_close
+text3_target1:
+    dc.b "Worauf wartest Du?",cc_newline,"Setz Dich in",cc_newline,"Bewegung!",cc_wait,cc_close
 
 newSpriteTable_logo:
         ; ss: size, 
