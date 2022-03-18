@@ -10,14 +10,6 @@
 ; Pointer Table: includes\text\pntrs_dialogues.asm
 ; =================================================================================================
 
-cAE equ $F0 
-cOE equ $F1 
-cUE equ $F2 
-ae  equ $F3 
-oe  equ $F4 
-ue  equ $F5 
-ss  equ $F6 
-
 textData_Dialogues:
 
 ; First textbox that pops up automatically upon game start in the house
@@ -58,7 +50,7 @@ text3_target1:
     dc.b "Worauf wartest Du?",cc_newline,"Setz Dich in",cc_newline,"Bewegung!",cc_wait,cc_close
 
 text4:
-    dc.b "Hier wird noch an",cc_newline,"Text 4 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$14,$03,$04,$02,"Alsedo,",cc_fast,cc_margin,$04,"das Dorf der Feen.",cc_wait,cc_close
 
 text5: 
     dc.b "Hier wird noch an",cc_newline,"Text 5 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -150,7 +142,7 @@ text33:
 
 ; First shop in a tree when looking at leather boots
 text34: 
-    dc.b $0B,$14,$03,$04,$02,$0C,$40,$2C,$02,$04,$04,$0C,$D3,$20,$66,$61,$69,$72,$79,$20,$0C,$DD,$05,$00
+    dc.b $0B,$0A,$1D,$0F,$00,$00
 
 
 text35: 
@@ -198,20 +190,50 @@ text48:
 text49: 
     dc.b "Hier wird noch an",cc_newline,"Text 49 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+
 text50: 
-    dc.b "Hier wird noch an",cc_newline,"Text 50 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+text50_t1:
+    dc.b $0C,$06,$0B,$13,$10,$0B,$12,$39
+text50_p2:
+    dc.w text50_t3-text50_p2
+    dc.b cc_jump
+text50_p1:
+    dc.w text50_t2-text50_p1
+text50_t3:
+    dc.b $0C,$65,$20,$74,$6F,$20,$0C,$5A,cc_newline,$0C,$45,$2E,cc_wait,cc_newline,cc_newline
+    dc.b $53,$74,$61,$79,$20,$61,$73,$20,$0C,$A1,$20,$61,$73,$20,$0C,$E6,cc_newline,$0C,$A0,$2E,cc_newline,cc_wait,cc_close
+text50_t2:
+    ;                                       Purapril
+    dc.b "Dies ist das Schlo",ss,cc_newline,cc_text,orange,$0C,$5A,cc_text,white,"!",cc_wait,cc_newline,cc_newline
+    ; Entry is prohibited
+    dc.b "     Eintritt",cc_newline,"     verboten!",cc_newline,cc_wait,cc_newline
+    ; Go away!
+    dc.b "    Geh weiter!",cc_newline,cc_wait,cc_close
+
 
 text51: 
     dc.b "Hier wird noch an",cc_newline,"Text 51 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+
+; Castle Guards #1
 text52: 
-    dc.b "Hier wird noch an",cc_newline,"Text 52 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$11,$10
+text52_p1:
+    dc.w text52_t1-text52_p1 ; set pointer.w to target 1
+    dc.b cc_jump
+text52_p2:
+    dc.w text50_t1-text52_p2 ; set pointer.w to (negative) target 2
+    dc.b $0C,$06
+text52_t1: ; target 1
+    dc.b cc_margin,$02,cc_speed,$06,"Ich habe Dir gesagt,",cc_newline,"niemand darf das",cc_newline,"Schloss betreten.",cc_wait,cc_newline,cc_newline
+    dc.b "    Spreche ich",cc_newline,"    undeutlich?",cc_newline,cc_wait,cc_close
+
 
 text53: 
     dc.b "Hier wird noch an",cc_newline,"Text 53 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 text54: 
-    dc.b "Hier wird noch an",cc_newline,"Text 54 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$0E,$01,$0F,$01,$00
 
 text55: 
     dc.b "Hier wird noch an",cc_newline,"Text 55 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -237,11 +259,19 @@ text61:
 text62: 
     dc.b "Hier wird noch an",cc_newline,"Text 62 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-text63: 
-    dc.b "Hier wird noch an",cc_newline,"Text 63 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+; Alsedo Inn: Good morning message after resting
+text63: 
+    dc.b $0C,$06,$0B,$11,$10
+text63_p1:
+    dc.w text63_t1-text63_p1
+    dc.b "Guten Morgen.",cc_newline,"Na, hast Du",cc_newline,"gut geschlafen?",cc_wait,cc_newline,cc_newline
+    dc.b "Viel Gl",ue,"ck",cc_newline,"auf Deinem Weg.",cc_newline,cc_wait,cc_close
+text63_t1:
+    dc.b $54,$68,$61,$74,$20,$0C,$E0,$20,$0C,$7B,$2E,$05,$09,$09,$0C,$68,$20,$73,$68,$6F,$75,$6C,$64,$6E,$27,$74,$20,$0C,$CF,$09,$63,$68,$61,$6E,$63,$65,$73,$20,$0C,$A0,$20,$0C,$D2,$21,$09,$05,$09,$0C,$57,$20,$62,$65,$20,$0C,$A8,$09,$63,$61,$72,$65,$66,$75,$6C,$21,$09,$05,$00
 text64: 
     dc.b "Hier wird noch an",cc_newline,"Text 64 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+
 
 text65: 
     dc.b "Hier wird noch an",cc_newline,"Text 65 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -276,8 +306,16 @@ text74:
 text75: 
     dc.b "Hier wird noch an",cc_newline,"Text 75 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+; First shop, talking to the owner:
 text76: 
-    dc.b "Hier wird noch an",cc_newline,"Text 76 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $03,$06,$0A,$01,$04,$01
+    dc.b "Wir hatten seit",cc_newline,"Jahren keinen Kunden",cc_newline,"mehr hier.",cc_wait,cc_newline,cc_newline
+    dc.b "Du bist gerade",cc_newline,"erst aufgebrochen?",cc_newline,cc_wait,"Pa",ss," gut auf Dich auf!",cc_wait,cc_newline,cc_newline
+    dc.b "Hoffentlich hast",cc_newline,"Du keine Scheu",cc_newline,"vor "
+    dc.w cc_textOrange
+    dc.b "Quallen."
+    dc.w cc_textWhite
+    dc.b cc_wait,cc_close
 
 text77: 
     dc.b "Hier wird noch an",cc_newline,"Text 77 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close

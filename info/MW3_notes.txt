@@ -162,6 +162,7 @@ SPEED   03 XX (Where 00 sets the text without animation and 09 brings each char 
 SPACE   04 XX Write XX spaces or margin?
 WAIT    05
 ?       06
+LOCK    07 disables fast forward of text
 ?       08 -timer?
 NL      09
 
@@ -183,6 +184,7 @@ VARIABLES
 0C 02   Legend Sword (orange)
 0C 03   19800 GOLD
 0C 06   __ (2x Space)
+0C 40   Alsedo
 0C 7A   monsters
 0C 54   MONSTER
 0C E0   was
@@ -258,6 +260,7 @@ Absolute Pointer references Block @0001CC00:
 000217A2    Variable-Strings start (begins with Legend Sword)
 00021A06    Pointers -> Variables (Word) [first:0056->00021A5C Shion]
 00021FEA    Dictionary (begins with 05[wait])
+000224C2    to 225D5: some Data Table
 
 000082B6    Menu Strings Pointer Table start
 000082C4    Menu Strings start

@@ -16,14 +16,20 @@ jumpBack:                                   ; only for Label
     org     $1882                           ; Cheat: Unl. Gold (do not decrease)
     nop
     nop 
+
+    org     $1F74                           ; translate "Found XX Gold"
+    jmp     bypassFoundText
+    org     $1F8E
+sub_1F8E:
+
     org     $8E46                           ; Cheat: Have more Gold upon New Game start
     dc.b    $0F,$42,$3F                     ; 1st Nybble: Starting location (0=Shion's House, 1=Alsedo, 2=Castle, 3=Lilypad ...),
                                             ; 2nd Nybble + 2 Bytes = 999999 Gold
     org     $8E4A                           ; Cheat: Have all Hearts upon New Game start
-    ;dc.b    $8
+    dc.b    $8
     org     $E0A4                           ; Cheat: Unl. Energy (do not decrease)
-    ;nop
-    ;nop 
+    nop
+    nop 
 
     org     $70E6
     jsr     writePlanemaps
@@ -33,9 +39,6 @@ jumpBack:                                   ; only for Label
                                             ; (i) $70F0.w: Skip SubRoutine to Load Plane A Map to C000-CFFF
                                             ; (i) $70FE.w: Skip SubRoutine to Load Plane B Map to E000-EFFF
                                             
-    org     $77D7
-    ;dc.b    $F7                             ; Increase Menu Text Length
-
 
     ; Menu Hacks:
 
@@ -69,10 +72,16 @@ jumpBackMenuTableAddress_Headline:
     dc.b    $FC,$FD,$00                     ; Replace SP (Speed Points) with custom icon
 
 
-    ; Dialogue Text:
+    ; Text Table Base Addresses:
 
     org     $1CC14
     dc.l    base_PointerTable_Dialogues
+
+    org     $211D2
+    dc.l    base_PointerTable_Names
+
+    org     $211D6
+    dc.l    base_PointerTable_SpecialDialogues
 
     ; Replace GFX data pointers:
     ; Font:

@@ -26,6 +26,10 @@
     include "includes/text/menu.asm"
     include "includes/text/pntrs_dialogues.asm"
     include "includes/text/dialogues.asm"
+    include "includes/text/pntrs_names.asm"
+    include "includes/text/names.asm"
+    include "includes/text/specialdialogues.asm"
+    include "includes/text/pntrs_specialdialogues.asm"
 
     ; Modified Sprite Tables:
     include "includes/sprite_tables.asm"

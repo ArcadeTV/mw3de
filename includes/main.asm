@@ -67,3 +67,24 @@ writePlanemap_Loop:
     move.w  d1,vdp_data                     ; Write tile line (4 bytes per line), and post-increment address
     dbra    d0,writePlanemap_Loop           ; Decrement d0 and loop until finished (when d0 reaches -1)
     rts
+
+
+bypassFoundText:
+    lea     textFound,a0   ; "Found "
+    jsr    sub_1F8E
+    movea.l a1,a0
+    jsr    sub_1F8E
+    lea     textGold,a0  ; " GOLD."
+    jsr    sub_1F8E
+    unlk    a6
+    rts
+
+textFoundThe:
+    dc.b    $00
+textFound:
+    dc.b    $00
+textGold:
+    dc.b    ' Taler gefunden.',$00
+textDot:
+    dc.b    ' gefunden.',$00  
+    dc.b    $00

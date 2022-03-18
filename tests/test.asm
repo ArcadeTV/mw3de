@@ -4,3 +4,4 @@
 
 tableStart:
     dc.w    tableStart
+    dc      "here",$1234
