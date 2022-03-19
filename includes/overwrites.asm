@@ -102,33 +102,82 @@ jumpBackMenuTableAddress_Headline:
     ; Bypass "THE END" and "TO BE CONTINUED" ending GFX:
 
     org     $1B3B8
-    jmp     change_theEnd
+    jmp     change_theEnd                   ; Bypass instructions to load custom tiles into VRAM
     nop
 ret_change_theEnd;
 
+    ; Overwrite Tilemaps:
+
     org     $1B61A
 tilemap_theEnd:
-    dc.w    $8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8081,$8082,$8083,$8084,$8085,$8086,$8081,$8082,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080
-    dc.w    $8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8087,$8088,$8089,$808A,$808B,$808C,$8087,$8088,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080
+    ;       upper,lower ROW
+    ;        ˅     ˅
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8081,$8087
+    dc.w    $8082,$8088
+    dc.w    $8083,$8089
+    dc.w    $8084,$808A
+    dc.w    $8085,$808B
+    dc.w    $8086,$808C
+    dc.w    $8081,$8087
+    dc.w    $8082,$8088
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+
 tilemap_toBeContinued:
-    dc.w    $8080,$8080,$8080,$808D,$808E,$808F,$8090,$8091,$8092,$8093,$8094,$8095,$8096,$8097,$8098,$8099,$809A,$809B,$809C,$809D,$809E,$809F,$80A0,$80A1,$80A2,$80A3,$80A4,$80A5,$80A6,$8080,$8080,$8080
-    dc.w    $8080,$8080,$8080,$80A7,$80A8,$80A9,$80AA,$80AB,$80AC,$80AD,$80AE,$80AF,$80B0,$80B1,$80B2,$80B3,$80B4,$80B5,$80B6,$80B7,$80B8,$80B9,$80BA,$80BB,$80BC,$80BD,$80BE,$80BF,$80C0,$8080,$8080,$8080
-;        ;  PCCVHAAAAAAAAAAA
-;mapbits = %1000000000000000
-;emptytile = ($80^mapbits)
-;    dc.w    emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,($81^mapbits),($82^mapbits),($83^mapbits),($84^mapbits),($85^mapbits),($86^mapbits),($81^mapbits),($82^mapbits),emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile
-;    dc.w    emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,($87^mapbits),($88^mapbits),($89^mapbits),($8A^mapbits),($8B^mapbits),($8C^mapbits),($87^mapbits),($88^mapbits),emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile
-;tilemap_toBeContinued:
-;    dc.w    emptytile,emptytile,emptytile
-;    rept    $1A                             ; repeat #26 times
-;    dc.w    ($80+13+REPTN)^mapbits          ; starting ID of tiles + no. of tiles already used (#13) + REPTN (0..1..2..)
-;    endr                                    ; end repeat-loop
-;    dc.w    emptytile,emptytile,emptytile
-;    dc.w    emptytile,emptytile,emptytile
-;    rept    $1A                             ; repeat #26 times
-;    dc.w    ($80+39+REPTN)^mapbits          ; starting ID of tiles + no. of tiles already used (#13+26) + REPTN (0..1..2..)
-;    endr                                    ; end repeat-loop
-;    dc.w    emptytile,emptytile,emptytile
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $808E,$80A8
+    dc.w    $808F,$80A9
+    dc.w    $8090,$80AA
+    dc.w    $8091,$80AB
+    dc.w    $8092,$80AC
+    dc.w    $8093,$80AD
+    dc.w    $8094,$80AE
+    dc.w    $8095,$80AF
+    dc.w    $8096,$80B0
+    dc.w    $8097,$80B1
+    dc.w    $8098,$80B2
+    dc.w    $8099,$80B3
+    dc.w    $809A,$80B4
+    dc.w    $809B,$80B5
+    dc.w    $809C,$80B6
+    dc.w    $809D,$80B7
+    dc.w    $809E,$80B8
+    dc.w    $809F,$80B9
+    dc.w    $80A0,$80BA
+    dc.w    $80A1,$80BB
+    dc.w    $80A2,$80BC
+    dc.w    $80A3,$80BD
+    dc.w    $80A4,$80BE
+    dc.w    $80A5,$80BF
+    dc.w    $80A6,$80C0
+    dc.w    $80A7,$80C1
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
+    dc.w    $8080,$8080
 
 
     ; Text Table Base Addresses:
