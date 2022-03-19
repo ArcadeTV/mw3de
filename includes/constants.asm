@@ -3,17 +3,20 @@
 ; =================================================================================================
 
 ; Utility
-size_word                   equ 2
-size_long                   equ 4
+; The size of a word and longword
+size_word				    equ 2
+size_long				    equ 4
 
-; German Chars (Umlaute)
-cAE                         equ $F0 ; Ä
-cOE                         equ $F1 ; Ö
-cUE                         equ $F2 ; Ü
-ae                          equ $F3 ; ä
-oe                          equ $F4 ; ö
-ue                          equ $F5 ; ü
-ss                          equ $F6 ; ß
+; The size of one palette (in bytes, words, and longwords)
+size_palette_b			    equ $20
+size_palette_w			    equ size_palette_b/size_word
+size_palette_l			    equ size_palette_b/size_long
+
+; The size of one graphics tile (in bytes, words, and longwords)
+size_tile_b				    equ $20
+size_tile_w				    equ size_tile_b/size_word
+size_tile_l				    equ size_tile_b/size_long
+
 
 ; VDP port addresses
 vdp_control                 equ $00C00004

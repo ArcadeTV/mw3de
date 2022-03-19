@@ -18,6 +18,7 @@
 CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
 
     include "includes/constants.asm"
+    include "includes/vars.asm"
     include "includes/macros.asm"
 
     ; MAIN CODE:

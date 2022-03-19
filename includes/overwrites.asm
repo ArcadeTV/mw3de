@@ -99,6 +99,38 @@ jumpBackMenuTableAddress_Headline:
     dc.b    $FC,$FD,$00                     ; Replace SP (Speed Points) with custom icon
 
 
+    ; Bypass "THE END" and "TO BE CONTINUED" ending GFX:
+
+    org     $1B3B8
+    jmp     change_theEnd
+    nop
+ret_change_theEnd;
+
+    org     $1B61A
+tilemap_theEnd:
+    dc.w    $8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8081,$8082,$8083,$8084,$8085,$8086,$8081,$8082,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080
+    dc.w    $8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8087,$8088,$8089,$808A,$808B,$808C,$8087,$8088,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080,$8080
+tilemap_toBeContinued:
+    dc.w    $8080,$8080,$8080,$808D,$808E,$808F,$8090,$8091,$8092,$8093,$8094,$8095,$8096,$8097,$8098,$8099,$809A,$809B,$809C,$809D,$809E,$809F,$80A0,$80A1,$80A2,$80A3,$80A4,$80A5,$80A6,$8080,$8080,$8080
+    dc.w    $8080,$8080,$8080,$80A7,$80A8,$80A9,$80AA,$80AB,$80AC,$80AD,$80AE,$80AF,$80B0,$80B1,$80B2,$80B3,$80B4,$80B5,$80B6,$80B7,$80B8,$80B9,$80BA,$80BB,$80BC,$80BD,$80BE,$80BF,$80C0,$8080,$8080,$8080
+;        ;  PCCVHAAAAAAAAAAA
+;mapbits = %1000000000000000
+;emptytile = ($80^mapbits)
+;    dc.w    emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,($81^mapbits),($82^mapbits),($83^mapbits),($84^mapbits),($85^mapbits),($86^mapbits),($81^mapbits),($82^mapbits),emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile
+;    dc.w    emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,($87^mapbits),($88^mapbits),($89^mapbits),($8A^mapbits),($8B^mapbits),($8C^mapbits),($87^mapbits),($88^mapbits),emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile,emptytile
+;tilemap_toBeContinued:
+;    dc.w    emptytile,emptytile,emptytile
+;    rept    $1A                             ; repeat #26 times
+;    dc.w    ($80+13+REPTN)^mapbits          ; starting ID of tiles + no. of tiles already used (#13) + REPTN (0..1..2..)
+;    endr                                    ; end repeat-loop
+;    dc.w    emptytile,emptytile,emptytile
+;    dc.w    emptytile,emptytile,emptytile
+;    rept    $1A                             ; repeat #26 times
+;    dc.w    ($80+39+REPTN)^mapbits          ; starting ID of tiles + no. of tiles already used (#13+26) + REPTN (0..1..2..)
+;    endr                                    ; end repeat-loop
+;    dc.w    emptytile,emptytile,emptytile
+
+
     ; Text Table Base Addresses:
 
     org     $1CC14

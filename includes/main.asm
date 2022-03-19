@@ -70,6 +70,9 @@ writePlanemap_Loop:
     rts
 
 
+
+; INGAME TEXT: FOUND XX GOLD.
+
 bypassFoundText:
     lea     textFound,a0   ; "Found "
     jsr    sub_1F8E
@@ -91,3 +94,29 @@ textGold:
 textDot:
     dc.b    ' gefunden.',$00  
     dc.b    $00
+
+
+
+; Bypass "THE END" and "TO BE CONTINUED" ending GFX:
+    
+    align 2
+
+change_theEnd:
+    movem.l d0-d1/a0-a1,-(sp)               ; save registers
+    
+    ; load new tiles into VRAM:
+	SetVRAMWrite $1000                      ; Setup the VDP to write to VRAM address $1000 (we will overwrite the unneded japanese characters)
+
+	lea     tileData_theEnd_de,a0			; Move the address of the first graphics tile into a0
+	move.l  #((tilecount_theEnd+tilecount_toBeContinued)*size_tile_l)-1,d0  
+                                            ; Loop counter = 8 longwords per tile * num tiles (-1 for DBRA loop)
+	@Tiles_Loop:							; Start of loop
+	move.l  (a0)+,vdp_data					; Write tile line (4 bytes per line), and post-increment address
+	dbra    d0,@Tiles_Loop					; Decrement d0 and loop until finished (when d0 reaches -1)
+
+    ; return to original instructions:
+
+    movem.l (sp)+,d0-d1/a0-a1               ; restore registers
+    lea     tilemap_theEnd,a0               ; change address in original instruction
+    move.l  a0,($FFA3B6).l                  ; Adopt original instruction
+    jmp     ret_change_theEnd               ; return to game code

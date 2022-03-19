@@ -25,3 +25,9 @@ fontGFX_pack_de:
     incbin "includes/bin/gfx/font_de_umlaute.cbin"
 fontGFX_pack_c:
     incbin "includes/bin/gfx/font_c.cbin"
+
+    align 2
+tileData_theEnd_de:
+    incbin "includes/bin/gfx/theEnd_tiledata[32x2](13).bin"
+    incbin "includes/bin/gfx/toBeContinued_tiledata[32x2](53).bin"
+tileData_theEnd_de_end:
