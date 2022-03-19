@@ -86,6 +86,15 @@ sub_1F8E:
     jmp     bypassMenuTableAddress_Items
 jumpBackMenuTableAddress_Items:
 
+    org     $7C56
+    jmp     bypassMenuMagicNames
+    nop
+ret_bypassMenuMagicNames:
+
+    org     $7BB6
+    jmp     bypassMenuMagicNames_alt
+ret_bypassMenuMagicNames_alt:
+
     org     $8276
     jmp     bypassMenuTableAddress_Headline
 jumpBackMenuTableAddress_Headline:
@@ -104,7 +113,7 @@ jumpBackMenuTableAddress_Headline:
     org     $1B3B8
     jmp     change_theEnd                   ; Bypass instructions to load custom tiles into VRAM
     nop
-ret_change_theEnd;
+ret_change_theEnd:
 
     ; Overwrite Tilemaps:
 

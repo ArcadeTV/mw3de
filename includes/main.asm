@@ -71,6 +71,18 @@ writePlanemap_Loop:
 
 
 
+; Bypass Menu Magic Item Names:
+
+bypassMenuMagicNames:
+    lea     base_PointerTable_Magic,a1
+    adda.w  (a1,d0.w),a1
+    jmp     ret_bypassMenuMagicNames
+
+bypassMenuMagicNames_alt:
+    moveq   #0,d4
+    lea     magic1,a1
+    jmp     ret_bypassMenuMagicNames_alt
+
 ; INGAME TEXT: FOUND XX GOLD.
 
 bypassFoundText:

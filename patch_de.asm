@@ -28,10 +28,16 @@ CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
     ; TEXT DATA:
     include "includes/text/control_codes.asm"
     include "includes/text/menu.asm"
+
     include "includes/text/pntrs_dialogues.asm"
     include "includes/text/dialogues.asm"
+
     include "includes/text/pntrs_names.asm"
     include "includes/text/names.asm"
+
+    include "includes/text/pntrs_magic.asm"
+    include "includes/text/magic.asm"
+    
     include "includes/text/specialdialogues.asm"
     include "includes/text/pntrs_specialdialogues.asm"
 
