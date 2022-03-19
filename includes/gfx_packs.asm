@@ -21,5 +21,7 @@ newTitleTxtGFX_pack2:
 newTitleTxtGFX_pack3:
     incbin "includes/bin/gfx/pack9.cbin"
 
-fontGFX_pack:
-    incbin "includes/bin/gfx/fonthack.cbin"
+fontGFX_pack_de:
+    incbin "includes/bin/gfx/font_de_umlaute.cbin"
+fontGFX_pack_c:
+    incbin "includes/bin/gfx/font_c.cbin"

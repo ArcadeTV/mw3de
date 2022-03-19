@@ -17,6 +17,7 @@ bypassMenuTableAddress_Items:
     jmp     jumpBackMenuTableAddress_Items
 
 bypassSpriteTableAddress:                   ; Extra Routine to replace the sprite table address
+
     add.l   a0,d1                           ; Adopt original instruction
     cmp.l   #locSpriteTable_logo,d1         ; Compare address in D1 to original sprite table location
     beq     setNewSpriteTable_logo          ; If it matches, branch to set a custom address
@@ -50,20 +51,20 @@ ret_bypassSpriteTableAddress:
 
 writePlanemaps:                             ; write custom tilemaps to VRAM:
 writePlanemapA:                             ; Plane A C000-CFFF, Plane B E000-EFFF
-    movem.l d0-d1/a0-a1,-(sp)               ; save registers
+    movem.l d0/d1/a4,-(sp)                  ; save registers
     SetVRAMWrite vram_addr_plane_a          ; Call macro to set address for writing to VRAM
-    lea     planeMapA,a0                    ; Move the address of the first graphics tile into a0
-    move.l  #(64*64)-1,d0                   ; Loop counter (-1 for DBRA loop)
-    jsr     writePlanemap_Loop
+    lea     planeMapA,a4                    ; Move the address of the first graphics tile into a4
+    jsr     writePlanemap
 writePlanemapB:
     SetVRAMWrite vram_addr_plane_b          ; Call macro to set address for writing to VRAM
-    lea     planeMapB,a0                    ; Move the address of the first graphics tile into a0
-    move.l  #(64*64)-1,d0                   ; Loop counter (-1 for DBRA loop)
-    jsr     writePlanemap_Loop
-    movem.l (sp)+,d0-d1/a0-a1               ; restore registers
-    rts
+    lea     planeMapB,a4                    ; Move the address of the first graphics tile into a4
+    jsr     writePlanemap
+    movem.l (sp)+,d0/d1/a4                  ; restore registers
+    jmp     $7102                           ; return
+writePlanemap:
+    move.l  #((64*64)/2)-1,d0                   ; Loop counter (-1 for DBRA loop)
 writePlanemap_Loop:
-    move.w  (a0)+,d1                        ; Start of loop
+    move.w  (a4)+,d1                        ; Start of loop
     move.w  d1,vdp_data                     ; Write tile line (4 bytes per line), and post-increment address
     dbra    d0,writePlanemap_Loop           ; Decrement d0 and loop until finished (when d0 reaches -1)
     rts
@@ -78,6 +79,8 @@ bypassFoundText:
     jsr    sub_1F8E
     unlk    a6
     rts
+
+    align 2
 
 textFoundThe:
     dc.b    $00

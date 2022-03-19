@@ -1,6 +1,8 @@
 ; =================================================================================================
 ; MENU TEXT DATA
 ; =================================================================================================
+    
+    align 2
 
 base_PointerTable_MenuItems:
     dc.w item1-base_PointerTable_MenuItems
@@ -16,7 +18,7 @@ item1:
 item2:
     dc.b "WAFFE   ",$00
 item3:
-    dc.b "R",$F2,"STUNG ",$00
+    dc.b "R",ue,"STUNG ",$00
 item4:
     dc.b "SCHILD   ",$00
 item5:

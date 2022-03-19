@@ -2,26 +2,51 @@
 ; OVERWRITES
 ; =================================================================================================
     
-    org $1B2
+    ; HEADER
+    org     $13F                            ; Modify Game Title in Header
+    dc.b    "German"
+
+    org     $166                            ; Fix spelling in title
+    dc.b    "W"
+
+    org     $16C                            ; Modify Game Title in Header
+    dc.b    "Deutsch"
+
+    org     $1C0
+    dc.b    "--> ArcadeTV <--"
+    org     $1D0
+    include "includes/version.asm"          ; include the generated file from build.bat
+    org     $1E0                            ; Date is written upon building
+    dc.b    "================"
+
+
+    ; SRAM FIX
+    org     $1B2
     dc.b    $F0,$20                         ; SRAM Fix 1/2
-    org $1BB
+    org     $1BB
     dc.b    $81                             ; SRAM Fix 2/2
 
+    ; LOGO SPRITES
     org $8D8
     jmp     bypassSpriteTableAddress
     
     org $8DE
 jumpBack:                                   ; only for Label
 
+    ; CHEATS
+    ifne CHEAT
     org     $1882                           ; Cheat: Unl. Gold (do not decrease)
     nop
-    nop 
+    nop
+    endif
 
     org     $1F74                           ; translate "Found XX Gold"
     jmp     bypassFoundText
     org     $1F8E
 sub_1F8E:
 
+    ; CHEATS
+    ifne CHEAT
     org     $8E46                           ; Cheat: Have more Gold upon New Game start
     dc.b    $0F,$42,$3F                     ; 1st Nybble: Starting location (0=Shion's House, 1=Alsedo, 2=Castle, 3=Lilypad ...),
                                             ; 2nd Nybble + 2 Bytes = 999999 Gold
@@ -30,17 +55,19 @@ sub_1F8E:
     org     $E0A4                           ; Cheat: Unl. Energy (do not decrease)
     nop
     nop 
-
+    endif
+    
+    ; BACKGROUND POSITION
     org     $70E6
-    jsr     writePlanemaps
-    rept    $B                              ; overwrite $70E6-$7102: ($1C/#28 bytes = $E/#14 words) - 6 Bytes for the JSR above
-    nop                                     ; with nops
-    endr
+    jmp     writePlanemaps
+    ;rept    $B                              ; overwrite $70E6-$7102: ($1C/#28 bytes = $E/#14 words) - 6 Bytes for the JSR above
+    ;nop                                     ; with nops
+    ;endr
                                             ; (i) $70F0.w: Skip SubRoutine to Load Plane A Map to C000-CFFF
                                             ; (i) $70FE.w: Skip SubRoutine to Load Plane B Map to E000-EFFF
                                             
 
-    ; Menu Hacks:
+    ; MENU HACKS:
 
     org     $7D6E
     dc.b    $0E                             ;change: 0F -> 0E to shift left column of items 1 tile to the left
@@ -85,8 +112,10 @@ jumpBackMenuTableAddress_Headline:
 
     ; Replace GFX data pointers:
     ; Font:
+    org     $4100C
+    dc.l    fontGFX_pack_c+$02000000        ; was 02 041F23
     org     $4101C
-    dc.l    fontGFX_pack+$02000000          ; was 02 0423FA
+    dc.l    fontGFX_pack_de+$02000000       ; was 02 0423FA
 
     ; Logo:
     org     $4155C

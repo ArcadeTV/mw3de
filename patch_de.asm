@@ -14,6 +14,9 @@
 ; - Draw an entirely new logo on the title screen
 ; #################################################################################################
 
+
+CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
+
     include "includes/constants.asm"
     include "includes/macros.asm"
 

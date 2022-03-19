@@ -1,0 +1,1403 @@
+                          Wonder Boy in Monster World
+ ,.___/|_____________         Megadrive / Genesis       _____________|\___.,
+ |\\\\||____________/             Text Dump             \____________||\\\\|
+ ''   \|                     by oblivion from aoc                    |/   ''
+                           oblivion_ee hotmail.com
+                                Version: 1.1
+
+
+BIG SPOILERS AHEAD!
+
+This is all the text ripped from Wonder Boy, it had to be reformatted and
+uncompressed. Everything from enemy names, item names, signs and speech dialog
+is included.
+
+The only readable things that are not included are stored in picture-form
+such as the title screen. Also any weird symbols you see is Japanese text
+which was not translated because it did not make the final release of the
+game.
+
+The structure is roughly from the start of the game to the ending, but I left
+some comments in brackets if you want to find certain things.
+
+Press CTRL+F and enter the code to jump that section.
+
+FAQ.
+
+  1. What are those weird letters under the inventory list?
+     They are unused key items in the game which haven't been translated to
+     english. Their translation is rapidpad and rod, they do nothing if you use
+     a cheat cartridge to acquire them.
+
+  2. I do not recognise some of the text here, where can I find it?
+     Some text can only be read by trying to skip levels and do thing you are
+     not suppose to. So when you are allowed to access certain parts of the
+     game, you can no longer find this text. There does not appear to be any
+     text which can't be accesed at some point in the game.
+
+  3. What text is in picture form that is not included in this dump?
+     Just the load up screen and main title screen, and ending screen which
+     includes:
+
+-------------------------------------------------------------------------------
+
+                                    SEGA TM
+
+-------------------------------------------------------------------------------
+
+                                     WONDER
+                                     BOY TM
+                               IN MONSTER WORLD TM
+
+                                   NEW GAME
+
+                               PRESS START BUTTON
+
+                                    CONTINUE
+
+                                 (c) 1991 SEGA
+                                 ORIGINAL GAME
+                           (C) 1989 WESTONE CO.,LTD
+
+-------------------------------------------------------------------------------
+
+                                    HAHAHA
+
+                                    THE END
+
+                                TO BE CONTINUED
+
+-------------------------------------------------------------------------------
+
+     NOTE:
+     The start title text may differ considerably depending on the
+     version/region of the game. For example the Japanese version says MWIII.
+
+     There is also Egyptian hieroglyphs in the pyramid, but they only appear to
+     translate to gibberish.
+
+-------------------------------------------------------------------------------
+
+Credits................................CR1
+Start of Game..........................ST1
+Village sign posts.....................SP1
+Sphinx Questions.......................SQ1
+Inventory/name list....................IL1
+
+-------------------------------------------------------------------------------
+
+SEGA MEGA DRIVE (C)
+SEGA 1990.JAN
+Wonder Boy V Monster World III
+WONDER BOY in Monster world
+Time's up. Incorrect. Correct.
+Found <#> gold.
+
+Shion plays the Ocarina.
+Oh, that sounds lovely.
+Shion plays the Ocarina.
+You play beautifully.
+But I can't play very well.
+The melody isn't quite right.
+
+FIRE STORM QUAKE THUNDER POWER SHIELD RETURN SELECT
+PAUSE
+ARMOR SHIELD BOOTS ITEM MAGIC
+
+                                                                  //Credits CR1
+CHIEF PROGRAMMER TAKANORI KURIHARA
+
+PROGRAMMER YOSHIHISA SHIMIZU
+
+MUSIC / EFFECTS SHINICHI SAKAMOTO
+
+DESIGNERS MINA MORIOKA HIROMI KURIHARA TOMOKO NAKAYAMA MAKI OHZORA
+
+DIRECTORS YUTAKA HIRATA YOSHIHISA SHIMIZU
+
+SUPERVISOR MICHISHITO ISHIZUKA
+
+SPECIAL THANKS MASANORI YOSHIHARA TSUTOMU WATANABE YOSHIHITO SAISYO HIROMITU
+WATANABE SUSUMU KONNO NAOKI HOSHIZAKI KOUTA KIKUCHI RYUICHI NISHIZAWA
+                                                            //Start of Game ST1
+Monster World was
+once a peaceful
+region.
+
+Then, the peace was
+shattered by an
+invading army of
+monsters.
+
+A young man named
+Shion vowed to
+defeat them and
+make his land
+peaceful again.
+
+Having difficulties
+already? Give it
+another try!
+
+Welcome to Monster
+World! Once again
+this world is being
+threatened.
+
+The princess has
+been kidnapped from
+Purapril Castle.
+
+You'd better use
+caution.
+
+Here's an Elixer
+and Firestorm. Take
+them with you.
+
+Make sure you're
+ready to use magic
+at all times! What
+are you waiting
+for? Get moving!
+                                                       //Village sign posts SP1
+Alsedo, the fairy
+village
+
+Purapril Castle
+Entrance
+
+Maugham Desert-
+enter at your own
+risk!
+
+Lilypad, the
+dwarf village
+
+Begonia, the dragon
+village
+
+Childam,
+the Darkworld village
+
+Purapril, the Aqua
+Capital
+
+Welcome to Purapril
+Castle.
+
+Stay as long as you
+like.
+
+This is Purapril
+Castle!
+
+Entry is prohibited.
+
+Go away!
+
+I hear that peace
+has returned to
+Alsedo. It appears
+that the village of
+Alsedo is being
+attacked.
+
+I just told you
+that no one may
+enter the castle.
+
+Did I speak too
+fast for you?
+
+Looks like we're
+sold out of
+everything.
+
+Come on back some
+other time.
+
+Welcome to Bacchus,
+a store with a
+reputation for good
+service.
+
+We have great
+confidence in the
+products we sell.
+
+Use this item
+wisely!
+
+Oh, I'm terribly
+sorry.
+
+We seem to be out
+of stock on that
+item.
+
+Welcome to Kishera.
+
+Stand in front of
+the item you wish
+to purchase and
+look up. Thank you
+very much.
+
+Hmmm... I'm out of
+stock on that right
+now.
+
+Try back later.
+
+Welcome to
+Felissimo.
+
+We have a medicine
+for sale.
+
+Use medicines with
+care.
+
+ÅI'm Sonia.
+
+The village is
+under attack.
+
+I don't know all
+the details, so
+you'd better see
+Eleanora.
+
+If you stand
+between the statues
+and look up, you
+can find her.
+
+I'm Queen Eleanora.
+
+The monsters come
+from a cave just
+beyond the village.
+
+Can't you help us?
+
+Take Priscilla with
+you.
+
+She may be able to
+help you.
+
+Remember, though,
+that once you set
+foot outside
+Alsedo, Priscilla
+will return to me,
+as she won't be
+able to help you
+any more. Is
+Priscilla helping
+you? You need the
+Ocarina to open the
+cave doors, but I
+lost it somewhere
+inside the cave.
+
+Keep in mind that
+when you equip a
+spear, you can't
+use a shield.
+
+Remember this when
+selecting a weapon.
+Queen Eleanora is a
+wonderful person,
+isn't she? Queen
+Eleanora was
+calling for you
+earlier.
+
+Why don't you pay
+her a visit?
+
+If it's the cave up
+ahead that you wish
+to know about, go
+ask Sonia. Our
+village is free! We
+are all very
+grateful.
+
+Good morning. Did
+you sleep well?
+
+Good luck to you on
+your journey.
+
+That was close.
+
+You shouldn't take
+chances like that!
+
+Please be more
+careful!
+
+Oh, it's the
+Ocarina!
+
+You went there to
+look for it, didn't
+you?
+
+The melody of the
+Ocarina may help to
+break the seals.
+
+Let's practice.
+Think you've got it?
+
+Play these melodies
+whenever you're in
+the cave.
+
+You've forgotten
+the melodies already?
+
+You're realy
+hopeless, you know?
+
+Let's practice them
+again. Have you got
+it now?
+
+If you forget them
+again, come on back
+and I'll help you
+out.
+
+Thanks to you, the
+village is saved.
+
+Keep the Ocarina.
+
+It might come in
+handy.
+
+Did the Ocarina
+prove useful?
+
+Thank you so much.
+
+Alsedo is once more
+a peaceful village.
+
+Go beyond the large
+tree and you'll
+reach Purapril.
+
+If you're ever in
+need of help of any
+kind, come and see
+me.
+
+I'm forever in your
+debt. How's your
+journey going?
+
+There are still a
+great many people
+in need of your help.
+
+Go now and do
+everything in your
+power to save them!
+
+Oh oh, looks like
+everything's gone.
+
+Come around again
+sometime.
+
+Buy something, will
+you?
+
+If you don't, I'll
+start breathing fire!
+
+Oh, thank you.
+
+You're rolling in
+dough,aren't you?
+
+What? I've got
+nothing to sell!
+
+I guess the shop is
+closed now...
+
+Find anything you
+like?
+
+I would create a
+sword from the Old
+Axe, but a
+necessary item to
+do so has been
+stolen from me.
+With the Fire-Urn,
+I can create a
+sword from the Old
+Axe. It will take
+some time.
+
+The Elder Dragon
+was calling for you
+a while ago so why
+don't you go and
+see him?
+
+It's not ready yet.
+Please wait just a
+little longer. It's
+finished! Here you
+go. Use its
+legendary powers
+and save Monster
+World for us!
+
+One of the children
+of my village has
+been kidnapped.
+
+I don't want to see
+anyone.
+
+Do me a favor and
+just go away.
+Please...
+
+You're the one who
+saved the child?
+
+I am eternally
+grateful to you.
+
+You're a hero.
+
+Now you should meet
+Poseidon.
+
+He is in a
+perpetual sleep at
+the bottom of the
+sea.
+
+In order to swim
+underwater, you
+need Poseidon's
+Trident.
+
+Unfortunately, the
+monsters have
+gotten their claws
+on it... You found
+the Trident!
+
+Now you're able to
+swim underwater.
+
+Go find Poseidon!
+
+Looks like I'm a
+storekeeper with
+nothing to sell!
+
+Welcome to
+Gooningle's.
+
+I may not have the
+best shop in the
+land, but there's
+not a friendlier
+store{ keeper
+around! Now that's
+a fine piece, isn't
+it?
+
+I'm terribly sorry,
+but I seem to be
+out of stock.
+Welcome to Drapnell
+sundry goods. Thank
+you. Be sure to use
+magic carefully.
+
+Rise and shine!
+
+You're wasting
+precious daylight!
+
+Get enough rest?
+Good!
+
+Good luck to you!
+
+Boy, that was a
+close call.
+
+Better keep your
+eyes open.
+
+At last you've come.
+
+I knew you would
+appear before too
+long.
+
+Now, you must
+search for the Old
+Axe hidden in Ice
+World.
+
+To get to Ice
+World, you'll need
+this special
+Bracelet.
+
+Shion takes the
+Bracelet. I already
+gave you the
+Bracelet.
+
+So, you've managed
+to get your hands
+on the Old Axe.
+
+The Blacksmith will
+give you all the
+details.
+
+This boy is my
+grandson.
+
+Take him with you,
+for I belive he can
+be of some help.
+You must hurry.
+
+Find the Old Axe
+and then return to
+me. The deciding
+battle is now at
+hand.
+
+After receiving the
+Legendary Sword
+from the
+Blacksmith, go to
+the Bell Tower at
+Purapril Castle and
+point the sword
+toward the sky.
+
+Emerge victorious
+and return safely!
+
+We're counting on
+you!
+
+I'm terribly sorry,
+but I seem to be
+out of stock.
+
+Welcome to Sundry.
+
+See anything you
+like? The
+Charmstone is...
+wait a minute!
+
+I'm not going to
+tell you that!
+
+It's been years
+since we last had a
+visitor.
+
+Your journey has
+just begun. Please
+take care.
+
+The jellyfish will
+help you on your way.
+
+Maugham Desert is a
+forbidding place.
+It is said that one
+who wears the Oasis
+Boots can cross the
+desert. It looks
+like the store over
+there is open.
+
+I know of a dwarf
+village deep in the
+woods that lie ahead.
+
+I believe it's
+called Lilypad.
+
+The well at
+Purapril Castle is
+connected to the
+sea by an
+underground
+waterway. It's only
+a rumor, but I've
+heard of a house
+that's hidden
+somewhere in town.
+
+My younger brother,
+Hotta, has been
+taken by the
+monsters.
+
+What am I going to
+do?
+
+The monsters have a
+den just beyond the
+village.
+
+Could they be
+holding Hotta there?
+
+You're the one who
+saved my brother!
+
+He wants to go with
+you.
+
+You know, he just
+may be able to help
+you.
+
+Don't go too far,
+though...
+
+My brother seems to
+have grown very
+fond of you.
+
+Please take him out
+again sometime.
+Thank you again for
+your help.
+
+Has my brother been
+able to help you at
+all?
+
+He's very good at
+finding hidden
+rooms, you know.
+
+You've done well to
+find this place,
+but I'm afraid I
+don't speak to
+anyone not holding
+a Charmstone. How
+about trading your
+Charmstone for this
+Heart?
+
+Oh, you will trade.
+How about that!
+
+Come back anytime,
+friend. No deal,
+eh? Well, come on
+back some other
+time. Oh, sorry.
+Your Heart supply
+can't get any
+larger. If you have
+two Charmstones, I
+can increase your
+magical powers. How
+about trading me
+those two
+Charmstones for
+some new magic?
+
+Oh, you will
+trade! Great!
+
+Come on by anytime
+you're in the area.
+Oh, well. Can't
+win'em all. Hope to
+see you again. Oh,
+my mistake. You
+can't handle any
+more magic. Sorry
+about that. The
+Myconid! It looks
+like the store is
+closed.
+
+Sold out? I'm not
+surprised.
+
+Guess it's time to
+head out and
+collect some more
+weapons.
+
+Hey, come on in and
+help us celebrate
+the Grand Opening
+of our shop.
+
+This is Wanderer,
+the finest weapon
+shop in the land.
+Back again, eh?
+
+Nothing but the
+best for my
+customers.
+
+I've collected
+these items on my
+many journeys. It's
+locked. I had been
+taken prisoner by
+the monsters.
+
+Please come to the
+castle hall.
+
+I'd like to thank
+you.
+
+The gate to the
+castle has been
+opened.
+
+Why don't you go on
+inside?
+
+If you have the
+Amulet, you can
+find the shrine at
+the bottom of the
+sea.
+
+Let me have your
+Ocarina and I'll
+tell you where to
+find the Amulet.
+What do you say?
+
+There's a door
+hidden amidst four
+palm trees.
+
+From there you
+should be able to
+find the Amulet.
+
+Oh, that's too bad.
+
+If you need my
+help, drop by
+again. Did you
+forget what I told
+you? OK.
+
+Find four palm
+trees, then find
+the door that's
+hidden amidst them.
+
+Good luck.
+
+If you have the
+Amulet, the shrine
+will appear right
+before your eyes.
+So you're the
+legendary hero!
+
+Now maybe my father
+will be able to get
+a decent night's
+sleep.
+
+I'm the daughter of
+Poseidon.
+
+You're here at
+last. The legendary
+hero.
+
+The Elder Dragon is
+waiting for you.
+
+Before you meet
+him, though, visit
+the Sphinx to
+increase your
+strength.
+
+There's a Pyramid
+just beyond the
+Maugham Desert.
+
+An item that will
+help you cross the
+desert is hidden
+somewhere in this
+shrine.
+
+Find it and then go
+see the Sphinx.
+
+What are you dilly-
+dallying about for?
+
+Many people await
+your help.
+
+I'm going back to
+sleep. He's already
+in a deep sleep.
+
+The princess has
+returned safely.
+
+I'm so relieved.
+
+The princess is
+waiting. Make
+yourself at home.
+The door has been
+sealed. So you've
+arrived. As you may
+have guessed, I'm
+the Sphinx. I've
+got this thing for
+quizzes, but then
+you've probably
+heard that by now.
+Tell you what I'm
+gonna do. I'm gonna
+ask you some
+questions - 5, to
+be exact. When
+you've answered
+them all correctly,
+I'm gonna send you
+into a new world.
+Are you ready?
+Here's the first
+question. Here's
+the second
+question. Here's
+the third question.
+Here's the fourth
+question. Here's
+the final question.
+This is terrible.
+You missed every
+one!. Looks like
+the end of the line
+for you... How sad.
+You only got one
+right. I can't let
+you pass... This is
+no good. You only
+got two correct.
+Come back and try
+again. Not bad, but
+not good enough.
+You got 3 right.
+Try the quiz one
+more time. You're
+so close. You only
+missed one! I'll
+let you pass!
+That's fantastic!
+You got every one
+right! As your
+reward, I bestow
+upon you Thunder
+Magic. You may pass.
+
+The Elder Dragon
+has something he
+wishes to discuss
+with you.
+
+Please go to him
+now.
+
+Only one bearing
+the Ancient Axe can
+enter the volcano.
+I saw someone
+carring the Fire-
+Urn and preparing
+to enter the
+volcano. The shop
+is closed.
+
+I'm Shiela Purapril.
+
+I thank you for
+rescuing me.
+
+I heard that you're
+on a journey and
+that you're
+battling the
+monsters.
+
+Why don't you stop
+by the village of
+Lilypad?
+
+There may be
+something there for
+you.
+
+Watch out for
+monsters on your way.
+
+I Thank you again.
+
+Are you having a
+safe journey?
+
+Rumor has it that
+you're the
+legendary hero. Is
+it true that you
+crossed the
+desert? That's
+incredible! I heard
+you went to Ice
+Castle.
+
+Be very, very
+careful.
+
+I worry about you.
+The Sphinx! The
+Bracelet has begun
+to glow. The seal
+is broken.
+
+Forgive me, but we
+seem to be sold
+out. Please come
+again. Thank you
+for coming.
+
+This is the weapon
+shop known as
+Labyrinth. Thank
+you very much.
+
+What an excellent
+choice!
+
+It looks like I'm a
+storekeeper with
+nothing to sell!
+Ha, ha, ha, ha...
+Well, come on in.
+Take your time.
+
+You're the
+legendary hero I've
+heard so much about.
+
+The item you're
+looking for is in
+Ice Castle.
+
+Be warned-it's a
+frightening place.
+
+Take Shabo with
+you, in case you
+need help. The Old
+Axe, in its
+original form, is
+of no use to you.
+
+You'd better return
+to Begonia and see
+the Blacksmith.
+You're finally
+starting to look
+like a hero.
+
+It appears that my
+job is done.
+
+Now, your final
+battle will no
+doubt be fierce,
+but I'm confident
+that you'll triumph
+and that will be
+allowed to return
+to our land. To
+enter the volcano,
+you must enter the
+room on the other
+side of this door,
+but in order to
+enter, you must
+have the following
+items: the Pygmy
+Sword, Pygmy Armor,
+Pygmy Shield, and
+Pygmy Boots.
+
+You have satisfied
+the requirements.
+You may enter. One
+of the items is
+missing. Continue
+your search. You
+need two more
+items. Continue
+your search. You
+have only one of
+the four you need.
+Continue your
+search. You have
+yet to find even
+one of the items.
+You must find all
+four. Gragg &
+Glagg! The Ice
+Bomber! The Tyrant
+Dragon! The
+Almighty Demon King!
+
+I've heard that the
+Sphinx in the
+Pyramid likes
+quizzes. If you
+have a certain
+special item, you
+can swim
+underwater. The
+star crest on this
+Bell Tower is the
+same as the
+insignia on the
+weapon of the
+legendary hero.
+
+The princess told
+me this a long time
+ago.
+
+You're very strong.
+
+I hope one day I'll
+be so strong. It is
+said that there's a
+shrine at the
+bottom of the
+
+sea, but no one's
+ever been able to
+find the entrance.
+I am the Prince of
+DarkWorld, and you
+must be the
+legendary hero.
+
+I was under the
+control of Biomeka,
+a deadly creature
+from outer space,
+but I'm alright now.
+
+Thank you for
+coming to my aid....
+
+Some hero. Is that
+the best you can do?
+
+Well, watch this!
+Not too bad, eh?
+Now, let's see if
+you've got what it
+takes.
+
+You're really going
+to go,aren't you...
+
+Can't you stay with
+me?
+
+No, you're the
+legendary hero.
+
+You must go.
+
+Be sure to come
+back safely.
+
+I'll be waiting
+right here for you.
+
+There's a
+convenient slot....
+Shion inserts the
+Gold Gem.
+
+The Gem doesn't fit!
+
+Shion inserts the
+Blue Gem.
+
+A secret lies in
+the surface of the
+walls of Ice Castle.
+
+Do you know where
+the prince went? I
+think he's gone to
+Nightmare Castle.
+He's probably
+attempting to
+collect the
+legendary weapons.
+
+It looks as though
+he's got all but
+one of them... It's
+sealed. You can
+ride a jellyfish!
+The monsters have
+come and made this
+their home, so no
+one may enter!
+Finally, the long,
+treacherous journey
+has reached its end.
+
+None of the people
+in Monster World
+will ever forget
+what they've been
+through, nor will
+they forget the
+hero who gave their
+lives back to them.
+
+The story of
+Shion's valiant
+struggle will no
+doubt be passed on
+from generation to
+generation.
+
+And so ends another
+episode in the
+adventures of
+"Wonder Boy".
+
+Welcome home,
+Shion. I'm so happy
+you made it back
+safely. I don't
+think I'll ever
+forget you... ever.
+
+The dwarf child is
+in danger!
+
+Danger! The desert
+lies ahead!
+
+Anyone shorter than
+this sign will not
+be able to move it.
+
+YES NO gold
+                                                         //Sphinx Questions SQ1
+What's the first
+type of magic you
+acquired?
+FireStorm
+Tornado
+Quake
+
+What's the name of
+the queen in the
+elf village?
+Rosanna
+Eleanora
+Sonia
+
+Which of these
+monsters did you
+battle first?
+Myconid
+Mecha-Dragon
+Eleanora
+
+After defeating
+Gragg & Glagg, what
+did you receive?
+Lamp
+Amulet
+Trident
+
+Which of these
+items is not sold
+at the Wanderer
+weapon shop?
+Trident
+Excalibur
+Steel Shield
+
+What's the name of
+the dwarf village?
+Lilian
+Lilypad
+Lollipop
+
+Which key do you
+need to enter the
+Pyramid ?
+Star Key
+Sun Key
+Moon Key
+
+How much does a
+Charmstone cost?
+50000 gold
+500000 gold
+5000000 gold
+
+What item helped
+you to traverse
+Maugham Desert?
+Desert Boots
+Oasis Boots
+Puss'n Boots
+
+Which of these
+stores does not
+sell weapons?
+Gooningle
+Bacchus
+Felissimo
+
+YES NO
+                                                      //Inventory/name list IL1
+Legend Sword Excalibur Knight Sword Gradius Battle Spear Trident Small Spear
+Pygmy Sword Legend Armor Flame Armor Knight Armor Steel Armor Hard Armor Chain
+mail Leather Armor Pygmy Armor Legend Shield Flame Shield Knight Shield Steel
+Shield Hard Shield Shell Shield Wood Shield Pygmy Shield Legend Boots Ceramic
+Boots Oasis Boots Marine Boots Ladder Boots Leather Boots Cloth Boots Pygmy
+Boots Fire Storm Quake Thunder Power Shield Return ØÆì©≥§ Ocarina Charmstone
+Elixir Medicine Potion Holywater Hi-Potion ˚œ˛‰ Lamp Amulet Sun-Key Moon-Key
+Star-Key Gold-Gem Blue-Gem Old Axe Fire-Urn Bracelet Rapid Pad Heart
+Shion Alsedo Maugham Desert Lilypad Begonia Childam ˇÍ“—˙› Purapril Ice Capital
+Castle of Illusion Eleanora Myconid Monster Priscilla Poseidon Shiela Purapril
+Sphinx Hotta Prince of the Devil World Bio-Mecha Shabo
+
+You have a
+discriminating eye.
+
+That's <ITEM NAME>
+It costs
+<AMOUNT OF GOLD>
+Would you like to
+purchase it?
+
+Thank you very much.
+You've decided
+against it?
+That's too bad.
+
+Please stop in
+again.
+
+I'm sorry,
+but you don't have
+enough money to
+purchase this item.
+
+Why don't you go
+get some money and
+come back?
+
+Welcome to my inn.
+
+You can have a good
+night's rest for
+
+Will you be staying
+overnight?
+
+Oh, you don't have
+enough gold?
+That's OK.
+
+I'll accept whatever
+you can afford.
+
+Do you wish to save
+your adventure?
+
+Your game is
+saved. Will you be
+continuing your
+journey in the
+morning?
+
+
+Good night and
+pleasant dreams.
+
+Oh well, maybe
+another day.
+Good night.
+
+OK, give it a try.
+
+That's awful!
+Try again.
+
+You're not even
+close.
+Once more.
+
+There you go!
+That's very good!
+
+This is the melody
+for the first door.
+
+The next melody
+opens the second
+door.
+
+The last melody
+opens the final
+door.
