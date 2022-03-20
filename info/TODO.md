@@ -14,6 +14,7 @@ _Dated 2022-03-20_
     - [x] Make the title screen's background move down to fill the whole screen
 - [x] Include language-specific characters
 - [ ] Modify the signs on all hostels so that the word `Inn` is no longer in them
+- [x] Modify the exit sign so that the word `EXIT` is no longer in it
 - [x] Translate the outro gfx `the end` and `to be continued`
 
 ---
