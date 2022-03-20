@@ -3,7 +3,7 @@
 **Translation (DE) / ROMHACK**
 
 ## -== Todo List ==-
-_Dated 2022-03-18_
+_Dated 2022-03-20_
 
 ---
 
@@ -14,7 +14,7 @@ _Dated 2022-03-18_
     - [x] Make the title screen's background move down to fill the whole screen
 - [x] Include language-specific characters
 - [ ] Modify the signs on all hostels so that the word `Inn` is no longer in them
-- [ ] Translate the outro gfx `the end` and `to be continued`
+- [x] Translate the outro gfx `the end` and `to be continued`
 
 ---
 
@@ -27,16 +27,20 @@ _Dated 2022-03-18_
     - [ ] Dictionary
     - [ ] Items
     - [x] Menu
+        - [x] Magic Items
     - [ ] Ingame Messages
         - [x] Gold found
         - [ ] Items found
-    - [ ] Credits
+    - [x] Credits
+        - [ ] Fix font used in staff roll for custom characters
 - [ ] Prettify text positions
     - [X] Menu Items
     - [ ] Ingame Messages
 
 ---
 
-### Code
+### Extras
 
-- [ ] Restore Sound Test
+- [ ] Create Sound Test
+- [ ] Transplant prettier SEGA logo from Golden Axe
+- [ ] Implement a Westone logo screen before title
