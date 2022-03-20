@@ -13,6 +13,8 @@ newLogoGFX_pack5:
     incbin "includes/bin/gfx/pack5.cbin"
 newLogoGFX_pack6:
     incbin "includes/bin/gfx/pack6.cbin"
+newExitGFX_pack:
+    incbin "includes/bin/gfx/exitsign.cbin"
 
 newTitleTxtGFX_pack1:
     incbin "includes/bin/gfx/pack7.cbin"

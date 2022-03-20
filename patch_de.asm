@@ -15,7 +15,7 @@
 ; #################################################################################################
 
 
-CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
+CHEAT = 1   ; 0: No Cheats, 1: Cheats enabled
 
     include "includes/constants.asm"
     include "includes/vars.asm"

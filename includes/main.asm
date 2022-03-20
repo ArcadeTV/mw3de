@@ -59,7 +59,7 @@ writePlanemapB:
     movem.l (sp)+,d0/d1/a4                  ; restore registers
     jmp     $7102                           ; return
 writePlanemap:
-    move.l  #((64*64)/2)-1,d0                   ; Loop counter (-1 for DBRA loop)
+    move.l  #((64*64)/2)-1,d0               ; Loop counter (-1 for DBRA loop)
 writePlanemap_Loop:
     move.w  (a4)+,d1                        ; Start of loop
     move.w  d1,vdp_data                     ; Write tile line (4 bytes per line), and post-increment address

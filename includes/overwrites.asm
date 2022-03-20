@@ -227,6 +227,10 @@ tilemap_toBeContinued:
     org     $4101C
     dc.l    fontGFX_pack_de+$02000000       ; was 02 0423FA
 
+    ; Exit Sign:
+    org     $412E0                          ; was 02 056476
+    dc.l    newExitGFX_pack+$02000000       ; was 02 0691F5
+
     ; Logo:
     org     $4155C
     dc.l    newLogoGFX_pack1+$02000000      ; was 02 068930
