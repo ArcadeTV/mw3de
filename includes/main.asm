@@ -3,9 +3,6 @@
 ; labels are jumped to from includes/overwrites.asm
 ; =================================================================================================
 
-
-    org     $A4C80 ; Free Space in ROM from here --------------------------------------------------
-
 bypassMenuTableAddress_Headline:
     add.w   d0,d0
     lea     base_PointerTable_MenuItems,a1
@@ -132,3 +129,9 @@ change_theEnd:
     lea     tilemap_theEnd,a0               ; change address in original instruction
     move.l  a0,($FFA3B6).l                  ; Adopt original instruction
     jmp     ret_change_theEnd               ; return to game code
+
+
+bypassstaffRoll:
+    lea     staffRoll,a1                    ; change address in original instruction
+    move.l  a1,($FFA3B6).l                  ; Adopt original instruction
+    jmp     ret_bypassstaffRoll             ; return to game code

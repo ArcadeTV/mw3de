@@ -21,8 +21,12 @@ CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
     include "includes/vars.asm"
     include "includes/macros.asm"
 
-    ; MAIN CODE:
+    ; PATCHED LOCATIONS:
     include "includes/overwrites.asm"
+
+    org     $A4C80 ; Free Space in ROM from here --------------------------------------------------
+
+    ; MAIN CODE:
     include "includes/main.asm"
 
     ; TEXT DATA:
@@ -37,9 +41,11 @@ CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
 
     include "includes/text/pntrs_magic.asm"
     include "includes/text/magic.asm"
-    
+
     include "includes/text/specialdialogues.asm"
     include "includes/text/pntrs_specialdialogues.asm"
+
+    include "includes/text/credits.asm"
 
     ; Modified Sprite Tables:
     include "includes/sprite_tables.asm"

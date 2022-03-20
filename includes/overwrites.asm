@@ -82,18 +82,22 @@ sub_1F8E:
     org     $7D78
     dc.b    $17                             ;change: 18 -> 17 to shift right column of items 1 tile to the left
 
+
     org     $77D4
     jmp     bypassMenuTableAddress_Items
 jumpBackMenuTableAddress_Items:
+
+
+    org     $7BB6
+    jmp     bypassMenuMagicNames_alt
+ret_bypassMenuMagicNames_alt:
+
 
     org     $7C56
     jmp     bypassMenuMagicNames
     nop
 ret_bypassMenuMagicNames:
 
-    org     $7BB6
-    jmp     bypassMenuMagicNames_alt
-ret_bypassMenuMagicNames_alt:
 
     org     $8276
     jmp     bypassMenuTableAddress_Headline
@@ -106,6 +110,22 @@ jumpBackMenuTableAddress_Headline:
     dc.b    $F8,$F9,$00                     ; Replace AP (Attack Points) with custom icon
     dc.b    $FA,$FB,$00                     ; Replace DP (Defense Points) with custom icon
     dc.b    $FC,$FD,$00                     ; Replace SP (Speed Points) with custom icon
+
+
+
+    ; End Credits / Staff Roll:
+
+    org     $1AB10
+    jmp     bypassstaffRoll
+    nop 
+ret_bypassstaffRoll:
+
+    org     $1AB4C                          ; word sized timer var for staff roll (light beam, skip to outro)
+    dc.w    $0A20                           ; was #820
+
+    org     $1AEF8                          ; word sized timer var for staff roll (world map scroll in)
+    dc.w    $1380                           ; was #F80
+
 
 
     ; Bypass "THE END" and "TO BE CONTINUED" ending GFX:
