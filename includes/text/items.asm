@@ -99,7 +99,7 @@ item31:
     dc.b    "Stoffschuhe",0
 
 item32:    
-    dc.b    "Pygmäenstiefel",0
+    dc.b    "Pygm",ae,"enstiefel",0
 
 item33:    
     dc.b    "Feuersturm",0
@@ -153,13 +153,13 @@ item49:
     dc.b    "Amulett",0
 
 item50:    
-    dc.b    "Sonnenschlüssel",0
+    dc.b    "Sonnenschl",ue,"ssel",0
 
 item51:    
-    dc.b    "Mondschlüssel",0
+    dc.b    "Mondschl",ue,"ssel",0
 
 item52:    
-    dc.b    "Sternenschlüssel",0
+    dc.b    "Sternenschl",ue,"ssel",0
 
 item53:    
     dc.b    "Goldstein",0

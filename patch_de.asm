@@ -15,7 +15,7 @@
 ; #################################################################################################
 
 
-CHEAT = 1   ; 0: No Cheats, 1: Cheats enabled
+CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
 
     include "includes/constants.asm"
     include "includes/vars.asm"
@@ -47,6 +47,9 @@ CHEAT = 1   ; 0: No Cheats, 1: Cheats enabled
 
     include "includes/text/specialdialogues.asm"
     include "includes/text/pntrs_specialdialogues.asm"
+
+    include "includes/text/pntrs_questions.asm"
+    include "includes/text/questions.asm"
 
     include "includes/text/credits.asm"
 

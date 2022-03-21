@@ -214,6 +214,9 @@ tilemap_toBeContinued:
     org     $1CC14
     dc.l    base_PointerTable_Dialogues
 
+    org     $211CA
+    dc.l    base_PointerTable_Questions
+    
     org     $211CE
     dc.l    base_PointerTable_Items
 

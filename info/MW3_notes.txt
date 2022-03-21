@@ -166,7 +166,7 @@ LOCK    07 disables fast forward of text
 ?       08 -timer?
 NL      09
 
-0B 02 AA BB P1P2    Sets the Curser for Selection (e.g. YES/NO)
+0B 02 AA BB P1 P2   Sets the Curser for Selection (e.g. YES/NO)
                     AA (00-18)  Left Option-Arrow placement
                     BB (00-18)  Right Option-Arrow placement
                     0 equals the alignment of the text inside the textbox.
