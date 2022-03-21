@@ -14,8 +14,13 @@
 ; - Draw an entirely new logo on the title screen
 ; #################################################################################################
 
+; CHEATS:_______0: Cheat disabled, 1: Cheats enabled
+CHEAT_99GOLD  = 0                   ; Have 999999 Gold
+CHEAT_UNLGOLD = 0                   ; Gold is not decreased upon purchases
+CHEAT_HEARTS  = 0                   ; Have all hearts
+CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
 
-CHEAT = 0   ; 0: No Cheats, 1: Cheats enabled
+; =================================================================================================
 
     include "includes/constants.asm"
     include "includes/vars.asm"

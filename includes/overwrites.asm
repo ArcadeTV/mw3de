@@ -33,8 +33,8 @@
     org $8DE
 jumpBack:                                   ; only for Label
 
-    ; CHEATS
-    ifne CHEAT
+    ; CHEAT:
+    ifne CHEAT_UNLGOLD
     org     $1882                           ; Cheat: Unl. Gold (do not decrease)
     nop
     nop
@@ -45,13 +45,20 @@ jumpBack:                                   ; only for Label
     org     $1F8E
 sub_1F8E:
 
-    ; CHEATS
-    ifne CHEAT
+
+    ; CHEATS:
+    ifne CHEAT_99GOLD
     org     $8E46                           ; Cheat: Have more Gold upon New Game start
     dc.b    $0F,$42,$3F                     ; 1st Nybble: Starting location (0=Shion's House, 1=Alsedo, 2=Castle, 3=Lilypad ...),
                                             ; 2nd Nybble + 2 Bytes = 999999 Gold
+    endif
+    ;
+    ifne CHEAT_HEARTS
     org     $8E4A                           ; Cheat: Have all Hearts upon New Game start
     dc.b    $8
+    endif
+    ;
+    ifne CHEAT_INVINC
     org     $E0A4                           ; Cheat: Unl. Energy (do not decrease)
     nop
     nop 

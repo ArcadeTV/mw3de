@@ -259,7 +259,7 @@ for sale.
 Use medicines with
 care.
 
-I'm Sonia.
+ï¿½I'm Sonia.
 
 The village is
 under attack.
@@ -297,7 +297,9 @@ as she won't be
 able to help you
 any more. Is
 Priscilla helping
-you? You need the
+you? 
+
+You need the
 Ocarina to open the
 cave doors, but I
 lost it somewhere
@@ -1314,10 +1316,10 @@ Pygmy Sword Legend Armor Flame Armor Knight Armor Steel Armor Hard Armor Chain
 mail Leather Armor Pygmy Armor Legend Shield Flame Shield Knight Shield Steel
 Shield Hard Shield Shell Shield Wood Shield Pygmy Shield Legend Boots Ceramic
 Boots Oasis Boots Marine Boots Ladder Boots Leather Boots Cloth Boots Pygmy
-Boots Fire Storm Quake Thunder Power Shield Return ¯®“©³¤ Ocarina Charmstone
-Elixir Medicine Potion Holywater Hi-Potion ûÏşä Lamp Amulet Sun-Key Moon-Key
+Boots Fire Storm Quake Thunder Power Shield Return ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ocarina Charmstone
+Elixir Medicine Potion Holywater Hi-Potion ï¿½ï¿½ï¿½ï¿½ Lamp Amulet Sun-Key Moon-Key
 Star-Key Gold-Gem Blue-Gem Old Axe Fire-Urn Bracelet Rapid Pad Heart
-Shion Alsedo Maugham Desert Lilypad Begonia Childam ÿêÒÑúİ Purapril Ice Capital
+Shion Alsedo Maugham Desert Lilypad Begonia Childam ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Purapril Ice Capital
 Castle of Illusion Eleanora Myconid Monster Priscilla Poseidon Shiela Purapril
 Sphinx Hotta Prince of the Devil World Bio-Mecha Shabo
 

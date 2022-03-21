@@ -25,6 +25,14 @@ white               equ $80
 
 
 ; =================================================================================================
+
 ; 0B:
+
 ; 0B 02             show yes/no options
 ;                   format: 0B02.w xpos.b ypos.b pntrToNoAnswer.w
+
+
+
+; 0C:
+
+; 0C 59             Priscilla
