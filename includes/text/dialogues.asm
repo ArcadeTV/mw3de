@@ -1,12 +1,5 @@
 ; =================================================================================================
 ; TEXT DATA: DIALOGUES
-; Custom Chars: German Umlaute
-;
-; F0=Ä     F3=ä
-; F1=Ö     F4=ö
-; F2=Ü     F5=ü
-; F6=ß
-;
 ; Pointer Table: includes\text\pntrs_dialogues.asm
 ; =================================================================================================
 
@@ -79,8 +72,9 @@ text12:
 text13: 
     dc.b "Hier wird noch an",cc_newline,"Text 13 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+    ; Alsedo Shop: Spear
 text14: 
-    dc.b "Hier wird noch an",cc_newline,"Text 14 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$0A,$06,$0F,$00,cc_close
 
 text15: 
     dc.b "Hier wird noch an",cc_newline,"Text 15 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -97,8 +91,9 @@ text18:
 text19: 
     dc.b "Hier wird noch an",cc_newline,"Text 19 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+    ; Alsedo Shop: Armor
 text20: 
-    dc.b "Hier wird noch an",cc_newline,"Text 20 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$0A,$0D,$0F,$00,cc_close
 
 text21: 
     dc.b "Hier wird noch an",cc_newline,"Text 21 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -121,8 +116,9 @@ text26:
 text27: 
     dc.b "Hier wird noch an",cc_newline,"Text 27 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
+    ; Alsedo Shop: Shield
 text28: 
-    dc.b "Hier wird noch an",cc_newline,"Text 28 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$0A,$16,$0F,$00,cc_close
 
 text29: 
     dc.b "Hier wird noch an",cc_newline,"Text 29 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close

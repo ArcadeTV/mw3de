@@ -9,7 +9,7 @@ bypassMenuTableAddress_Headline:
     jmp     jumpBackMenuTableAddress_Headline
 
 bypassMenuTableAddress_Items:
-    lea     item2,a1                        ; "WEAPON"
+    lea     mitem2,a1                       ; "WEAPON"
     moveq   #5,d2                           ; Adopt original instruction
     jmp     jumpBackMenuTableAddress_Items
 

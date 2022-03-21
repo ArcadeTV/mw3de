@@ -214,11 +214,16 @@ tilemap_toBeContinued:
     org     $1CC14
     dc.l    base_PointerTable_Dialogues
 
+    org     $211CE
+    dc.l    base_PointerTable_Items
+
     org     $211D2
     dc.l    base_PointerTable_Names
 
     org     $211D6
     dc.l    base_PointerTable_SpecialDialogues
+
+
 
     ; Replace GFX data pointers:
     ; Font:

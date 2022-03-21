@@ -39,6 +39,9 @@ CHEAT = 1   ; 0: No Cheats, 1: Cheats enabled
     include "includes/text/pntrs_names.asm"
     include "includes/text/names.asm"
 
+    include "includes/text/pntrs_items.asm"
+    include "includes/text/items.asm"
+
     include "includes/text/pntrs_magic.asm"
     include "includes/text/magic.asm"
 
