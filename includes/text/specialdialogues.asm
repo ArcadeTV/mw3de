@@ -56,11 +56,11 @@ special2_p3:
 special2_t_notEnoughMoney:
     dc.b    cc_newline,"Oh, Du kannst",cc_newline,"es Dir gerade",cc_newline,"nicht leisten?",cc_wait
     dc.b    cc_newline,"Das ist schon okay.",cc_newline,cc_newline,cc_wait
-    dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie Du",cc_newline,"entbehren kannst."
+    dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie Du",cc_newline,"entbehren kannst.",cc_wait
     dc.b    $0B,$10 
     dc.b    $0B,$15
 special2_t_saveQuestion:
-    dc.b    cc_newline,"M",oe,"chtest Du",cc_newline,"speichern?"
+    dc.b    cc_newline,cc_newline,"M",oe,"chtest Du",cc_newline,"speichern?"
     dc.b    $0C,$00
     dc.b    $0B,$02,$03,$08
 special2_p4:
@@ -86,11 +86,40 @@ special2_t_noContinue:
     dc.b    $0B,$0C,cc_close
 special2_t_doNotStay:
     dc.b    cc_newline,cc_speed,$06
-    dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders überlegst.",cc_wait,cc_close
+    dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders ",ue,"berlegst.",cc_wait,cc_close
 
 
 special3:
-    dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_newline,cc_newline
+    dc.b    $0B,$1C
+    dc.b    cc_newline
+    dc.b    "Okay, nun bist",cc_newline,"Du dran!"
+    dc.b    $0B,$1A,$FF
+special3_p3:
+    dc.w    special3_notEvenClose-special3_p3
+special1_p4:
+    dc.w    special1_good-special1_p4 ; 00 45
+    dc.b    cc_newline,cc_newline
+    dc.b    "Konzentriere Dich!",cc_newline,cc_newline,cc_wait
+    dc.b    cc_newline,cc_newline
+    dc.b    "Probiere es",cc_newline,"noch einmal."
+    dc.b    $2E,cc_jump
+special3_p1:
+    dc.w    special3-special3_p1
+special3_notEvenClose:
+    dc.b    cc_newline,cc_newline
+    dc.b    "F",ue,"rchterlich!",cc_newline,cc_newline,cc_wait
+    dc.b    cc_newline,"Du triffst ja",cc_newline,"keinen einzigen Ton.",cc_newline,cc_wait
+    dc.b    cc_newline,cc_newline
+    dc.b    "Noch einmal bitte."
+    dc.b    $2E,cc_jump ; FF A1
+special3_p2:
+    dc.w    special3-special3_p2
+special1_good:
+    dc.b    cc_newline,cc_newline
+    dc.b    "Du hast es!",cc_newline,"Das war sehr gut.",cc_newline,cc_wait
+    dc.b    $0B,$18,$28
+    dc.b    cc_newline,cc_newline,cc_close
 
 
 special4:
@@ -127,6 +156,6 @@ special8:
     dc.b    "Die n",ae,"chste Melodie",cc_newline,oe,"ffnet die",cc_newline,"zweite T",ue,"r."
     dc.b    $0B,$0A,$01,$0B,$1B,$0C,$09,$0F,$02
     dc.b    "Die letzte Melodie",cc_newline,oe,"ffnet die",cc_newline,"dritte T",ue,"r."
-    dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$05,$09,$00 
+    dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$09,$00 
     
     dc.b    $00

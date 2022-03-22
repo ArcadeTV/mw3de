@@ -195,12 +195,17 @@ text40:
     dc.b "Hier wird noch an",cc_newline,"Text 40 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Found Ocarina
 text41: 
-    dc.b "Hier wird noch an",cc_newline,"Text 41 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$19,$FC
+    dc.b    cc_lock,cc_margin,$04,cc_speed,$06
+    dc.b    "Oh, da ist",cc_newline,cc_margin,$06,"die "
+    dc.b    $0B,$0A,$28,$0C,$02,$0B,$08,$28,$0B,$09,$0B,$19,$2D,$03,$A0,$21,$0B,$19,$FD
+    dc.b    cc_wait,cc_close
 
 
 text42: 
-    dc.b "Hier wird noch an",cc_newline,"Text 42 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b "Hier wird noch an",cc_newline,"Text 41 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text43: 
@@ -288,11 +293,15 @@ text56:
 ; Sonia, first encounter:
 text57: 
     dc.b    $0C,$06
-    dc.b    $0B,$12,$37,$04,$D7
-    dc.b    $0B,$17,$28,$03,$85
-    dc.b    $0B,$11,$26
+    dc.b    $0B,$12,$37 
 text57_p1:
-    dc.w    text59-text57_p1
+    dc.w    text64_thanks-text57_p1 ; 04D7
+    dc.b    $0B,$17,$28 ; when having the ocarina
+text57_p2:
+    dc.w    text64-text57_p2 ; 0385: points to text64
+    dc.b    $0B,$11,$26
+text57_p3:
+    dc.w    text59-text57_p3 ; points to text59
     dc.b    "Ich bin ",cc_text,orange,"Sonia",cc_text,white,".",cc_newline,cc_newline,cc_wait
     dc.b    cc_newline,"Das Dorf wird",cc_newline,"gerade von Monstern",cc_newline,"angegriffen.",cc_wait
     dc.b    cc_newline,"Ich verlasse mein",cc_newline,"Haus nicht mehr,",cc_newline,cc_wait,"daher kann",cc_newline,"ich nichts",cc_newline,"Genaueres sagen.",cc_wait
@@ -353,8 +362,44 @@ text63_p1:
     dc.b "Viel Gl",ue,"ck",cc_newline,"auf Deinem Weg.",cc_newline,cc_wait,cc_close
 text63_t1:
     dc.b $54,$68,$61,$74,$20,$0C,$E0,$20,$0C,$7B,$2E,$05,$09,$09,$0C,$68,$20,$73,$68,$6F,$75,$6C,$64,$6E,$27,$74,$20,$0C,$CF,$09,$63,$68,$61,$6E,$63,$65,$73,$20,$0C,$A0,$20,$0C,$D2,$21,$09,$05,$09,$0C,$57,$20,$62,$65,$20,$0C,$A8,$09,$63,$61,$72,$65,$66,$75,$6C,$21,$09,$05,$00
+
+; Sonia, havin the Ocarina
 text64: 
-    dc.b "Hier wird noch an",cc_newline,"Text 64 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$19,$FC,$0B,$12,$46
+text64_p1:
+    dc.w    text64_forgotten-text64_p1 ; 00 B6
+    dc.b    $0B,$14,$46
+    dc.b    "Oh, meine",cc_newline,cc_text,orange,"Okarina!",cc_text,white,cc_newline,cc_wait,cc_newline
+    dc.b    "Du hast",cc_newline,"sie gefunden!",cc_newline,cc_wait,cc_newline
+    dc.b    "Wenn man eine",cc_newline,"bestimmte Melodie",cc_newline,"auf ihr spielt,",cc_wait,cc_newline
+    dc.b    "werden die Siegel",cc_newline,"der T",ue,"ren gebrochen.",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Nimm sie an Dich",cc_newline,"und benutze sie!",cc_newline,cc_wait,cc_newline
+    dc.b    "Ich werde Dich nun",cc_newline,"die Melodien",cc_newline,"lehren.",cc_wait,cc_newline,cc_newline
+    dc.b    "H",oe,"re gut zu!",cc_newline,cc_newline,cc_wait,cc_newline
+    dc.b    $0F,$07
+    dc.b    "Denkst Du,",cc_newline,"Du hast die",cc_newline,"Melodien behalten?",cc_wait,cc_newline,cc_newline
+    dc.b    "Spiele die ",cc_text,orange,"Okarina",cc_text,white,cc_newline,"in der H",oe,"hle.",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Wir sind Dir sehr",cc_newline,"dankbar f",ue,"r Deine",cc_newline,"Hilfe.",cc_wait,cc_close
+text64_forgotten:
+    dc.b    "Was, Du hast die",cc_newline,"Melodien bereits",cc_newline,"vergessen?",cc_wait,cc_newline,cc_newline
+    dc.b    "Ein Mustersch",ue,"ler",cc_newline,"bist Du ja",cc_newline,"nicht gerade.",cc_wait,cc_newline,cc_newline
+    dc.b    "Lass uns",cc_newline,"noch einmal",cc_newline,"zusammen ",ue,"ben.",cc_wait,cc_newline,cc_newline
+    dc.b    "Es geht los!",cc_newline,cc_newline,cc_wait
+    dc.b    $0F,$07
+    dc.b    "Kannst Du sie jetzt",cc_newline,"auswendig spielen?",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Wenn Du die",cc_newline,"Melodien wieder",cc_newline,"vergi",ss,"t,",cc_wait,cc_newline
+    dc.b    "komm zu mir",cc_newline,"und wir ",ue,"ben",cc_newline,"noch einmal.",cc_wait
+    dc.b    $0B,$19,$FD,cc_close
+text64_thanks:
+    dc.b    $0B,$12,$5A
+text64_p2:
+    dc.w    text64_last-text64_p2 ; 00 47
+    dc.b    "Dank Dir",cc_newline,"ist das Dorf",cc_newline,"gerettet.",cc_wait,cc_newline,cc_newline
+    dc.b    "Behalte die ",cc_text,orange,"Okarina",cc_text,white,cc_newline,"als Geschenk",cc_newline,"von mir.",cc_wait,cc_newline,cc_newline
+    dc.b    "Vielleicht wird sie",cc_newline,"noch n",ue,"tzlich",cc_newline,"f",ue,"r Dich sein.",cc_wait,cc_close
+text64_last:
+    dc.b    "Hat sich die",cc_newline,cc_text,orange,"Okarina",cc_text,white," als",cc_newline,"n",ue,"tzlich erwiesen?",cc_wait,cc_close
+
 
 
 text65: 
