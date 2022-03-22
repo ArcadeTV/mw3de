@@ -209,7 +209,7 @@ text42:
 
 
 text43: 
-    dc.b "Hier wird noch an",cc_newline,"Text 43 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b $0B,$0A,$2B,$0F,$00,$00
 
 
 text44: 
@@ -287,7 +287,20 @@ text55:
 
 
 text56: 
-    dc.b "Hier wird noch an",cc_newline,"Text 56 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$11,$17
+text56_p1
+    dc.w    text56_welcome-text56_p1 ; 00 3B
+    dc.b    "Derzeit sind unsere",cc_newline,"Regale leider leer,",cc_newline,cc_wait,cc_newline
+    dc.b    "aber wir haben",cc_newline,"bereits neue",cc_newline,"Ware bestellt.",cc_wait,cc_newline,cc_newline
+    dc.b    "Komm doch später",cc_newline,"noch einmal",cc_newline,"bei uns vorbei.",cc_wait,cc_close
+text56_welcome:
+    dc.b    $0B,$11,$1E
+text56_p2:
+    dc.w    text56_useWithCaution-text56_p2 ; 00 31
+    dc.b    "Willkommen bei",cc_newline,"Felissimo.",cc_newline,cc_wait,cc_newline
+    dc.b    "Wir haben Medizin",cc_newline,"im Angebot.",cc_newline,cc_wait,cc_close
+text56_useWithCaution:
+    dc.b    "Verwende Medizin",cc_newline,"mit Sorgfalt!",cc_wait,cc_close
 
 
 ; Sonia, first encounter:
