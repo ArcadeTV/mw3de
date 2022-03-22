@@ -53,8 +53,8 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
     include "includes/text/specialdialogues.asm"
     include "includes/text/pntrs_specialdialogues.asm"
 
-    include "includes/text/pntrs_questions.asm"
-    include "includes/text/questions.asm"
+    include "includes/text/pntrs_snippets.asm"
+    include "includes/text/snippets.asm"
 
     include "includes/text/credits.asm"
 

@@ -23,7 +23,7 @@ special1_yes:
     dc.b    cc_newline,"Danke sehr.",cc_wait,cc_close
 special1_no:
     dc.b    cc_speed,$06,cc_newline,cc_newline,"Nein?",cc_newline,"Das ist aber schade.",cc_newline,cc_wait
-    dc.b    cc_newline,"Naja, vielleicht",cc_newline,"nächstes Mal.",cc_newline,cc_wait,cc_close
+    dc.b    cc_newline,"Naja, vielleicht",cc_newline,"n",ae,"chstes Mal.",cc_newline,cc_wait,cc_close
 special1_notEnoughGold:
     dc.b    $0B,$19,$35,cc_newline,cc_speed,$06
     dc.b    "Es tut mir leid,",cc_newline,"aber wenn Deine",cc_newline,"Taler nicht reichen,",cc_wait

@@ -222,7 +222,7 @@ tilemap_toBeContinued:
     dc.l    base_PointerTable_Dialogues
 
     org     $211CA
-    dc.l    base_PointerTable_Questions ; @ TODO: incomplete!
+    dc.l    base_PointerTable_Snippets
     
     org     $211CE
     dc.l    base_PointerTable_Items
