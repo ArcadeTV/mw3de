@@ -11,7 +11,7 @@ text1:
 text1_p1:
     dc.w    text1_respawn-text1_p1
     dc.b    cc_speed,$06,$0A,$01,cc_margin,$01,cc_lock
-    dc.b    $0C,$54," ",$0C,$67," war",cc_newline,"einst ein friedvoller",cc_newline,"Ort."
+    dc.b    cc_text,orange,$0C,$54," ",$0C,$67,cc_text,white," war",cc_newline,"einst ein friedvoller",cc_newline,"Ort."
     dc.b    cc_wait,cc_newline,cc_newline,cc_newline
     dc.b    "Doch der Frieden",cc_newline,"wurde gest",oe,"rt, als",cc_newline,"die Monster das Land",cc_wait,cc_newline
     dc.b    "wie eine Armee",cc_newline,ue,"berfielen.",cc_wait,cc_newline,cc_newline,cc_newline
@@ -296,7 +296,7 @@ text57_p1:
     dc.b    "Ich bin ",cc_text,orange,"Sonia",cc_text,white,".",cc_newline,cc_newline,cc_wait
     dc.b    cc_newline,"Das Dorf wird",cc_newline,"gerade von Monstern",cc_newline,"angegriffen.",cc_wait
     dc.b    cc_newline,"Ich verlasse mein",cc_newline,"Haus nicht mehr,",cc_newline,cc_wait,"daher kann",cc_newline,"ich nichts",cc_newline,"Genaueres sagen.",cc_wait
-    dc.b    cc_newline,"Du solltest mit",cc_newline,cc_text,orange,"Königin Eleanora",cc_text,white,cc_newline,"sprechen.",cc_wait
+    dc.b    cc_newline,"Du solltest mit",cc_newline,cc_text,orange,"K",oe,"nigin Eleanora",cc_text,white,cc_newline,"sprechen.",cc_wait
     dc.b    cc_newline,"Um sie zu finden,",cc_newline,"schaue zwischen den",cc_newline,"Statuen nach oben.",cc_wait,cc_close
 
 
@@ -313,13 +313,13 @@ text58_p2:
     dc.b    $0B,$1D
     dc.b    $0B,$12,$5E,$05,$34
     dc.b    $0B,$13,$26
-    dc.b    "Ich bin",cc_newline,cc_text,orange,"Königin Eleanora",cc_text,white,".",cc_newline,cc_wait
-    dc.b    "Die Monster kommen",cc_newline,"aus der Höhle",cc_newline,"hinter dem Dorf.",cc_wait
+    dc.b    "Ich bin",cc_newline,cc_text,orange,"K",oe,"nigin Eleanora",cc_text,white,".",cc_newline,cc_wait
+    dc.b    "Die Monster kommen",cc_newline,"aus der H",oe,"hle",cc_newline,"hinter dem Dorf.",cc_wait
     dc.b    cc_newline,"Bitte, kannst",cc_newline,"Du uns helfen?",cc_newline,cc_wait
     dc.b    cc_newline,cc_text,orange,"Priscilla",cc_text,white," wird",cc_newline,"Dich begleiten.",cc_newline,cc_wait
-    dc.b    cc_newline,"Sie ist klein, aber",cc_newline,"sie wird an Deiner",cc_newline,"Seite kämpfen.",cc_wait
-    dc.b    cc_newline,cc_newline,"Sobald Du ",cc_text,orange,"Alsedo",cc_text,white,cc_newline," verlässt,",cc_wait
-    dc.b    cc_newline,"wird sie zu mir",cc_newline,"zurückkehren.",cc_newline,cc_wait,cc_close
+    dc.b    cc_newline,"Sie ist klein, aber",cc_newline,"sie wird an Deiner",cc_newline,"Seite k",ae,"mpfen.",cc_wait
+    dc.b    cc_newline,cc_newline,"Sobald Du ",cc_text,orange,"Alsedo",cc_text,white,cc_newline," verl",ae,"sst,",cc_wait
+    dc.b    cc_newline,"wird sie zu mir",cc_newline,"zur",ue,"ckkehren.",cc_newline,cc_wait,cc_close
 text58_t2:
     dc.b    "Ist Priscilla",cc_newline,"eine Hilfe?",cc_newline
     dc.b    cc_wait,cc_close
@@ -327,7 +327,7 @@ text58_t2:
 ; Sonia after visiting Queen Eleanora:
 text59: 
     dc.b    $0B,$13,$25
-    dc.b    "Du brauchst meine",cc_newline,cc_text,orange,"Okarina",cc_text,white,", um die Tür",cc_newline,"der Höhle zu öffnen,",cc_wait
+    dc.b    "Du brauchst meine",cc_newline,cc_text,orange,"Okarina",cc_text,white,", um die T",ue,"r",cc_newline,"der H",oe,"hle zu ",oe,"ffnen,",cc_wait
     dc.b    cc_newline,"aber ich habe sie",cc_newline,"auf der Flucht vor",cc_newline,"den Monstern",cc_wait
     dc.b    cc_newline,"irgendwo im Wald",cc_newline,"verloren.",cc_newline,cc_wait,cc_close
 
