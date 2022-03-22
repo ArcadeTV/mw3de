@@ -258,7 +258,7 @@ snippet74:
     dc.b    "Weiter",0 ; Continue
 
 snippet75:
-    dc.b    "W",ue"ste",0 ; Desert
+    dc.b    "W",ue,"ste",0 ; Desert
 
 snippet76:
     dc.b    "Drache",0 ; Dragon
