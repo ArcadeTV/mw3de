@@ -4781,16 +4781,17 @@ F20:0015           dc.b    $0B,$02,$03,$08 ; show yes/no options
 F20:0016       special1_pntr_wantToBuy:
 F20:0017           dc.w    special1_no-special1_pntr_wantToBuy ; 00 27
                S50:000A73E3:  00 1E
-F20:0018           dc.b    $09,$03,$06,$0B,$03
+F20:0018           dc.b    cc_newline,cc_speed,$06
                S50:000A73E5:  09
                S50:000A73E6:  03
                S50:000A73E7:  06
+F20:0019           dc.b    $0B,$03
                S50:000A73E8:  0B
                S50:000A73E9:  03
-F20:0019       special1_pntr_notEnoughGold:
-F20:0020           dc.w    special1_notEnoughGold-special1_pntr_notEnoughGold 
+F20:0020       special1_pntr_notEnoughGold:
+F20:0021           dc.w    special1_notEnoughGold-special1_pntr_notEnoughGold 
                S50:000A73EA:  00 59
-F20:0021           dc.b    $0B,$07,$0B,$08,$FF,$0B,$09
+F20:0022           dc.b    $0B,$07,$0B,$08,$FF,$0B,$09
                S50:000A73EC:  0B
                S50:000A73ED:  07
                S50:000A73EE:  0B
@@ -4798,14 +4799,14 @@ F20:0021           dc.b    $0B,$07,$0B,$08,$FF,$0B,$09
                S50:000A73F0:  FF
                S50:000A73F1:  0B
                S50:000A73F2:  09
-F20:0022       special1_yes:
-F20:0023           dc.b    cc_newline,"Danke sehr.",cc_wait,cc_close
+F20:0023       special1_yes:
+F20:0024           dc.b    cc_newline,"Danke sehr.",cc_wait,cc_close
                S50:000A73F3:  09
                S50:000A73F4:  44 61 6E 6B 65 20 73 65 68 72 2E
                S50:000A73FF:  05
                S50:000A7400:  00
-F20:0024       special1_no:
-F20:0025           dc.b    cc_speed,$06,cc_newline,cc_newline,"Nein?",cc_newline,"Das ist aber schade.",cc_newline,cc_wait
+F20:0025       special1_no:
+F20:0026           dc.b    cc_speed,$06,cc_newline,cc_newline,"Nein?",cc_newline,"Das ist aber schade.",cc_newline,cc_wait
                S50:000A7401:  03
                S50:000A7402:  06
                S50:000A7403:  09
@@ -4816,7 +4817,7 @@ F20:0025           dc.b    cc_speed,$06,cc_newline,cc_newline,"Nein?",cc_newline
                S50:000A741B:  61 64 65 2E
                S50:000A741F:  09
                S50:000A7420:  05
-F20:0026           dc.b    cc_newline,"Naja, vielleicht",cc_newline,"n",ae,"chstes Mal.",cc_newline,cc_wait,cc_close
+F20:0027           dc.b    cc_newline,"Naja, vielleicht",cc_newline,"n",ae,"chstes Mal.",cc_newline,cc_wait,cc_close
                S50:000A7421:  09
                S50:000A7422:  4E 61 6A 61 2C 20 76 69 65 6C 6C 65 69 63 68 74
                S50:000A7432:  09
@@ -4826,15 +4827,15 @@ F20:0026           dc.b    cc_newline,"Naja, vielleicht",cc_newline,"n",ae,"chst
                S50:000A7440:  09
                S50:000A7441:  05
                S50:000A7442:  00
-F20:0027       special1_notEnoughGold:
-F20:0028           dc.b    $0B,$19,$35,cc_newline,cc_speed,$06
+F20:0028       special1_notEnoughGold:
+F20:0029           dc.b    $0B,$19,$35,cc_newline,cc_speed,$06
                S50:000A7443:  0B
                S50:000A7444:  19
                S50:000A7445:  35
                S50:000A7446:  09
                S50:000A7447:  03
                S50:000A7448:  06
-F20:0029           dc.b    "Es tut mir leid,",cc_newline,"aber wenn Deine",cc_newline,"Taler nicht reichen,",cc_wait
+F20:0030           dc.b    "Es tut mir leid,",cc_newline,"aber wenn Deine",cc_newline,"Taler nicht reichen,",cc_wait
                S50:000A7449:  45 73 20 74 75 74 20 6D 69 72 20 6C 65 69 64 2C
                S50:000A7459:  09
                S50:000A745A:  61 62 65 72 20 77 65 6E 6E 20 44 65 69 6E 65
@@ -4842,14 +4843,14 @@ F20:0029           dc.b    "Es tut mir leid,",cc_newline,"aber wenn Deine",cc_ne
                S50:000A746A:  54 61 6C 65 72 20 6E 69 63 68 74 20 72 65 69 63
                S50:000A747A:  68 65 6E 2C
                S50:000A747E:  05
-F20:0030           dc.b    cc_newline,"dann kannst Du",cc_newline,"es nicht kaufen.",cc_newline,cc_wait
+F20:0031           dc.b    cc_newline,"dann kannst Du",cc_newline,"es nicht kaufen.",cc_newline,cc_wait
                S50:000A747F:  09
                S50:000A7480:  64 61 6E 6E 20 6B 61 6E 6E 73 74 20 44 75
                S50:000A748E:  09
                S50:000A748F:  65 73 20 6E 69 63 68 74 20 6B 61 75 66 65 6E 2E
                S50:000A749F:  09
                S50:000A74A0:  05
-F20:0031           dc.b    "Schau doch nochmal",cc_newline,"vorbei, wenn Du mehr",cc_newline,"Gold hast.",cc_wait,cc_close
+F20:0032           dc.b    "Schau doch nochmal",cc_newline,"vorbei, wenn Du mehr",cc_newline,"Gold hast.",cc_wait,cc_close
                S50:000A74A1:  53 63 68 61 75 20 64 6F 63 68 20 6E 6F 63 68 6D
                S50:000A74B1:  61 6C
                S50:000A74B3:  09
@@ -4859,35 +4860,35 @@ F20:0031           dc.b    "Schau doch nochmal",cc_newline,"vorbei, wenn Du mehr
                S50:000A74C9:  47 6F 6C 64 20 68 61 73 74 2E
                S50:000A74D3:  05
                S50:000A74D4:  00
-F20:0032       
 F20:0033       
-F20:0034       special2:
-F20:0035           dc.b    $0A,$02,cc_speed,$06,cc_margin,$02
+F20:0034       ; Inn
+F20:0035       special2:
+F20:0036           dc.b    $0A,$02,cc_speed,$06,cc_margin,$02
                S50:000A74D5:  0A
                S50:000A74D6:  02
                S50:000A74D7:  03
                S50:000A74D8:  06
                S50:000A74D9:  04
                S50:000A74DA:  02
-F20:0036           dc.b    "Willkommen in",cc_newline,"meiner Pension.",cc_wait
+F20:0037           dc.b    "Willkommen in",cc_newline,"meiner Pension.",cc_wait
                S50:000A74DB:  57 69 6C 6C 6B 6F 6D 6D 65 6E 20 69 6E
                S50:000A74E8:  09
                S50:000A74E9:  6D 65 69 6E 65 72 20 50 65 6E 73 69 6F 6E 2E
                S50:000A74F8:  05
-F20:0037           dc.b    cc_newline,cc_newline
+F20:0038           dc.b    cc_newline,cc_newline
                S50:000A74F9:  09
                S50:000A74FA:  09
-F20:0038           dc.b    "Ich kann Dir ein",cc_newline,"bequemes Bett",cc_newline,"anbieten.",cc_wait
+F20:0039           dc.b    "Ich kann Dir ein",cc_newline,"bequemes Bett",cc_newline,"anbieten.",cc_wait
                S50:000A74FB:  49 63 68 20 6B 61 6E 6E 20 44 69 72 20 65 69 6E
                S50:000A750B:  09
                S50:000A750C:  62 65 71 75 65 6D 65 73 20 42 65 74 74
                S50:000A7519:  09
                S50:000A751A:  61 6E 62 69 65 74 65 6E 2E
                S50:000A7523:  05
-F20:0039           dc.b    cc_newline,cc_newline
+F20:0040           dc.b    cc_newline,cc_newline
                S50:000A7524:  09
                S50:000A7525:  09
-F20:0040           dc.b    "Das Zimmer kostet",$02,$0C,$05,cc_newline,"f",ue,"r eine Nacht.",cc_wait
+F20:0041           dc.b    "Das Zimmer kostet",$02,$0C,$05,cc_newline,"f",ue,"r eine Nacht.",cc_wait
                S50:000A7526:  44 61 73 20 5A 69 6D 6D 65 72 20 6B 6F 73 74 65
                S50:000A7536:  74
                S50:000A7537:  02
@@ -4898,10 +4899,10 @@ F20:0040           dc.b    "Das Zimmer kostet",$02,$0C,$05,cc_newline,"f",ue,"r 
                S50:000A753C:  F5
                S50:000A753D:  72 20 65 69 6E 65 20 4E 61 63 68 74 2E
                S50:000A754A:  05
-F20:0041           dc.b    cc_newline,cc_newline
+F20:0042           dc.b    cc_newline,cc_newline
                S50:000A754B:  09
                S50:000A754C:  09
-F20:0042           dc.b    "M",oe,"chtest Du bei",cc_newline,"uns ",ue,"bernachten?"
+F20:0043           dc.b    "M",oe,"chtest Du bei",cc_newline,"uns ",ue,"bernachten?"
                S50:000A754D:  4D
                S50:000A754E:  F4
                S50:000A754F:  63 68 74 65 73 74 20 44 75 20 62 65 69
@@ -4909,39 +4910,39 @@ F20:0042           dc.b    "M",oe,"chtest Du bei",cc_newline,"uns ",ue,"bernacht
                S50:000A755D:  75 6E 73 20
                S50:000A7561:  F5
                S50:000A7562:  62 65 72 6E 61 63 68 74 65 6E 3F
-F20:0043           dc.b    $0C,$00
+F20:0044           dc.b    $0C,$00
                S50:000A756D:  0C
                S50:000A756E:  00
-F20:0044           dc.b    $0B,$02,$03,$08
+F20:0045           dc.b    $0B,$02,$03,$08
                S50:000A756F:  0B
                S50:000A7570:  02
                S50:000A7571:  03
                S50:000A7572:  08
-F20:0045       special2_p1:
-F20:0046           dc.w    special2_t_doNotStay-special2_p1 ; FE D6
+F20:0046       special2_p1:
+F20:0047           dc.w    special2_t_doNotStay-special2_p1 ; FE D6
                S50:000A7573:  01 65
-F20:0047           dc.b    cc_newline,cc_speed,$06
+F20:0048           dc.b    cc_newline,cc_speed,$06
                S50:000A7575:  09
                S50:000A7576:  03
                S50:000A7577:  06
-F20:0048           dc.b    $0B,$03
+F20:0049           dc.b    $0B,$03
                S50:000A7578:  0B
                S50:000A7579:  03
-F20:0049       special2_p2:
-F20:0050           dc.w    special2_t_notEnoughMoney-special2_p2 ; 00 09
+F20:0050       special2_p2:
+F20:0051           dc.w    special2_t_notEnoughMoney-special2_p2 ; 00 09
                S50:000A757A:  00 09
-F20:0051           dc.b    $0B,$07
+F20:0052           dc.b    $0B,$07
                S50:000A757C:  0B
                S50:000A757D:  07
-F20:0052           dc.b    $0B,$15,$06
+F20:0053           dc.b    $0B,$15,$06
                S50:000A757E:  0B
                S50:000A757F:  15
                S50:000A7580:  06
-F20:0053       special2_p3:
-F20:0054           dc.w    special2_t_saveQuestion-special2_p3 ; 00 5B
+F20:0054       special2_p3:
+F20:0055           dc.w    special2_t_saveQuestion-special2_p3 ; 00 5B
                S50:000A7581:  00 7B
-F20:0055       special2_t_notEnoughMoney:
-F20:0056           dc.b    cc_newline,"Oh, Du kannst",cc_newline,"es Dir gerade",cc_newline,"nicht leisten?",cc_wait
+F20:0056       special2_t_notEnoughMoney:
+F20:0057           dc.b    cc_newline,"Oh, Du kannst",cc_newline,"es Dir gerade",cc_newline,"nicht leisten?",cc_wait
                S50:000A7583:  09
                S50:000A7584:  4F 68 2C 20 44 75 20 6B 61 6E 6E 73 74
                S50:000A7591:  09
@@ -4949,14 +4950,14 @@ F20:0056           dc.b    cc_newline,"Oh, Du kannst",cc_newline,"es Dir gerade"
                S50:000A759F:  09
                S50:000A75A0:  6E 69 63 68 74 20 6C 65 69 73 74 65 6E 3F
                S50:000A75AE:  05
-F20:0057           dc.b    cc_newline,"Das ist schon okay.",cc_newline,cc_newline,cc_wait
+F20:0058           dc.b    cc_newline,"Das ist schon okay.",cc_newline,cc_newline,cc_wait
                S50:000A75AF:  09
                S50:000A75B0:  44 61 73 20 69 73 74 20 73 63 68 6F 6E 20 6F 6B
                S50:000A75C0:  61 79 2E
                S50:000A75C3:  09
                S50:000A75C4:  09
                S50:000A75C5:  05
-F20:0058           dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie Du",cc_newline,"entbehren kannst."
+F20:0059           dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie Du",cc_newline,"entbehren kannst."
                S50:000A75C6:  09
                S50:000A75C7:  42 65 7A 61 68 6C 65 20 65 69 6E 66 61 63 68
                S50:000A75D6:  09
@@ -4964,51 +4965,51 @@ F20:0058           dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie
                S50:000A75E6:  09
                S50:000A75E7:  65 6E 74 62 65 68 72 65 6E 20 6B 61 6E 6E 73 74
                S50:000A75F7:  2E
-F20:0059           dc.b    $0B,$10 
+F20:0060           dc.b    $0B,$10 
                S50:000A75F8:  0B
                S50:000A75F9:  10
-F20:0060           dc.b    $0B,$15
+F20:0061           dc.b    $0B,$15
                S50:000A75FA:  0B
                S50:000A75FB:  15
-F20:0061       special2_t_saveQuestion:
-F20:0062           dc.b    cc_newline,"M",oe,"chtest Du",cc_newline,"speichern?"
+F20:0062       special2_t_saveQuestion:
+F20:0063           dc.b    cc_newline,"M",oe,"chtest Du",cc_newline,"speichern?"
                S50:000A75FC:  09
                S50:000A75FD:  4D
                S50:000A75FE:  F4
                S50:000A75FF:  63 68 74 65 73 74 20 44 75
                S50:000A7608:  09
                S50:000A7609:  73 70 65 69 63 68 65 72 6E 3F
-F20:0063           dc.b    $0C,$00
+F20:0064           dc.b    $0C,$00
                S50:000A7613:  0C
                S50:000A7614:  00
-F20:0064           dc.b    $0B,$02,$03,$08
+F20:0065           dc.b    $0B,$02,$03,$08
                S50:000A7615:  0B
                S50:000A7616:  02
                S50:000A7617:  03
                S50:000A7618:  08
-F20:0065       special2_p4:
-F20:0066           dc.w    special2_t_continueQuestion-special2_p4 ; 00 1A
+F20:0066       special2_p4:
+F20:0067           dc.w    special2_t_continueQuestion-special2_p4 ; 00 1A
                S50:000A7619:  00 26
-F20:0067           dc.b    cc_speed,$06
+F20:0068           dc.b    cc_speed,$06
                S50:000A761B:  03
                S50:000A761C:  06
-F20:0068           dc.b    $09,$0B,$0B
+F20:0069           dc.b    $09,$0B,$0B
                S50:000A761D:  09
                S50:000A761E:  0B
                S50:000A761F:  0B
-F20:0069           dc.b    "Dein Spiel",cc_newline,"wurde gespeichert.",cc_newline,cc_wait
+F20:0070           dc.b    "Dein Spiel",cc_newline,"wurde gespeichert.",cc_newline,cc_wait
                S50:000A7620:  44 65 69 6E 20 53 70 69 65 6C
                S50:000A762A:  09
                S50:000A762B:  77 75 72 64 65 20 67 65 73 70 65 69 63 68 65 72
                S50:000A763B:  74 2E
                S50:000A763D:  09
                S50:000A763E:  05
-F20:0070       special2_t_noSave:
-F20:0071       special2_t_continueQuestion:
-F20:0072           dc.b    cc_speed,$06
+F20:0071       special2_t_noSave:
+F20:0072       special2_t_continueQuestion:
+F20:0073           dc.b    cc_speed,$06
                S50:000A763F:  03
                S50:000A7640:  06
-F20:0073           dc.b    cc_newline,cc_newline,"Wirst Du Deine",cc_newline,"Reise am Morgen",cc_newline,"fortsetzen?"
+F20:0074           dc.b    cc_newline,cc_newline,"Wirst Du Deine",cc_newline,"Reise am Morgen",cc_newline,"fortsetzen?"
                S50:000A7641:  09
                S50:000A7642:  09
                S50:000A7643:  57 69 72 73 74 20 44 75 20 44 65 69 6E 65
@@ -5016,58 +5017,59 @@ F20:0073           dc.b    cc_newline,cc_newline,"Wirst Du Deine",cc_newline,"Re
                S50:000A7652:  52 65 69 73 65 20 61 6D 20 4D 6F 72 67 65 6E
                S50:000A7661:  09
                S50:000A7662:  66 6F 72 74 73 65 74 7A 65 6E 3F
-F20:0074           dc.b    $0C,$00,$0B,$02,$03,$08
+F20:0075           dc.b    $0C,$00
                S50:000A766D:  0C
                S50:000A766E:  00
+F20:0076           dc.b    $0B,$02,$03,$08
                S50:000A766F:  0B
                S50:000A7670:  02
                S50:000A7671:  03
                S50:000A7672:  08
-F20:0075       special2_p5:
-F20:0076           dc.w    special2_t_noContinue-special2_p5 ; 00 27
+F20:0077       special2_p5:
+F20:0078           dc.w    special2_t_noContinue-special2_p5 ; 00 27
                S50:000A7673:  00 25
-F20:0077           dc.b    cc_newline,cc_speed,$06
+F20:0079           dc.b    cc_newline,cc_speed,$06
                S50:000A7675:  09
                S50:000A7676:  03
                S50:000A7677:  06
-F20:0078           dc.b    "Gute Nacht,",cc_newline,"erhol Dich gut!",cc_newline,cc_wait
+F20:0080           dc.b    "Gute Nacht,",cc_newline,"erhol Dich gut!",cc_newline,cc_wait
                S50:000A7678:  47 75 74 65 20 4E 61 63 68 74 2C
                S50:000A7683:  09
                S50:000A7684:  65 72 68 6F 6C 20 44 69 63 68 20 67 75 74 21
                S50:000A7693:  09
                S50:000A7694:  05
-F20:0079           dc.b    $0B,$0D,cc_close
+F20:0081           dc.b    $0B,$0D,cc_close
                S50:000A7695:  0B
                S50:000A7696:  0D
                S50:000A7697:  00
-F20:0080       special2_t_noContinue:
-F20:0081           dc.b    cc_newline,cc_speed,$06
+F20:0082       special2_t_noContinue:
+F20:0083           dc.b    cc_newline,cc_speed,$06
                S50:000A7698:  09
                S50:000A7699:  03
                S50:000A769A:  06
-F20:0082           dc.b    "Wie schade,",cc_newline,"aber wir sehen",cc_newline,"uns wieder, ja?",cc_wait
+F20:0084           dc.b    "Wie schade,",cc_newline,"aber wir sehen",cc_newline,"uns wieder, ja?",cc_wait
                S50:000A769B:  57 69 65 20 73 63 68 61 64 65 2C
                S50:000A76A6:  09
                S50:000A76A7:  61 62 65 72 20 77 69 72 20 73 65 68 65 6E
                S50:000A76B5:  09
                S50:000A76B6:  75 6E 73 20 77 69 65 64 65 72 2C 20 6A 61 3F
                S50:000A76C5:  05
-F20:0083           dc.b    cc_newline,"Gute Nacht.",cc_newline,cc_newline,cc_wait
+F20:0085           dc.b    cc_newline,"Gute Nacht.",cc_newline,cc_newline,cc_wait
                S50:000A76C6:  09
                S50:000A76C7:  47 75 74 65 20 4E 61 63 68 74 2E
                S50:000A76D2:  09
                S50:000A76D3:  09
                S50:000A76D4:  05
-F20:0084           dc.b    $0B,$0C,cc_close
+F20:0086           dc.b    $0B,$0C,cc_close
                S50:000A76D5:  0B
                S50:000A76D6:  0C
                S50:000A76D7:  00
-F20:0085       special2_t_doNotStay:
-F20:0086           dc.b    cc_newline,cc_speed,$06
+F20:0087       special2_t_doNotStay:
+F20:0088           dc.b    cc_newline,cc_speed,$06
                S50:000A76D8:  09
                S50:000A76D9:  03
                S50:000A76DA:  06
-F20:0087           dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders überlegst.",cc_wait,cc_close
+F20:0089           dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders überlegst.",cc_wait,cc_close
                S50:000A76DB:  42 65 73 75 63 68 65 20 75 6E 73 20 77 69 65 64
                S50:000A76EB:  65 72 2C
                S50:000A76EE:  09
@@ -5077,9 +5079,10 @@ F20:0087           dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc
                S50:000A770F:  74 2E
                S50:000A7711:  05
                S50:000A7712:  00
-F20:0088       
-F20:0089       special3:
-F20:0090           dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+F20:0090       
+F20:0091       
+F20:0092       special3:
+F20:0093           dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
                S50:000A7713:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
                S50:000A7723:  6E
                S50:000A7724:  09
@@ -5089,60 +5092,70 @@ F20:0090           dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.
                S50:000A773B:  56 65 72 73 63 68 77 69 6E 64 65 21
                S50:000A7747:  05
                S50:000A7748:  00
-F20:0091       
-F20:0092       special4:
-F20:0093           dc.b    $0B,$19,$18,$10,$20,$00
+F20:0094       
+F20:0095       
+F20:0096       special4:
+F20:0097           dc.b    $0B,$19,$18,$10,$20,$00
                S50:000A7749:  0B
                S50:000A774A:  19
                S50:000A774B:  18
                S50:000A774C:  10
                S50:000A774D:  20
                S50:000A774E:  00
-F20:0094       
-F20:0095       special5:
-F20:0096           dc.b    $0B,$19,$19,$11,$20,$00
+F20:0098       
+F20:0099       
+F20:0100       special5:
+F20:0101           dc.b    $0B,$19,$19,$11,$20,$00
                S50:000A774F:  0B
                S50:000A7750:  19
                S50:000A7751:  19
                S50:000A7752:  11
                S50:000A7753:  20
                S50:000A7754:  00
-F20:0097       
-F20:0098       special6:
-F20:0099           dc.b    $0B,$19,$1A,$12,$20,$00
+F20:0102       
+F20:0103       
+F20:0104       special6:
+F20:0105           dc.b    $0B,$19,$1A,$12,$20,$00
                S50:000A7755:  0B
                S50:000A7756:  19
                S50:000A7757:  1A
                S50:000A7758:  12
                S50:000A7759:  20
                S50:000A775A:  00
-F20:0100       
-F20:0101       special7:
-F20:0102           dc.b    $05,$0B,$22,$03,$08,$0B,$20,$0B,$32,$02,$0B,$1F,$00,$0B,$32,$05,$03,$00,$0B,$1E,$01,$02,$10,$20,$0B,$1F,$01,
+F20:0106       
+F20:0107       
+F20:0108       special7:
+F20:0109           dc.b    $05,$0B,$22,$03,$08
                S50:000A775B:  05
                S50:000A775C:  0B
                S50:000A775D:  22
                S50:000A775E:  03
                S50:000A775F:  08
+F20:0110           dc.b    $0B,$20
                S50:000A7760:  0B
                S50:000A7761:  20
+F20:0111           dc.b    $0B,$32,$02
                S50:000A7762:  0B
                S50:000A7763:  32
                S50:000A7764:  02
+F20:0112           dc.b    $0B,$1F,$00
                S50:000A7765:  0B
                S50:000A7766:  1F
                S50:000A7767:  00
+F20:0113           dc.b    $0B,$32,$05,$03,$00
                S50:000A7768:  0B
                S50:000A7769:  32
                S50:000A776A:  05
                S50:000A776B:  03
                S50:000A776C:  00
+F20:0114           dc.b    $0B,$1E,$01,$02,$10,$20
                S50:000A776D:  0B
                S50:000A776E:  1E
                S50:000A776F:  01
                S50:000A7770:  02
                S50:000A7771:  10
                S50:000A7772:  20
+F20:0115           dc.b    $0B,$1F,$01,$02,$20,$11,$20
                S50:000A7773:  0B
                S50:000A7774:  1F
                S50:000A7775:  01
@@ -5150,6 +5163,7 @@ F20:0102           dc.b    $05,$0B,$22,$03,$08,$0B,$20,$0B,$32,$02,$0B,$1F,$00,$
                S50:000A7777:  20
                S50:000A7778:  11
                S50:000A7779:  20
+F20:0116           dc.b    $0B,$1F,$02,$02,$20,$12,$20
                S50:000A777A:  0B
                S50:000A777B:  1F
                S50:000A777C:  02
@@ -5157,23 +5171,28 @@ F20:0102           dc.b    $05,$0B,$22,$03,$08,$0B,$20,$0B,$32,$02,$0B,$1F,$00,$
                S50:000A777E:  20
                S50:000A777F:  12
                S50:000A7780:  20
+F20:0117           dc.b    $0B,$1F,$03
                S50:000A7781:  0B
                S50:000A7782:  1F
                S50:000A7783:  03
+F20:0118           dc.b    $0B,$21
                S50:000A7784:  0B
                S50:000A7785:  21
+F20:0119           dc.b    $0B,$18,$1E
                S50:000A7786:  0B
                S50:000A7787:  18
                S50:000A7788:  1E
+F20:0120           dc.b    $0B,$20,$00
                S50:000A7789:  0B
                S50:000A778A:  20
                S50:000A778B:  00
-F20:0103       
-F20:0104       special8:
-F20:0105           dc.b    cc_newline,cc_lock
+F20:0121       
+F20:0122       ; Sonia, teaching ocarina melodies
+F20:0123       special8:
+F20:0124           dc.b    cc_newline,cc_lock
                S50:000A778C:  09
                S50:000A778D:  07
-F20:0106           dc.b    "Dies ist die",cc_newline,"Melodie f",ue,"r die",cc_newline,"erste T",ue,"r."
+F20:0125           dc.b    "Dies ist die",cc_newline,"Melodie f",ue,"r die",cc_newline,"erste T",ue,"r."
                S50:000A778E:  44 69 65 73 20 69 73 74 20 64 69 65
                S50:000A779A:  09
                S50:000A779B:  4D 65 6C 6F 64 69 65 20 66
@@ -5183,7 +5202,7 @@ F20:0106           dc.b    "Dies ist die",cc_newline,"Melodie f",ue,"r die",cc_n
                S50:000A77AB:  65 72 73 74 65 20 54
                S50:000A77B2:  F5
                S50:000A77B3:  72 2E
-F20:0107           dc.b    $0B,$0A,$00,$0B,$1B,$0C,$08,$0F,$02
+F20:0126           dc.b    $0B,$0A,$00,$0B,$1B,$0C,$08,$0F,$02
                S50:000A77B5:  0B
                S50:000A77B6:  0A
                S50:000A77B7:  00
@@ -5193,7 +5212,7 @@ F20:0107           dc.b    $0B,$0A,$00,$0B,$1B,$0C,$08,$0F,$02
                S50:000A77BB:  08
                S50:000A77BC:  0F
                S50:000A77BD:  02
-F20:0108           dc.b    "Die n",ae,"chste Melodie",cc_newline,oe,"ffnet die",cc_newline,"zweite T",ue,"r."
+F20:0127           dc.b    "Die n",ae,"chste Melodie",cc_newline,oe,"ffnet die",cc_newline,"zweite T",ue,"r."
                S50:000A77BE:  44 69 65 20 6E
                S50:000A77C3:  F3
                S50:000A77C4:  63 68 73 74 65 20 4D 65 6C 6F 64 69 65
@@ -5204,7 +5223,7 @@ F20:0108           dc.b    "Die n",ae,"chste Melodie",cc_newline,oe,"ffnet die",
                S50:000A77DD:  7A 77 65 69 74 65 20 54
                S50:000A77E5:  F5
                S50:000A77E6:  72 2E
-F20:0109           dc.b    $0B,$0A,$01,$0B,$1B,$0C,$09,$0F,$02
+F20:0128           dc.b    $0B,$0A,$01,$0B,$1B,$0C,$09,$0F,$02
                S50:000A77E8:  0B
                S50:000A77E9:  0A
                S50:000A77EA:  01
@@ -5214,7 +5233,7 @@ F20:0109           dc.b    $0B,$0A,$01,$0B,$1B,$0C,$09,$0F,$02
                S50:000A77EE:  09
                S50:000A77EF:  0F
                S50:000A77F0:  02
-F20:0110           dc.b    "Die letzte Melodie",cc_newline,oe,"ffnet die",cc_newline,"dritte T",ue,"r."
+F20:0129           dc.b    "Die letzte Melodie",cc_newline,oe,"ffnet die",cc_newline,"dritte T",ue,"r."
                S50:000A77F1:  44 69 65 20 6C 65 74 7A 74 65 20 4D 65 6C 6F 64
                S50:000A7801:  69 65
                S50:000A7803:  09
@@ -5224,7 +5243,7 @@ F20:0110           dc.b    "Die letzte Melodie",cc_newline,oe,"ffnet die",cc_new
                S50:000A780F:  64 72 69 74 74 65 20 54
                S50:000A7817:  F5
                S50:000A7818:  72 2E
-F20:0111           dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$05,$09,$00 
+F20:0130           dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$05,$09,$00 
                S50:000A781A:  0B
                S50:000A781B:  0A
                S50:000A781C:  02
@@ -5238,8 +5257,8 @@ F20:0111           dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$05,$09,$00
                S50:000A7824:  05
                S50:000A7825:  09
                S50:000A7826:  00
-F20:0112           
-F20:0113           dc.b    $00
+F20:0131           
+F20:0132           dc.b    $00
                S50:000A7827:  00
 F00:0054           include "includes/text/pntrs_specialdialogues.asm"
 F21:0001       ; =================================================================================================

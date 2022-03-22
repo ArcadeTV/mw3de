@@ -15,7 +15,8 @@ special1:
     dc.b    $0B,$02,$03,$08 ; show yes/no options
 special1_pntr_wantToBuy:
     dc.w    special1_no-special1_pntr_wantToBuy ; 00 27
-    dc.b    $09,$03,$06,$0B,$03
+    dc.b    cc_newline,cc_speed,$06
+    dc.b    $0B,$03
 special1_pntr_notEnoughGold:
     dc.w    special1_notEnoughGold-special1_pntr_notEnoughGold 
     dc.b    $0B,$07,$0B,$08,$FF,$0B,$09
@@ -30,7 +31,7 @@ special1_notEnoughGold:
     dc.b    cc_newline,"dann kannst Du",cc_newline,"es nicht kaufen.",cc_newline,cc_wait
     dc.b    "Schau doch nochmal",cc_newline,"vorbei, wenn Du mehr",cc_newline,"Gold hast.",cc_wait,cc_close
 
-
+; Inn
 special2:
     dc.b    $0A,$02,cc_speed,$06,cc_margin,$02
     dc.b    "Willkommen in",cc_newline,"meiner Pension.",cc_wait
@@ -71,7 +72,8 @@ special2_t_noSave:
 special2_t_continueQuestion:
     dc.b    cc_speed,$06
     dc.b    cc_newline,cc_newline,"Wirst Du Deine",cc_newline,"Reise am Morgen",cc_newline,"fortsetzen?"
-    dc.b    $0C,$00,$0B,$02,$03,$08
+    dc.b    $0C,$00
+    dc.b    $0B,$02,$03,$08
 special2_p5:
     dc.w    special2_t_noContinue-special2_p5 ; 00 27
     dc.b    cc_newline,cc_speed,$06
@@ -86,21 +88,38 @@ special2_t_doNotStay:
     dc.b    cc_newline,cc_speed,$06
     dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders überlegst.",cc_wait,cc_close
 
+
 special3:
     dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+
 
 special4:
     dc.b    $0B,$19,$18,$10,$20,$00
 
+
 special5:
     dc.b    $0B,$19,$19,$11,$20,$00
+
 
 special6:
     dc.b    $0B,$19,$1A,$12,$20,$00
 
-special7:
-    dc.b    $05,$0B,$22,$03,$08,$0B,$20,$0B,$32,$02,$0B,$1F,$00,$0B,$32,$05,$03,$00,$0B,$1E,$01,$02,$10,$20,$0B,$1F,$01,$02,$20,$11,$20,$0B,$1F,$02,$02,$20,$12,$20,$0B,$1F,$03,$0B,$21,$0B,$18,$1E,$0B,$20,$00
 
+special7:
+    dc.b    $05,$0B,$22,$03,$08
+    dc.b    $0B,$20
+    dc.b    $0B,$32,$02
+    dc.b    $0B,$1F,$00
+    dc.b    $0B,$32,$05,$03,$00
+    dc.b    $0B,$1E,$01,$02,$10,$20
+    dc.b    $0B,$1F,$01,$02,$20,$11,$20
+    dc.b    $0B,$1F,$02,$02,$20,$12,$20
+    dc.b    $0B,$1F,$03
+    dc.b    $0B,$21
+    dc.b    $0B,$18,$1E
+    dc.b    $0B,$20,$00
+
+; Sonia, teaching ocarina melodies
 special8:
     dc.b    cc_newline,cc_lock
     dc.b    "Dies ist die",cc_newline,"Melodie f",ue,"r die",cc_newline,"erste T",ue,"r."
