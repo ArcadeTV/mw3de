@@ -492,7 +492,7 @@ F04:0222           dc.l    base_PointerTable_Dialogues
 F04:0223       
 F04:0224           org     $211CA
 F04:0225           dc.l    base_PointerTable_Snippets
-               S33:000211CA:  00 0A 76 60
+               S33:000211CA:  00 0A 78 38
 F04:0226           
 F04:0227           org     $211CE
 F04:0228           dc.l    base_PointerTable_Items
@@ -504,7 +504,7 @@ F04:0231           dc.l    base_PointerTable_Names
 F04:0232       
 F04:0233           org     $211D6
 F04:0234           dc.l    base_PointerTable_SpecialDialogues
-               S36:000211D6:  00 0A 76 50
+               S36:000211D6:  00 0A 78 28
 F04:0235       
 F04:0236       
 F04:0237       
@@ -512,53 +512,53 @@ F04:0238           ; Replace GFX data pointers:
 F04:0239           ; Font:
 F04:0240           org     $4100C
 F04:0241           dc.l    fontGFX_pack_c+$02000000        ; was 02 041F23
-               S37:0004100C:  02 0A B3 04
+               S37:0004100C:  02 0A B4 DC
 F04:0242           org     $4101C
 F04:0243           dc.l    fontGFX_pack_de+$02000000       ; was 02 0423FA
-               S38:0004101C:  02 0A B1 71
+               S38:0004101C:  02 0A B3 49
 F04:0244       
 F04:0245           ; Exit Sign:
 F04:0246           org     $412E0                          ; was 02 056476
 F04:0247           dc.l    newExitGFX_pack+$02000000       ; was 02 0691F5
-               S39:000412E0:  02 0A AC 37
+               S39:000412E0:  02 0A AE 0F
 F04:0248       
 F04:0249           ; Logo:
 F04:0250           org     $4155C
 F04:0251           dc.l    newLogoGFX_pack1+$02000000      ; was 02 068930
-               S40:0004155C:  02 0A A4 34
+               S40:0004155C:  02 0A A6 0C
 F04:0252       
 F04:0253           org     $41560
 F04:0254           dc.l    newLogoGFX_pack2+$02000000      ; was 02 068ADA
-               S41:00041560:  02 0A A5 F7
+               S41:00041560:  02 0A A7 CF
 F04:0255       
 F04:0256           org     $41564
 F04:0257           dc.l    newLogoGFX_pack3+$02000000      ; was 02 068C8A
-               S42:00041564:  02 0A A7 8D
+               S42:00041564:  02 0A A9 65
 F04:0258       
 F04:0259           org     $41568
 F04:0260           dc.l    newLogoGFX_pack4+$02000000      ; was 02 068E5C
-               S43:00041568:  02 0A A8 F6
+               S43:00041568:  02 0A AA CE
 F04:0261       
 F04:0262           org     $4156C
 F04:0263           dc.l    newLogoGFX_pack5+$02000000      ; was 02 068FEC
-               S44:0004156C:  02 0A AA 44
+               S44:0004156C:  02 0A AC 1C
 F04:0264       
 F04:0265           org     $41570
 F04:0266           dc.l    newLogoGFX_pack6+$02000000      ; was 02 0691F5
-               S45:00041570:  02 0A AB B4
+               S45:00041570:  02 0A AD 8C
 F04:0267       
 F04:0268           ; Titlescreen Text GFX: Press Start Button, New Game, Continue and Arrow
 F04:0269           org     $41598                
 F04:0270           dc.l    newTitleTxtGFX_pack1+$02000000  ; was 02 06A2C9
-               S46:00041598:  02 0A AE 63
+               S46:00041598:  02 0A B0 3B
 F04:0271       
 F04:0272           org     $4159C 
 F04:0273           dc.l    newTitleTxtGFX_pack2+$02000000  ; was 02 06A3F5
-               S47:0004159C:  02 0A AF 90
+               S47:0004159C:  02 0A B1 68
 F04:0274       
 F04:0275           org     $415A0 
 F04:0276           dc.l    newTitleTxtGFX_pack3+$02000000  ; was 02 06A4FE
-               S48:000415A0:  02 0A B0 99
+               S48:000415A0:  02 0A B2 71
 F04:0277       
 F04:0278           ; Replace Sprite Table Values for re-positioning:
 F04:0279           org     $A0E4C                          ; Sprite Table for Copyright Stuff
@@ -693,27 +693,27 @@ F06:0029           bra.s   ret_bypassSpriteTableAddress    ; If no matches found
                S50:000A4CC0:  60 26
 F06:0030       setNewSpriteTable_logo:
 F06:0031           move.l  #newSpriteTable_logo,d1         ; If found, load our own address into D1
-               S50:000A4CC2:  22 3C 00 0A 83 7E
+               S50:000A4CC2:  22 3C 00 0A 85 56
 F06:0032           bra.s   ret_bypassSpriteTableAddress
                S50:000A4CC8:  60 1E
 F06:0033       setNewSpriteTable_arrow:
 F06:0034           move.l  #newSpriteTable_arrow,d1        ; If found, load our own address into D1
-               S50:000A4CCA:  22 3C 00 0A 84 2C
+               S50:000A4CCA:  22 3C 00 0A 86 04
 F06:0035           bra.s   ret_bypassSpriteTableAddress
                S50:000A4CD0:  60 16
 F06:0036       setNewSpriteTable_pressStart:
 F06:0037           move.l  #newSpriteTable_pressStart,d1   ; If found, load our own address into D1
-               S50:000A4CD2:  22 3C 00 0A 83 ED
+               S50:000A4CD2:  22 3C 00 0A 85 C5
 F06:0038           bra.s   ret_bypassSpriteTableAddress
                S50:000A4CD8:  60 0E
 F06:0039       setNewSpriteTable_newGame:
 F06:0040           move.l  #newSpriteTable_newGame,d1      ; If found, load our own address into D1
-               S50:000A4CDA:  22 3C 00 0A 84 02
+               S50:000A4CDA:  22 3C 00 0A 85 DA
 F06:0041           bra.s   ret_bypassSpriteTableAddress
                S50:000A4CE0:  60 06
 F06:0042       setNewSpriteTable_continue:
 F06:0043           move.l  #newSpriteTable_continue,d1     ; If found, load our own address into D1
-               S50:000A4CE2:  22 3C 00 0A 84 17
+               S50:000A4CE2:  22 3C 00 0A 85 EF
 F06:0044       ret_bypassSpriteTableAddress:
 F06:0045           move.l  d1,$FFFFC100(a4)                ; Adopt original instruction
                S50:000A4CE8:  29 41 C1 00
@@ -729,7 +729,7 @@ F06:0052           SetVRAMWrite vram_addr_plane_a          ; Call macro to set a
 F07:0001           move.l  #(vdp_cmd_vram_write)|((vram_addr_plane_a)&$3FFF)<<16|(vram_addr_plane_a)>>14,vdp_control
                S50:000A4CF4:  23 FC 40 00 00 03 00 C0 00 04
 F06:0053           lea     planeMapA,a4                    ; Move the address of the first graphics tile into a4
-               S50:000A4CFE:  49 FA 37 34
+               S50:000A4CFE:  49 FA 39 0C
 F06:0054           jsr     writePlanemap
                S50:000A4D02:  61 18
 F06:0055       writePlanemapB:
@@ -737,7 +737,7 @@ F06:0056           SetVRAMWrite vram_addr_plane_b          ; Call macro to set a
 F08:0001           move.l  #(vdp_cmd_vram_write)|((vram_addr_plane_b)&$3FFF)<<16|(vram_addr_plane_b)>>14,vdp_control
                S50:000A4D04:  23 FC 60 00 00 03 00 C0 00 04
 F06:0057           lea     planeMapB,a4                    ; Move the address of the first graphics tile into a4
-               S50:000A4D0E:  49 FA 47 24
+               S50:000A4D0E:  49 FA 48 FC
 F06:0058           jsr     writePlanemap
                S50:000A4D12:  61 08
 F06:0059           movem.l (sp)+,d0/d1/a4                  ; restore registers
@@ -832,7 +832,7 @@ F09:0001           move.l  #(vdp_cmd_vram_write)|(($1000)&$3FFF)<<16|($1000)>>14
                S50:000A4D84:  23 FC 50 00 00 00 00 C0 00 04
 F06:0118       
 F06:0119       	lea     tileData_theEnd_de,a0			; Move the address of the first graphics tile into a0
-               S50:000A4D8E:  41 FA 66 58
+               S50:000A4D8E:  41 FA 68 30
 F06:0120       	move.l  #((tilecount_theEnd+tilecount_toBeContinued)*size_tile_l)-1,d0  
                S50:000A4D92:  20 3C 00 00 02 0F
 F06:0121                                                   ; Loop counter = 8 longwords per tile * num tiles (-1 for DBRA loop)
@@ -856,7 +856,7 @@ F06:0132
 F06:0133       
 F06:0134       bypassstaffRoll:
 F06:0135           lea     staffRoll,a1                    ; change address in original instruction
-               S50:000A4DB8:  43 FA 33 EE
+               S50:000A4DB8:  43 FA 35 C6
 F06:0136           move.l  a1,($FFA3B6).l                  ; Adopt original instruction
                S50:000A4DBC:  23 C9 00 FF A3 B6
 F06:0137           jmp     ret_bypassstaffRoll             ; return to game code
@@ -4862,89 +4862,385 @@ F20:0031           dc.b    "Schau doch nochmal",cc_newline,"vorbei, wenn Du mehr
 F20:0032       
 F20:0033       
 F20:0034       special2:
-F20:0035           dc.b "Hier wird noch an",cc_newline,"Special 2 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A74D5:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A74E5:  6E
-               S50:000A74E6:  09
-               S50:000A74E7:  53 70 65 63 69 61 6C 20 32 20 67 65 61 72 62 65
-               S50:000A74F7:  69 74 65 74 2E
-               S50:000A74FC:  09
-               S50:000A74FD:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A7509:  05
-               S50:000A750A:  00
-F20:0036       
-F20:0037       special3:
-F20:0038           dc.b "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A750B:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A751B:  6E
-               S50:000A751C:  09
-               S50:000A751D:  53 70 65 63 69 61 6C 20 33 20 67 65 61 72 62 65
-               S50:000A752D:  69 74 65 74 2E
-               S50:000A7532:  09
-               S50:000A7533:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A753F:  05
-               S50:000A7540:  00
-F20:0039       
-F20:0040       special4:
-F20:0041           dc.b "Hier wird noch an",cc_newline,"Special 4 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A7541:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A7551:  6E
-               S50:000A7552:  09
-               S50:000A7553:  53 70 65 63 69 61 6C 20 34 20 67 65 61 72 62 65
-               S50:000A7563:  69 74 65 74 2E
-               S50:000A7568:  09
-               S50:000A7569:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A7575:  05
-               S50:000A7576:  00
-F20:0042       
-F20:0043       special5:
-F20:0044           dc.b "Hier wird noch an",cc_newline,"Special 5 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A7577:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A7587:  6E
-               S50:000A7588:  09
-               S50:000A7589:  53 70 65 63 69 61 6C 20 35 20 67 65 61 72 62 65
-               S50:000A7599:  69 74 65 74 2E
-               S50:000A759E:  09
-               S50:000A759F:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A75AB:  05
-               S50:000A75AC:  00
-F20:0045       
-F20:0046       special6:
-F20:0047           dc.b "Hier wird noch an",cc_newline,"Special 6 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A75AD:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A75BD:  6E
-               S50:000A75BE:  09
-               S50:000A75BF:  53 70 65 63 69 61 6C 20 36 20 67 65 61 72 62 65
-               S50:000A75CF:  69 74 65 74 2E
-               S50:000A75D4:  09
-               S50:000A75D5:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A75E1:  05
-               S50:000A75E2:  00
-F20:0048       
-F20:0049       special7:
-F20:0050           dc.b "Hier wird noch an",cc_newline,"Special 7 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A75E3:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A75F3:  6E
-               S50:000A75F4:  09
-               S50:000A75F5:  53 70 65 63 69 61 6C 20 37 20 67 65 61 72 62 65
-               S50:000A7605:  69 74 65 74 2E
-               S50:000A760A:  09
-               S50:000A760B:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A7617:  05
-               S50:000A7618:  00
-F20:0051       
-F20:0052       special8:
-F20:0053           dc.b "Hier wird noch an",cc_newline,"Special 8 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-               S50:000A7619:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
-               S50:000A7629:  6E
+F20:0035           dc.b    $0A,$02,cc_speed,$06,cc_margin,$02
+               S50:000A74D5:  0A
+               S50:000A74D6:  02
+               S50:000A74D7:  03
+               S50:000A74D8:  06
+               S50:000A74D9:  04
+               S50:000A74DA:  02
+F20:0036           dc.b    "Willkommen in",cc_newline,"meiner Pension.",cc_wait
+               S50:000A74DB:  57 69 6C 6C 6B 6F 6D 6D 65 6E 20 69 6E
+               S50:000A74E8:  09
+               S50:000A74E9:  6D 65 69 6E 65 72 20 50 65 6E 73 69 6F 6E 2E
+               S50:000A74F8:  05
+F20:0037           dc.b    cc_newline,cc_newline
+               S50:000A74F9:  09
+               S50:000A74FA:  09
+F20:0038           dc.b    "Ich kann Dir ein",cc_newline,"bequemes Bett",cc_newline,"anbieten.",cc_wait
+               S50:000A74FB:  49 63 68 20 6B 61 6E 6E 20 44 69 72 20 65 69 6E
+               S50:000A750B:  09
+               S50:000A750C:  62 65 71 75 65 6D 65 73 20 42 65 74 74
+               S50:000A7519:  09
+               S50:000A751A:  61 6E 62 69 65 74 65 6E 2E
+               S50:000A7523:  05
+F20:0039           dc.b    cc_newline,cc_newline
+               S50:000A7524:  09
+               S50:000A7525:  09
+F20:0040           dc.b    "Das Zimmer kostet",$02,$0C,$05,cc_newline,"f",ue,"r eine Nacht.",cc_wait
+               S50:000A7526:  44 61 73 20 5A 69 6D 6D 65 72 20 6B 6F 73 74 65
+               S50:000A7536:  74
+               S50:000A7537:  02
+               S50:000A7538:  0C
+               S50:000A7539:  05
+               S50:000A753A:  09
+               S50:000A753B:  66
+               S50:000A753C:  F5
+               S50:000A753D:  72 20 65 69 6E 65 20 4E 61 63 68 74 2E
+               S50:000A754A:  05
+F20:0041           dc.b    cc_newline,cc_newline
+               S50:000A754B:  09
+               S50:000A754C:  09
+F20:0042           dc.b    "M",oe,"chtest Du bei",cc_newline,"uns ",ue,"bernachten?"
+               S50:000A754D:  4D
+               S50:000A754E:  F4
+               S50:000A754F:  63 68 74 65 73 74 20 44 75 20 62 65 69
+               S50:000A755C:  09
+               S50:000A755D:  75 6E 73 20
+               S50:000A7561:  F5
+               S50:000A7562:  62 65 72 6E 61 63 68 74 65 6E 3F
+F20:0043           dc.b    $0C,$00
+               S50:000A756D:  0C
+               S50:000A756E:  00
+F20:0044           dc.b    $0B,$02,$03,$08
+               S50:000A756F:  0B
+               S50:000A7570:  02
+               S50:000A7571:  03
+               S50:000A7572:  08
+F20:0045       special2_p1:
+F20:0046           dc.w    special2_t_doNotStay-special2_p1 ; FE D6
+               S50:000A7573:  01 65
+F20:0047           dc.b    cc_newline,cc_speed,$06
+               S50:000A7575:  09
+               S50:000A7576:  03
+               S50:000A7577:  06
+F20:0048           dc.b    $0B,$03
+               S50:000A7578:  0B
+               S50:000A7579:  03
+F20:0049       special2_p2:
+F20:0050           dc.w    special2_t_notEnoughMoney-special2_p2 ; 00 09
+               S50:000A757A:  00 09
+F20:0051           dc.b    $0B,$07
+               S50:000A757C:  0B
+               S50:000A757D:  07
+F20:0052           dc.b    $0B,$15,$06
+               S50:000A757E:  0B
+               S50:000A757F:  15
+               S50:000A7580:  06
+F20:0053       special2_p3:
+F20:0054           dc.w    special2_t_saveQuestion-special2_p3 ; 00 5B
+               S50:000A7581:  00 7B
+F20:0055       special2_t_notEnoughMoney:
+F20:0056           dc.b    cc_newline,"Oh, Du kannst",cc_newline,"es Dir gerade",cc_newline,"nicht leisten?",cc_wait
+               S50:000A7583:  09
+               S50:000A7584:  4F 68 2C 20 44 75 20 6B 61 6E 6E 73 74
+               S50:000A7591:  09
+               S50:000A7592:  65 73 20 44 69 72 20 67 65 72 61 64 65
+               S50:000A759F:  09
+               S50:000A75A0:  6E 69 63 68 74 20 6C 65 69 73 74 65 6E 3F
+               S50:000A75AE:  05
+F20:0057           dc.b    cc_newline,"Das ist schon okay.",cc_newline,cc_newline,cc_wait
+               S50:000A75AF:  09
+               S50:000A75B0:  44 61 73 20 69 73 74 20 73 63 68 6F 6E 20 6F 6B
+               S50:000A75C0:  61 79 2E
+               S50:000A75C3:  09
+               S50:000A75C4:  09
+               S50:000A75C5:  05
+F20:0058           dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie Du",cc_newline,"entbehren kannst."
+               S50:000A75C6:  09
+               S50:000A75C7:  42 65 7A 61 68 6C 65 20 65 69 6E 66 61 63 68
+               S50:000A75D6:  09
+               S50:000A75D7:  73 6F 20 76 69 65 6C 2C 20 77 69 65 20 44 75
+               S50:000A75E6:  09
+               S50:000A75E7:  65 6E 74 62 65 68 72 65 6E 20 6B 61 6E 6E 73 74
+               S50:000A75F7:  2E
+F20:0059           dc.b    $0B,$10 
+               S50:000A75F8:  0B
+               S50:000A75F9:  10
+F20:0060           dc.b    $0B,$15
+               S50:000A75FA:  0B
+               S50:000A75FB:  15
+F20:0061       special2_t_saveQuestion:
+F20:0062           dc.b    cc_newline,"M",oe,"chtest Du",cc_newline,"speichern?"
+               S50:000A75FC:  09
+               S50:000A75FD:  4D
+               S50:000A75FE:  F4
+               S50:000A75FF:  63 68 74 65 73 74 20 44 75
+               S50:000A7608:  09
+               S50:000A7609:  73 70 65 69 63 68 65 72 6E 3F
+F20:0063           dc.b    $0C,$00
+               S50:000A7613:  0C
+               S50:000A7614:  00
+F20:0064           dc.b    $0B,$02,$03,$08
+               S50:000A7615:  0B
+               S50:000A7616:  02
+               S50:000A7617:  03
+               S50:000A7618:  08
+F20:0065       special2_p4:
+F20:0066           dc.w    special2_t_continueQuestion-special2_p4 ; 00 1A
+               S50:000A7619:  00 26
+F20:0067           dc.b    cc_speed,$06
+               S50:000A761B:  03
+               S50:000A761C:  06
+F20:0068           dc.b    $09,$0B,$0B
+               S50:000A761D:  09
+               S50:000A761E:  0B
+               S50:000A761F:  0B
+F20:0069           dc.b    "Dein Spiel",cc_newline,"wurde gespeichert.",cc_newline,cc_wait
+               S50:000A7620:  44 65 69 6E 20 53 70 69 65 6C
                S50:000A762A:  09
-               S50:000A762B:  53 70 65 63 69 61 6C 20 38 20 67 65 61 72 62 65
-               S50:000A763B:  69 74 65 74 2E
-               S50:000A7640:  09
-               S50:000A7641:  56 65 72 73 63 68 77 69 6E 64 65 21
-               S50:000A764D:  05
-               S50:000A764E:  00
-F20:0054       
+               S50:000A762B:  77 75 72 64 65 20 67 65 73 70 65 69 63 68 65 72
+               S50:000A763B:  74 2E
+               S50:000A763D:  09
+               S50:000A763E:  05
+F20:0070       special2_t_noSave:
+F20:0071       special2_t_continueQuestion:
+F20:0072           dc.b    cc_speed,$06
+               S50:000A763F:  03
+               S50:000A7640:  06
+F20:0073           dc.b    cc_newline,cc_newline,"Wirst Du Deine",cc_newline,"Reise am Morgen",cc_newline,"fortsetzen?"
+               S50:000A7641:  09
+               S50:000A7642:  09
+               S50:000A7643:  57 69 72 73 74 20 44 75 20 44 65 69 6E 65
+               S50:000A7651:  09
+               S50:000A7652:  52 65 69 73 65 20 61 6D 20 4D 6F 72 67 65 6E
+               S50:000A7661:  09
+               S50:000A7662:  66 6F 72 74 73 65 74 7A 65 6E 3F
+F20:0074           dc.b    $0C,$00,$0B,$02,$03,$08
+               S50:000A766D:  0C
+               S50:000A766E:  00
+               S50:000A766F:  0B
+               S50:000A7670:  02
+               S50:000A7671:  03
+               S50:000A7672:  08
+F20:0075       special2_p5:
+F20:0076           dc.w    special2_t_noContinue-special2_p5 ; 00 27
+               S50:000A7673:  00 25
+F20:0077           dc.b    cc_newline,cc_speed,$06
+               S50:000A7675:  09
+               S50:000A7676:  03
+               S50:000A7677:  06
+F20:0078           dc.b    "Gute Nacht,",cc_newline,"erhol Dich gut!",cc_newline,cc_wait
+               S50:000A7678:  47 75 74 65 20 4E 61 63 68 74 2C
+               S50:000A7683:  09
+               S50:000A7684:  65 72 68 6F 6C 20 44 69 63 68 20 67 75 74 21
+               S50:000A7693:  09
+               S50:000A7694:  05
+F20:0079           dc.b    $0B,$0D,cc_close
+               S50:000A7695:  0B
+               S50:000A7696:  0D
+               S50:000A7697:  00
+F20:0080       special2_t_noContinue:
+F20:0081           dc.b    cc_newline,cc_speed,$06
+               S50:000A7698:  09
+               S50:000A7699:  03
+               S50:000A769A:  06
+F20:0082           dc.b    "Wie schade,",cc_newline,"aber wir sehen",cc_newline,"uns wieder, ja?",cc_wait
+               S50:000A769B:  57 69 65 20 73 63 68 61 64 65 2C
+               S50:000A76A6:  09
+               S50:000A76A7:  61 62 65 72 20 77 69 72 20 73 65 68 65 6E
+               S50:000A76B5:  09
+               S50:000A76B6:  75 6E 73 20 77 69 65 64 65 72 2C 20 6A 61 3F
+               S50:000A76C5:  05
+F20:0083           dc.b    cc_newline,"Gute Nacht.",cc_newline,cc_newline,cc_wait
+               S50:000A76C6:  09
+               S50:000A76C7:  47 75 74 65 20 4E 61 63 68 74 2E
+               S50:000A76D2:  09
+               S50:000A76D3:  09
+               S50:000A76D4:  05
+F20:0084           dc.b    $0B,$0C,cc_close
+               S50:000A76D5:  0B
+               S50:000A76D6:  0C
+               S50:000A76D7:  00
+F20:0085       special2_t_doNotStay:
+F20:0086           dc.b    cc_newline,cc_speed,$06
+               S50:000A76D8:  09
+               S50:000A76D9:  03
+               S50:000A76DA:  06
+F20:0087           dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders überlegst.",cc_wait,cc_close
+               S50:000A76DB:  42 65 73 75 63 68 65 20 75 6E 73 20 77 69 65 64
+               S50:000A76EB:  65 72 2C
+               S50:000A76EE:  09
+               S50:000A76EF:  66 61 6C 6C 73 20 44 75 20 65 73 20 44 69 72
+               S50:000A76FE:  09
+               S50:000A76FF:  61 6E 64 65 72 73 20 C3 BC 62 65 72 6C 65 67 73
+               S50:000A770F:  74 2E
+               S50:000A7711:  05
+               S50:000A7712:  00
+F20:0088       
+F20:0089       special3:
+F20:0090           dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+               S50:000A7713:  48 69 65 72 20 77 69 72 64 20 6E 6F 63 68 20 61
+               S50:000A7723:  6E
+               S50:000A7724:  09
+               S50:000A7725:  53 70 65 63 69 61 6C 20 33 20 67 65 61 72 62 65
+               S50:000A7735:  69 74 65 74 2E
+               S50:000A773A:  09
+               S50:000A773B:  56 65 72 73 63 68 77 69 6E 64 65 21
+               S50:000A7747:  05
+               S50:000A7748:  00
+F20:0091       
+F20:0092       special4:
+F20:0093           dc.b    $0B,$19,$18,$10,$20,$00
+               S50:000A7749:  0B
+               S50:000A774A:  19
+               S50:000A774B:  18
+               S50:000A774C:  10
+               S50:000A774D:  20
+               S50:000A774E:  00
+F20:0094       
+F20:0095       special5:
+F20:0096           dc.b    $0B,$19,$19,$11,$20,$00
+               S50:000A774F:  0B
+               S50:000A7750:  19
+               S50:000A7751:  19
+               S50:000A7752:  11
+               S50:000A7753:  20
+               S50:000A7754:  00
+F20:0097       
+F20:0098       special6:
+F20:0099           dc.b    $0B,$19,$1A,$12,$20,$00
+               S50:000A7755:  0B
+               S50:000A7756:  19
+               S50:000A7757:  1A
+               S50:000A7758:  12
+               S50:000A7759:  20
+               S50:000A775A:  00
+F20:0100       
+F20:0101       special7:
+F20:0102           dc.b    $05,$0B,$22,$03,$08,$0B,$20,$0B,$32,$02,$0B,$1F,$00,$0B,$32,$05,$03,$00,$0B,$1E,$01,$02,$10,$20,$0B,$1F,$01,
+               S50:000A775B:  05
+               S50:000A775C:  0B
+               S50:000A775D:  22
+               S50:000A775E:  03
+               S50:000A775F:  08
+               S50:000A7760:  0B
+               S50:000A7761:  20
+               S50:000A7762:  0B
+               S50:000A7763:  32
+               S50:000A7764:  02
+               S50:000A7765:  0B
+               S50:000A7766:  1F
+               S50:000A7767:  00
+               S50:000A7768:  0B
+               S50:000A7769:  32
+               S50:000A776A:  05
+               S50:000A776B:  03
+               S50:000A776C:  00
+               S50:000A776D:  0B
+               S50:000A776E:  1E
+               S50:000A776F:  01
+               S50:000A7770:  02
+               S50:000A7771:  10
+               S50:000A7772:  20
+               S50:000A7773:  0B
+               S50:000A7774:  1F
+               S50:000A7775:  01
+               S50:000A7776:  02
+               S50:000A7777:  20
+               S50:000A7778:  11
+               S50:000A7779:  20
+               S50:000A777A:  0B
+               S50:000A777B:  1F
+               S50:000A777C:  02
+               S50:000A777D:  02
+               S50:000A777E:  20
+               S50:000A777F:  12
+               S50:000A7780:  20
+               S50:000A7781:  0B
+               S50:000A7782:  1F
+               S50:000A7783:  03
+               S50:000A7784:  0B
+               S50:000A7785:  21
+               S50:000A7786:  0B
+               S50:000A7787:  18
+               S50:000A7788:  1E
+               S50:000A7789:  0B
+               S50:000A778A:  20
+               S50:000A778B:  00
+F20:0103       
+F20:0104       special8:
+F20:0105           dc.b    cc_newline,cc_lock
+               S50:000A778C:  09
+               S50:000A778D:  07
+F20:0106           dc.b    "Dies ist die",cc_newline,"Melodie f",ue,"r die",cc_newline,"erste T",ue,"r."
+               S50:000A778E:  44 69 65 73 20 69 73 74 20 64 69 65
+               S50:000A779A:  09
+               S50:000A779B:  4D 65 6C 6F 64 69 65 20 66
+               S50:000A77A4:  F5
+               S50:000A77A5:  72 20 64 69 65
+               S50:000A77AA:  09
+               S50:000A77AB:  65 72 73 74 65 20 54
+               S50:000A77B2:  F5
+               S50:000A77B3:  72 2E
+F20:0107           dc.b    $0B,$0A,$00,$0B,$1B,$0C,$08,$0F,$02
+               S50:000A77B5:  0B
+               S50:000A77B6:  0A
+               S50:000A77B7:  00
+               S50:000A77B8:  0B
+               S50:000A77B9:  1B
+               S50:000A77BA:  0C
+               S50:000A77BB:  08
+               S50:000A77BC:  0F
+               S50:000A77BD:  02
+F20:0108           dc.b    "Die n",ae,"chste Melodie",cc_newline,oe,"ffnet die",cc_newline,"zweite T",ue,"r."
+               S50:000A77BE:  44 69 65 20 6E
+               S50:000A77C3:  F3
+               S50:000A77C4:  63 68 73 74 65 20 4D 65 6C 6F 64 69 65
+               S50:000A77D1:  09
+               S50:000A77D2:  F4
+               S50:000A77D3:  66 66 6E 65 74 20 64 69 65
+               S50:000A77DC:  09
+               S50:000A77DD:  7A 77 65 69 74 65 20 54
+               S50:000A77E5:  F5
+               S50:000A77E6:  72 2E
+F20:0109           dc.b    $0B,$0A,$01,$0B,$1B,$0C,$09,$0F,$02
+               S50:000A77E8:  0B
+               S50:000A77E9:  0A
+               S50:000A77EA:  01
+               S50:000A77EB:  0B
+               S50:000A77EC:  1B
+               S50:000A77ED:  0C
+               S50:000A77EE:  09
+               S50:000A77EF:  0F
+               S50:000A77F0:  02
+F20:0110           dc.b    "Die letzte Melodie",cc_newline,oe,"ffnet die",cc_newline,"dritte T",ue,"r."
+               S50:000A77F1:  44 69 65 20 6C 65 74 7A 74 65 20 4D 65 6C 6F 64
+               S50:000A7801:  69 65
+               S50:000A7803:  09
+               S50:000A7804:  F4
+               S50:000A7805:  66 66 6E 65 74 20 64 69 65
+               S50:000A780E:  09
+               S50:000A780F:  64 72 69 74 74 65 20 54
+               S50:000A7817:  F5
+               S50:000A7818:  72 2E
+F20:0111           dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$05,$09,$00 
+               S50:000A781A:  0B
+               S50:000A781B:  0A
+               S50:000A781C:  02
+               S50:000A781D:  0B
+               S50:000A781E:  1B
+               S50:000A781F:  0C
+               S50:000A7820:  0A
+               S50:000A7821:  0F
+               S50:000A7822:  02
+               S50:000A7823:  08
+               S50:000A7824:  05
+               S50:000A7825:  09
+               S50:000A7826:  00
+F20:0112           
+F20:0113           dc.b    $00
+               S50:000A7827:  00
 F00:0054           include "includes/text/pntrs_specialdialogues.asm"
 F21:0001       ; =================================================================================================
 F21:0002       ; POINTER TABLE DATA: SPECIAL DIALOGUES (Shop, Inn, Music-Teacher..)
@@ -4956,24 +5252,33 @@ F21:0007
 F21:0008           align 2
 F21:0009       
 F21:0010       base_PointerTable_SpecialDialogues:
-F21:0011       
-F21:0012           dc.w special1-base_PointerTable_SpecialDialogues
-               S50:000A7650:  FD 35
-F21:0013           dc.w special2-base_PointerTable_SpecialDialogues
-               S50:000A7652:  FE 85
-F21:0014           dc.w special3-base_PointerTable_SpecialDialogues
-               S50:000A7654:  FE BB
-F21:0015           dc.w special4-base_PointerTable_SpecialDialogues
-               S50:000A7656:  FE F1
-F21:0016           dc.w special5-base_PointerTable_SpecialDialogues
-               S50:000A7658:  FF 27
-F21:0017           dc.w special6-base_PointerTable_SpecialDialogues
-               S50:000A765A:  FF 5D
-F21:0018           dc.w special7-base_PointerTable_SpecialDialogues
-               S50:000A765C:  FF 93
-F21:0019           dc.w special8-base_PointerTable_SpecialDialogues
-               S50:000A765E:  FF C9
-F21:0020           
+F21:0011                                                            ;negative absolute     pointsTo
+F21:0012                                                            ; ˅       ˅            ˅
+F21:0013           dc.w special1-base_PointerTable_SpecialDialogues ; FBB4 => 044C         21B7E-21CC5
+               S50:000A7828:  FB 5D
+F21:0014           dc.w special2-base_PointerTable_SpecialDialogues ; FCFC => 0304         21CC6-21E6B
+               S50:000A782A:  FC AD
+F21:0015           dc.w special3-base_PointerTable_SpecialDialogues ; FEA2 => 015E         21E6C-21EF3
+               S50:000A782C:  FE EB
+F21:0016           dc.w special4-base_PointerTable_SpecialDialogues ; FF2A => 00D6         21EF4-21EF9
+               S50:000A782E:  FF 21
+F21:0017           dc.w special5-base_PointerTable_SpecialDialogues ; FF30 => 00D0         21EFA-21EFF
+               S50:000A7830:  FF 27
+F21:0018           dc.w special6-base_PointerTable_SpecialDialogues ; FF36 => 00CA         21F00-21F05
+               S50:000A7832:  FF 2D
+F21:0019           dc.w special7-base_PointerTable_SpecialDialogues ; FF3C => 00C4         21F06-21F36
+               S50:000A7834:  FF 33
+F21:0020           dc.w special8-base_PointerTable_SpecialDialogues ; FF6D => 0093         21F37-21FC9
+               S50:000A7836:  FF 64
+F21:0021           
+F21:0022           
+F21:0023           
+F21:0024           
+F21:0025           
+F21:0026           
+F21:0027           
+F21:0028           
+F21:0029           
 F00:0055       
 F00:0056           include "includes/text/pntrs_snippets.asm"
 F22:0001       ; =================================================================================================
@@ -4988,471 +5293,471 @@ F22:0009
 F22:0010       base_PointerTable_Snippets:
 F22:0011       
 F22:0012           dc.w snippet1-base_PointerTable_Snippets  ; 01: 01D0
-               S50:000A7660:  01 D0
+               S50:000A7838:  01 D0
 F22:0013           dc.w snippet2-base_PointerTable_Snippets  ; 02: 01DD
-               S50:000A7662:  01 DF
+               S50:000A783A:  01 DF
 F22:0014           dc.w snippet3-base_PointerTable_Snippets  ; 03: 01E3
-               S50:000A7664:  01 E6
+               S50:000A783C:  01 E6
 F22:0015           dc.w snippet4-base_PointerTable_Snippets  ; 04: 01EA
-               S50:000A7666:  01 ED
+               S50:000A783E:  01 ED
 F22:0016           dc.w snippet5-base_PointerTable_Snippets  ; 05: 01F4
-               S50:000A7668:  01 F7
+               S50:000A7840:  01 F7
 F22:0017           dc.w snippet6-base_PointerTable_Snippets  ; 06: 01FB
-               S50:000A766A:  01 FE
+               S50:000A7842:  01 FE
 F22:0018           dc.w snippet7-base_PointerTable_Snippets  ; 07: 0205
-               S50:000A766C:  02 08
+               S50:000A7844:  02 08
 F22:0019           dc.w snippet8-base_PointerTable_Snippets  ; 08: 020C
-               S50:000A766E:  02 0F
+               S50:000A7846:  02 0F
 F22:0020           dc.w snippet9-base_PointerTable_Snippets  ; 09: 0213
-               S50:000A7670:  02 16
+               S50:000A7848:  02 16
 F22:0021           dc.w snippet10-base_PointerTable_Snippets ; 10: 0227
-               S50:000A7672:  02 2A
+               S50:000A784A:  02 2A
 F22:0022           dc.w snippet11-base_PointerTable_Snippets ; 11: 023B
-               S50:000A7674:  02 3E
+               S50:000A784C:  02 3E
 F22:0023           dc.w snippet12-base_PointerTable_Snippets ; 12: 024F
-               S50:000A7676:  02 52
+               S50:000A784E:  02 52
 F22:0024           dc.w snippet13-base_PointerTable_Snippets ; 13: 027C
-               S50:000A7678:  02 85
+               S50:000A7850:  02 85
 F22:0025           dc.w snippet14-base_PointerTable_Snippets ; 14: 0287
-               S50:000A767A:  02 8F
+               S50:000A7852:  02 8F
 F22:0026           dc.w snippet15-base_PointerTable_Snippets ; 15: 028F
-               S50:000A767C:  02 96
+               S50:000A7854:  02 96
 F22:0027           dc.w snippet16-base_PointerTable_Snippets ; 16: 0295
-               S50:000A767E:  02 9B
+               S50:000A7856:  02 9B
 F22:0028           dc.w snippet17-base_PointerTable_Snippets ; 17: 02C6
-               S50:000A7680:  02 CB
+               S50:000A7858:  02 CB
 F22:0029           dc.w snippet18-base_PointerTable_Snippets ; 18: 02CE
-               S50:000A7682:  02 D3
+               S50:000A785A:  02 D3
 F22:0030           dc.w snippet19-base_PointerTable_Snippets ; 19: 02D7
-               S50:000A7684:  02 DC
+               S50:000A785C:  02 DC
 F22:0031           dc.w snippet20-base_PointerTable_Snippets ; 20: 02DD
-               S50:000A7686:  02 E2
+               S50:000A785E:  02 E2
 F22:0032           dc.w snippet21-base_PointerTable_Snippets ; 21: 030B
-               S50:000A7688:  03 11
+               S50:000A7860:  03 11
 F22:0033           dc.w snippet22-base_PointerTable_Snippets ; 22: 0313
-               S50:000A768A:  03 19
+               S50:000A7862:  03 19
 F22:0034           dc.w snippet23-base_PointerTable_Snippets ; 23: 0320
-               S50:000A768C:  03 26
+               S50:000A7864:  03 26
 F22:0035           dc.w snippet24-base_PointerTable_Snippets ; 24: 0329
-               S50:000A768E:  03 2F
+               S50:000A7866:  03 2F
 F22:0036           dc.w snippet25-base_PointerTable_Snippets ; 25: 035E
-               S50:000A7690:  03 6D
+               S50:000A7868:  03 6D
 F22:0037           dc.w snippet26-base_PointerTable_Snippets ; 26: 0363
-               S50:000A7692:  03 78
+               S50:000A786A:  03 78
 F22:0038           dc.w snippet27-base_PointerTable_Snippets ; 27: 036A
-               S50:000A7694:  03 84
+               S50:000A786C:  03 84
 F22:0039           dc.w snippet28-base_PointerTable_Snippets ; 28: 0372
-               S50:000A7696:  03 91
+               S50:000A786E:  03 91
 F22:0040           dc.w snippet29-base_PointerTable_Snippets ; 29: 03B0
-               S50:000A7698:  03 C9
+               S50:000A7870:  03 C9
 F22:0041           dc.w snippet30-base_PointerTable_Snippets ; 30: 03B8
-               S50:000A769A:  03 D2
+               S50:000A7872:  03 D2
 F22:0042           dc.w snippet31-base_PointerTable_Snippets ; 31: 03C2
-               S50:000A769C:  03 DC
+               S50:000A7874:  03 DC
 F22:0043           dc.w snippet32-base_PointerTable_Snippets ; 32: 03CF
-               S50:000A769E:  03 E8
+               S50:000A7876:  03 E8
 F22:0044           dc.w snippet33-base_PointerTable_Snippets ; 33: 03F5
-               S50:000A76A0:  04 1F
+               S50:000A7878:  04 1F
 F22:0045           dc.w snippet34-base_PointerTable_Snippets ; 34: 03FC
-               S50:000A76A2:  04 26
+               S50:000A787A:  04 26
 F22:0046           dc.w snippet35-base_PointerTable_Snippets ; 35: 0404
-               S50:000A76A4:  04 2E
+               S50:000A787C:  04 2E
 F22:0047           dc.w snippet36-base_PointerTable_Snippets ; 36: 040D
-               S50:000A76A6:  04 37
+               S50:000A787E:  04 37
 F22:0048           dc.w snippet37-base_PointerTable_Snippets ; 37: 043A
-               S50:000A76A8:  04 74
+               S50:000A7880:  04 74
 F22:0049           dc.w snippet38-base_PointerTable_Snippets ; 38: 0443
-               S50:000A76AA:  04 85
+               S50:000A7882:  04 85
 F22:0050           dc.w snippet39-base_PointerTable_Snippets ; 39: 044B
-               S50:000A76AC:  04 95
+               S50:000A7884:  04 95
 F22:0051           dc.w snippet40-base_PointerTable_Snippets ; 40: 0454
-               S50:000A76AE:  04 A3
+               S50:000A7886:  04 A3
 F22:0052           dc.w snippet41-base_PointerTable_Snippets ; 41: 0475
-               S50:000A76B0:  04 C2
+               S50:000A7888:  04 C2
 F22:0053           dc.w snippet42-base_PointerTable_Snippets ; 42: 0480
-               S50:000A76B2:  04 CE
+               S50:000A788A:  04 CE
 F22:0054           dc.w snippet43-base_PointerTable_Snippets ; 43: 048C
-               S50:000A76B4:  04 DB
+               S50:000A788C:  04 DB
 F22:0055           dc.w snippet44-base_PointerTable_Snippets ; 44: 0499
-               S50:000A76B6:  04 E9
+               S50:000A788E:  04 E9
 F22:0056           dc.w snippet45-base_PointerTable_Snippets ; 45: 04CA
-               S50:000A76B8:  05 30
+               S50:000A7890:  05 30
 F22:0057           dc.w snippet46-base_PointerTable_Snippets ; 46: 04D7
-               S50:000A76BA:  05 3E
+               S50:000A7892:  05 3E
 F22:0058           dc.w snippet47-base_PointerTable_Snippets ; 47: 04E3
-               S50:000A76BC:  05 4B
+               S50:000A7894:  05 4B
 F22:0059           dc.w snippet48-base_PointerTable_Snippets ; 48: 04F0
-               S50:000A76BE:  05 54
+               S50:000A7896:  05 54
 F22:0060           dc.w snippet49-base_PointerTable_Snippets ; 49: 051D
-               S50:000A76C0:  05 80
+               S50:000A7898:  05 80
 F22:0061           dc.w snippet50-base_PointerTable_Snippets ; 50: 0527
-               S50:000A76C2:  05 8A
+               S50:000A789A:  05 8A
 F22:0062           dc.w snippet51-base_PointerTable_Snippets ; 51: 052F
-               S50:000A76C4:  05 92
+               S50:000A789C:  05 92
 F22:0063           dc.w snippet52-base_PointerTable_Snippets ; 52: 0539
-               S50:000A76C6:  05 9C
+               S50:000A789E:  05 9C
 F22:0064           
 F22:0065           dc.w $0000                                ; 53: 0000
-               S50:000A76C8:  00 00
+               S50:000A78A0:  00 00
 F22:0066           dc.w $0000                                ; 54: 0000
-               S50:000A76CA:  00 00
+               S50:000A78A2:  00 00
 F22:0067           dc.w $0000                                ; 55: 0000
-               S50:000A76CC:  00 00
+               S50:000A78A4:  00 00
 F22:0068           dc.w $0000                                ; 56: 0000
-               S50:000A76CE:  00 00
+               S50:000A78A6:  00 00
 F22:0069           dc.w $0000                                ; 57: 0000
-               S50:000A76D0:  00 00
+               S50:000A78A8:  00 00
 F22:0070           dc.w $0000                                ; 58: 0000
-               S50:000A76D2:  00 00
+               S50:000A78AA:  00 00
 F22:0071           dc.w $0000                                ; 59: 0000
-               S50:000A76D4:  00 00
+               S50:000A78AC:  00 00
 F22:0072           dc.w $0000                                ; 60: 0000
-               S50:000A76D6:  00 00
+               S50:000A78AE:  00 00
 F22:0073           dc.w $0000                                ; 61: 0000
-               S50:000A76D8:  00 00
+               S50:000A78B0:  00 00
 F22:0074           dc.w $0000                                ; 62: 0000
-               S50:000A76DA:  00 00
+               S50:000A78B2:  00 00
 F22:0075           dc.w $0000                                ; 63: 0000
-               S50:000A76DC:  00 00
+               S50:000A78B4:  00 00
 F22:0076           dc.w $0000                                ; 64: 0000
-               S50:000A76DE:  00 00
+               S50:000A78B6:  00 00
 F22:0077       
 F22:0078           dc.w snippet65-base_PointerTable_Snippets  ; 65:  0E4C
-               S50:000A76E0:  05 AC
+               S50:000A78B8:  05 AC
 F22:0079           dc.w snippet66-base_PointerTable_Snippets  ; 66:  0E53
-               S50:000A76E2:  05 B3
+               S50:000A78BA:  05 B3
 F22:0080           dc.w snippet67-base_PointerTable_Snippets  ; 67:  0E5A
-               S50:000A76E4:  05 BA
+               S50:000A78BC:  05 BA
 F22:0081           dc.w snippet68-base_PointerTable_Snippets  ; 68:  0E5E
-               S50:000A76E6:  05 BE
+               S50:000A78BE:  05 BE
 F22:0082           dc.w snippet69-base_PointerTable_Snippets  ; 69:  0E69
-               S50:000A76E8:  05 C6
+               S50:000A78C0:  05 C6
 F22:0083           dc.w snippet70-base_PointerTable_Snippets  ; 70:  0E72
-               S50:000A76EA:  05 CE
+               S50:000A78C2:  05 CE
 F22:0084           dc.w snippet71-base_PointerTable_Snippets  ; 71:  0E79
-               S50:000A76EC:  05 D5
+               S50:000A78C4:  05 D5
 F22:0085           dc.w snippet72-base_PointerTable_Snippets  ; 72:  0E84
-               S50:000A76EE:  05 E0
+               S50:000A78C6:  05 E0
 F22:0086           dc.w snippet73-base_PointerTable_Snippets  ; 73:  0E90
-               S50:000A76F0:  05 EC
+               S50:000A78C8:  05 EC
 F22:0087           dc.w snippet74-base_PointerTable_Snippets  ; 74:  0E95
-               S50:000A76F2:  05 F1
+               S50:000A78CA:  05 F1
 F22:0088           dc.w snippet75-base_PointerTable_Snippets  ; 75:  0E9E
-               S50:000A76F4:  05 F8
+               S50:000A78CC:  05 F8
 F22:0089           dc.w snippet76-base_PointerTable_Snippets  ; 76:  0EA5
-               S50:000A76F6:  05 FE
+               S50:000A78CE:  05 FE
 F22:0090           dc.w snippet77-base_PointerTable_Snippets  ; 77:  0EAC
-               S50:000A76F8:  06 05
+               S50:000A78D0:  06 05
 F22:0091           dc.w snippet78-base_PointerTable_Snippets  ; 78:  0EB2
-               S50:000A76FA:  06 0D
+               S50:000A78D2:  06 0D
 F22:0092           dc.w snippet79-base_PointerTable_Snippets  ; 79:  0EBB
-               S50:000A76FC:  06 16
+               S50:000A78D4:  06 16
 F22:0093           dc.w snippet80-base_PointerTable_Snippets  ; 80:  0EC0
-               S50:000A76FE:  06 1C
+               S50:000A78D6:  06 1C
 F22:0094           dc.w snippet81-base_PointerTable_Snippets  ; 81:  0EC5
-               S50:000A7700:  06 20
+               S50:000A78D8:  06 20
 F22:0095           dc.w snippet82-base_PointerTable_Snippets  ; 82:  0ECA
-               S50:000A7702:  06 25
+               S50:000A78DA:  06 25
 F22:0096           dc.w snippet83-base_PointerTable_Snippets  ; 83:  0ED2
-               S50:000A7704:  06 2D
+               S50:000A78DC:  06 2D
 F22:0097           dc.w snippet84-base_PointerTable_Snippets  ; 84:  0ED8
-               S50:000A7706:  06 37
+               S50:000A78DE:  06 37
 F22:0098           dc.w snippet85-base_PointerTable_Snippets  ; 85:  0EE0
-               S50:000A7708:  06 3F
+               S50:000A78E0:  06 3F
 F22:0099           dc.w snippet86-base_PointerTable_Snippets  ; 86:  0EE8
-               S50:000A770A:  06 47
+               S50:000A78E2:  06 47
 F22:0100           dc.w snippet87-base_PointerTable_Snippets  ; 87:  0EEC
-               S50:000A770C:  06 4D
+               S50:000A78E4:  06 4D
 F22:0101           dc.w snippet88-base_PointerTable_Snippets  ; 88:  0EF4
-               S50:000A770E:  06 55
+               S50:000A78E6:  06 55
 F22:0102           dc.w snippet89-base_PointerTable_Snippets  ; 89:  0EFB
-               S50:000A7710:  06 5B
+               S50:000A78E8:  06 5B
 F22:0103           dc.w snippet90-base_PointerTable_Snippets  ; 90:  0F04
-               S50:000A7712:  06 64
+               S50:000A78EA:  06 64
 F22:0104           dc.w snippet91-base_PointerTable_Snippets  ; 91:  0F0E
-               S50:000A7714:  06 6E
+               S50:000A78EC:  06 6E
 F22:0105           dc.w snippet92-base_PointerTable_Snippets  ; 92:  0F17
-               S50:000A7716:  06 77
+               S50:000A78EE:  06 77
 F22:0106           dc.w snippet93-base_PointerTable_Snippets  ; 93:  0F1D
-               S50:000A7718:  06 7F
+               S50:000A78F0:  06 7F
 F22:0107           dc.w snippet94-base_PointerTable_Snippets  ; 94:  0F23
-               S50:000A771A:  06 87
+               S50:000A78F2:  06 87
 F22:0108           dc.w snippet95-base_PointerTable_Snippets  ; 95:  0F2C
-               S50:000A771C:  06 92
+               S50:000A78F4:  06 92
 F22:0109           dc.w snippet96-base_PointerTable_Snippets  ; 96:  0F32
-               S50:000A771E:  06 98
+               S50:000A78F6:  06 98
 F22:0110           dc.w snippet97-base_PointerTable_Snippets  ; 97:  0F39
-               S50:000A7720:  06 9F
+               S50:000A78F8:  06 9F
 F22:0111           dc.w snippet98-base_PointerTable_Snippets  ; 98:  0F3E
-               S50:000A7722:  06 A4
+               S50:000A78FA:  06 A4
 F22:0112           dc.w snippet99-base_PointerTable_Snippets  ; 99:  0F44
-               S50:000A7724:  06 A9
+               S50:000A78FC:  06 A9
 F22:0113           dc.w snippet100-base_PointerTable_Snippets ; 100: 0F48
-               S50:000A7726:  06 AD
+               S50:000A78FE:  06 AD
 F22:0114           dc.w snippet101-base_PointerTable_Snippets ; 101: 0F4E
-               S50:000A7728:  06 B2
+               S50:000A7900:  06 B2
 F22:0115           dc.w snippet102-base_PointerTable_Snippets ; 102: 0F53
-               S50:000A772A:  06 B7
+               S50:000A7902:  06 B7
 F22:0116           dc.w snippet103-base_PointerTable_Snippets ; 103: 0F5B
-               S50:000A772C:  06 C2
+               S50:000A7904:  06 C2
 F22:0117           dc.w snippet104-base_PointerTable_Snippets ; 104: 0F60
-               S50:000A772E:  06 C6
+               S50:000A7906:  06 C6
 F22:0118           dc.w snippet105-base_PointerTable_Snippets ; 105: 0F66
-               S50:000A7730:  06 CC
+               S50:000A7908:  06 CC
 F22:0119           dc.w snippet106-base_PointerTable_Snippets ; 106: 0F6A
-               S50:000A7732:  06 CF
+               S50:000A790A:  06 CF
 F22:0120           dc.w snippet107-base_PointerTable_Snippets ; 107: 0F6F
-               S50:000A7734:  06 D8
+               S50:000A790C:  06 D8
 F22:0121           dc.w snippet108-base_PointerTable_Snippets ; 108: 0F75
-               S50:000A7736:  06 E1
+               S50:000A790E:  06 E1
 F22:0122           dc.w snippet109-base_PointerTable_Snippets ; 109: 0F7B
-               S50:000A7738:  06 EA
+               S50:000A7910:  06 EA
 F22:0123           dc.w snippet110-base_PointerTable_Snippets ; 110: 0F81
-               S50:000A773A:  06 F3
+               S50:000A7912:  06 F3
 F22:0124           dc.w snippet111-base_PointerTable_Snippets ; 111: 0F85
-               S50:000A773C:  06 FC
+               S50:000A7914:  06 FC
 F22:0125           dc.w snippet112-base_PointerTable_Snippets ; 112: 0F8D
-               S50:000A773E:  07 05
+               S50:000A7916:  07 05
 F22:0126           dc.w snippet113-base_PointerTable_Snippets ; 113: 0F91
-               S50:000A7740:  07 0E
+               S50:000A7918:  07 0E
 F22:0127           dc.w snippet114-base_PointerTable_Snippets ; 114: 0F9A
-               S50:000A7742:  07 17
+               S50:000A791A:  07 17
 F22:0128           dc.w snippet115-base_PointerTable_Snippets ; 115: 0F9F
-               S50:000A7744:  07 20
+               S50:000A791C:  07 20
 F22:0129           dc.w snippet116-base_PointerTable_Snippets ; 116: 0FA4
-               S50:000A7746:  07 29
+               S50:000A791E:  07 29
 F22:0130           dc.w snippet117-base_PointerTable_Snippets ; 117: 0FAB
-               S50:000A7748:  07 32
+               S50:000A7920:  07 32
 F22:0131           dc.w snippet118-base_PointerTable_Snippets ; 118: 0FB2
-               S50:000A774A:  07 3B
+               S50:000A7922:  07 3B
 F22:0132           dc.w snippet119-base_PointerTable_Snippets ; 119: 0FB9
-               S50:000A774C:  07 44
+               S50:000A7924:  07 44
 F22:0133           dc.w snippet120-base_PointerTable_Snippets ; 120: 0FC1
-               S50:000A774E:  07 4D
+               S50:000A7926:  07 4D
 F22:0134           dc.w snippet121-base_PointerTable_Snippets ; 121: 0FC5
-               S50:000A7750:  07 56
+               S50:000A7928:  07 56
 F22:0135           dc.w snippet122-base_PointerTable_Snippets ; 122: 0FC9
-               S50:000A7752:  07 5F
+               S50:000A792A:  07 5F
 F22:0136           dc.w snippet123-base_PointerTable_Snippets ; 123: 0FD0
-               S50:000A7754:  07 68
+               S50:000A792C:  07 68
 F22:0137           dc.w snippet124-base_PointerTable_Snippets ; 124: 0FD5
-               S50:000A7756:  07 71
+               S50:000A792E:  07 71
 F22:0138           dc.w snippet125-base_PointerTable_Snippets ; 125: 0FDB
-               S50:000A7758:  07 7A
+               S50:000A7930:  07 7A
 F22:0139           dc.w snippet126-base_PointerTable_Snippets ; 126: 0FE2
-               S50:000A775A:  07 83
+               S50:000A7932:  07 83
 F22:0140           dc.w snippet127-base_PointerTable_Snippets ; 127: 0FE7
-               S50:000A775C:  07 8C
+               S50:000A7934:  07 8C
 F22:0141           dc.w snippet128-base_PointerTable_Snippets ; 128: 0FEE
-               S50:000A775E:  07 95
+               S50:000A7936:  07 95
 F22:0142           dc.w snippet129-base_PointerTable_Snippets ; 129: 0FF2
-               S50:000A7760:  07 9E
+               S50:000A7938:  07 9E
 F22:0143           dc.w snippet130-base_PointerTable_Snippets ; 130: 0FF7
-               S50:000A7762:  07 A7
+               S50:000A793A:  07 A7
 F22:0144           dc.w snippet131-base_PointerTable_Snippets ; 131: 0FFD
-               S50:000A7764:  07 B0
+               S50:000A793C:  07 B0
 F22:0145           dc.w snippet132-base_PointerTable_Snippets ; 132: 1003
-               S50:000A7766:  07 B9
+               S50:000A793E:  07 B9
 F22:0146           dc.w snippet133-base_PointerTable_Snippets ; 133: 1008
-               S50:000A7768:  07 C2
+               S50:000A7940:  07 C2
 F22:0147           dc.w snippet134-base_PointerTable_Snippets ; 134: 1013
-               S50:000A776A:  07 CB
+               S50:000A7942:  07 CB
 F22:0148           dc.w snippet135-base_PointerTable_Snippets ; 135: 1018
-               S50:000A776C:  07 D4
+               S50:000A7944:  07 D4
 F22:0149           dc.w snippet136-base_PointerTable_Snippets ; 136: 101C
-               S50:000A776E:  07 DD
+               S50:000A7946:  07 DD
 F22:0150           dc.w snippet137-base_PointerTable_Snippets ; 137: 1023
-               S50:000A7770:  07 E6
+               S50:000A7948:  07 E6
 F22:0151           dc.w snippet138-base_PointerTable_Snippets ; 138: 1028
-               S50:000A7772:  07 EF
+               S50:000A794A:  07 EF
 F22:0152           dc.w snippet139-base_PointerTable_Snippets ; 139: 102D
-               S50:000A7774:  07 F8
+               S50:000A794C:  07 F8
 F22:0153           dc.w snippet140-base_PointerTable_Snippets ; 140: 1038
-               S50:000A7776:  08 01
+               S50:000A794E:  08 01
 F22:0154           dc.w snippet141-base_PointerTable_Snippets ; 141: 103E
-               S50:000A7778:  08 0A
+               S50:000A7950:  08 0A
 F22:0155           dc.w snippet142-base_PointerTable_Snippets ; 142: 1044
-               S50:000A777A:  08 13
+               S50:000A7952:  08 13
 F22:0156           dc.w snippet143-base_PointerTable_Snippets ; 143: 1049
-               S50:000A777C:  08 1C
+               S50:000A7954:  08 1C
 F22:0157           dc.w snippet144-base_PointerTable_Snippets ; 144: 104D
-               S50:000A777E:  08 25
+               S50:000A7956:  08 25
 F22:0158           dc.w snippet145-base_PointerTable_Snippets ; 145: 1056
-               S50:000A7780:  08 2E
+               S50:000A7958:  08 2E
 F22:0159           dc.w snippet146-base_PointerTable_Snippets ; 146: 105A
-               S50:000A7782:  08 37
+               S50:000A795A:  08 37
 F22:0160           dc.w snippet147-base_PointerTable_Snippets ; 147: 105F
-               S50:000A7784:  08 40
+               S50:000A795C:  08 40
 F22:0161           dc.w snippet148-base_PointerTable_Snippets ; 148: 1065
-               S50:000A7786:  08 49
+               S50:000A795E:  08 49
 F22:0162           dc.w snippet149-base_PointerTable_Snippets ; 149: 106A
-               S50:000A7788:  08 52
+               S50:000A7960:  08 52
 F22:0163           dc.w snippet150-base_PointerTable_Snippets ; 150: 106F
-               S50:000A778A:  08 5B
+               S50:000A7962:  08 5B
 F22:0164           dc.w snippet151-base_PointerTable_Snippets ; 151: 1076
-               S50:000A778C:  08 64
+               S50:000A7964:  08 64
 F22:0165           dc.w snippet152-base_PointerTable_Snippets ; 152: 107F
-               S50:000A778E:  08 6D
+               S50:000A7966:  08 6D
 F22:0166           dc.w snippet153-base_PointerTable_Snippets ; 153: 1084
-               S50:000A7790:  08 76
+               S50:000A7968:  08 76
 F22:0167           dc.w snippet154-base_PointerTable_Snippets ; 154: 108A
-               S50:000A7792:  08 7F
+               S50:000A796A:  08 7F
 F22:0168           dc.w snippet155-base_PointerTable_Snippets ; 155: 1094
-               S50:000A7794:  08 88
+               S50:000A796C:  08 88
 F22:0169           dc.w snippet156-base_PointerTable_Snippets ; 156: 109C
-               S50:000A7796:  08 91
+               S50:000A796E:  08 91
 F22:0170           dc.w snippet157-base_PointerTable_Snippets ; 157: 10A1
-               S50:000A7798:  08 9A
+               S50:000A7970:  08 9A
 F22:0171           dc.w snippet158-base_PointerTable_Snippets ; 158: 10AB
-               S50:000A779A:  08 A3
+               S50:000A7972:  08 A3
 F22:0172           dc.w snippet159-base_PointerTable_Snippets ; 159: 10B0
-               S50:000A779C:  08 AC
+               S50:000A7974:  08 AC
 F22:0173           dc.w snippet160-base_PointerTable_Snippets ; 160: 10B5
-               S50:000A779E:  08 B5
+               S50:000A7976:  08 B5
 F22:0174           dc.w snippet161-base_PointerTable_Snippets ; 161: 10BF
-               S50:000A77A0:  08 BE
+               S50:000A7978:  08 BE
 F22:0175           dc.w snippet162-base_PointerTable_Snippets ; 162: 10C4
-               S50:000A77A2:  08 C7
+               S50:000A797A:  08 C7
 F22:0176           dc.w snippet163-base_PointerTable_Snippets ; 163: 10C9
-               S50:000A77A4:  08 D0
+               S50:000A797C:  08 D0
 F22:0177           dc.w snippet164-base_PointerTable_Snippets ; 164: 10CE
-               S50:000A77A6:  08 D9
+               S50:000A797E:  08 D9
 F22:0178           dc.w snippet165-base_PointerTable_Snippets ; 165: 10D4
-               S50:000A77A8:  08 E2
+               S50:000A7980:  08 E2
 F22:0179           dc.w snippet166-base_PointerTable_Snippets ; 166: 10DA
-               S50:000A77AA:  08 EB
+               S50:000A7982:  08 EB
 F22:0180           dc.w snippet167-base_PointerTable_Snippets ; 167: 10DE
-               S50:000A77AC:  08 F4
+               S50:000A7984:  08 F4
 F22:0181           dc.w snippet168-base_PointerTable_Snippets ; 168: 10E7
-               S50:000A77AE:  08 FD
+               S50:000A7986:  08 FD
 F22:0182           dc.w snippet169-base_PointerTable_Snippets ; 169: 10F0
-               S50:000A77B0:  09 06
+               S50:000A7988:  09 06
 F22:0183           dc.w snippet170-base_PointerTable_Snippets ; 170: 10F5
-               S50:000A77B2:  09 0F
+               S50:000A798A:  09 0F
 F22:0184           dc.w snippet171-base_PointerTable_Snippets ; 171: 10FA
-               S50:000A77B4:  09 18
+               S50:000A798C:  09 18
 F22:0185           dc.w snippet172-base_PointerTable_Snippets ; 172: 10FF
-               S50:000A77B6:  09 21
+               S50:000A798E:  09 21
 F22:0186           dc.w snippet173-base_PointerTable_Snippets ; 173: 1104
-               S50:000A77B8:  09 2A
+               S50:000A7990:  09 2A
 F22:0187           dc.w snippet174-base_PointerTable_Snippets ; 174: 1108
-               S50:000A77BA:  09 33
+               S50:000A7992:  09 33
 F22:0188           dc.w snippet175-base_PointerTable_Snippets ; 175: 1110
-               S50:000A77BC:  09 3C
+               S50:000A7994:  09 3C
 F22:0189           dc.w snippet176-base_PointerTable_Snippets ; 176: 1114
-               S50:000A77BE:  09 45
+               S50:000A7996:  09 45
 F22:0190           dc.w snippet177-base_PointerTable_Snippets ; 177: 1118
-               S50:000A77C0:  09 4E
+               S50:000A7998:  09 4E
 F22:0191           dc.w snippet178-base_PointerTable_Snippets ; 178: 111D
-               S50:000A77C2:  09 57
+               S50:000A799A:  09 57
 F22:0192           dc.w snippet179-base_PointerTable_Snippets ; 179: 1123
-               S50:000A77C4:  09 60
+               S50:000A799C:  09 60
 F22:0193           dc.w snippet180-base_PointerTable_Snippets ; 180: 1127
-               S50:000A77C6:  09 69
+               S50:000A799E:  09 69
 F22:0194           dc.w snippet181-base_PointerTable_Snippets ; 181: 1130
-               S50:000A77C8:  09 72
+               S50:000A79A0:  09 72
 F22:0195           dc.w snippet182-base_PointerTable_Snippets ; 182: 1137
-               S50:000A77CA:  09 7B
+               S50:000A79A2:  09 7B
 F22:0196           dc.w snippet183-base_PointerTable_Snippets ; 183: 113D
-               S50:000A77CC:  09 84
+               S50:000A79A4:  09 84
 F22:0197           dc.w snippet184-base_PointerTable_Snippets ; 184: 1146
-               S50:000A77CE:  09 8D
+               S50:000A79A6:  09 8D
 F22:0198           dc.w snippet185-base_PointerTable_Snippets ; 185: 114F
-               S50:000A77D0:  09 96
+               S50:000A79A8:  09 96
 F22:0199           dc.w snippet186-base_PointerTable_Snippets ; 186: 1158
-               S50:000A77D2:  09 9F
+               S50:000A79AA:  09 9F
 F22:0200           dc.w snippet187-base_PointerTable_Snippets ; 187: 1161
-               S50:000A77D4:  09 A8
+               S50:000A79AC:  09 A8
 F22:0201           dc.w snippet188-base_PointerTable_Snippets ; 188: 1167
-               S50:000A77D6:  09 B1
+               S50:000A79AE:  09 B1
 F22:0202           dc.w snippet189-base_PointerTable_Snippets ; 189: 116E
-               S50:000A77D8:  09 BA
+               S50:000A79B0:  09 BA
 F22:0203           dc.w snippet190-base_PointerTable_Snippets ; 190: 1177
-               S50:000A77DA:  09 C3
+               S50:000A79B2:  09 C3
 F22:0204           dc.w snippet191-base_PointerTable_Snippets ; 191: 117D
-               S50:000A77DC:  09 CC
+               S50:000A79B4:  09 CC
 F22:0205           dc.w snippet192-base_PointerTable_Snippets ; 192: 1184
-               S50:000A77DE:  09 D5
+               S50:000A79B6:  09 D5
 F22:0206           dc.w snippet193-base_PointerTable_Snippets ; 193: 118A
-               S50:000A77E0:  09 DE
+               S50:000A79B8:  09 DE
 F22:0207           dc.w snippet194-base_PointerTable_Snippets ; 194: 1191
-               S50:000A77E2:  09 E7
+               S50:000A79BA:  09 E7
 F22:0208           dc.w snippet195-base_PointerTable_Snippets ; 195: 1195
-               S50:000A77E4:  09 F0
+               S50:000A79BC:  09 F0
 F22:0209           dc.w snippet196-base_PointerTable_Snippets ; 196: 119A
-               S50:000A77E6:  09 F9
+               S50:000A79BE:  09 F9
 F22:0210           dc.w snippet197-base_PointerTable_Snippets ; 197: 119F
-               S50:000A77E8:  0A 02
+               S50:000A79C0:  0A 02
 F22:0211           dc.w snippet198-base_PointerTable_Snippets ; 198: 11A6
-               S50:000A77EA:  0A 0B
+               S50:000A79C2:  0A 0B
 F22:0212           dc.w snippet199-base_PointerTable_Snippets ; 199: 11AC
-               S50:000A77EC:  0A 14
+               S50:000A79C4:  0A 14
 F22:0213           dc.w snippet200-base_PointerTable_Snippets ; 200: 11B1
-               S50:000A77EE:  0A 1D
+               S50:000A79C6:  0A 1D
 F22:0214           dc.w snippet201-base_PointerTable_Snippets ; 201: 11BB
-               S50:000A77F0:  0A 26
+               S50:000A79C8:  0A 26
 F22:0215           dc.w snippet202-base_PointerTable_Snippets ; 202: 11C4
-               S50:000A77F2:  0A 2F
+               S50:000A79CA:  0A 2F
 F22:0216           dc.w snippet203-base_PointerTable_Snippets ; 203: 11CE
-               S50:000A77F4:  0A 38
+               S50:000A79CC:  0A 38
 F22:0217           dc.w snippet204-base_PointerTable_Snippets ; 204: 11D4
-               S50:000A77F6:  0A 41
+               S50:000A79CE:  0A 41
 F22:0218           dc.w snippet205-base_PointerTable_Snippets ; 205: 11DA
-               S50:000A77F8:  0A 4A
+               S50:000A79D0:  0A 4A
 F22:0219           dc.w snippet206-base_PointerTable_Snippets ; 206: 11E0
-               S50:000A77FA:  0A 53
+               S50:000A79D2:  0A 53
 F22:0220           dc.w snippet207-base_PointerTable_Snippets ; 207: 11EC
-               S50:000A77FC:  0A 5C
+               S50:000A79D4:  0A 5C
 F22:0221           dc.w snippet208-base_PointerTable_Snippets ; 208: 11F2
-               S50:000A77FE:  0A 65
+               S50:000A79D6:  0A 65
 F22:0222           dc.w snippet209-base_PointerTable_Snippets ; 209: 11F7
-               S50:000A7800:  0A 6E
+               S50:000A79D8:  0A 6E
 F22:0223           dc.w snippet210-base_PointerTable_Snippets ; 210: 1200
-               S50:000A7802:  0A 77
+               S50:000A79DA:  0A 77
 F22:0224           dc.w snippet211-base_PointerTable_Snippets ; 211: 1206
-               S50:000A7804:  0A 80
+               S50:000A79DC:  0A 80
 F22:0225           dc.w snippet212-base_PointerTable_Snippets ; 212: 120B
-               S50:000A7806:  0A 89
+               S50:000A79DE:  0A 89
 F22:0226           dc.w snippet213-base_PointerTable_Snippets ; 213: 120F
-               S50:000A7808:  0A 92
+               S50:000A79E0:  0A 92
 F22:0227           dc.w snippet214-base_PointerTable_Snippets ; 214: 1215
-               S50:000A780A:  0A 9B
+               S50:000A79E2:  0A 9B
 F22:0228           dc.w snippet215-base_PointerTable_Snippets ; 215: 121A
-               S50:000A780C:  0A A4
+               S50:000A79E4:  0A A4
 F22:0229           dc.w snippet216-base_PointerTable_Snippets ; 216: 121F
-               S50:000A780E:  0A AD
+               S50:000A79E6:  0A AD
 F22:0230           dc.w snippet217-base_PointerTable_Snippets ; 217: 1225
-               S50:000A7810:  0A B6
+               S50:000A79E8:  0A B6
 F22:0231           dc.w snippet218-base_PointerTable_Snippets ; 218: 122A
-               S50:000A7812:  0A BF
+               S50:000A79EA:  0A BF
 F22:0232           dc.w snippet219-base_PointerTable_Snippets ; 219: 1231
-               S50:000A7814:  0A C8
+               S50:000A79EC:  0A C8
 F22:0233           dc.w snippet220-base_PointerTable_Snippets ; 220: 1236
-               S50:000A7816:  0A D1
+               S50:000A79EE:  0A D1
 F22:0234           dc.w snippet221-base_PointerTable_Snippets ; 221: 1241
-               S50:000A7818:  0A DA
+               S50:000A79F0:  0A DA
 F22:0235           dc.w snippet222-base_PointerTable_Snippets ; 222: 1246
-               S50:000A781A:  0A E3
+               S50:000A79F2:  0A E3
 F22:0236           dc.w snippet223-base_PointerTable_Snippets ; 223: 124E
-               S50:000A781C:  0A EC
+               S50:000A79F4:  0A EC
 F22:0237           dc.w snippet224-base_PointerTable_Snippets ; 224: 1256
-               S50:000A781E:  0A F5
+               S50:000A79F6:  0A F5
 F22:0238           dc.w snippet225-base_PointerTable_Snippets ; 225: 125E
-               S50:000A7820:  0A FE
+               S50:000A79F8:  0A FE
 F22:0239           dc.w snippet226-base_PointerTable_Snippets ; 226: 1262
-               S50:000A7822:  0B 07
+               S50:000A79FA:  0B 07
 F22:0240           dc.w snippet227-base_PointerTable_Snippets ; 227: 1269
-               S50:000A7824:  0B 10
+               S50:000A79FC:  0B 10
 F22:0241           dc.w snippet228-base_PointerTable_Snippets ; 228: 126E
-               S50:000A7826:  0B 19
+               S50:000A79FE:  0B 19
 F22:0242           dc.w snippet229-base_PointerTable_Snippets ; 229: 1273
-               S50:000A7828:  0B 22
+               S50:000A7A00:  0B 22
 F22:0243           dc.w snippet230-base_PointerTable_Snippets ; 230: 1278
-               S50:000A782A:  0B 2B
+               S50:000A7A02:  0B 2B
 F22:0244           dc.w snippet231-base_PointerTable_Snippets ; 231: 127D
-               S50:000A782C:  0B 34
+               S50:000A7A04:  0B 34
 F22:0245           dc.w snippet232-base_PointerTable_Snippets ; 232: 1281
-               S50:000A782E:  0B 3D
+               S50:000A7A06:  0B 3D
 F22:0246       
 F22:0247       
 F22:0248       
@@ -5632,485 +5937,485 @@ F23:0007
 F23:0008       ; Yes / No Option
 F23:0009       snippet1:
 F23:0010           dc.b    $03,$00,$02,$04,$04,"Ja   Nein",0 ; <- format: 4 chars + space + 4 chars
-               S50:000A7830:  03
-               S50:000A7831:  00
-               S50:000A7832:  02
-               S50:000A7833:  04
-               S50:000A7834:  04
-               S50:000A7835:  4A 61 20 20 20 4E 65 69 6E
-               S50:000A783E:  00
+               S50:000A7A08:  03
+               S50:000A7A09:  00
+               S50:000A7A0A:  02
+               S50:000A7A0B:  04
+               S50:000A7A0C:  04
+               S50:000A7A0D:  4A 61 20 20 20 4E 65 69 6E
+               S50:000A7A16:  00
 F23:0011       
 F23:0012       ; Gold (Item price in shops)
 F23:0013       snippet2:
 F23:0014           dc.b    " Taler",0
-               S50:000A783F:  20 54 61 6C 65 72
-               S50:000A7845:  00
+               S50:000A7A17:  20 54 61 6C 65 72
+               S50:000A7A1D:  00
 F23:0015       
 F23:0016       
 F23:0017       snippet3:
 F23:0018           dc.b    $01,$A0,$0B,$06,$01,$80,$00
-               S50:000A7846:  01
-               S50:000A7847:  A0
-               S50:000A7848:  0B
-               S50:000A7849:  06
-               S50:000A784A:  01
-               S50:000A784B:  80
-               S50:000A784C:  00
+               S50:000A7A1E:  01
+               S50:000A7A1F:  A0
+               S50:000A7A20:  0B
+               S50:000A7A21:  06
+               S50:000A7A22:  01
+               S50:000A7A23:  80
+               S50:000A7A24:  00
 F23:0019       
 F23:0020       
 F23:0021       snippet4:
 F23:0022           dc.b    $04,$01,$0B,$04,$FF,$0B,$05,$0C,$01,$00
-               S50:000A784D:  04
-               S50:000A784E:  01
-               S50:000A784F:  0B
-               S50:000A7850:  04
-               S50:000A7851:  FF
-               S50:000A7852:  0B
-               S50:000A7853:  05
-               S50:000A7854:  0C
-               S50:000A7855:  01
-               S50:000A7856:  00
+               S50:000A7A25:  04
+               S50:000A7A26:  01
+               S50:000A7A27:  0B
+               S50:000A7A28:  04
+               S50:000A7A29:  FF
+               S50:000A7A2A:  0B
+               S50:000A7A2B:  05
+               S50:000A7A2C:  0C
+               S50:000A7A2D:  01
+               S50:000A7A2E:  00
 F23:0023       
 F23:0024       
 F23:0025       snippet5:
 F23:0026           dc.b    $95,$97,$8C,$98,$9B,$BD,$00
-               S50:000A7857:  95
-               S50:000A7858:  97
-               S50:000A7859:  8C
-               S50:000A785A:  98
-               S50:000A785B:  9B
-               S50:000A785C:  BD
-               S50:000A785D:  00
+               S50:000A7A2F:  95
+               S50:000A7A30:  97
+               S50:000A7A31:  8C
+               S50:000A7A32:  98
+               S50:000A7A33:  9B
+               S50:000A7A34:  BD
+               S50:000A7A35:  00
 F23:0027       
 F23:0028       
 F23:0029       snippet6:
 F23:0030           dc.b    $04,$03,$0B,$0F,$FF,$0B,$05,$0C,$01,$00
-               S50:000A785E:  04
-               S50:000A785F:  03
-               S50:000A7860:  0B
-               S50:000A7861:  0F
-               S50:000A7862:  FF
-               S50:000A7863:  0B
-               S50:000A7864:  05
-               S50:000A7865:  0C
-               S50:000A7866:  01
-               S50:000A7867:  00
+               S50:000A7A36:  04
+               S50:000A7A37:  03
+               S50:000A7A38:  0B
+               S50:000A7A39:  0F
+               S50:000A7A3A:  FF
+               S50:000A7A3B:  0B
+               S50:000A7A3C:  05
+               S50:000A7A3D:  0C
+               S50:000A7A3E:  01
+               S50:000A7A3F:  00
 F23:0031       
 F23:0032       
 F23:0033       snippet7:
 F23:0034           dc.b    $0A,$02,$03,$06,$04,$02,$00
-               S50:000A7868:  0A
-               S50:000A7869:  02
-               S50:000A786A:  03
-               S50:000A786B:  06
-               S50:000A786C:  04
-               S50:000A786D:  02
-               S50:000A786E:  00
+               S50:000A7A40:  0A
+               S50:000A7A41:  02
+               S50:000A7A42:  03
+               S50:000A7A43:  06
+               S50:000A7A44:  04
+               S50:000A7A45:  02
+               S50:000A7A46:  00
 F23:0035       
 F23:0036       
 F23:0037       snippet8:
 F23:0038           dc.b    $03,$06,$0A,$02,$05,$09,$00
-               S50:000A786F:  03
-               S50:000A7870:  06
-               S50:000A7871:  0A
-               S50:000A7872:  02
-               S50:000A7873:  05
-               S50:000A7874:  09
-               S50:000A7875:  00
+               S50:000A7A47:  03
+               S50:000A7A48:  06
+               S50:000A7A49:  0A
+               S50:000A7A4A:  02
+               S50:000A7A4B:  05
+               S50:000A7A4C:  09
+               S50:000A7A4D:  00
 F23:0039       
 F23:0040       
 F23:0041       snippet9:
 F23:0042           dc.b    $03,$10,$20,$0F,$04,$0F,$03,$0F,$04,$0F,$03,$0F,$04,$0F,$05,$0F,$04,$03,$06,$00
-               S50:000A7876:  03
-               S50:000A7877:  10
-               S50:000A7878:  20
-               S50:000A7879:  0F
-               S50:000A787A:  04
-               S50:000A787B:  0F
-               S50:000A787C:  03
-               S50:000A787D:  0F
-               S50:000A787E:  04
-               S50:000A787F:  0F
-               S50:000A7880:  03
-               S50:000A7881:  0F
-               S50:000A7882:  04
-               S50:000A7883:  0F
-               S50:000A7884:  05
-               S50:000A7885:  0F
-               S50:000A7886:  04
-               S50:000A7887:  03
-               S50:000A7888:  06
-               S50:000A7889:  00
+               S50:000A7A4E:  03
+               S50:000A7A4F:  10
+               S50:000A7A50:  20
+               S50:000A7A51:  0F
+               S50:000A7A52:  04
+               S50:000A7A53:  0F
+               S50:000A7A54:  03
+               S50:000A7A55:  0F
+               S50:000A7A56:  04
+               S50:000A7A57:  0F
+               S50:000A7A58:  03
+               S50:000A7A59:  0F
+               S50:000A7A5A:  04
+               S50:000A7A5B:  0F
+               S50:000A7A5C:  05
+               S50:000A7A5D:  0F
+               S50:000A7A5E:  04
+               S50:000A7A5F:  03
+               S50:000A7A60:  06
+               S50:000A7A61:  00
 F23:0043       
 F23:0044       
 F23:0045       snippet10:
 F23:0046           dc.b    $03,$10,$20,$0F,$03,$0F,$04,$0F,$05,$0F,$04,$0F,$05,$0F,$03,$0F,$04,$03,$06,$00
-               S50:000A788A:  03
-               S50:000A788B:  10
-               S50:000A788C:  20
-               S50:000A788D:  0F
-               S50:000A788E:  03
-               S50:000A788F:  0F
-               S50:000A7890:  04
-               S50:000A7891:  0F
-               S50:000A7892:  05
-               S50:000A7893:  0F
-               S50:000A7894:  04
-               S50:000A7895:  0F
-               S50:000A7896:  05
-               S50:000A7897:  0F
-               S50:000A7898:  03
-               S50:000A7899:  0F
-               S50:000A789A:  04
-               S50:000A789B:  03
-               S50:000A789C:  06
-               S50:000A789D:  00
+               S50:000A7A62:  03
+               S50:000A7A63:  10
+               S50:000A7A64:  20
+               S50:000A7A65:  0F
+               S50:000A7A66:  03
+               S50:000A7A67:  0F
+               S50:000A7A68:  04
+               S50:000A7A69:  0F
+               S50:000A7A6A:  05
+               S50:000A7A6B:  0F
+               S50:000A7A6C:  04
+               S50:000A7A6D:  0F
+               S50:000A7A6E:  05
+               S50:000A7A6F:  0F
+               S50:000A7A70:  03
+               S50:000A7A71:  0F
+               S50:000A7A72:  04
+               S50:000A7A73:  03
+               S50:000A7A74:  06
+               S50:000A7A75:  00
 F23:0047       
 F23:0048       
 F23:0049       snippet11:
 F23:0050           dc.b    $03,$10,$20,$0F,$03,$0F,$05,$0F,$05,$0F,$03,$0F,$04,$0F,$03,$0F,$04,$03,$06,$00
-               S50:000A789E:  03
-               S50:000A789F:  10
-               S50:000A78A0:  20
-               S50:000A78A1:  0F
-               S50:000A78A2:  03
-               S50:000A78A3:  0F
-               S50:000A78A4:  05
-               S50:000A78A5:  0F
-               S50:000A78A6:  05
-               S50:000A78A7:  0F
-               S50:000A78A8:  03
-               S50:000A78A9:  0F
-               S50:000A78AA:  04
-               S50:000A78AB:  0F
-               S50:000A78AC:  03
-               S50:000A78AD:  0F
-               S50:000A78AE:  04
-               S50:000A78AF:  03
-               S50:000A78B0:  06
-               S50:000A78B1:  00
+               S50:000A7A76:  03
+               S50:000A7A77:  10
+               S50:000A7A78:  20
+               S50:000A7A79:  0F
+               S50:000A7A7A:  03
+               S50:000A7A7B:  0F
+               S50:000A7A7C:  05
+               S50:000A7A7D:  0F
+               S50:000A7A7E:  05
+               S50:000A7A7F:  0F
+               S50:000A7A80:  03
+               S50:000A7A81:  0F
+               S50:000A7A82:  04
+               S50:000A7A83:  0F
+               S50:000A7A84:  03
+               S50:000A7A85:  0F
+               S50:000A7A86:  04
+               S50:000A7A87:  03
+               S50:000A7A88:  06
+               S50:000A7A89:  00
 F23:0051       
 F23:0052       
 F23:0053       snippet12:
 F23:0054           dc.b    "Welches war die",cc_newline,"erste Magie, die",cc_newline,"Du erhalten hast?",0
-               S50:000A78B2:  57 65 6C 63 68 65 73 20 77 61 72 20 64 69 65
-               S50:000A78C1:  09
-               S50:000A78C2:  65 72 73 74 65 20 4D 61 67 69 65 2C 20 64 69 65
-               S50:000A78D2:  09
-               S50:000A78D3:  44 75 20 65 72 68 61 6C 74 65 6E 20 68 61 73 74
-               S50:000A78E3:  3F
-               S50:000A78E4:  00
+               S50:000A7A8A:  57 65 6C 63 68 65 73 20 77 61 72 20 64 69 65
+               S50:000A7A99:  09
+               S50:000A7A9A:  65 72 73 74 65 20 4D 61 67 69 65 2C 20 64 69 65
+               S50:000A7AAA:  09
+               S50:000A7AAB:  44 75 20 65 72 68 61 6C 74 65 6E 20 68 61 73 74
+               S50:000A7ABB:  3F
+               S50:000A7ABC:  00
 F23:0055       
 F23:0056       
 F23:0057       snippet13:
 F23:0058           dc.b    "Feuersturm"
-               S50:000A78E5:  46 65 75 65 72 73 74 75 72 6D
+               S50:000A7ABD:  46 65 75 65 72 73 74 75 72 6D
 F23:0059       
 F23:0060       
 F23:0061       snippet14:
 F23:0062           dc.b    "Tornado"
-               S50:000A78EF:  54 6F 72 6E 61 64 6F
+               S50:000A7AC7:  54 6F 72 6E 61 64 6F
 F23:0063       
 F23:0064       
 F23:0065       snippet15:
 F23:0066           dc.b    "Beben"
-               S50:000A78F6:  42 65 62 65 6E
+               S50:000A7ACE:  42 65 62 65 6E
 F23:0067       
 F23:0068       
 F23:0069       snippet16:
 F23:0070           dc.b    "Welchen Namen tr",ae,"gt",cc_newline,"die K",oe,"nigin des",cc_newline,"Elfendorfs?",0
-               S50:000A78FB:  57 65 6C 63 68 65 6E 20 4E 61 6D 65 6E 20 74 72
-               S50:000A790B:  F3
-               S50:000A790C:  67 74
-               S50:000A790E:  09
-               S50:000A790F:  64 69 65 20 4B
-               S50:000A7914:  F4
-               S50:000A7915:  6E 69 67 69 6E 20 64 65 73
-               S50:000A791E:  09
-               S50:000A791F:  45 6C 66 65 6E 64 6F 72 66 73 3F
-               S50:000A792A:  00
+               S50:000A7AD3:  57 65 6C 63 68 65 6E 20 4E 61 6D 65 6E 20 74 72
+               S50:000A7AE3:  F3
+               S50:000A7AE4:  67 74
+               S50:000A7AE6:  09
+               S50:000A7AE7:  64 69 65 20 4B
+               S50:000A7AEC:  F4
+               S50:000A7AED:  6E 69 67 69 6E 20 64 65 73
+               S50:000A7AF6:  09
+               S50:000A7AF7:  45 6C 66 65 6E 64 6F 72 66 73 3F
+               S50:000A7B02:  00
 F23:0071       
 F23:0072       
 F23:0073       snippet17:
 F23:0074           dc.b    "Rosanna",0
-               S50:000A792B:  52 6F 73 61 6E 6E 61
-               S50:000A7932:  00
+               S50:000A7B03:  52 6F 73 61 6E 6E 61
+               S50:000A7B0A:  00
 F23:0075       
 F23:0076       
 F23:0077       snippet18:
 F23:0078           dc.b    "Eleanora",0
-               S50:000A7933:  45 6C 65 61 6E 6F 72 61
-               S50:000A793B:  00
+               S50:000A7B0B:  45 6C 65 61 6E 6F 72 61
+               S50:000A7B13:  00
 F23:0079       
 F23:0080       
 F23:0081       snippet19:
 F23:0082           dc.b    "Sonia",0
-               S50:000A793C:  53 6F 6E 69 61
-               S50:000A7941:  00
+               S50:000A7B14:  53 6F 6E 69 61
+               S50:000A7B19:  00
 F23:0083       
 F23:0084       
 F23:0085       snippet20:
 F23:0086           dc.b    "Welches dieser",cc_newline,"Monster hast Du",cc_newline,"zuerst besiegt?",0
-               S50:000A7942:  57 65 6C 63 68 65 73 20 64 69 65 73 65 72
-               S50:000A7950:  09
-               S50:000A7951:  4D 6F 6E 73 74 65 72 20 68 61 73 74 20 44 75
-               S50:000A7960:  09
-               S50:000A7961:  7A 75 65 72 73 74 20 62 65 73 69 65 67 74 3F
-               S50:000A7970:  00
+               S50:000A7B1A:  57 65 6C 63 68 65 73 20 64 69 65 73 65 72
+               S50:000A7B28:  09
+               S50:000A7B29:  4D 6F 6E 73 74 65 72 20 68 61 73 74 20 44 75
+               S50:000A7B38:  09
+               S50:000A7B39:  7A 75 65 72 73 74 20 62 65 73 69 65 67 74 3F
+               S50:000A7B48:  00
 F23:0087       
 F23:0088       
 F23:0089       snippet21:
 F23:0090           dc.b    "Myconid",0
-               S50:000A7971:  4D 79 63 6F 6E 69 64
-               S50:000A7978:  00
+               S50:000A7B49:  4D 79 63 6F 6E 69 64
+               S50:000A7B50:  00
 F23:0091       
 F23:0092       
 F23:0093       snippet22:
 F23:0094           dc.b    "Mecha-Dragon",0
-               S50:000A7979:  4D 65 63 68 61 2D 44 72 61 67 6F 6E
-               S50:000A7985:  00
+               S50:000A7B51:  4D 65 63 68 61 2D 44 72 61 67 6F 6E
+               S50:000A7B5D:  00
 F23:0095       
 F23:0096       
 F23:0097       snippet23:
 F23:0098           dc.b    "Eleanora",0
-               S50:000A7986:  45 6C 65 61 6E 6F 72 61
-               S50:000A798E:  00
+               S50:000A7B5E:  45 6C 65 61 6E 6F 72 61
+               S50:000A7B66:  00
 F23:0099       
 F23:0100       
 F23:0101       snippet24:
 F23:0102           dc.b    "Was hast Du",cc_newline,"erhalten, nachdem Du",cc_newline,"Gragg & Glagg,",cc_newline,"besiegt hast?",0
-               S50:000A798F:  57 61 73 20 68 61 73 74 20 44 75
-               S50:000A799A:  09
-               S50:000A799B:  65 72 68 61 6C 74 65 6E 2C 20 6E 61 63 68 64 65
-               S50:000A79AB:  6D 20 44 75
-               S50:000A79AF:  09
-               S50:000A79B0:  47 72 61 67 67 20 26 20 47 6C 61 67 67 2C
-               S50:000A79BE:  09
-               S50:000A79BF:  62 65 73 69 65 67 74 20 68 61 73 74 3F
-               S50:000A79CC:  00
+               S50:000A7B67:  57 61 73 20 68 61 73 74 20 44 75
+               S50:000A7B72:  09
+               S50:000A7B73:  65 72 68 61 6C 74 65 6E 2C 20 6E 61 63 68 64 65
+               S50:000A7B83:  6D 20 44 75
+               S50:000A7B87:  09
+               S50:000A7B88:  47 72 61 67 67 20 26 20 47 6C 61 67 67 2C
+               S50:000A7B96:  09
+               S50:000A7B97:  62 65 73 69 65 67 74 20 68 61 73 74 3F
+               S50:000A7BA4:  00
 F23:0103       
 F23:0104       
 F23:0105       snippet25:
 F23:0106           dc.b    "Eine Lampe",0
-               S50:000A79CD:  45 69 6E 65 20 4C 61 6D 70 65
-               S50:000A79D7:  00
+               S50:000A7BA5:  45 69 6E 65 20 4C 61 6D 70 65
+               S50:000A7BAF:  00
 F23:0107       
 F23:0108       
 F23:0109       snippet26:
 F23:0110           dc.b    "Ein Amulett",0
-               S50:000A79D8:  45 69 6E 20 41 6D 75 6C 65 74 74
-               S50:000A79E3:  00
+               S50:000A7BB0:  45 69 6E 20 41 6D 75 6C 65 74 74
+               S50:000A7BBB:  00
 F23:0111       
 F23:0112       
 F23:0113       snippet27:
 F23:0114           dc.b    "Den Dreizack",0
-               S50:000A79E4:  44 65 6E 20 44 72 65 69 7A 61 63 6B
-               S50:000A79F0:  00
+               S50:000A7BBC:  44 65 6E 20 44 72 65 69 7A 61 63 6B
+               S50:000A7BC8:  00
 F23:0115       
 F23:0116       
 F23:0117       snippet28:
 F23:0118           dc.b    "Was kannst Du nicht",cc_newline,"im Waffenladen vom",cc_newline,"Wanderer kaufen?",0
-               S50:000A79F1:  57 61 73 20 6B 61 6E 6E 73 74 20 44 75 20 6E 69
-               S50:000A7A01:  63 68 74
-               S50:000A7A04:  09
-               S50:000A7A05:  69 6D 20 57 61 66 66 65 6E 6C 61 64 65 6E 20 76
-               S50:000A7A15:  6F 6D
-               S50:000A7A17:  09
-               S50:000A7A18:  57 61 6E 64 65 72 65 72 20 6B 61 75 66 65 6E 3F
-               S50:000A7A28:  00
+               S50:000A7BC9:  57 61 73 20 6B 61 6E 6E 73 74 20 44 75 20 6E 69
+               S50:000A7BD9:  63 68 74
+               S50:000A7BDC:  09
+               S50:000A7BDD:  69 6D 20 57 61 66 66 65 6E 6C 61 64 65 6E 20 76
+               S50:000A7BED:  6F 6D
+               S50:000A7BEF:  09
+               S50:000A7BF0:  57 61 6E 64 65 72 65 72 20 6B 61 75 66 65 6E 3F
+               S50:000A7C00:  00
 F23:0119                   
 F23:0120       
 F23:0121       snippet29:
 F23:0122           dc.b    "Dreizack",0
-               S50:000A7A29:  44 72 65 69 7A 61 63 6B
-               S50:000A7A31:  00
+               S50:000A7C01:  44 72 65 69 7A 61 63 6B
+               S50:000A7C09:  00
 F23:0123       
 F23:0124       
 F23:0125       snippet30:
 F23:0126           dc.b    "Excalibur",0
-               S50:000A7A32:  45 78 63 61 6C 69 62 75 72
-               S50:000A7A3B:  00
+               S50:000A7C0A:  45 78 63 61 6C 69 62 75 72
+               S50:000A7C13:  00
 F23:0127       
 F23:0128       
 F23:0129       snippet31:
 F23:0130           dc.b    "Stahlschild",0
-               S50:000A7A3C:  53 74 61 68 6C 73 63 68 69 6C 64
-               S50:000A7A47:  00
+               S50:000A7C14:  53 74 61 68 6C 73 63 68 69 6C 64
+               S50:000A7C1F:  00
 F23:0131       
 F23:0132       
 F23:0133       snippet32:
 F23:0134           dc.b    "Wie lautet der Name",cc_newline,"vom Dorf, in dem",cc_newline,"die Zwerge leben?",0
-               S50:000A7A48:  57 69 65 20 6C 61 75 74 65 74 20 64 65 72 20 4E
-               S50:000A7A58:  61 6D 65
-               S50:000A7A5B:  09
-               S50:000A7A5C:  76 6F 6D 20 44 6F 72 66 2C 20 69 6E 20 64 65 6D
-               S50:000A7A6C:  09
-               S50:000A7A6D:  64 69 65 20 5A 77 65 72 67 65 20 6C 65 62 65 6E
-               S50:000A7A7D:  3F
-               S50:000A7A7E:  00
+               S50:000A7C20:  57 69 65 20 6C 61 75 74 65 74 20 64 65 72 20 4E
+               S50:000A7C30:  61 6D 65
+               S50:000A7C33:  09
+               S50:000A7C34:  76 6F 6D 20 44 6F 72 66 2C 20 69 6E 20 64 65 6D
+               S50:000A7C44:  09
+               S50:000A7C45:  64 69 65 20 5A 77 65 72 67 65 20 6C 65 62 65 6E
+               S50:000A7C55:  3F
+               S50:000A7C56:  00
 F23:0135       
 F23:0136       
 F23:0137       snippet33:
 F23:0138           dc.b    "Lilian",0
-               S50:000A7A7F:  4C 69 6C 69 61 6E
-               S50:000A7A85:  00
+               S50:000A7C57:  4C 69 6C 69 61 6E
+               S50:000A7C5D:  00
 F23:0139       
 F23:0140       
 F23:0141       snippet34:
 F23:0142           dc.b    "Lilypad",0
-               S50:000A7A86:  4C 69 6C 79 70 61 64
-               S50:000A7A8D:  00
+               S50:000A7C5E:  4C 69 6C 79 70 61 64
+               S50:000A7C65:  00
 F23:0143       
 F23:0144       
 F23:0145       snippet35:
 F23:0146           dc.b    "Lollipop",0
-               S50:000A7A8E:  4C 6F 6C 6C 69 70 6F 70
-               S50:000A7A96:  00
+               S50:000A7C66:  4C 6F 6C 6C 69 70 6F 70
+               S50:000A7C6E:  00
 F23:0147       
 F23:0148       
 F23:0149       snippet36:
 F23:0150           dc.b    "Welchen Schl",ue,"ssel",cc_newline,"ben",oe,"tigt man, um",cc_newline,"die Pyramide",cc_newline,"zu betrete
-               S50:000A7A97:  57 65 6C 63 68 65 6E 20 53 63 68 6C
-               S50:000A7AA3:  F5
-               S50:000A7AA4:  73 73 65 6C
-               S50:000A7AA8:  09
-               S50:000A7AA9:  62 65 6E
-               S50:000A7AAC:  F4
-               S50:000A7AAD:  74 69 67 74 20 6D 61 6E 2C 20 75 6D
-               S50:000A7AB9:  09
-               S50:000A7ABA:  64 69 65 20 50 79 72 61 6D 69 64 65
-               S50:000A7AC6:  09
-               S50:000A7AC7:  7A 75 20 62 65 74 72 65 74 65 6E 3F
-               S50:000A7AD3:  00
+               S50:000A7C6F:  57 65 6C 63 68 65 6E 20 53 63 68 6C
+               S50:000A7C7B:  F5
+               S50:000A7C7C:  73 73 65 6C
+               S50:000A7C80:  09
+               S50:000A7C81:  62 65 6E
+               S50:000A7C84:  F4
+               S50:000A7C85:  74 69 67 74 20 6D 61 6E 2C 20 75 6D
+               S50:000A7C91:  09
+               S50:000A7C92:  64 69 65 20 50 79 72 61 6D 69 64 65
+               S50:000A7C9E:  09
+               S50:000A7C9F:  7A 75 20 62 65 74 72 65 74 65 6E 3F
+               S50:000A7CAB:  00
 F23:0151       
 F23:0152       
 F23:0153       snippet37:
 F23:0154           dc.b    "Sternenschl",ue,"ssel",0
-               S50:000A7AD4:  53 74 65 72 6E 65 6E 73 63 68 6C
-               S50:000A7ADF:  F5
-               S50:000A7AE0:  73 73 65 6C
-               S50:000A7AE4:  00
+               S50:000A7CAC:  53 74 65 72 6E 65 6E 73 63 68 6C
+               S50:000A7CB7:  F5
+               S50:000A7CB8:  73 73 65 6C
+               S50:000A7CBC:  00
 F23:0155       
 F23:0156       
 F23:0157       snippet38:
 F23:0158           dc.b    "Sonnenschl",ue,"ssel",0
-               S50:000A7AE5:  53 6F 6E 6E 65 6E 73 63 68 6C
-               S50:000A7AEF:  F5
-               S50:000A7AF0:  73 73 65 6C
-               S50:000A7AF4:  00
+               S50:000A7CBD:  53 6F 6E 6E 65 6E 73 63 68 6C
+               S50:000A7CC7:  F5
+               S50:000A7CC8:  73 73 65 6C
+               S50:000A7CCC:  00
 F23:0159       
 F23:0160       
 F23:0161       snippet39:
 F23:0162           dc.b    "Mondschl",ue,"ssel",0
-               S50:000A7AF5:  4D 6F 6E 64 73 63 68 6C
-               S50:000A7AFD:  F5
-               S50:000A7AFE:  73 73 65 6C
-               S50:000A7B02:  00
+               S50:000A7CCD:  4D 6F 6E 64 73 63 68 6C
+               S50:000A7CD5:  F5
+               S50:000A7CD6:  73 73 65 6C
+               S50:000A7CDA:  00
 F23:0163       
 F23:0164       
 F23:0165       snippet40:
 F23:0166           dc.b    "Wieviel kostet ein",cc_newline,"Charmstein?",0
-               S50:000A7B03:  57 69 65 76 69 65 6C 20 6B 6F 73 74 65 74 20 65
-               S50:000A7B13:  69 6E
-               S50:000A7B15:  09
-               S50:000A7B16:  43 68 61 72 6D 73 74 65 69 6E 3F
-               S50:000A7B21:  00
+               S50:000A7CDB:  57 69 65 76 69 65 6C 20 6B 6F 73 74 65 74 20 65
+               S50:000A7CEB:  69 6E
+               S50:000A7CED:  09
+               S50:000A7CEE:  43 68 61 72 6D 73 74 65 69 6E 3F
+               S50:000A7CF9:  00
 F23:0167       
 F23:0168       
 F23:0169       snippet41:
 F23:0170           dc.b    "50000 Taler",0
-               S50:000A7B22:  35 30 30 30 30 20 54 61 6C 65 72
-               S50:000A7B2D:  00
+               S50:000A7CFA:  35 30 30 30 30 20 54 61 6C 65 72
+               S50:000A7D05:  00
 F23:0171       
 F23:0172       
 F23:0173       snippet42:
 F23:0174           dc.b    "500000 Taler",0
-               S50:000A7B2E:  35 30 30 30 30 30 20 54 61 6C 65 72
-               S50:000A7B3A:  00
+               S50:000A7D06:  35 30 30 30 30 30 20 54 61 6C 65 72
+               S50:000A7D12:  00
 F23:0175       
 F23:0176       
 F23:0177       snippet43:
 F23:0178           dc.b    "5000000 Taler",0
-               S50:000A7B3B:  35 30 30 30 30 30 30 20 54 61 6C 65 72
-               S50:000A7B48:  00
+               S50:000A7D13:  35 30 30 30 30 30 30 20 54 61 6C 65 72
+               S50:000A7D20:  00
 F23:0179       
 F23:0180       
 F23:0181       snippet44:
 F23:0182           dc.b    "Welcher Gegenstand",cc_newline,"wird ben",oe,"tigt, um",cc_newline,"die Maugham-W",ue,"ste",cc_newline,"zu 
-               S50:000A7B49:  57 65 6C 63 68 65 72 20 47 65 67 65 6E 73 74 61
-               S50:000A7B59:  6E 64
-               S50:000A7B5B:  09
-               S50:000A7B5C:  77 69 72 64 20 62 65 6E
-               S50:000A7B64:  F4
-               S50:000A7B65:  74 69 67 74 2C 20 75 6D
-               S50:000A7B6D:  09
-               S50:000A7B6E:  64 69 65 20 4D 61 75 67 68 61 6D 2D 57
-               S50:000A7B7B:  F5
-               S50:000A7B7C:  73 74 65
-               S50:000A7B7F:  09
-               S50:000A7B80:  7A 75 20 64 75 72 63 68 71 75 65 72 65 6E 3F
-               S50:000A7B8F:  00
+               S50:000A7D21:  57 65 6C 63 68 65 72 20 47 65 67 65 6E 73 74 61
+               S50:000A7D31:  6E 64
+               S50:000A7D33:  09
+               S50:000A7D34:  77 69 72 64 20 62 65 6E
+               S50:000A7D3C:  F4
+               S50:000A7D3D:  74 69 67 74 2C 20 75 6D
+               S50:000A7D45:  09
+               S50:000A7D46:  64 69 65 20 4D 61 75 67 68 61 6D 2D 57
+               S50:000A7D53:  F5
+               S50:000A7D54:  73 74 65
+               S50:000A7D57:  09
+               S50:000A7D58:  7A 75 20 64 75 72 63 68 71 75 65 72 65 6E 3F
+               S50:000A7D67:  00
 F23:0183                   
 F23:0184       
 F23:0185       snippet45:
 F23:0186           dc.b    "W",ue,"stenstiefel",0
-               S50:000A7B90:  57
-               S50:000A7B91:  F5
-               S50:000A7B92:  73 74 65 6E 73 74 69 65 66 65 6C
-               S50:000A7B9D:  00
+               S50:000A7D68:  57
+               S50:000A7D69:  F5
+               S50:000A7D6A:  73 74 65 6E 73 74 69 65 66 65 6C
+               S50:000A7D75:  00
 F23:0187       
 F23:0188       
 F23:0189       snippet46:
 F23:0190           dc.b    "Oasenstiefel",0
-               S50:000A7B9E:  4F 61 73 65 6E 73 74 69 65 66 65 6C
-               S50:000A7BAA:  00
+               S50:000A7D76:  4F 61 73 65 6E 73 74 69 65 66 65 6C
+               S50:000A7D82:  00
 F23:0191       
 F23:0192       
 F23:0193       snippet47:
 F23:0194           dc.b    "Sandalen",0
-               S50:000A7BAB:  53 61 6E 64 61 6C 65 6E
-               S50:000A7BB3:  00
+               S50:000A7D83:  53 61 6E 64 61 6C 65 6E
+               S50:000A7D8B:  00
 F23:0195       
 F23:0196       
 F23:0197       snippet48:
 F23:0198           dc.b    "Welcher dieser",cc_newline,"L",ae,"den verkauft",cc_newline,"keine Waffen?",0
-               S50:000A7BB4:  57 65 6C 63 68 65 72 20 64 69 65 73 65 72
-               S50:000A7BC2:  09
-               S50:000A7BC3:  4C
-               S50:000A7BC4:  F3
-               S50:000A7BC5:  64 65 6E 20 76 65 72 6B 61 75 66 74
-               S50:000A7BD1:  09
-               S50:000A7BD2:  6B 65 69 6E 65 20 57 61 66 66 65 6E 3F
-               S50:000A7BDF:  00
+               S50:000A7D8C:  57 65 6C 63 68 65 72 20 64 69 65 73 65 72
+               S50:000A7D9A:  09
+               S50:000A7D9B:  4C
+               S50:000A7D9C:  F3
+               S50:000A7D9D:  64 65 6E 20 76 65 72 6B 61 75 66 74
+               S50:000A7DA9:  09
+               S50:000A7DAA:  6B 65 69 6E 65 20 57 61 66 66 65 6E 3F
+               S50:000A7DB7:  00
 F23:0199       
 F23:0200       
 F23:0201       snippet49:
 F23:0202           dc.b    "Gooningle",0
-               S50:000A7BE0:  47 6F 6F 6E 69 6E 67 6C 65
-               S50:000A7BE9:  00
+               S50:000A7DB8:  47 6F 6F 6E 69 6E 67 6C 65
+               S50:000A7DC1:  00
 F23:0203       
 F23:0204       
 F23:0205       snippet50:
 F23:0206           dc.b    "Bacchus",0
-               S50:000A7BEA:  42 61 63 63 68 75 73
-               S50:000A7BF1:  00
+               S50:000A7DC2:  42 61 63 63 68 75 73
+               S50:000A7DC9:  00
 F23:0207       
 F23:0208       
 F23:0209       snippet51:
 F23:0210           dc.b    "Felissimo",0
-               S50:000A7BF2:  46 65 6C 69 73 73 69 6D 6F
-               S50:000A7BFB:  00
+               S50:000A7DCA:  46 65 6C 69 73 73 69 6D 6F
+               S50:000A7DD3:  00
 F23:0211       
 F23:0212       
 F23:0213       snippet52:
 F23:0214           dc.b    $03,$00,$02,$04,$04,"Ja   Nein",0
-               S50:000A7BFC:  03
-               S50:000A7BFD:  00
-               S50:000A7BFE:  02
-               S50:000A7BFF:  04
-               S50:000A7C00:  04
-               S50:000A7C01:  4A 61 20 20 20 4E 65 69 6E
-               S50:000A7C0A:  00
+               S50:000A7DD4:  03
+               S50:000A7DD5:  00
+               S50:000A7DD6:  02
+               S50:000A7DD7:  04
+               S50:000A7DD8:  04
+               S50:000A7DD9:  4A 61 20 20 20 4E 65 69 6E
+               S50:000A7DE2:  00
 F23:0215       
 F23:0216       snippet53:
 F23:0217       snippet54:
@@ -6125,855 +6430,855 @@ F23:0225       snippet62:
 F23:0226       snippet63:
 F23:0227       snippet64:
 F23:0228           dc.b    $00
-               S50:000A7C0B:  00
+               S50:000A7DE3:  00
 F23:0229       
 F23:0230       snippet65:
 F23:0231           dc.b    "Alsedo",0 ; Alsedo
-               S50:000A7C0C:  41 6C 73 65 64 6F
-               S50:000A7C12:  00
+               S50:000A7DE4:  41 6C 73 65 64 6F
+               S50:000A7DEA:  00
 F23:0232       
 F23:0233       snippet66:
 F23:0234           dc.b    "Amulet",0 ; Amulet
-               S50:000A7C13:  41 6D 75 6C 65 74
-               S50:000A7C19:  00
+               S50:000A7DEB:  41 6D 75 6C 65 74
+               S50:000A7DF1:  00
 F23:0235       
 F23:0236       snippet67:
 F23:0237           dc.b    "Axt",0 ; Axe
-               S50:000A7C1A:  41 78 74
-               S50:000A7C1D:  00
+               S50:000A7DF2:  41 78 74
+               S50:000A7DF5:  00
 F23:0238       
 F23:0239       snippet68:
 F23:0240           dc.b    "Schmied",0 ; Blacksmith
-               S50:000A7C1E:  53 63 68 6D 69 65 64
-               S50:000A7C25:  00
+               S50:000A7DF6:  53 63 68 6D 69 65 64
+               S50:000A7DFD:  00
 F23:0241       
 F23:0242       snippet69:
 F23:0243           dc.b    "Armreif",0 ; Bracelet
-               S50:000A7C26:  41 72 6D 72 65 69 66
-               S50:000A7C2D:  00
+               S50:000A7DFE:  41 72 6D 72 65 69 66
+               S50:000A7E05:  00
 F23:0244       
 F23:0245       snippet70:
 F23:0246           dc.b    "Schlo",ss,0 ; Castle
-               S50:000A7C2E:  53 63 68 6C 6F
-               S50:000A7C33:  F6
-               S50:000A7C34:  00
+               S50:000A7E06:  53 63 68 6C 6F
+               S50:000A7E0B:  F6
+               S50:000A7E0C:  00
 F23:0247       
 F23:0248       snippet71:
 F23:0249           dc.b    "Charmstein",0 ; Charmstone
-               S50:000A7C35:  43 68 61 72 6D 73 74 65 69 6E
-               S50:000A7C3F:  00
+               S50:000A7E0D:  43 68 61 72 6D 73 74 65 69 6E
+               S50:000A7E17:  00
 F23:0250       
 F23:0251       snippet72:
 F23:0252           dc.b    "Charmsteine",0 ; Charmstones
-               S50:000A7C40:  43 68 61 72 6D 73 74 65 69 6E 65
-               S50:000A7C4B:  00
+               S50:000A7E18:  43 68 61 72 6D 73 74 65 69 6E 65
+               S50:000A7E23:  00
 F23:0253       
 F23:0254       snippet73:
 F23:0255           dc.b    "Komm",0 ; Come
-               S50:000A7C4C:  4B 6F 6D 6D
-               S50:000A7C50:  00
+               S50:000A7E24:  4B 6F 6D 6D
+               S50:000A7E28:  00
 F23:0256       
 F23:0257       snippet74:
 F23:0258           dc.b    "Weiter",0 ; Continue
-               S50:000A7C51:  57 65 69 74 65 72
-               S50:000A7C57:  00
+               S50:000A7E29:  57 65 69 74 65 72
+               S50:000A7E2F:  00
 F23:0259       
 F23:0260       snippet75:
 F23:0261           dc.b    "W",ue,"ste",0 ; Desert
-               S50:000A7C58:  57
-               S50:000A7C59:  F5
-               S50:000A7C5A:  73 74 65
-               S50:000A7C5D:  00
+               S50:000A7E30:  57
+               S50:000A7E31:  F5
+               S50:000A7E32:  73 74 65
+               S50:000A7E35:  00
 F23:0262       
 F23:0263       snippet76:
 F23:0264           dc.b    "Drache",0 ; Dragon
-               S50:000A7C5E:  44 72 61 63 68 65
-               S50:000A7C64:  00
+               S50:000A7E36:  44 72 61 63 68 65
+               S50:000A7E3C:  00
 F23:0265       
 F23:0266       snippet77:
 F23:0267           dc.b    cAE,"lteste",0 ; Elder
-               S50:000A7C65:  F0
-               S50:000A7C66:  6C 74 65 73 74 65
-               S50:000A7C6C:  00
+               S50:000A7E3D:  F0
+               S50:000A7E3E:  6C 74 65 73 74 65
+               S50:000A7E44:  00
 F23:0268       
 F23:0269       snippet78:
 F23:0270           dc.b    "Eleanora",0 ; Eleanora
-               S50:000A7C6D:  45 6C 65 61 6E 6F 72 61
-               S50:000A7C75:  00
+               S50:000A7E45:  45 6C 65 61 6E 6F 72 61
+               S50:000A7E4D:  00
 F23:0271       
 F23:0272       snippet79:
 F23:0273           dc.b    "Finde",0 ; Find
-               S50:000A7C76:  46 69 6E 64 65
-               S50:000A7C7B:  00
+               S50:000A7E4E:  46 69 6E 64 65
+               S50:000A7E53:  00
 F23:0274       
 F23:0275       snippet80:
 F23:0276           dc.b    "Gut",0 ; Good
-               S50:000A7C7C:  47 75 74
-               S50:000A7C7F:  00
+               S50:000A7E54:  47 75 74
+               S50:000A7E57:  00
 F23:0277       
 F23:0278       snippet81:
 F23:0279           dc.b    "Hier",0 ; Here
-               S50:000A7C80:  48 69 65 72
-               S50:000A7C84:  00
+               S50:000A7E58:  48 69 65 72
+               S50:000A7E5C:  00
 F23:0280       
 F23:0281       snippet82:
 F23:0282           dc.b    "Lilypad",0 ; Lilypad
-               S50:000A7C85:  4C 69 6C 79 70 61 64
-               S50:000A7C8C:  00
+               S50:000A7E5D:  4C 69 6C 79 70 61 64
+               S50:000A7E64:  00
 F23:0283       
 F23:0284       snippet83:
 F23:0285           dc.b    "Sieht aus",0 ; Looks
-               S50:000A7C8D:  53 69 65 68 74 20 61 75 73
-               S50:000A7C96:  00
+               S50:000A7E65:  53 69 65 68 74 20 61 75 73
+               S50:000A7E6E:  00
 F23:0286       
 F23:0287       snippet84:
 F23:0288           dc.b    "Maugham",0 ; Maugham
-               S50:000A7C97:  4D 61 75 67 68 61 6D
-               S50:000A7C9E:  00
+               S50:000A7E6F:  4D 61 75 67 68 61 6D
+               S50:000A7E76:  00
 F23:0289       
 F23:0290       snippet85:
 F23:0291           dc.b    "Monster",0 ; Monster
-               S50:000A7C9F:  4D 6F 6E 73 74 65 72
-               S50:000A7CA6:  00
+               S50:000A7E77:  4D 6F 6E 73 74 65 72
+               S50:000A7E7E:  00
 F23:0292       
 F23:0293       snippet86:
 F23:0294           dc.b    "Jetzt",0 ; Now
-               S50:000A7CA7:  4A 65 74 7A 74
-               S50:000A7CAC:  00
+               S50:000A7E7F:  4A 65 74 7A 74
+               S50:000A7E84:  00
 F23:0295       
 F23:0296       snippet87:
 F23:0297           dc.b    "Okarina",0 ; Ocarina
-               S50:000A7CAD:  4F 6B 61 72 69 6E 61
-               S50:000A7CB4:  00
+               S50:000A7E85:  4F 6B 61 72 69 6E 61
+               S50:000A7E8C:  00
 F23:0298       
 F23:0299       snippet88:
 F23:0300           dc.b    "Bitte",0 ; Please
-               S50:000A7CB5:  42 69 74 74 65
-               S50:000A7CBA:  00
+               S50:000A7E8D:  42 69 74 74 65
+               S50:000A7E92:  00
 F23:0301       
 F23:0302       snippet89:
 F23:0303           dc.b    "Poseidon",0 ; Poseidon
-               S50:000A7CBB:  50 6F 73 65 69 64 6F 6E
-               S50:000A7CC3:  00
+               S50:000A7E93:  50 6F 73 65 69 64 6F 6E
+               S50:000A7E9B:  00
 F23:0304       
 F23:0305       snippet90:
 F23:0306           dc.b    "Priscilla",0 ; Priscilla
-               S50:000A7CC4:  50 72 69 73 63 69 6C 6C 61
-               S50:000A7CCD:  00
+               S50:000A7E9C:  50 72 69 73 63 69 6C 6C 61
+               S50:000A7EA5:  00
 F23:0307       
 F23:0308       snippet91:
 F23:0309           dc.b    "Purapril",0 ; Purapril
-               S50:000A7CCE:  50 75 72 61 70 72 69 6C
-               S50:000A7CD6:  00
+               S50:000A7EA6:  50 75 72 61 70 72 69 6C
+               S50:000A7EAE:  00
 F23:0310       
 F23:0311       snippet92:
 F23:0312           dc.b    "Pygm",ae,"en",0 ; Pygmy
-               S50:000A7CD7:  50 79 67 6D
-               S50:000A7CDB:  F3
-               S50:000A7CDC:  65 6E
-               S50:000A7CDE:  00
+               S50:000A7EAF:  50 79 67 6D
+               S50:000A7EB3:  F3
+               S50:000A7EB4:  65 6E
+               S50:000A7EB6:  00
 F23:0313       
 F23:0314       snippet93:
 F23:0315           dc.b    "K",oe,"nigin",0 ; Queen
-               S50:000A7CDF:  4B
-               S50:000A7CE0:  F4
-               S50:000A7CE1:  6E 69 67 69 6E
-               S50:000A7CE6:  00
+               S50:000A7EB7:  4B
+               S50:000A7EB8:  F4
+               S50:000A7EB9:  6E 69 67 69 6E
+               S50:000A7EBE:  00
 F23:0316       
 F23:0317       snippet94:
 F23:0318           dc.b    "Denk daran",0 ; Remember
-               S50:000A7CE7:  44 65 6E 6B 20 64 61 72 61 6E
-               S50:000A7CF1:  00
+               S50:000A7EBF:  44 65 6E 6B 20 64 61 72 61 6E
+               S50:000A7EC9:  00
 F23:0319       
 F23:0320       snippet95:
 F23:0321           dc.b    "Shion",0 ; Shion
-               S50:000A7CF2:  53 68 69 6F 6E
-               S50:000A7CF7:  00
+               S50:000A7ECA:  53 68 69 6F 6E
+               S50:000A7ECF:  00
 F23:0322       
 F23:0323       snippet96:
 F23:0324           dc.b    "Sphinx",0 ; Sphinx
-               S50:000A7CF8:  53 70 68 69 6E 78
-               S50:000A7CFE:  00
+               S50:000A7ED0:  53 70 68 69 6E 78
+               S50:000A7ED6:  00
 F23:0325       
 F23:0326       snippet97:
 F23:0327           dc.b    "Nimm",0 ; Take
-               S50:000A7CFF:  4E 69 6D 6D
-               S50:000A7D03:  00
+               S50:000A7ED7:  4E 69 6D 6D
+               S50:000A7EDB:  00
 F23:0328       
 F23:0329       snippet98:
 F23:0330           dc.b    "Dank",0 ; Thank
-               S50:000A7D04:  44 61 6E 6B
-               S50:000A7D08:  00
+               S50:000A7EDC:  44 61 6E 6B
+               S50:000A7EE0:  00
 F23:0331       
 F23:0332       snippet99:
 F23:0333           dc.b    "Das",0 ; The
-               S50:000A7D09:  44 61 73
-               S50:000A7D0C:  00
+               S50:000A7EE1:  44 61 73
+               S50:000A7EE4:  00
 F23:0334       
 F23:0335       snippet100:
 F23:0336           dc.b    "Dort",0 ; There
-               S50:000A7D0D:  44 6F 72 74
-               S50:000A7D11:  00
+               S50:000A7EE5:  44 6F 72 74
+               S50:000A7EE9:  00
 F23:0337       
 F23:0338       snippet101:
 F23:0339           dc.b    "Dies",0 ; This
-               S50:000A7D12:  44 69 65 73
-               S50:000A7D16:  00
+               S50:000A7EEA:  44 69 65 73
+               S50:000A7EEE:  00
 F23:0340       
 F23:0341       snippet102:
 F23:0342           dc.b    "Willkommen",0 ; Welcome
-               S50:000A7D17:  57 69 6C 6C 6B 6F 6D 6D 65 6E
-               S50:000A7D21:  00
+               S50:000A7EEF:  57 69 6C 6C 6B 6F 6D 6D 65 6E
+               S50:000A7EF9:  00
 F23:0343       
 F23:0344       snippet103:
 F23:0345           dc.b    "Was",0 ; What
-               S50:000A7D22:  57 61 73
-               S50:000A7D25:  00
+               S50:000A7EFA:  57 61 73
+               S50:000A7EFD:  00
 F23:0346       
 F23:0347       snippet104:
 F23:0348           dc.b    "World",0 ; World
-               S50:000A7D26:  57 6F 72 6C 64
-               S50:000A7D2B:  00
+               S50:000A7EFE:  57 6F 72 6C 64
+               S50:000A7F03:  00
 F23:0349       
 F23:0350       snippet105:
 F23:0351           dc.b    "Du",0 ; You
-               S50:000A7D2C:  44 75
-               S50:000A7D2E:  00
+               S50:000A7F04:  44 75
+               S50:000A7F06:  00
 F23:0352       
 F23:0353       snippet106:
 F23:0354           dc.b    "blubb106",0 ;able
-               S50:000A7D2F:  62 6C 75 62 62 31 30 36
-               S50:000A7D37:  00
+               S50:000A7F07:  62 6C 75 62 62 31 30 36
+               S50:000A7F0F:  00
 F23:0355       
 F23:0356       snippet107:
 F23:0357           dc.b    "blubb107",0 ; about
-               S50:000A7D38:  62 6C 75 62 62 31 30 37
-               S50:000A7D40:  00
+               S50:000A7F10:  62 6C 75 62 62 31 30 37
+               S50:000A7F18:  00
 F23:0358       
 F23:0359       snippet108:
 F23:0360           dc.b    "blubb108",0 ; again
-               S50:000A7D41:  62 6C 75 62 62 31 30 38
-               S50:000A7D49:  00
+               S50:000A7F19:  62 6C 75 62 62 31 30 38
+               S50:000A7F21:  00
 F23:0361       
 F23:0362       snippet109:
 F23:0363           dc.b    "blubb109",0 ; ahead
-               S50:000A7D4A:  62 6C 75 62 62 31 30 39
-               S50:000A7D52:  00
+               S50:000A7F22:  62 6C 75 62 62 31 30 39
+               S50:000A7F2A:  00
 F23:0364       
 F23:0365       snippet110:
 F23:0366           dc.b    "blubb110",0 ; all
-               S50:000A7D53:  62 6C 75 62 62 31 31 30
-               S50:000A7D5B:  00
+               S50:000A7F2B:  62 6C 75 62 62 31 31 30
+               S50:000A7F33:  00
 F23:0367       
 F23:0368       snippet111:
 F23:0369           dc.b    "blubb111",0 ; already
-               S50:000A7D5C:  62 6C 75 62 62 31 31 31
-               S50:000A7D64:  00
+               S50:000A7F34:  62 6C 75 62 62 31 31 31
+               S50:000A7F3C:  00
 F23:0370       
 F23:0371       snippet112:
 F23:0372           dc.b    "blubb112",0 ; and
-               S50:000A7D65:  62 6C 75 62 62 31 31 32
-               S50:000A7D6D:  00
+               S50:000A7F3D:  62 6C 75 62 62 31 31 32
+               S50:000A7F45:  00
 F23:0373       
 F23:0374       snippet113:
 F23:0375           dc.b    "blubb113",0 ; anything
-               S50:000A7D6E:  62 6C 75 62 62 31 31 33
-               S50:000A7D76:  00
+               S50:000A7F46:  62 6C 75 62 62 31 31 33
+               S50:000A7F4E:  00
 F23:0376       
 F23:0377       snippet114:
 F23:0378           dc.b    "blubb114",0 ; back
-               S50:000A7D77:  62 6C 75 62 62 31 31 34
-               S50:000A7D7F:  00
+               S50:000A7F4F:  62 6C 75 62 62 31 31 34
+               S50:000A7F57:  00
 F23:0379       
 F23:0380       snippet115:
 F23:0381           dc.b    "blubb115",0 ; been
-               S50:000A7D80:  62 6C 75 62 62 31 31 35
-               S50:000A7D88:  00
+               S50:000A7F58:  62 6C 75 62 62 31 31 35
+               S50:000A7F60:  00
 F23:0382       
 F23:0383       snippet116:
 F23:0384           dc.b    "blubb116",0 ; better
-               S50:000A7D89:  62 6C 75 62 62 31 31 36
-               S50:000A7D91:  00
+               S50:000A7F61:  62 6C 75 62 62 31 31 36
+               S50:000A7F69:  00
 F23:0385       
 F23:0386       snippet117:
 F23:0387           dc.b    "blubb117",0 ; beyond
-               S50:000A7D92:  62 6C 75 62 62 31 31 37
-               S50:000A7D9A:  00
+               S50:000A7F6A:  62 6C 75 62 62 31 31 37
+               S50:000A7F72:  00
 F23:0388       
 F23:0389       snippet118:
 F23:0390           dc.b    "blubb118",0 ; bottom
-               S50:000A7D9B:  62 6C 75 62 62 31 31 38
-               S50:000A7DA3:  00
+               S50:000A7F73:  62 6C 75 62 62 31 31 38
+               S50:000A7F7B:  00
 F23:0391       
 F23:0392       snippet119:
 F23:0393           dc.b    "blubb119",0 ; brother
-               S50:000A7DA4:  62 6C 75 62 62 31 31 39
-               S50:000A7DAC:  00
+               S50:000A7F7C:  62 6C 75 62 62 31 31 39
+               S50:000A7F84:  00
 F23:0394       
 F23:0395       snippet120:
 F23:0396           dc.b    "blubb120",0 ; but
-               S50:000A7DAD:  62 6C 75 62 62 31 32 30
-               S50:000A7DB5:  00
+               S50:000A7F85:  62 6C 75 62 62 31 32 30
+               S50:000A7F8D:  00
 F23:0397       
 F23:0398       snippet121:
 F23:0399           dc.b    "blubb121",0 ; can
-               S50:000A7DB6:  62 6C 75 62 62 31 32 31
-               S50:000A7DBE:  00
+               S50:000A7F8E:  62 6C 75 62 62 31 32 31
+               S50:000A7F96:  00
 F23:0400       
 F23:0401       snippet122:
 F23:0402           dc.b    "blubb122",0 ; castle
-               S50:000A7DBF:  62 6C 75 62 62 31 32 32
-               S50:000A7DC7:  00
+               S50:000A7F97:  62 6C 75 62 62 31 32 32
+               S50:000A7F9F:  00
 F23:0403       
 F23:0404       snippet123:
 F23:0405           dc.b    "blubb123",0 ; cave
-               S50:000A7DC8:  62 6C 75 62 62 31 32 33
-               S50:000A7DD0:  00
+               S50:000A7FA0:  62 6C 75 62 62 31 32 33
+               S50:000A7FA8:  00
 F23:0406       
 F23:0407       snippet124:
 F23:0408           dc.b    "blubb124",0 ; close
-               S50:000A7DD1:  62 6C 75 62 62 31 32 34
-               S50:000A7DD9:  00
+               S50:000A7FA9:  62 6C 75 62 62 31 32 34
+               S50:000A7FB1:  00
 F23:0409       
 F23:0410       snippet125:
 F23:0411           dc.b    "blubb125",0 ; closed
-               S50:000A7DDA:  62 6C 75 62 62 31 32 35
-               S50:000A7DE2:  00
+               S50:000A7FB2:  62 6C 75 62 62 31 32 35
+               S50:000A7FBA:  00
 F23:0412       
 F23:0413       snippet126:
 F23:0414           dc.b    "blubb126",0 ; come
-               S50:000A7DE3:  62 6C 75 62 62 31 32 36
-               S50:000A7DEB:  00
+               S50:000A7FBB:  62 6C 75 62 62 31 32 36
+               S50:000A7FC3:  00
 F23:0415       
 F23:0416       snippet127:
 F23:0417           dc.b    "blubb127",0 ; desert
-               S50:000A7DEC:  62 6C 75 62 62 31 32 37
-               S50:000A7DF4:  00
+               S50:000A7FC4:  62 6C 75 62 62 31 32 37
+               S50:000A7FCC:  00
 F23:0418       
 F23:0419       snippet128:
 F23:0420           dc.b    "blubb128",0 ; don
-               S50:000A7DF5:  62 6C 75 62 62 31 32 38
-               S50:000A7DFD:  00
+               S50:000A7FCD:  62 6C 75 62 62 31 32 38
+               S50:000A7FD5:  00
 F23:0421       
 F23:0422       snippet129:
 F23:0423           dc.b    "blubb129",0 ; door
-               S50:000A7DFE:  62 6C 75 62 62 31 32 39
-               S50:000A7E06:  00
+               S50:000A7FD6:  62 6C 75 62 62 31 32 39
+               S50:000A7FDE:  00
 F23:0424       
 F23:0425       snippet130:
 F23:0426           dc.b    "blubb130",0 ; dwarf
-               S50:000A7E07:  62 6C 75 62 62 31 33 30
-               S50:000A7E0F:  00
+               S50:000A7FDF:  62 6C 75 62 62 31 33 30
+               S50:000A7FE7:  00
 F23:0427       
 F23:0428       snippet131:
 F23:0429           dc.b    "blubb131",0 ; enter
-               S50:000A7E10:  62 6C 75 62 62 31 33 31
-               S50:000A7E18:  00
+               S50:000A7FE8:  62 6C 75 62 62 31 33 31
+               S50:000A7FF0:  00
 F23:0430       
 F23:0431       snippet132:
 F23:0432           dc.b    "blubb132",0 ; ever
-               S50:000A7E19:  62 6C 75 62 62 31 33 32
-               S50:000A7E21:  00
+               S50:000A7FF1:  62 6C 75 62 62 31 33 32
+               S50:000A7FF9:  00
 F23:0433       
 F23:0434       snippet133:
 F23:0435           dc.b    "blubb133",0 ; everything
-               S50:000A7E22:  62 6C 75 62 62 31 33 33
-               S50:000A7E2A:  00
+               S50:000A7FFA:  62 6C 75 62 62 31 33 33
+               S50:000A8002:  00
 F23:0436       
 F23:0437       snippet134:
 F23:0438           dc.b    "blubb134",0 ; find
-               S50:000A7E2B:  62 6C 75 62 62 31 33 34
-               S50:000A7E33:  00
+               S50:000A8003:  62 6C 75 62 62 31 33 34
+               S50:000A800B:  00
 F23:0439       
 F23:0440       snippet135:
 F23:0441           dc.b    "blubb135",0 ; for
-               S50:000A7E34:  62 6C 75 62 62 31 33 35
-               S50:000A7E3C:  00
+               S50:000A800C:  62 6C 75 62 62 31 33 35
+               S50:000A8014:  00
 F23:0442       
 F23:0443       snippet136:
 F23:0444           dc.b    "blubb136",0 ; forget
-               S50:000A7E3D:  62 6C 75 62 62 31 33 36
-               S50:000A7E45:  00
+               S50:000A8015:  62 6C 75 62 62 31 33 36
+               S50:000A801D:  00
 F23:0445       
 F23:0446       snippet137:
 F23:0447           dc.b    "blubb137",0 ; four
-               S50:000A7E46:  62 6C 75 62 62 31 33 37
-               S50:000A7E4E:  00
+               S50:000A801E:  62 6C 75 62 62 31 33 37
+               S50:000A8026:  00
 F23:0448       
 F23:0449       snippet138:
 F23:0450           dc.b    "blubb138",0 ; from
-               S50:000A7E4F:  62 6C 75 62 62 31 33 38
-               S50:000A7E57:  00
+               S50:000A8027:  62 6C 75 62 62 31 33 38
+               S50:000A802F:  00
 F23:0451       
 F23:0452       snippet139:
 F23:0453           dc.b    "blubb139",0 ; generation
-               S50:000A7E58:  62 6C 75 62 62 31 33 39
-               S50:000A7E60:  00
+               S50:000A8030:  62 6C 75 62 62 31 33 39
+               S50:000A8038:  00
 F23:0454       
 F23:0455       snippet140:
 F23:0456           dc.b    "blubb140",0 ; going
-               S50:000A7E61:  62 6C 75 62 62 31 34 30
-               S50:000A7E69:  00
+               S50:000A8039:  62 6C 75 62 62 31 34 30
+               S50:000A8041:  00
 F23:0457       
 F23:0458       snippet141:
 F23:0459           dc.b    "blubb141",0 ; gonna
-               S50:000A7E6A:  62 6C 75 62 62 31 34 31
-               S50:000A7E72:  00
+               S50:000A8042:  62 6C 75 62 62 31 34 31
+               S50:000A804A:  00
 F23:0460       
 F23:0461       snippet142:
 F23:0462           dc.b    "blubb142",0 ; good
-               S50:000A7E73:  62 6C 75 62 62 31 34 32
-               S50:000A7E7B:  00
+               S50:000A804B:  62 6C 75 62 62 31 34 32
+               S50:000A8053:  00
 F23:0463       
 F23:0464       snippet143:
 F23:0465           dc.b    "blubb143",0 ; got
-               S50:000A7E7C:  62 6C 75 62 62 31 34 33
-               S50:000A7E84:  00
+               S50:000A8054:  62 6C 75 62 62 31 34 33
+               S50:000A805C:  00
 F23:0466       
 F23:0467       snippet144:
 F23:0468           dc.b    "blubb144",0 ; grateful
-               S50:000A7E85:  62 6C 75 62 62 31 34 34
-               S50:000A7E8D:  00
+               S50:000A805D:  62 6C 75 62 62 31 34 34
+               S50:000A8065:  00
 F23:0469       
 F23:0470       snippet145:
 F23:0471           dc.b    "blubb145",0 ; has
-               S50:000A7E8E:  62 6C 75 62 62 31 34 35
-               S50:000A7E96:  00
+               S50:000A8066:  62 6C 75 62 62 31 34 35
+               S50:000A806E:  00
 F23:0472       
 F23:0473       snippet146:
 F23:0474           dc.b    "blubb146",0 ; have
-               S50:000A7E97:  62 6C 75 62 62 31 34 36
-               S50:000A7E9F:  00
+               S50:000A806F:  62 6C 75 62 62 31 34 36
+               S50:000A8077:  00
 F23:0475       
 F23:0476       snippet147:
 F23:0477           dc.b    "blubb147",0 ; heard
-               S50:000A7EA0:  62 6C 75 62 62 31 34 37
-               S50:000A7EA8:  00
+               S50:000A8078:  62 6C 75 62 62 31 34 37
+               S50:000A8080:  00
 F23:0478       
 F23:0479       snippet148:
 F23:0480           dc.b    "blubb148",0 ; help
-               S50:000A7EA9:  62 6C 75 62 62 31 34 38
-               S50:000A7EB1:  00
+               S50:000A8081:  62 6C 75 62 62 31 34 38
+               S50:000A8089:  00
 F23:0481       
 F23:0482       snippet149:
 F23:0483           dc.b    "blubb149",0 ; hero
-               S50:000A7EB2:  62 6C 75 62 62 31 34 39
-               S50:000A7EBA:  00
+               S50:000A808A:  62 6C 75 62 62 31 34 39
+               S50:000A8092:  00
 F23:0484       
 F23:0485       snippet150:
 F23:0486           dc.b    "blubb150",0 ; hidden
-               S50:000A7EBB:  62 6C 75 62 62 31 35 30
-               S50:000A7EC3:  00
+               S50:000A8093:  62 6C 75 62 62 31 35 30
+               S50:000A809B:  00
 F23:0487       
 F23:0488       snippet151:
 F23:0489           dc.b    "blubb151",0 ; increase
-               S50:000A7EC4:  62 6C 75 62 62 31 35 31
-               S50:000A7ECC:  00
+               S50:000A809C:  62 6C 75 62 62 31 35 31
+               S50:000A80A4:  00
 F23:0490       
 F23:0491       snippet152:
 F23:0492           dc.b    "blubb152",0 ; item
-               S50:000A7ECD:  62 6C 75 62 62 31 35 32
-               S50:000A7ED5:  00
+               S50:000A80A5:  62 6C 75 62 62 31 35 32
+               S50:000A80AD:  00
 F23:0493       
 F23:0494       snippet153:
 F23:0495           dc.b    "blubb153",0 ; items
-               S50:000A7ED6:  62 6C 75 62 62 31 35 33
-               S50:000A7EDE:  00
+               S50:000A80AE:  62 6C 75 62 62 31 35 33
+               S50:000A80B6:  00
 F23:0496       
 F23:0497       snippet154:
 F23:0498           dc.b    "blubb154",0 ; jellyfish
-               S50:000A7EDF:  62 6C 75 62 62 31 35 34
-               S50:000A7EE7:  00
+               S50:000A80B7:  62 6C 75 62 62 31 35 34
+               S50:000A80BF:  00
 F23:0499       
 F23:0500       snippet155:
 F23:0501           dc.b    "blubb155",0 ; journey
-               S50:000A7EE8:  62 6C 75 62 62 31 35 35
-               S50:000A7EF0:  00
+               S50:000A80C0:  62 6C 75 62 62 31 35 35
+               S50:000A80C8:  00
 F23:0502       
 F23:0503       snippet156:
 F23:0504           dc.b    "blubb156",0 ; just
-               S50:000A7EF1:  62 6C 75 62 62 31 35 36
-               S50:000A7EF9:  00
+               S50:000A80C9:  62 6C 75 62 62 31 35 36
+               S50:000A80D1:  00
 F23:0505       
 F23:0506       snippet157:
 F23:0507           dc.b    "blubb157",0 ; kidnapped
-               S50:000A7EFA:  62 6C 75 62 62 31 35 37
-               S50:000A7F02:  00
+               S50:000A80D2:  62 6C 75 62 62 31 35 37
+               S50:000A80DA:  00
 F23:0508       
 F23:0509       snippet158:
 F23:0510           dc.b    "blubb158",0 ; know
-               S50:000A7F03:  62 6C 75 62 62 31 35 38
-               S50:000A7F0B:  00
+               S50:000A80DB:  62 6C 75 62 62 31 35 38
+               S50:000A80E3:  00
 F23:0511       
 F23:0512       snippet159:
 F23:0513           dc.b    "blubb159",0 ; land
-               S50:000A7F0C:  62 6C 75 62 62 31 35 39
-               S50:000A7F14:  00
+               S50:000A80E4:  62 6C 75 62 62 31 35 39
+               S50:000A80EC:  00
 F23:0514       
 F23:0515       snippet160:
 F23:0516           dc.b    "blubb160",0 ; legendary
-               S50:000A7F15:  62 6C 75 62 62 31 36 30
-               S50:000A7F1D:  00
+               S50:000A80ED:  62 6C 75 62 62 31 36 30
+               S50:000A80F5:  00
 F23:0517       
 F23:0518       snippet161:
 F23:0519           dc.b    "blubb161",0 ; like
-               S50:000A7F1E:  62 6C 75 62 62 31 36 31
-               S50:000A7F26:  00
+               S50:000A80F6:  62 6C 75 62 62 31 36 31
+               S50:000A80FE:  00
 F23:0520       
 F23:0521       snippet162:
 F23:0522           dc.b    "blubb162",0 ; long
-               S50:000A7F27:  62 6C 75 62 62 31 36 32
-               S50:000A7F2F:  00
+               S50:000A80FF:  62 6C 75 62 62 31 36 32
+               S50:000A8107:  00
 F23:0523       
 F23:0524       snippet163:
 F23:0525           dc.b    "blubb163",0 ; look
-               S50:000A7F30:  62 6C 75 62 62 31 36 33
-               S50:000A7F38:  00
+               S50:000A8108:  62 6C 75 62 62 31 36 33
+               S50:000A8110:  00
 F23:0526       
 F23:0527       snippet164:
 F23:0528           dc.b    "blubb164",0 ; looks
-               S50:000A7F39:  62 6C 75 62 62 31 36 34
-               S50:000A7F41:  00
+               S50:000A8111:  62 6C 75 62 62 31 36 34
+               S50:000A8119:  00
 F23:0529       
 F23:0530       snippet165:
 F23:0531           dc.b    "blubb165",0 ; magic
-               S50:000A7F42:  62 6C 75 62 62 31 36 35
-               S50:000A7F4A:  00
+               S50:000A811A:  62 6C 75 62 62 31 36 35
+               S50:000A8122:  00
 F23:0532       
 F23:0533       snippet166:
 F23:0534           dc.b    "blubb166",0 ; may
-               S50:000A7F4B:  62 6C 75 62 62 31 36 36
-               S50:000A7F53:  00
+               S50:000A8123:  62 6C 75 62 62 31 36 36
+               S50:000A812B:  00
 F23:0535       
 F23:0536       snippet167:
 F23:0537           dc.b    "blubb167",0 ; melodies
-               S50:000A7F54:  62 6C 75 62 62 31 36 37
-               S50:000A7F5C:  00
+               S50:000A812C:  62 6C 75 62 62 31 36 37
+               S50:000A8134:  00
 F23:0538       
 F23:0539       snippet168:
 F23:0540           dc.b    "blubb168",0 ; monsters
-               S50:000A7F5D:  62 6C 75 62 62 31 36 38
-               S50:000A7F65:  00
+               S50:000A8135:  62 6C 75 62 62 31 36 38
+               S50:000A813D:  00
 F23:0541       
 F23:0542       snippet169:
 F23:0543           dc.b    "blubb169",0 ; more
-               S50:000A7F66:  62 6C 75 62 62 31 36 39
-               S50:000A7F6E:  00
+               S50:000A813E:  62 6C 75 62 62 31 36 39
+               S50:000A8146:  00
 F23:0544       
 F23:0545       snippet170:
 F23:0546           dc.b    "blubb170",0 ; much
-               S50:000A7F6F:  62 6C 75 62 62 31 37 30
-               S50:000A7F77:  00
+               S50:000A8147:  62 6C 75 62 62 31 37 30
+               S50:000A814F:  00
 F23:0547       
 F23:0548       snippet171:
 F23:0549           dc.b    "blubb171",0 ; must
-               S50:000A7F78:  62 6C 75 62 62 31 37 31
-               S50:000A7F80:  00
+               S50:000A8150:  62 6C 75 62 62 31 37 31
+               S50:000A8158:  00
 F23:0550       
 F23:0551       snippet172:
 F23:0552           dc.b    "blubb172",0 ; need
-               S50:000A7F81:  62 6C 75 62 62 31 37 32
-               S50:000A7F89:  00
+               S50:000A8159:  62 6C 75 62 62 31 37 32
+               S50:000A8161:  00
 F23:0553       
 F23:0554       snippet173:
 F23:0555           dc.b    "blubb173",0 ; not
-               S50:000A7F8A:  62 6C 75 62 62 31 37 33
-               S50:000A7F92:  00
+               S50:000A8162:  62 6C 75 62 62 31 37 33
+               S50:000A816A:  00
 F23:0556       
 F23:0557       snippet174:
 F23:0558           dc.b    "blubb174",0 ; nothing
-               S50:000A7F93:  62 6C 75 62 62 31 37 34
-               S50:000A7F9B:  00
+               S50:000A816B:  62 6C 75 62 62 31 37 34
+               S50:000A8173:  00
 F23:0559       
 F23:0560       snippet175:
 F23:0561           dc.b    "blubb175",0 ; now
-               S50:000A7F9C:  62 6C 75 62 62 31 37 35
-               S50:000A7FA4:  00
+               S50:000A8174:  62 6C 75 62 62 31 37 35
+               S50:000A817C:  00
 F23:0562       
 F23:0563       snippet176:
 F23:0564           dc.b    "blubb176",0 ; one
-               S50:000A7FA5:  62 6C 75 62 62 31 37 36
-               S50:000A7FAD:  00
+               S50:000A817D:  62 6C 75 62 62 31 37 36
+               S50:000A8185:  00
 F23:0565       
 F23:0566       snippet177:
 F23:0567           dc.b    "blubb177",0 ; only
-               S50:000A7FAE:  62 6C 75 62 62 31 37 37
-               S50:000A7FB6:  00
+               S50:000A8186:  62 6C 75 62 62 31 37 37
+               S50:000A818E:  00
 F23:0568       
 F23:0569       snippet178:
 F23:0570           dc.b    "blubb178",0 ; other
-               S50:000A7FB7:  62 6C 75 62 62 31 37 38
-               S50:000A7FBF:  00
+               S50:000A818F:  62 6C 75 62 62 31 37 38
+               S50:000A8197:  00
 F23:0571       
 F23:0572       snippet179:
 F23:0573           dc.b    "blubb179",0 ; out
-               S50:000A7FC0:  62 6C 75 62 62 31 37 39
-               S50:000A7FC8:  00
+               S50:000A8198:  62 6C 75 62 62 31 37 39
+               S50:000A81A0:  00
 F23:0574       
 F23:0575       snippet180:
 F23:0576           dc.b    "blubb180",0 ; peaceful
-               S50:000A7FC9:  62 6C 75 62 62 31 38 30
-               S50:000A7FD1:  00
+               S50:000A81A1:  62 6C 75 62 62 31 38 30
+               S50:000A81A9:  00
 F23:0577       
 F23:0578       snippet181:
 F23:0579           dc.b    "blubb181",0 ; people
-               S50:000A7FD2:  62 6C 75 62 62 31 38 31
-               S50:000A7FDA:  00
+               S50:000A81AA:  62 6C 75 62 62 31 38 31
+               S50:000A81B2:  00
 F23:0580       
 F23:0581       snippet182:
 F23:0582           dc.b    "blubb182",0 ; place
-               S50:000A7FDB:  62 6C 75 62 62 31 38 32
-               S50:000A7FE3:  00
+               S50:000A81B3:  62 6C 75 62 62 31 38 32
+               S50:000A81BB:  00
 F23:0583       
 F23:0584       snippet183:
 F23:0585           dc.b    "blubb183",0 ; practice
-               S50:000A7FE4:  62 6C 75 62 62 31 38 33
-               S50:000A7FEC:  00
+               S50:000A81BC:  62 6C 75 62 62 31 38 33
+               S50:000A81C4:  00
 F23:0586       
 F23:0587       snippet184:
 F23:0588           dc.b    "blubb184",0 ; princess
-               S50:000A7FED:  62 6C 75 62 62 31 38 34
-               S50:000A7FF5:  00
+               S50:000A81C5:  62 6C 75 62 62 31 38 34
+               S50:000A81CD:  00
 F23:0589       
 F23:0590       snippet185:
 F23:0591           dc.b    "blubb185",0 ; probably
-               S50:000A7FF6:  62 6C 75 62 62 31 38 35
-               S50:000A7FFE:  00
+               S50:000A81CE:  62 6C 75 62 62 31 38 35
+               S50:000A81D6:  00
 F23:0592       
 F23:0593       snippet186:
 F23:0594           dc.b    "blubb186",0 ; question
-               S50:000A7FFF:  62 6C 75 62 62 31 38 36
-               S50:000A8007:  00
+               S50:000A81D7:  62 6C 75 62 62 31 38 36
+               S50:000A81DF:  00
 F23:0595       
 F23:0596       snippet187:
 F23:0597           dc.b    "blubb187",0 ; ready
-               S50:000A8008:  62 6C 75 62 62 31 38 37
-               S50:000A8010:  00
+               S50:000A81E0:  62 6C 75 62 62 31 38 37
+               S50:000A81E8:  00
 F23:0598       
 F23:0599       snippet188:
 F23:0600           dc.b    "blubb188",0 ; return
-               S50:000A8011:  62 6C 75 62 62 31 38 38
-               S50:000A8019:  00
+               S50:000A81E9:  62 6C 75 62 62 31 38 38
+               S50:000A81F1:  00
 F23:0601       
 F23:0602       snippet189:
 F23:0603           dc.b    "blubb189",0 ; returned
-               S50:000A801A:  62 6C 75 62 62 31 38 39
-               S50:000A8022:  00
+               S50:000A81F2:  62 6C 75 62 62 31 38 39
+               S50:000A81FA:  00
 F23:0604       
 F23:0605       snippet190:
 F23:0606           dc.b    "blubb190",0 ; right
-               S50:000A8023:  62 6C 75 62 62 31 39 30
-               S50:000A802B:  00
+               S50:000A81FB:  62 6C 75 62 62 31 39 30
+               S50:000A8203:  00
 F23:0607       
 F23:0608       snippet191:
 F23:0609           dc.b    "blubb191",0 ; safely
-               S50:000A802C:  62 6C 75 62 62 31 39 31
-               S50:000A8034:  00
+               S50:000A8204:  62 6C 75 62 62 31 39 31
+               S50:000A820C:  00
 F23:0610       
 F23:0611       snippet192:
 F23:0612           dc.b    "blubb192",0 ; saved
-               S50:000A8035:  62 6C 75 62 62 31 39 32
-               S50:000A803D:  00
+               S50:000A820D:  62 6C 75 62 62 31 39 32
+               S50:000A8215:  00
 F23:0613       
 F23:0614       snippet193:
 F23:0615           dc.b    "blubb193",0 ; search
-               S50:000A803E:  62 6C 75 62 62 31 39 33
-               S50:000A8046:  00
+               S50:000A8216:  62 6C 75 62 62 31 39 33
+               S50:000A821E:  00
 F23:0616       
 F23:0617       snippet194:
 F23:0618           dc.b    "blubb194",0 ; see
-               S50:000A8047:  62 6C 75 62 62 31 39 34
-               S50:000A804F:  00
+               S50:000A821F:  62 6C 75 62 62 31 39 34
+               S50:000A8227:  00
 F23:0619       
 F23:0620       snippet195:
 F23:0621           dc.b    "blubb195",0 ; sell
-               S50:000A8050:  62 6C 75 62 62 31 39 35
-               S50:000A8058:  00
+               S50:000A8228:  62 6C 75 62 62 31 39 35
+               S50:000A8230:  00
 F23:0622       
 F23:0623       snippet196:
 F23:0624           dc.b    "blubb196",0 ; shop
-               S50:000A8059:  62 6C 75 62 62 31 39 36
-               S50:000A8061:  00
+               S50:000A8231:  62 6C 75 62 62 31 39 36
+               S50:000A8239:  00
 F23:0625       
 F23:0626       snippet197:
 F23:0627           dc.b    "blubb197",0 ; shrine
-               S50:000A8062:  62 6C 75 62 62 31 39 37
-               S50:000A806A:  00
+               S50:000A823A:  62 6C 75 62 62 31 39 37
+               S50:000A8242:  00
 F23:0628       
 F23:0629       snippet198:
 F23:0630           dc.b    "blubb198",0 ; sleep
-               S50:000A806B:  62 6C 75 62 62 31 39 38
-               S50:000A8073:  00
+               S50:000A8243:  62 6C 75 62 62 31 39 38
+               S50:000A824B:  00
 F23:0631       
 F23:0632       snippet199:
 F23:0633           dc.b    "blubb199",0 ; some
-               S50:000A8074:  62 6C 75 62 62 31 39 39
-               S50:000A807C:  00
+               S50:000A824C:  62 6C 75 62 62 31 39 39
+               S50:000A8254:  00
 F23:0634       
 F23:0635       snippet200:
 F23:0636           dc.b    "blubb200",0 ; something
-               S50:000A807D:  62 6C 75 62 62 32 30 30
-               S50:000A8085:  00
+               S50:000A8255:  62 6C 75 62 62 32 30 30
+               S50:000A825D:  00
 F23:0637       
 F23:0638       snippet201:
 F23:0639           dc.b    "blubb201",0 ; sometime
-               S50:000A8086:  62 6C 75 62 62 32 30 31
-               S50:000A808E:  00
+               S50:000A825E:  62 6C 75 62 62 32 30 31
+               S50:000A8266:  00
 F23:0640       
 F23:0641       snippet202:
 F23:0642           dc.b    "blubb202",0 ; somewhere
-               S50:000A808F:  62 6C 75 62 62 32 30 32
-               S50:000A8097:  00
+               S50:000A8267:  62 6C 75 62 62 32 30 32
+               S50:000A826F:  00
 F23:0643       
 F23:0644       snippet203:
 F23:0645           dc.b    "blubb203",0 ; sorry
-               S50:000A8098:  62 6C 75 62 62 32 30 33
-               S50:000A80A0:  00
+               S50:000A8270:  62 6C 75 62 62 32 30 33
+               S50:000A8278:  00
 F23:0646       
 F23:0647       snippet204:
 F23:0648           dc.b    "blubb204",0 ; stock
-               S50:000A80A1:  62 6C 75 62 62 32 30 34
-               S50:000A80A9:  00
+               S50:000A8279:  62 6C 75 62 62 32 30 34
+               S50:000A8281:  00
 F23:0649       
 F23:0650       snippet205:
 F23:0651           dc.b    "blubb205",0 ; store
-               S50:000A80AA:  62 6C 75 62 62 32 30 35
-               S50:000A80B2:  00
+               S50:000A8282:  62 6C 75 62 62 32 30 35
+               S50:000A828A:  00
 F23:0652       
 F23:0653       snippet206:
 F23:0654           dc.b    "blubb206",0 ; storekeeper
-               S50:000A80B3:  62 6C 75 62 62 32 30 36
-               S50:000A80BB:  00
+               S50:000A828B:  62 6C 75 62 62 32 30 36
+               S50:000A8293:  00
 F23:0655       
 F23:0656       snippet207:
 F23:0657           dc.b    "blubb207",0 ; sword
-               S50:000A80BC:  62 6C 75 62 62 32 30 37
-               S50:000A80C4:  00
+               S50:000A8294:  62 6C 75 62 62 32 30 37
+               S50:000A829C:  00
 F23:0658       
 F23:0659       snippet208:
 F23:0660           dc.b    "blubb208",0 ; take
-               S50:000A80C5:  62 6C 75 62 62 32 30 38
-               S50:000A80CD:  00
+               S50:000A829D:  62 6C 75 62 62 32 30 38
+               S50:000A82A5:  00
 F23:0661       
 F23:0662       snippet209:
 F23:0663           dc.b    "blubb209",0 ; terribly
-               S50:000A80CE:  62 6C 75 62 62 32 30 39
-               S50:000A80D6:  00
+               S50:000A82A6:  62 6C 75 62 62 32 30 39
+               S50:000A82AE:  00
 F23:0664       
 F23:0665       snippet210:
 F23:0666           dc.b    "blubb210",0 ; thank
-               S50:000A80D7:  62 6C 75 62 62 32 31 30
-               S50:000A80DF:  00
+               S50:000A82AF:  62 6C 75 62 62 32 31 30
+               S50:000A82B7:  00
 F23:0667       
 F23:0668       snippet211:
 F23:0669           dc.b    "blubb211",0 ; that
-               S50:000A80E0:  62 6C 75 62 62 32 31 31
-               S50:000A80E8:  00
+               S50:000A82B8:  62 6C 75 62 62 32 31 31
+               S50:000A82C0:  00
 F23:0670       
 F23:0671       snippet212:
 F23:0672           dc.b    "blubb212",0 ; the
-               S50:000A80E9:  62 6C 75 62 62 32 31 32
-               S50:000A80F1:  00
+               S50:000A82C1:  62 6C 75 62 62 32 31 32
+               S50:000A82C9:  00
 F23:0673       
 F23:0674       snippet213:
 F23:0675           dc.b    "blubb213",0 ; their
-               S50:000A80F2:  62 6C 75 62 62 32 31 33
-               S50:000A80FA:  00
+               S50:000A82CA:  62 6C 75 62 62 32 31 33
+               S50:000A82D2:  00
 F23:0676       
 F23:0677       snippet214:
 F23:0678           dc.b    "blubb214",0 ; them
-               S50:000A80FB:  62 6C 75 62 62 32 31 34
-               S50:000A8103:  00
+               S50:000A82D3:  62 6C 75 62 62 32 31 34
+               S50:000A82DB:  00
 F23:0679       
 F23:0680       snippet215:
 F23:0681           dc.b    "blubb215",0 ; then
-               S50:000A8104:  62 6C 75 62 62 32 31 35
-               S50:000A810C:  00
+               S50:000A82DC:  62 6C 75 62 62 32 31 35
+               S50:000A82E4:  00
 F23:0682       
 F23:0683       snippet216:
 F23:0684           dc.b    "blubb216",0 ; there
-               S50:000A810D:  62 6C 75 62 62 32 31 36
-               S50:000A8115:  00
+               S50:000A82E5:  62 6C 75 62 62 32 31 36
+               S50:000A82ED:  00
 F23:0685       
 F23:0686       snippet217:
 F23:0687           dc.b    "blubb217",0 ; this
-               S50:000A8116:  62 6C 75 62 62 32 31 37
-               S50:000A811E:  00
+               S50:000A82EE:  62 6C 75 62 62 32 31 37
+               S50:000A82F6:  00
 F23:0688       
 F23:0689       snippet218:
 F23:0690           dc.b    "blubb218",0 ; though
-               S50:000A811F:  62 6C 75 62 62 32 31 38
-               S50:000A8127:  00
+               S50:000A82F7:  62 6C 75 62 62 32 31 38
+               S50:000A82FF:  00
 F23:0691       
 F23:0692       snippet219:
 F23:0693           dc.b    "blubb219",0 ; time
-               S50:000A8128:  62 6C 75 62 62 32 31 39
-               S50:000A8130:  00
+               S50:000A8300:  62 6C 75 62 62 32 31 39
+               S50:000A8308:  00
 F23:0694       
 F23:0695       snippet220:
 F23:0696           dc.b    "blubb220",0 ; underwater
-               S50:000A8131:  62 6C 75 62 62 32 32 30
-               S50:000A8139:  00
+               S50:000A8309:  62 6C 75 62 62 32 32 30
+               S50:000A8311:  00
 F23:0697       
 F23:0698       snippet221:
 F23:0699           dc.b    "blubb221",0 ; very
-               S50:000A813A:  62 6C 75 62 62 32 32 31
-               S50:000A8142:  00
+               S50:000A8312:  62 6C 75 62 62 32 32 31
+               S50:000A831A:  00
 F23:0700       
 F23:0701       snippet222:
 F23:0702           dc.b    "blubb222",0 ; village
-               S50:000A8143:  62 6C 75 62 62 32 32 32
-               S50:000A814B:  00
+               S50:000A831B:  62 6C 75 62 62 32 32 32
+               S50:000A8323:  00
 F23:0703       
 F23:0704       snippet223:
 F23:0705           dc.b    "blubb223",0 ; volcano
-               S50:000A814C:  62 6C 75 62 62 32 32 33
-               S50:000A8154:  00
+               S50:000A8324:  62 6C 75 62 62 32 32 33
+               S50:000A832C:  00
 F23:0706       
 F23:0707       snippet224:
 F23:0708           dc.b    "blubb224",0 ; waiting
-               S50:000A8155:  62 6C 75 62 62 32 32 34
-               S50:000A815D:  00
+               S50:000A832D:  62 6C 75 62 62 32 32 34
+               S50:000A8335:  00
 F23:0709       
 F23:0710       snippet225:
 F23:0711           dc.b    "blubb225",0 ; was
-               S50:000A815E:  62 6C 75 62 62 32 32 35
-               S50:000A8166:  00
+               S50:000A8336:  62 6C 75 62 62 32 32 35
+               S50:000A833E:  00
 F23:0712       
 F23:0713       snippet226:
 F23:0714           dc.b    "blubb226",0 ; weapon
-               S50:000A8167:  62 6C 75 62 62 32 32 36
-               S50:000A816F:  00
+               S50:000A833F:  62 6C 75 62 62 32 32 36
+               S50:000A8347:  00
 F23:0715       
 F23:0716       snippet227:
 F23:0717           dc.b    "blubb227",0 ; well
-               S50:000A8170:  62 6C 75 62 62 32 32 37
-               S50:000A8178:  00
+               S50:000A8348:  62 6C 75 62 62 32 32 37
+               S50:000A8350:  00
 F23:0718       
 F23:0719       snippet228:
 F23:0720           dc.b    "blubb228",0 ; what
-               S50:000A8179:  62 6C 75 62 62 32 32 38
-               S50:000A8181:  00
+               S50:000A8351:  62 6C 75 62 62 32 32 38
+               S50:000A8359:  00
 F23:0721       
 F23:0722       snippet229:
 F23:0723           dc.b    "blubb229",0 ; will
-               S50:000A8182:  62 6C 75 62 62 32 32 39
-               S50:000A818A:  00
+               S50:000A835A:  62 6C 75 62 62 32 32 39
+               S50:000A8362:  00
 F23:0724       
 F23:0725       snippet230:
 F23:0726           dc.b    "blubb230",0 ; with
-               S50:000A818B:  62 6C 75 62 62 32 33 30
-               S50:000A8193:  00
+               S50:000A8363:  62 6C 75 62 62 32 33 30
+               S50:000A836B:  00
 F23:0727       
 F23:0728       snippet231:
 F23:0729           dc.b    "blubb231",0 ; you
-               S50:000A8194:  62 6C 75 62 62 32 33 31
-               S50:000A819C:  00
+               S50:000A836C:  62 6C 75 62 62 32 33 31
+               S50:000A8374:  00
 F23:0730       
 F23:0731       snippet232:
 F23:0732           dc.b    "blubb232",0 ; your
-               S50:000A819D:  62 6C 75 62 62 32 33 32
-               S50:000A81A5:  00
+               S50:000A8375:  62 6C 75 62 62 32 33 32
+               S50:000A837D:  00
 F23:0733       
 F23:0734       
 F00:0058       
@@ -6991,154 +7296,154 @@ F24:0010           ;!!! 19 CHARACTERS MAX FOR HEADLINES !!!
 F24:0011           ;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 F24:0012       
 F24:0013           dc.b "MITARBEITER",0
-               S50:000A81A8:  4D 49 54 41 52 42 45 49 54 45 52
-               S50:000A81B3:  00
+               S50:000A8380:  4D 49 54 41 52 42 45 49 54 45 52
+               S50:000A838B:  00
 F24:0014       
 F24:0015           ;;;;;;;;;"1234567890123456789"
 F24:0016           dc.b $9A,"PROGRAMMLEITUNG",0
-               S50:000A81B4:  9A
-               S50:000A81B5:  50 52 4F 47 52 41 4D 4D 4C 45 49 54 55 4E 47
-               S50:000A81C4:  00
+               S50:000A838C:  9A
+               S50:000A838D:  50 52 4F 47 52 41 4D 4D 4C 45 49 54 55 4E 47
+               S50:000A839C:  00
 F24:0017           dc.b "TAKANORI KURIHARA",0
-               S50:000A81C5:  54 41 4B 41 4E 4F 52 49 20 4B 55 52 49 48 41 52
-               S50:000A81D5:  41
-               S50:000A81D6:  00
+               S50:000A839D:  54 41 4B 41 4E 4F 52 49 20 4B 55 52 49 48 41 52
+               S50:000A83AD:  41
+               S50:000A83AE:  00
 F24:0018       
 F24:0019           ;;;;;;;;;"1234567890123456789"
 F24:0020           dc.b $9A,"PROGRAMMIERUNG",0
-               S50:000A81D7:  9A
-               S50:000A81D8:  50 52 4F 47 52 41 4D 4D 49 45 52 55 4E 47
-               S50:000A81E6:  00
+               S50:000A83AF:  9A
+               S50:000A83B0:  50 52 4F 47 52 41 4D 4D 49 45 52 55 4E 47
+               S50:000A83BE:  00
 F24:0021           dc.b "YOSHIHISA SHIMIZU",0
-               S50:000A81E7:  59 4F 53 48 49 48 49 53 41 20 53 48 49 4D 49 5A
-               S50:000A81F7:  55
-               S50:000A81F8:  00
+               S50:000A83BF:  59 4F 53 48 49 48 49 53 41 20 53 48 49 4D 49 5A
+               S50:000A83CF:  55
+               S50:000A83D0:  00
 F24:0022       
 F24:0023           ;;;;;;;;;"1234567890123456789"
 F24:0024           dc.b $9A,"MUSIK UND EFFEKTE",0
-               S50:000A81F9:  9A
-               S50:000A81FA:  4D 55 53 49 4B 20 55 4E 44 20 45 46 46 45 4B 54
-               S50:000A820A:  45
-               S50:000A820B:  00
+               S50:000A83D1:  9A
+               S50:000A83D2:  4D 55 53 49 4B 20 55 4E 44 20 45 46 46 45 4B 54
+               S50:000A83E2:  45
+               S50:000A83E3:  00
 F24:0025           dc.b "SHINICHI SAKAMOTO",0
-               S50:000A820C:  53 48 49 4E 49 43 48 49 20 53 41 4B 41 4D 4F 54
-               S50:000A821C:  4F
-               S50:000A821D:  00
+               S50:000A83E4:  53 48 49 4E 49 43 48 49 20 53 41 4B 41 4D 4F 54
+               S50:000A83F4:  4F
+               S50:000A83F5:  00
 F24:0026       
 F24:0027           ;;;;;;;;;"1234567890123456789"
 F24:0028           dc.b $9A,"DESIGNER",0
-               S50:000A821E:  9A
-               S50:000A821F:  44 45 53 49 47 4E 45 52
-               S50:000A8227:  00
+               S50:000A83F6:  9A
+               S50:000A83F7:  44 45 53 49 47 4E 45 52
+               S50:000A83FF:  00
 F24:0029           dc.b "MINA MORIOKA",0
-               S50:000A8228:  4D 49 4E 41 20 4D 4F 52 49 4F 4B 41
-               S50:000A8234:  00
+               S50:000A8400:  4D 49 4E 41 20 4D 4F 52 49 4F 4B 41
+               S50:000A840C:  00
 F24:0030           dc.b "HIROMI KURIHARA",0
-               S50:000A8235:  48 49 52 4F 4D 49 20 4B 55 52 49 48 41 52 41
-               S50:000A8244:  00
+               S50:000A840D:  48 49 52 4F 4D 49 20 4B 55 52 49 48 41 52 41
+               S50:000A841C:  00
 F24:0031           dc.b "TOMOKO NAKAYAMA",0
-               S50:000A8245:  54 4F 4D 4F 4B 4F 20 4E 41 4B 41 59 41 4D 41
-               S50:000A8254:  00
+               S50:000A841D:  54 4F 4D 4F 4B 4F 20 4E 41 4B 41 59 41 4D 41
+               S50:000A842C:  00
 F24:0032           dc.b "MAKI OHZORA",0
-               S50:000A8255:  4D 41 4B 49 20 4F 48 5A 4F 52 41
-               S50:000A8260:  00
+               S50:000A842D:  4D 41 4B 49 20 4F 48 5A 4F 52 41
+               S50:000A8438:  00
 F24:0033       
 F24:0034           ;;;;;;;;;"1234567890123456789"
 F24:0035           dc.b $9A,"REGIE",0
-               S50:000A8261:  9A
-               S50:000A8262:  52 45 47 49 45
-               S50:000A8267:  00
+               S50:000A8439:  9A
+               S50:000A843A:  52 45 47 49 45
+               S50:000A843F:  00
 F24:0036           dc.b "YUTAKA HIRATA",0
-               S50:000A8268:  59 55 54 41 4B 41 20 48 49 52 41 54 41
-               S50:000A8275:  00
+               S50:000A8440:  59 55 54 41 4B 41 20 48 49 52 41 54 41
+               S50:000A844D:  00
 F24:0037           dc.b "YOSHIHISA SHIMIZU",0
-               S50:000A8276:  59 4F 53 48 49 48 49 53 41 20 53 48 49 4D 49 5A
-               S50:000A8286:  55
-               S50:000A8287:  00
+               S50:000A844E:  59 4F 53 48 49 48 49 53 41 20 53 48 49 4D 49 5A
+               S50:000A845E:  55
+               S50:000A845F:  00
 F24:0038       
 F24:0039           ;;;;;;;;;"1234567890123456789"
 F24:0040           dc.b $9A,"LEITUNG",0
-               S50:000A8288:  9A
-               S50:000A8289:  4C 45 49 54 55 4E 47
-               S50:000A8290:  00
+               S50:000A8460:  9A
+               S50:000A8461:  4C 45 49 54 55 4E 47
+               S50:000A8468:  00
 F24:0041           dc.b "MICHISHITO ISHIZUKA",0
-               S50:000A8291:  4D 49 43 48 49 53 48 49 54 4F 20 49 53 48 49 5A
-               S50:000A82A1:  55 4B 41
-               S50:000A82A4:  00
+               S50:000A8469:  4D 49 43 48 49 53 48 49 54 4F 20 49 53 48 49 5A
+               S50:000A8479:  55 4B 41
+               S50:000A847C:  00
 F24:0042       
 F24:0043           ;;;;;;;;;"1234567890123456789"
 F24:0044           dc.b $9A,"BESONDERER DANK AN",0
-               S50:000A82A5:  9A
-               S50:000A82A6:  42 45 53 4F 4E 44 45 52 45 52 20 44 41 4E 4B 20
-               S50:000A82B6:  41 4E
-               S50:000A82B8:  00
+               S50:000A847D:  9A
+               S50:000A847E:  42 45 53 4F 4E 44 45 52 45 52 20 44 41 4E 4B 20
+               S50:000A848E:  41 4E
+               S50:000A8490:  00
 F24:0045           dc.b "MASANORI YOSHIHARA",0
-               S50:000A82B9:  4D 41 53 41 4E 4F 52 49 20 59 4F 53 48 49 48 41
-               S50:000A82C9:  52 41
-               S50:000A82CB:  00
+               S50:000A8491:  4D 41 53 41 4E 4F 52 49 20 59 4F 53 48 49 48 41
+               S50:000A84A1:  52 41
+               S50:000A84A3:  00
 F24:0046           dc.b "TSUTOMU WATANABE",0
-               S50:000A82CC:  54 53 55 54 4F 4D 55 20 57 41 54 41 4E 41 42 45
-               S50:000A82DC:  00
+               S50:000A84A4:  54 53 55 54 4F 4D 55 20 57 41 54 41 4E 41 42 45
+               S50:000A84B4:  00
 F24:0047           dc.b "YOSHIHITO SAISYO",0
-               S50:000A82DD:  59 4F 53 48 49 48 49 54 4F 20 53 41 49 53 59 4F
-               S50:000A82ED:  00
+               S50:000A84B5:  59 4F 53 48 49 48 49 54 4F 20 53 41 49 53 59 4F
+               S50:000A84C5:  00
 F24:0048           dc.b "HIROMITU WATANABE",0
-               S50:000A82EE:  48 49 52 4F 4D 49 54 55 20 57 41 54 41 4E 41 42
-               S50:000A82FE:  45
-               S50:000A82FF:  00
+               S50:000A84C6:  48 49 52 4F 4D 49 54 55 20 57 41 54 41 4E 41 42
+               S50:000A84D6:  45
+               S50:000A84D7:  00
 F24:0049           dc.b "SUSUMU KONNO",0
-               S50:000A8300:  53 55 53 55 4D 55 20 4B 4F 4E 4E 4F
-               S50:000A830C:  00
+               S50:000A84D8:  53 55 53 55 4D 55 20 4B 4F 4E 4E 4F
+               S50:000A84E4:  00
 F24:0050           dc.b "NAOKI HOSHIZAKI",0
-               S50:000A830D:  4E 41 4F 4B 49 20 48 4F 53 48 49 5A 41 4B 49
-               S50:000A831C:  00
+               S50:000A84E5:  4E 41 4F 4B 49 20 48 4F 53 48 49 5A 41 4B 49
+               S50:000A84F4:  00
 F24:0051           dc.b "KOUTA KIKUCHI",0
-               S50:000A831D:  4B 4F 55 54 41 20 4B 49 4B 55 43 48 49
-               S50:000A832A:  00
+               S50:000A84F5:  4B 4F 55 54 41 20 4B 49 4B 55 43 48 49
+               S50:000A8502:  00
 F24:0052           dc.b "RYUICHI NISHIZAWA",0
-               S50:000A832B:  52 59 55 49 43 48 49 20 4E 49 53 48 49 5A 41 57
-               S50:000A833B:  41
-               S50:000A833C:  00
+               S50:000A8503:  52 59 55 49 43 48 49 20 4E 49 53 48 49 5A 41 57
+               S50:000A8513:  41
+               S50:000A8514:  00
 F24:0053       
 F24:0054           ;;;;;;;;;"1234567890123456789"
 F24:0055           dc.b $9A,"DEUTSCHE VERSION",0
-               S50:000A833D:  9A
-               S50:000A833E:  44 45 55 54 53 43 48 45 20 56 45 52 53 49 4F 4E
-               S50:000A834E:  00
+               S50:000A8515:  9A
+               S50:000A8516:  44 45 55 54 53 43 48 45 20 56 45 52 53 49 4F 4E
+               S50:000A8526:  00
 F24:0056           dc.b "ALEX SCH",cUE,"TZ",0
-               S50:000A834F:  41 4C 45 58 20 53 43 48
-               S50:000A8357:  F2
-               S50:000A8358:  54 5A
-               S50:000A835A:  00
+               S50:000A8527:  41 4C 45 58 20 53 43 48
+               S50:000A852F:  F2
+               S50:000A8530:  54 5A
+               S50:000A8532:  00
 F24:0057           dc.b " ",0
-               S50:000A835B:  20
-               S50:000A835C:  00
+               S50:000A8533:  20
+               S50:000A8534:  00
 F24:0058           dc.b " ",0
-               S50:000A835D:  20
-               S50:000A835E:  00
+               S50:000A8535:  20
+               S50:000A8536:  00
 F24:0059           dc.b " ",0
-               S50:000A835F:  20
-               S50:000A8360:  00
+               S50:000A8537:  20
+               S50:000A8538:  00
 F24:0060           dc.b " ",0
-               S50:000A8361:  20
-               S50:000A8362:  00
+               S50:000A8539:  20
+               S50:000A853A:  00
 F24:0061           
 F24:0062           ;;;;;;;;;"1234567890123456789"
 F24:0063           dc.b $9A,"DANKE F",cUE,"RS SPIELEN!",0
-               S50:000A8363:  9A
-               S50:000A8364:  44 41 4E 4B 45 20 46
-               S50:000A836B:  F2
-               S50:000A836C:  52 53 20 53 50 49 45 4C 45 4E 21
-               S50:000A8377:  00
+               S50:000A853B:  9A
+               S50:000A853C:  44 41 4E 4B 45 20 46
+               S50:000A8543:  F2
+               S50:000A8544:  52 53 20 53 50 49 45 4C 45 4E 21
+               S50:000A854F:  00
 F24:0064           dc.b " ",0
-               S50:000A8378:  20
-               S50:000A8379:  00
+               S50:000A8550:  20
+               S50:000A8551:  00
 F24:0065           dc.b " ",0
-               S50:000A837A:  20
-               S50:000A837B:  00
+               S50:000A8552:  20
+               S50:000A8553:  00
 F24:0066           dc.b $99,0
-               S50:000A837C:  99
-               S50:000A837D:  00
+               S50:000A8554:  99
+               S50:000A8555:  00
 F00:0060       
 F00:0061           ; Modified Sprite Tables:
 F00:0062           include "includes/sprite_tables.asm"
@@ -7154,143 +7459,143 @@ F25:0009               ; ----------------------
 F25:0010               ; ss, ff, ii, xx, yy
 F25:0011               ; ˅   ˅   ˅   ˅   ˅
 F25:0012           dc.b $0D,$62,$E0,$A8,$D8 ; 8 Tiles, 32x16
-               S50:000A837E:  0D
-               S50:000A837F:  62
-               S50:000A8380:  E0
-               S50:000A8381:  A8
-               S50:000A8382:  D8
+               S50:000A8556:  0D
+               S50:000A8557:  62
+               S50:000A8558:  E0
+               S50:000A8559:  A8
+               S50:000A855A:  D8
 F25:0013           dc.b $0D,$62,$E8,$C8,$D8 ; 8 Tiles, 32x16
-               S50:000A8383:  0D
-               S50:000A8384:  62
-               S50:000A8385:  E8
-               S50:000A8386:  C8
-               S50:000A8387:  D8
+               S50:000A855B:  0D
+               S50:000A855C:  62
+               S50:000A855D:  E8
+               S50:000A855E:  C8
+               S50:000A855F:  D8
 F25:0014           dc.b $0D,$62,$F0,$E8,$D8 ; 8 Tiles, 32x16
-               S50:000A8388:  0D
-               S50:000A8389:  62
-               S50:000A838A:  F0
-               S50:000A838B:  E8
-               S50:000A838C:  D8
+               S50:000A8560:  0D
+               S50:000A8561:  62
+               S50:000A8562:  F0
+               S50:000A8563:  E8
+               S50:000A8564:  D8
 F25:0015           dc.b $0D,$62,$F8,$08,$D8 ; 8 Tiles, 32x16
-               S50:000A838D:  0D
-               S50:000A838E:  62
-               S50:000A838F:  F8
-               S50:000A8390:  08
-               S50:000A8391:  D8
+               S50:000A8565:  0D
+               S50:000A8566:  62
+               S50:000A8567:  F8
+               S50:000A8568:  08
+               S50:000A8569:  D8
 F25:0016           dc.b $0D,$63,$00,$28,$D8 ; 8 Tiles, 32x16
-               S50:000A8392:  0D
-               S50:000A8393:  63
-               S50:000A8394:  00
-               S50:000A8395:  28
-               S50:000A8396:  D8
+               S50:000A856A:  0D
+               S50:000A856B:  63
+               S50:000A856C:  00
+               S50:000A856D:  28
+               S50:000A856E:  D8
 F25:0017           dc.b $0D,$63,$08,$48,$D8 ; 8 Tiles, 32x16
-               S50:000A8397:  0D
-               S50:000A8398:  63
-               S50:000A8399:  08
-               S50:000A839A:  48
-               S50:000A839B:  D8
+               S50:000A856F:  0D
+               S50:000A8570:  63
+               S50:000A8571:  08
+               S50:000A8572:  48
+               S50:000A8573:  D8
 F25:0018           dc.b $04,$63,$10,$68,$D8 ; 2 Tiles, 16x8
-               S50:000A839C:  04
-               S50:000A839D:  63
-               S50:000A839E:  10
-               S50:000A839F:  68
-               S50:000A83A0:  D8
+               S50:000A8574:  04
+               S50:000A8575:  63
+               S50:000A8576:  10
+               S50:000A8577:  68
+               S50:000A8578:  D8
 F25:0019       
 F25:0020           dc.b $00,$63,$12,$C0,$E8 ; 1 Tiles, 8x8
-               S50:000A83A1:  00
-               S50:000A83A2:  63
-               S50:000A83A3:  12
-               S50:000A83A4:  C0
-               S50:000A83A5:  E8
+               S50:000A8579:  00
+               S50:000A857A:  63
+               S50:000A857B:  12
+               S50:000A857C:  C0
+               S50:000A857D:  E8
 F25:0021           dc.b $05,$63,$13,$B8,$F0 ; 4 Tiles, 16x16
-               S50:000A83A6:  05
-               S50:000A83A7:  63
-               S50:000A83A8:  13
-               S50:000A83A9:  B8
-               S50:000A83AA:  F0
+               S50:000A857E:  05
+               S50:000A857F:  63
+               S50:000A8580:  13
+               S50:000A8581:  B8
+               S50:000A8582:  F0
 F25:0022           dc.b $09,$63,$17,$B0,$00 ; 6 Tiles, 24x16
-               S50:000A83AB:  09
-               S50:000A83AC:  63
-               S50:000A83AD:  17
-               S50:000A83AE:  B0
-               S50:000A83AF:  00
+               S50:000A8583:  09
+               S50:000A8584:  63
+               S50:000A8585:  17
+               S50:000A8586:  B0
+               S50:000A8587:  00
 F25:0023           dc.b $0C,$63,$1D,$A8,$10 ; 4 Tiles, 32x8
-               S50:000A83B0:  0C
-               S50:000A83B1:  63
-               S50:000A83B2:  1D
-               S50:000A83B3:  A8
-               S50:000A83B4:  10
+               S50:000A8588:  0C
+               S50:000A8589:  63
+               S50:000A858A:  1D
+               S50:000A858B:  A8
+               S50:000A858C:  10
 F25:0024       
 F25:0025           dc.b $0F,$63,$21,$C8,$E8 ; 16 Tiles, 32x32
-               S50:000A83B5:  0F
-               S50:000A83B6:  63
-               S50:000A83B7:  21
-               S50:000A83B8:  C8
-               S50:000A83B9:  E8
+               S50:000A858D:  0F
+               S50:000A858E:  63
+               S50:000A858F:  21
+               S50:000A8590:  C8
+               S50:000A8591:  E8
 F25:0026           dc.b $0F,$63,$31,$E8,$E8 ; 16 Tiles, 32x32
-               S50:000A83BA:  0F
-               S50:000A83BB:  63
-               S50:000A83BC:  31
-               S50:000A83BD:  E8
-               S50:000A83BE:  E8
+               S50:000A8592:  0F
+               S50:000A8593:  63
+               S50:000A8594:  31
+               S50:000A8595:  E8
+               S50:000A8596:  E8
 F25:0027           dc.b $0F,$63,$41,$08,$E8 ; 16 Tiles, 32x32
-               S50:000A83BF:  0F
-               S50:000A83C0:  63
-               S50:000A83C1:  41
-               S50:000A83C2:  08
-               S50:000A83C3:  E8
+               S50:000A8597:  0F
+               S50:000A8598:  63
+               S50:000A8599:  41
+               S50:000A859A:  08
+               S50:000A859B:  E8
 F25:0028           dc.b $0F,$63,$51,$28,$E8 ; 16 Tiles, 32x32
-               S50:000A83C4:  0F
-               S50:000A83C5:  63
-               S50:000A83C6:  51
-               S50:000A83C7:  28
-               S50:000A83C8:  E8
+               S50:000A859C:  0F
+               S50:000A859D:  63
+               S50:000A859E:  51
+               S50:000A859F:  28
+               S50:000A85A0:  E8
 F25:0029       
 F25:0030           dc.b $0D,$63,$61,$C8,$08 ; 8 Tiles, 32x16
-               S50:000A83C9:  0D
-               S50:000A83CA:  63
-               S50:000A83CB:  61
-               S50:000A83CC:  C8
-               S50:000A83CD:  08
+               S50:000A85A1:  0D
+               S50:000A85A2:  63
+               S50:000A85A3:  61
+               S50:000A85A4:  C8
+               S50:000A85A5:  08
 F25:0031           dc.b $0D,$63,$69,$E8,$08 ; 8 Tiles, 32x16
-               S50:000A83CE:  0D
-               S50:000A83CF:  63
-               S50:000A83D0:  69
-               S50:000A83D1:  E8
-               S50:000A83D2:  08
+               S50:000A85A6:  0D
+               S50:000A85A7:  63
+               S50:000A85A8:  69
+               S50:000A85A9:  E8
+               S50:000A85AA:  08
 F25:0032           dc.b $0D,$63,$71,$08,$08 ; 8 Tiles, 32x16
-               S50:000A83D3:  0D
-               S50:000A83D4:  63
-               S50:000A83D5:  71
-               S50:000A83D6:  08
-               S50:000A83D7:  08
+               S50:000A85AB:  0D
+               S50:000A85AC:  63
+               S50:000A85AD:  71
+               S50:000A85AE:  08
+               S50:000A85AF:  08
 F25:0033           dc.b $0D,$63,$79,$28,$08 ; 8 Tiles, 32x16
-               S50:000A83D8:  0D
-               S50:000A83D9:  63
-               S50:000A83DA:  79
-               S50:000A83DB:  28
-               S50:000A83DC:  08
+               S50:000A85B0:  0D
+               S50:000A85B1:  63
+               S50:000A85B2:  79
+               S50:000A85B3:  28
+               S50:000A85B4:  08
 F25:0034       
 F25:0035           dc.b $08,$63,$81,$48,$E8 ; 3 Tiles, 24x8
-               S50:000A83DD:  08
-               S50:000A83DE:  63
-               S50:000A83DF:  81
-               S50:000A83E0:  48
-               S50:000A83E1:  E8
+               S50:000A85B5:  08
+               S50:000A85B6:  63
+               S50:000A85B7:  81
+               S50:000A85B8:  48
+               S50:000A85B9:  E8
 F25:0036           dc.b $05,$63,$84,$48,$F0 ; 4 Tiles, 16x16
-               S50:000A83E2:  05
-               S50:000A83E3:  63
-               S50:000A83E4:  84
-               S50:000A83E5:  48
-               S50:000A83E6:  F0
+               S50:000A85BA:  05
+               S50:000A85BB:  63
+               S50:000A85BC:  84
+               S50:000A85BD:  48
+               S50:000A85BE:  F0
 F25:0037           dc.b $02,$63,$88,$48,$00 ; 3 Tiles, 8x24
-               S50:000A83E7:  02
-               S50:000A83E8:  63
-               S50:000A83E9:  88
-               S50:000A83EA:  48
-               S50:000A83EB:  00
+               S50:000A85BF:  02
+               S50:000A85C0:  63
+               S50:000A85C1:  88
+               S50:000A85C2:  48
+               S50:000A85C3:  00
 F25:0038           dc.b $FF
-               S50:000A83EC:  FF
+               S50:000A85C4:  FF
 F25:0039       
 F25:0040       
 F25:0041       newSpriteTable_pressStart:
@@ -7303,31 +7608,31 @@ F25:0047               ; ----------------------
 F25:0048               ; ss, ff, ii, xx, yy
 F25:0049               ; ˅   ˅   ˅   ˅   ˅
 F25:0050           dc.b $0D,$63,$C0,$C8,$F1 ; 8 Tiles, 32x16
-               S50:000A83ED:  0D
-               S50:000A83EE:  63
-               S50:000A83EF:  C0
-               S50:000A83F0:  C8
-               S50:000A83F1:  F1
+               S50:000A85C5:  0D
+               S50:000A85C6:  63
+               S50:000A85C7:  C0
+               S50:000A85C8:  C8
+               S50:000A85C9:  F1
 F25:0051           dc.b $0D,$63,$C8,$E8,$F1 ; 8 Tiles, 32x16
-               S50:000A83F2:  0D
-               S50:000A83F3:  63
-               S50:000A83F4:  C8
-               S50:000A83F5:  E8
-               S50:000A83F6:  F1
+               S50:000A85CA:  0D
+               S50:000A85CB:  63
+               S50:000A85CC:  C8
+               S50:000A85CD:  E8
+               S50:000A85CE:  F1
 F25:0052           dc.b $0D,$63,$D0,$08,$F1 ; 8 Tiles, 32x16
-               S50:000A83F7:  0D
-               S50:000A83F8:  63
-               S50:000A83F9:  D0
-               S50:000A83FA:  08
-               S50:000A83FB:  F1
+               S50:000A85CF:  0D
+               S50:000A85D0:  63
+               S50:000A85D1:  D0
+               S50:000A85D2:  08
+               S50:000A85D3:  F1
 F25:0053           dc.b $05,$63,$D8,$28,$F1 ; 4 Tiles, 16x16
-               S50:000A83FC:  05
-               S50:000A83FD:  63
-               S50:000A83FE:  D8
-               S50:000A83FF:  28
-               S50:000A8400:  F1
+               S50:000A85D4:  05
+               S50:000A85D5:  63
+               S50:000A85D6:  D8
+               S50:000A85D7:  28
+               S50:000A85D8:  F1
 F25:0054           dc.b $FF
-               S50:000A8401:  FF
+               S50:000A85D9:  FF
 F25:0055       
 F25:0056       
 F25:0057       newSpriteTable_newGame:
@@ -7340,31 +7645,31 @@ F25:0063               ; ----------------------
 F25:0064               ; ss, ff, ii, xx, yy
 F25:0065               ; ˅   ˅   ˅   ˅   ˅
 F25:0066           dc.b $01,$63,$DC,$CD,$F9 ; 2 Tiles, 8x16
-               S50:000A8402:  01
-               S50:000A8403:  63
-               S50:000A8404:  DC
-               S50:000A8405:  CD
-               S50:000A8406:  F9
+               S50:000A85DA:  01
+               S50:000A85DB:  63
+               S50:000A85DC:  DC
+               S50:000A85DD:  CD
+               S50:000A85DE:  F9
 F25:0067           dc.b $0D,$63,$DE,$D5,$F9 ; 8 Tiles, 32x16 
-               S50:000A8407:  0D
-               S50:000A8408:  63
-               S50:000A8409:  DE
-               S50:000A840A:  D5
-               S50:000A840B:  F9
+               S50:000A85DF:  0D
+               S50:000A85E0:  63
+               S50:000A85E1:  DE
+               S50:000A85E2:  D5
+               S50:000A85E3:  F9
 F25:0068           dc.b $0D,$63,$E6,$F5,$F9 ; 8 Tiles, 32x16
-               S50:000A840C:  0D
-               S50:000A840D:  63
-               S50:000A840E:  E6
-               S50:000A840F:  F5
-               S50:000A8410:  F9
+               S50:000A85E4:  0D
+               S50:000A85E5:  63
+               S50:000A85E6:  E6
+               S50:000A85E7:  F5
+               S50:000A85E8:  F9
 F25:0069           dc.b $0D,$63,$EE,$15,$F9 ; 8 Tiles, 32x16
-               S50:000A8411:  0D
-               S50:000A8412:  63
-               S50:000A8413:  EE
-               S50:000A8414:  15
-               S50:000A8415:  F9
+               S50:000A85E9:  0D
+               S50:000A85EA:  63
+               S50:000A85EB:  EE
+               S50:000A85EC:  15
+               S50:000A85ED:  F9
 F25:0070           dc.b $FF
-               S50:000A8416:  FF
+               S50:000A85EE:  FF
 F25:0071       
 F25:0072       
 F25:0073       newSpriteTable_continue:
@@ -7377,31 +7682,31 @@ F25:0079               ; ----------------------
 F25:0080               ; ss, ff, ii, xx, yy
 F25:0081               ; ˅   ˅   ˅   ˅   ˅
 F25:0082           dc.b $01,$63,$F8,$CD,$F9 ; 2 Tiles, 8x16
-               S50:000A8417:  01
-               S50:000A8418:  63
-               S50:000A8419:  F8
-               S50:000A841A:  CD
-               S50:000A841B:  F9
+               S50:000A85EF:  01
+               S50:000A85F0:  63
+               S50:000A85F1:  F8
+               S50:000A85F2:  CD
+               S50:000A85F3:  F9
 F25:0083           dc.b $0D,$63,$FA,$D5,$F9 ; 8 Tiles, 32x16 
-               S50:000A841C:  0D
-               S50:000A841D:  63
-               S50:000A841E:  FA
-               S50:000A841F:  D5
-               S50:000A8420:  F9
+               S50:000A85F4:  0D
+               S50:000A85F5:  63
+               S50:000A85F6:  FA
+               S50:000A85F7:  D5
+               S50:000A85F8:  F9
 F25:0084           dc.b $0D,$64,$02,$F5,$F9 ; 8 Tiles, 32x16
-               S50:000A8421:  0D
-               S50:000A8422:  64
-               S50:000A8423:  02
-               S50:000A8424:  F5
-               S50:000A8425:  F9
+               S50:000A85F9:  0D
+               S50:000A85FA:  64
+               S50:000A85FB:  02
+               S50:000A85FC:  F5
+               S50:000A85FD:  F9
 F25:0085           dc.b $0D,$64,$0A,$15,$F9 ; 8 Tiles, 32x16
-               S50:000A8426:  0D
-               S50:000A8427:  64
-               S50:000A8428:  0A
-               S50:000A8429:  15
-               S50:000A842A:  F9
+               S50:000A85FE:  0D
+               S50:000A85FF:  64
+               S50:000A8600:  0A
+               S50:000A8601:  15
+               S50:000A8602:  F9
 F25:0086           dc.b $FF
-               S50:000A842B:  FF
+               S50:000A8603:  FF
 F25:0087       
 F25:0088       
 F25:0089       newSpriteTable_arrow:
@@ -7414,13 +7719,13 @@ F25:0095               ; ----------------------
 F25:0096               ; ss, ff, ii, xx, yy
 F25:0097               ; ˅   ˅   ˅   ˅   ˅
 F25:0098           dc.b $05,$64,$12,$ED,$F9 ; 4 Tiles, 16x16
-               S50:000A842C:  05
-               S50:000A842D:  64
-               S50:000A842E:  12
-               S50:000A842F:  ED
-               S50:000A8430:  F9
+               S50:000A8604:  05
+               S50:000A8605:  64
+               S50:000A8606:  12
+               S50:000A8607:  ED
+               S50:000A8608:  F9
 F25:0099           dc.b $FF
-               S50:000A8431:  FF
+               S50:000A8609:  FF
 F25:0100       
 F00:0063       
 F00:0064           ; GFX:
@@ -7433,12 +7738,12 @@ F26:0005           align 2
 F26:0006       
 F26:0007       planeMapA:
 F26:0008           incbin  "includes/bin/maps/planeA_map_shifted[C000-CFFF].bin"
-               S50:000A8434:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-               S50:000A8444:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000A860C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000A861C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 F26:0009       planeMapB:
 F26:0010           incbin  "includes/bin/maps/planeB_map_shifted[E000-EFFF].bin"
-               S50:000A9434:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-               S50:000A9444:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000A960C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000A961C:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 F26:0011       
 F26:0012       
 F00:0066           include "includes/gfx_packs.asm"
@@ -7447,63 +7752,63 @@ F27:0002
 F27:0003           align 2
 F27:0004       newLogoGFX_pack1:
 F27:0005           incbin "includes/bin/gfx/pack1.cbin"
-               S50:000AA434:  F8 02 33 51 82 13 C7 1F CB F1 57 04 41 F4 1E 19
-               S50:000AA444:  C5 F3 DA 22 1E 78 00 1F 9F F7 FE 1F 0D E0 1A 1E
+               S50:000AA60C:  F8 02 33 51 82 13 C7 1F CB F1 57 04 41 F4 1E 19
+               S50:000AA61C:  C5 F3 DA 22 1E 78 00 1F 9F F7 FE 1F 0D E0 1A 1E
 F27:0006       newLogoGFX_pack2:
 F27:0007           incbin "includes/bin/gfx/pack2.cbin"
-               S50:000AA5F7:  DF E7 8D 0C 44 11 F9 9A 6F 02 38 03 03 C1 C0 3B
-               S50:000AA607:  41 E1 10 8B 13 C7 5C A2 33 26 E9 E0 00 70 7F 3D
+               S50:000AA7CF:  DF E7 8D 0C 44 11 F9 9A 6F 02 38 03 03 C1 C0 3B
+               S50:000AA7DF:  41 E1 10 8B 13 C7 5C A2 33 26 E9 E0 00 70 7F 3D
 F27:0008       newLogoGFX_pack3:
 F27:0009           incbin "includes/bin/gfx/pack3.cbin"
-               S50:000AA78D:  FC 2A 2A A6 08 44 01 F1 D8 78 96 29 01 F7 FC F1
-               S50:000AA79D:  80 08 74 B0 05 11 FF 41 E0 D0 37 28 93 02 38 0E
+               S50:000AA965:  FC 2A 2A A6 08 44 01 F1 D8 78 96 29 01 F7 FC F1
+               S50:000AA975:  80 08 74 B0 05 11 FF 41 E0 D0 37 28 93 02 38 0E
 F27:0010       newLogoGFX_pack4:
 F27:0011           incbin "includes/bin/gfx/pack4.cbin"
-               S50:000AA8F6:  F3 C7 44 05 4A 24 70 7C 03 7F E0 04 01 5E 07 4F
-               S50:000AA906:  F8 22 87 DF 07 F8 0E 08 44 41 17 8E 85 0C AA 3D
+               S50:000AAACE:  F3 C7 44 05 4A 24 70 7C 03 7F E0 04 01 5E 07 4F
+               S50:000AAADE:  F8 22 87 DF 07 F8 0E 08 44 41 17 8E 85 0C AA 3D
 F27:0012       newLogoGFX_pack5:
 F27:0013           incbin "includes/bin/gfx/pack5.cbin"
-               S50:000AAA44:  F8 FE 66 EF 87 43 73 37 A3 B1 82 3B E0 1C 80 01
-               S50:000AAA54:  E0 FE 7A 1A 20 8E 83 9D A8 E9 51 4F 1A 48 3C 1B
+               S50:000AAC1C:  F8 FE 66 EF 87 43 73 37 A3 B1 82 3B E0 1C 80 01
+               S50:000AAC2C:  E0 FE 7A 1A 20 8E 83 9D A8 E9 51 4F 1A 48 3C 1B
 F27:0014       newLogoGFX_pack6:
 F27:0015           incbin "includes/bin/gfx/pack6.cbin"
-               S50:000AABB4:  C0 0E 78 82 20 1B EE 07 41 04 28 2F E3 BC FF 88
-               S50:000AABC4:  82 7F 77 DE EC 75 AB 8E 9F A3 B1 53 F4 7D F7 93
+               S50:000AAD8C:  C0 0E 78 82 20 1B EE 07 41 04 28 2F E3 BC FF 88
+               S50:000AAD9C:  82 7F 77 DE EC 75 AB 8E 9F A3 B1 53 F4 7D F7 93
 F27:0016       newExitGFX_pack:
 F27:0017           incbin "includes/bin/gfx/exitsign.cbin"
-               S50:000AAC37:  F1 56 44 00 18 84 32 E0 48 A9 19 21 A8 6D 88 91
-               S50:000AAC47:  DF 26 52 06 8F FC A0 8C 65 54 53 D5 15 22 1E 01
+               S50:000AAE0F:  F1 56 44 00 18 84 32 E0 48 A9 19 21 A8 6D 88 91
+               S50:000AAE1F:  DF 26 52 06 8F FC A0 8C 65 54 53 D5 15 22 1E 01
 F27:0018       
 F27:0019       newTitleTxtGFX_pack1:
 F27:0020           incbin "includes/bin/gfx/pack7.cbin"
-               S50:000AAE63:  F3 C4 01 83 F8 36 E0 03 C1 1A 2B 14 90 01 0D FD
-               S50:000AAE73:  06 08 47 F0 1F 03 CF FA 38 16 09 B2 EC 99 8B DF
+               S50:000AB03B:  F3 C4 01 83 F8 36 E0 03 C1 1A 2B 14 90 01 0D FD
+               S50:000AB04B:  06 08 47 F0 1F 03 CF FA 38 16 09 B2 EC 99 8B DF
 F27:0021       newTitleTxtGFX_pack2:
 F27:0022           incbin "includes/bin/gfx/pack8.cbin"
-               S50:000AAF90:  DF E0 05 25 B0 1F 3C 60 3C 13 06 F4 10 43 46 E0
-               S50:000AAFA0:  03 C1 1A 18 16 1F E0 0A 28 3E 7F A2 93 33 2B ED
+               S50:000AB168:  DF E0 05 25 B0 1F 3C 60 3C 13 06 F4 10 43 46 E0
+               S50:000AB178:  03 C1 1A 18 16 1F E0 0A 28 3E 7F A2 93 33 2B ED
 F27:0023       newTitleTxtGFX_pack3:
 F27:0024           incbin "includes/bin/gfx/pack9.cbin"
-               S50:000AB099:  F3 C4 1F 00 38 7E 8F 02 C0 F8 36 20 20 BF E0 18
-               S50:000AB0A9:  21 7C 7F F0 1D 10 22 84 D2 1E B3 B6 7A 3D E9 1C
+               S50:000AB271:  F3 C4 1F 00 38 7E 8F 02 C0 F8 36 20 20 BF E0 18
+               S50:000AB281:  21 7C 7F F0 1D 10 22 84 D2 1E B3 B6 7A 3D E9 1C
 F27:0025       
 F27:0026       fontGFX_pack_de:
 F27:0027           incbin "includes/bin/gfx/font_de_umlaute.cbin"
-               S50:000AB171:  FC DE 4E 58 1E 39 DD 00 54 51 80 7A 19 FE 90 11
-               S50:000AB181:  F8 42 2F 83 E8 38 0E 06 CD D0 02 8A 96 1F 94 EF
+               S50:000AB349:  FC DE 4E 58 1E 39 DD 00 54 51 80 7A 19 FE 90 11
+               S50:000AB359:  F8 42 2F 83 E8 38 0E 06 CD D0 02 8A 96 1F 94 EF
 F27:0028       fontGFX_pack_c:
 F27:0029           incbin "includes/bin/gfx/font_c.cbin"
-               S50:000AB304:  F3 C5 1E 95 35 48 07 9F E8 A8 68 12 5F F8 0E 29
-               S50:000AB314:  C7 F4 F5 55 80 5C 1F 80 10 FC 11 F5 E7 BF 27 91
+               S50:000AB4DC:  F3 C5 1E 95 35 48 07 9F E8 A8 68 12 5F F8 0E 29
+               S50:000AB4EC:  C7 F4 F5 55 80 5C 1F 80 10 FC 11 F5 E7 BF 27 91
 F27:0030       
 F27:0031           align 2
 F27:0032       tileData_theEnd_de:
 F27:0033           incbin "includes/bin/gfx/theEnd_tiledata[32x2](13).bin"
-               S50:000AB3E8:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-               S50:000AB3F8:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000AB5C0:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000AB5D0:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 F27:0034           incbin "includes/bin/gfx/toBeContinued_tiledata[32x2](53).bin"
-               S50:000AB588:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-               S50:000AB598:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000AB760:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+               S50:000AB770:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 F27:0035       tileData_theEnd_de_end:
 F27:0036       
 
@@ -7593,245 +7898,256 @@ F27  includes\gfx_packs.asm
 
 
 Symbols:
-tileData_theEnd_de_end EXPR(703528=0xabc28) UNUSED ABS 
-snippet64 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet63 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet62 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet61 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet60 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet59 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet58 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet57 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet56 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet55 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet54 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet53 EXPR(687115=0xa7c0b) UNUSED ABS 
-snippet232 EXPR(688541=0xa819d) ABS 
-snippet231 EXPR(688532=0xa8194) ABS 
-snippet230 EXPR(688523=0xa818b) ABS 
-snippet229 EXPR(688514=0xa8182) ABS 
-snippet228 EXPR(688505=0xa8179) ABS 
-snippet227 EXPR(688496=0xa8170) ABS 
-snippet226 EXPR(688487=0xa8167) ABS 
-snippet225 EXPR(688478=0xa815e) ABS 
-snippet224 EXPR(688469=0xa8155) ABS 
-snippet223 EXPR(688460=0xa814c) ABS 
-snippet222 EXPR(688451=0xa8143) ABS 
-snippet221 EXPR(688442=0xa813a) ABS 
-snippet220 EXPR(688433=0xa8131) ABS 
-snippet219 EXPR(688424=0xa8128) ABS 
-snippet218 EXPR(688415=0xa811f) ABS 
-snippet217 EXPR(688406=0xa8116) ABS 
-snippet216 EXPR(688397=0xa810d) ABS 
-snippet215 EXPR(688388=0xa8104) ABS 
-snippet214 EXPR(688379=0xa80fb) ABS 
-snippet213 EXPR(688370=0xa80f2) ABS 
-snippet212 EXPR(688361=0xa80e9) ABS 
-snippet211 EXPR(688352=0xa80e0) ABS 
-snippet210 EXPR(688343=0xa80d7) ABS 
-snippet209 EXPR(688334=0xa80ce) ABS 
-snippet208 EXPR(688325=0xa80c5) ABS 
-snippet207 EXPR(688316=0xa80bc) ABS 
-snippet206 EXPR(688307=0xa80b3) ABS 
-snippet205 EXPR(688298=0xa80aa) ABS 
-snippet204 EXPR(688289=0xa80a1) ABS 
-snippet203 EXPR(688280=0xa8098) ABS 
-snippet202 EXPR(688271=0xa808f) ABS 
-snippet201 EXPR(688262=0xa8086) ABS 
-snippet200 EXPR(688253=0xa807d) ABS 
-snippet199 EXPR(688244=0xa8074) ABS 
-snippet198 EXPR(688235=0xa806b) ABS 
-snippet197 EXPR(688226=0xa8062) ABS 
-snippet196 EXPR(688217=0xa8059) ABS 
-snippet195 EXPR(688208=0xa8050) ABS 
-snippet194 EXPR(688199=0xa8047) ABS 
-snippet193 EXPR(688190=0xa803e) ABS 
-snippet192 EXPR(688181=0xa8035) ABS 
-snippet191 EXPR(688172=0xa802c) ABS 
-snippet190 EXPR(688163=0xa8023) ABS 
-snippet189 EXPR(688154=0xa801a) ABS 
-snippet188 EXPR(688145=0xa8011) ABS 
-snippet187 EXPR(688136=0xa8008) ABS 
-snippet186 EXPR(688127=0xa7fff) ABS 
-snippet185 EXPR(688118=0xa7ff6) ABS 
-snippet184 EXPR(688109=0xa7fed) ABS 
-snippet183 EXPR(688100=0xa7fe4) ABS 
-snippet182 EXPR(688091=0xa7fdb) ABS 
-snippet181 EXPR(688082=0xa7fd2) ABS 
-snippet180 EXPR(688073=0xa7fc9) ABS 
-snippet179 EXPR(688064=0xa7fc0) ABS 
-snippet178 EXPR(688055=0xa7fb7) ABS 
-snippet177 EXPR(688046=0xa7fae) ABS 
-snippet176 EXPR(688037=0xa7fa5) ABS 
-snippet175 EXPR(688028=0xa7f9c) ABS 
-snippet174 EXPR(688019=0xa7f93) ABS 
-snippet173 EXPR(688010=0xa7f8a) ABS 
-snippet172 EXPR(688001=0xa7f81) ABS 
-snippet171 EXPR(687992=0xa7f78) ABS 
-snippet170 EXPR(687983=0xa7f6f) ABS 
-snippet169 EXPR(687974=0xa7f66) ABS 
-snippet168 EXPR(687965=0xa7f5d) ABS 
-snippet167 EXPR(687956=0xa7f54) ABS 
-snippet166 EXPR(687947=0xa7f4b) ABS 
-snippet165 EXPR(687938=0xa7f42) ABS 
-snippet164 EXPR(687929=0xa7f39) ABS 
-snippet163 EXPR(687920=0xa7f30) ABS 
-snippet162 EXPR(687911=0xa7f27) ABS 
-snippet161 EXPR(687902=0xa7f1e) ABS 
-snippet160 EXPR(687893=0xa7f15) ABS 
-snippet159 EXPR(687884=0xa7f0c) ABS 
-snippet158 EXPR(687875=0xa7f03) ABS 
-snippet157 EXPR(687866=0xa7efa) ABS 
-snippet156 EXPR(687857=0xa7ef1) ABS 
-snippet155 EXPR(687848=0xa7ee8) ABS 
-snippet154 EXPR(687839=0xa7edf) ABS 
-snippet153 EXPR(687830=0xa7ed6) ABS 
-snippet152 EXPR(687821=0xa7ecd) ABS 
-snippet151 EXPR(687812=0xa7ec4) ABS 
-snippet150 EXPR(687803=0xa7ebb) ABS 
-snippet149 EXPR(687794=0xa7eb2) ABS 
-snippet148 EXPR(687785=0xa7ea9) ABS 
-snippet147 EXPR(687776=0xa7ea0) ABS 
-snippet146 EXPR(687767=0xa7e97) ABS 
-snippet145 EXPR(687758=0xa7e8e) ABS 
-snippet144 EXPR(687749=0xa7e85) ABS 
-snippet143 EXPR(687740=0xa7e7c) ABS 
-snippet142 EXPR(687731=0xa7e73) ABS 
-snippet141 EXPR(687722=0xa7e6a) ABS 
-snippet140 EXPR(687713=0xa7e61) ABS 
-snippet139 EXPR(687704=0xa7e58) ABS 
-snippet138 EXPR(687695=0xa7e4f) ABS 
-snippet137 EXPR(687686=0xa7e46) ABS 
-snippet136 EXPR(687677=0xa7e3d) ABS 
-snippet135 EXPR(687668=0xa7e34) ABS 
-snippet134 EXPR(687659=0xa7e2b) ABS 
-snippet133 EXPR(687650=0xa7e22) ABS 
-snippet132 EXPR(687641=0xa7e19) ABS 
-snippet131 EXPR(687632=0xa7e10) ABS 
-snippet130 EXPR(687623=0xa7e07) ABS 
-snippet129 EXPR(687614=0xa7dfe) ABS 
-snippet128 EXPR(687605=0xa7df5) ABS 
-snippet127 EXPR(687596=0xa7dec) ABS 
-snippet126 EXPR(687587=0xa7de3) ABS 
-snippet125 EXPR(687578=0xa7dda) ABS 
-snippet124 EXPR(687569=0xa7dd1) ABS 
-snippet123 EXPR(687560=0xa7dc8) ABS 
-snippet122 EXPR(687551=0xa7dbf) ABS 
-snippet121 EXPR(687542=0xa7db6) ABS 
-snippet120 EXPR(687533=0xa7dad) ABS 
-snippet119 EXPR(687524=0xa7da4) ABS 
-snippet118 EXPR(687515=0xa7d9b) ABS 
-snippet117 EXPR(687506=0xa7d92) ABS 
-snippet116 EXPR(687497=0xa7d89) ABS 
-snippet115 EXPR(687488=0xa7d80) ABS 
-snippet114 EXPR(687479=0xa7d77) ABS 
-snippet113 EXPR(687470=0xa7d6e) ABS 
-snippet112 EXPR(687461=0xa7d65) ABS 
-snippet111 EXPR(687452=0xa7d5c) ABS 
-snippet110 EXPR(687443=0xa7d53) ABS 
-snippet109 EXPR(687434=0xa7d4a) ABS 
-snippet108 EXPR(687425=0xa7d41) ABS 
-snippet107 EXPR(687416=0xa7d38) ABS 
-snippet106 EXPR(687407=0xa7d2f) ABS 
-snippet105 EXPR(687404=0xa7d2c) ABS 
-snippet104 EXPR(687398=0xa7d26) ABS 
-snippet103 EXPR(687394=0xa7d22) ABS 
-snippet102 EXPR(687383=0xa7d17) ABS 
-snippet101 EXPR(687378=0xa7d12) ABS 
-snippet100 EXPR(687373=0xa7d0d) ABS 
-snippet99 EXPR(687369=0xa7d09) ABS 
-snippet98 EXPR(687364=0xa7d04) ABS 
-snippet97 EXPR(687359=0xa7cff) ABS 
-snippet96 EXPR(687352=0xa7cf8) ABS 
-snippet95 EXPR(687346=0xa7cf2) ABS 
-snippet94 EXPR(687335=0xa7ce7) ABS 
-snippet93 EXPR(687327=0xa7cdf) ABS 
-snippet92 EXPR(687319=0xa7cd7) ABS 
-snippet91 EXPR(687310=0xa7cce) ABS 
-snippet90 EXPR(687300=0xa7cc4) ABS 
-snippet89 EXPR(687291=0xa7cbb) ABS 
-snippet88 EXPR(687285=0xa7cb5) ABS 
-snippet87 EXPR(687277=0xa7cad) ABS 
-snippet86 EXPR(687271=0xa7ca7) ABS 
-snippet85 EXPR(687263=0xa7c9f) ABS 
-snippet84 EXPR(687255=0xa7c97) ABS 
-snippet83 EXPR(687245=0xa7c8d) ABS 
-snippet82 EXPR(687237=0xa7c85) ABS 
-snippet81 EXPR(687232=0xa7c80) ABS 
-snippet80 EXPR(687228=0xa7c7c) ABS 
-snippet79 EXPR(687222=0xa7c76) ABS 
-snippet78 EXPR(687213=0xa7c6d) ABS 
-snippet77 EXPR(687205=0xa7c65) ABS 
-snippet76 EXPR(687198=0xa7c5e) ABS 
-snippet75 EXPR(687192=0xa7c58) ABS 
-snippet74 EXPR(687185=0xa7c51) ABS 
-snippet73 EXPR(687180=0xa7c4c) ABS 
-snippet72 EXPR(687168=0xa7c40) ABS 
-snippet71 EXPR(687157=0xa7c35) ABS 
-snippet70 EXPR(687150=0xa7c2e) ABS 
-snippet69 EXPR(687142=0xa7c26) ABS 
-snippet68 EXPR(687134=0xa7c1e) ABS 
-snippet67 EXPR(687130=0xa7c1a) ABS 
-snippet66 EXPR(687123=0xa7c13) ABS 
-snippet65 EXPR(687116=0xa7c0c) ABS 
-snippet52 EXPR(687100=0xa7bfc) ABS 
-snippet51 EXPR(687090=0xa7bf2) ABS 
-snippet50 EXPR(687082=0xa7bea) ABS 
-snippet49 EXPR(687072=0xa7be0) ABS 
-snippet48 EXPR(687028=0xa7bb4) ABS 
-snippet47 EXPR(687019=0xa7bab) ABS 
-snippet46 EXPR(687006=0xa7b9e) ABS 
-snippet45 EXPR(686992=0xa7b90) ABS 
-snippet44 EXPR(686921=0xa7b49) ABS 
-snippet43 EXPR(686907=0xa7b3b) ABS 
-snippet42 EXPR(686894=0xa7b2e) ABS 
-snippet41 EXPR(686882=0xa7b22) ABS 
-snippet40 EXPR(686851=0xa7b03) ABS 
-snippet39 EXPR(686837=0xa7af5) ABS 
-snippet38 EXPR(686821=0xa7ae5) ABS 
-snippet37 EXPR(686804=0xa7ad4) ABS 
-snippet36 EXPR(686743=0xa7a97) ABS 
-snippet35 EXPR(686734=0xa7a8e) ABS 
-snippet34 EXPR(686726=0xa7a86) ABS 
-snippet33 EXPR(686719=0xa7a7f) ABS 
-snippet32 EXPR(686664=0xa7a48) ABS 
-snippet31 EXPR(686652=0xa7a3c) ABS 
-snippet30 EXPR(686642=0xa7a32) ABS 
-snippet29 EXPR(686633=0xa7a29) ABS 
-snippet28 EXPR(686577=0xa79f1) ABS 
-snippet27 EXPR(686564=0xa79e4) ABS 
-snippet26 EXPR(686552=0xa79d8) ABS 
-snippet25 EXPR(686541=0xa79cd) ABS 
-snippet24 EXPR(686479=0xa798f) ABS 
-snippet23 EXPR(686470=0xa7986) ABS 
-snippet22 EXPR(686457=0xa7979) ABS 
-snippet21 EXPR(686449=0xa7971) ABS 
-snippet20 EXPR(686402=0xa7942) ABS 
-snippet19 EXPR(686396=0xa793c) ABS 
-snippet18 EXPR(686387=0xa7933) ABS 
-snippet17 EXPR(686379=0xa792b) ABS 
-snippet16 EXPR(686331=0xa78fb) ABS 
-snippet15 EXPR(686326=0xa78f6) ABS 
-snippet14 EXPR(686319=0xa78ef) ABS 
-snippet13 EXPR(686309=0xa78e5) ABS 
-snippet12 EXPR(686258=0xa78b2) ABS 
-snippet11 EXPR(686238=0xa789e) ABS 
-snippet10 EXPR(686218=0xa788a) ABS 
-snippet9 EXPR(686198=0xa7876) ABS 
-snippet8 EXPR(686191=0xa786f) ABS 
-snippet7 EXPR(686184=0xa7868) ABS 
-snippet6 EXPR(686174=0xa785e) ABS 
-snippet5 EXPR(686167=0xa7857) ABS 
-snippet4 EXPR(686157=0xa784d) ABS 
-snippet3 EXPR(686150=0xa7846) ABS 
-snippet2 EXPR(686143=0xa783f) ABS 
-snippet1 EXPR(686128=0xa7830) ABS 
-special8 EXPR(685593=0xa7619) ABS 
-special7 EXPR(685539=0xa75e3) ABS 
-special6 EXPR(685485=0xa75ad) ABS 
-special5 EXPR(685431=0xa7577) ABS 
-special4 EXPR(685377=0xa7541) ABS 
-special3 EXPR(685323=0xa750b) ABS 
+tileData_theEnd_de_end EXPR(704000=0xabe00) UNUSED ABS 
+snippet64 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet63 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet62 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet61 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet60 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet59 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet58 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet57 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet56 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet55 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet54 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet53 EXPR(687587=0xa7de3) UNUSED ABS 
+snippet232 EXPR(689013=0xa8375) ABS 
+snippet231 EXPR(689004=0xa836c) ABS 
+snippet230 EXPR(688995=0xa8363) ABS 
+snippet229 EXPR(688986=0xa835a) ABS 
+snippet228 EXPR(688977=0xa8351) ABS 
+snippet227 EXPR(688968=0xa8348) ABS 
+snippet226 EXPR(688959=0xa833f) ABS 
+snippet225 EXPR(688950=0xa8336) ABS 
+snippet224 EXPR(688941=0xa832d) ABS 
+snippet223 EXPR(688932=0xa8324) ABS 
+snippet222 EXPR(688923=0xa831b) ABS 
+snippet221 EXPR(688914=0xa8312) ABS 
+snippet220 EXPR(688905=0xa8309) ABS 
+snippet219 EXPR(688896=0xa8300) ABS 
+snippet218 EXPR(688887=0xa82f7) ABS 
+snippet217 EXPR(688878=0xa82ee) ABS 
+snippet216 EXPR(688869=0xa82e5) ABS 
+snippet215 EXPR(688860=0xa82dc) ABS 
+snippet214 EXPR(688851=0xa82d3) ABS 
+snippet213 EXPR(688842=0xa82ca) ABS 
+snippet212 EXPR(688833=0xa82c1) ABS 
+snippet211 EXPR(688824=0xa82b8) ABS 
+snippet210 EXPR(688815=0xa82af) ABS 
+snippet209 EXPR(688806=0xa82a6) ABS 
+snippet208 EXPR(688797=0xa829d) ABS 
+snippet207 EXPR(688788=0xa8294) ABS 
+snippet206 EXPR(688779=0xa828b) ABS 
+snippet205 EXPR(688770=0xa8282) ABS 
+snippet204 EXPR(688761=0xa8279) ABS 
+snippet203 EXPR(688752=0xa8270) ABS 
+snippet202 EXPR(688743=0xa8267) ABS 
+snippet201 EXPR(688734=0xa825e) ABS 
+snippet200 EXPR(688725=0xa8255) ABS 
+snippet199 EXPR(688716=0xa824c) ABS 
+snippet198 EXPR(688707=0xa8243) ABS 
+snippet197 EXPR(688698=0xa823a) ABS 
+snippet196 EXPR(688689=0xa8231) ABS 
+snippet195 EXPR(688680=0xa8228) ABS 
+snippet194 EXPR(688671=0xa821f) ABS 
+snippet193 EXPR(688662=0xa8216) ABS 
+snippet192 EXPR(688653=0xa820d) ABS 
+snippet191 EXPR(688644=0xa8204) ABS 
+snippet190 EXPR(688635=0xa81fb) ABS 
+snippet189 EXPR(688626=0xa81f2) ABS 
+snippet188 EXPR(688617=0xa81e9) ABS 
+snippet187 EXPR(688608=0xa81e0) ABS 
+snippet186 EXPR(688599=0xa81d7) ABS 
+snippet185 EXPR(688590=0xa81ce) ABS 
+snippet184 EXPR(688581=0xa81c5) ABS 
+snippet183 EXPR(688572=0xa81bc) ABS 
+snippet182 EXPR(688563=0xa81b3) ABS 
+snippet181 EXPR(688554=0xa81aa) ABS 
+snippet180 EXPR(688545=0xa81a1) ABS 
+snippet179 EXPR(688536=0xa8198) ABS 
+snippet178 EXPR(688527=0xa818f) ABS 
+snippet177 EXPR(688518=0xa8186) ABS 
+snippet176 EXPR(688509=0xa817d) ABS 
+snippet175 EXPR(688500=0xa8174) ABS 
+snippet174 EXPR(688491=0xa816b) ABS 
+snippet173 EXPR(688482=0xa8162) ABS 
+snippet172 EXPR(688473=0xa8159) ABS 
+snippet171 EXPR(688464=0xa8150) ABS 
+snippet170 EXPR(688455=0xa8147) ABS 
+snippet169 EXPR(688446=0xa813e) ABS 
+snippet168 EXPR(688437=0xa8135) ABS 
+snippet167 EXPR(688428=0xa812c) ABS 
+snippet166 EXPR(688419=0xa8123) ABS 
+snippet165 EXPR(688410=0xa811a) ABS 
+snippet164 EXPR(688401=0xa8111) ABS 
+snippet163 EXPR(688392=0xa8108) ABS 
+snippet162 EXPR(688383=0xa80ff) ABS 
+snippet161 EXPR(688374=0xa80f6) ABS 
+snippet160 EXPR(688365=0xa80ed) ABS 
+snippet159 EXPR(688356=0xa80e4) ABS 
+snippet158 EXPR(688347=0xa80db) ABS 
+snippet157 EXPR(688338=0xa80d2) ABS 
+snippet156 EXPR(688329=0xa80c9) ABS 
+snippet155 EXPR(688320=0xa80c0) ABS 
+snippet154 EXPR(688311=0xa80b7) ABS 
+snippet153 EXPR(688302=0xa80ae) ABS 
+snippet152 EXPR(688293=0xa80a5) ABS 
+snippet151 EXPR(688284=0xa809c) ABS 
+snippet150 EXPR(688275=0xa8093) ABS 
+snippet149 EXPR(688266=0xa808a) ABS 
+snippet148 EXPR(688257=0xa8081) ABS 
+snippet147 EXPR(688248=0xa8078) ABS 
+snippet146 EXPR(688239=0xa806f) ABS 
+snippet145 EXPR(688230=0xa8066) ABS 
+snippet144 EXPR(688221=0xa805d) ABS 
+snippet143 EXPR(688212=0xa8054) ABS 
+snippet142 EXPR(688203=0xa804b) ABS 
+snippet141 EXPR(688194=0xa8042) ABS 
+snippet140 EXPR(688185=0xa8039) ABS 
+snippet139 EXPR(688176=0xa8030) ABS 
+snippet138 EXPR(688167=0xa8027) ABS 
+snippet137 EXPR(688158=0xa801e) ABS 
+snippet136 EXPR(688149=0xa8015) ABS 
+snippet135 EXPR(688140=0xa800c) ABS 
+snippet134 EXPR(688131=0xa8003) ABS 
+snippet133 EXPR(688122=0xa7ffa) ABS 
+snippet132 EXPR(688113=0xa7ff1) ABS 
+snippet131 EXPR(688104=0xa7fe8) ABS 
+snippet130 EXPR(688095=0xa7fdf) ABS 
+snippet129 EXPR(688086=0xa7fd6) ABS 
+snippet128 EXPR(688077=0xa7fcd) ABS 
+snippet127 EXPR(688068=0xa7fc4) ABS 
+snippet126 EXPR(688059=0xa7fbb) ABS 
+snippet125 EXPR(688050=0xa7fb2) ABS 
+snippet124 EXPR(688041=0xa7fa9) ABS 
+snippet123 EXPR(688032=0xa7fa0) ABS 
+snippet122 EXPR(688023=0xa7f97) ABS 
+snippet121 EXPR(688014=0xa7f8e) ABS 
+snippet120 EXPR(688005=0xa7f85) ABS 
+snippet119 EXPR(687996=0xa7f7c) ABS 
+snippet118 EXPR(687987=0xa7f73) ABS 
+snippet117 EXPR(687978=0xa7f6a) ABS 
+snippet116 EXPR(687969=0xa7f61) ABS 
+snippet115 EXPR(687960=0xa7f58) ABS 
+snippet114 EXPR(687951=0xa7f4f) ABS 
+snippet113 EXPR(687942=0xa7f46) ABS 
+snippet112 EXPR(687933=0xa7f3d) ABS 
+snippet111 EXPR(687924=0xa7f34) ABS 
+snippet110 EXPR(687915=0xa7f2b) ABS 
+snippet109 EXPR(687906=0xa7f22) ABS 
+snippet108 EXPR(687897=0xa7f19) ABS 
+snippet107 EXPR(687888=0xa7f10) ABS 
+snippet106 EXPR(687879=0xa7f07) ABS 
+snippet105 EXPR(687876=0xa7f04) ABS 
+snippet104 EXPR(687870=0xa7efe) ABS 
+snippet103 EXPR(687866=0xa7efa) ABS 
+snippet102 EXPR(687855=0xa7eef) ABS 
+snippet101 EXPR(687850=0xa7eea) ABS 
+snippet100 EXPR(687845=0xa7ee5) ABS 
+snippet99 EXPR(687841=0xa7ee1) ABS 
+snippet98 EXPR(687836=0xa7edc) ABS 
+snippet97 EXPR(687831=0xa7ed7) ABS 
+snippet96 EXPR(687824=0xa7ed0) ABS 
+snippet95 EXPR(687818=0xa7eca) ABS 
+snippet94 EXPR(687807=0xa7ebf) ABS 
+snippet93 EXPR(687799=0xa7eb7) ABS 
+snippet92 EXPR(687791=0xa7eaf) ABS 
+snippet91 EXPR(687782=0xa7ea6) ABS 
+snippet90 EXPR(687772=0xa7e9c) ABS 
+snippet89 EXPR(687763=0xa7e93) ABS 
+snippet88 EXPR(687757=0xa7e8d) ABS 
+snippet87 EXPR(687749=0xa7e85) ABS 
+snippet86 EXPR(687743=0xa7e7f) ABS 
+snippet85 EXPR(687735=0xa7e77) ABS 
+snippet84 EXPR(687727=0xa7e6f) ABS 
+snippet83 EXPR(687717=0xa7e65) ABS 
+snippet82 EXPR(687709=0xa7e5d) ABS 
+snippet81 EXPR(687704=0xa7e58) ABS 
+snippet80 EXPR(687700=0xa7e54) ABS 
+snippet79 EXPR(687694=0xa7e4e) ABS 
+snippet78 EXPR(687685=0xa7e45) ABS 
+snippet77 EXPR(687677=0xa7e3d) ABS 
+snippet76 EXPR(687670=0xa7e36) ABS 
+snippet75 EXPR(687664=0xa7e30) ABS 
+snippet74 EXPR(687657=0xa7e29) ABS 
+snippet73 EXPR(687652=0xa7e24) ABS 
+snippet72 EXPR(687640=0xa7e18) ABS 
+snippet71 EXPR(687629=0xa7e0d) ABS 
+snippet70 EXPR(687622=0xa7e06) ABS 
+snippet69 EXPR(687614=0xa7dfe) ABS 
+snippet68 EXPR(687606=0xa7df6) ABS 
+snippet67 EXPR(687602=0xa7df2) ABS 
+snippet66 EXPR(687595=0xa7deb) ABS 
+snippet65 EXPR(687588=0xa7de4) ABS 
+snippet52 EXPR(687572=0xa7dd4) ABS 
+snippet51 EXPR(687562=0xa7dca) ABS 
+snippet50 EXPR(687554=0xa7dc2) ABS 
+snippet49 EXPR(687544=0xa7db8) ABS 
+snippet48 EXPR(687500=0xa7d8c) ABS 
+snippet47 EXPR(687491=0xa7d83) ABS 
+snippet46 EXPR(687478=0xa7d76) ABS 
+snippet45 EXPR(687464=0xa7d68) ABS 
+snippet44 EXPR(687393=0xa7d21) ABS 
+snippet43 EXPR(687379=0xa7d13) ABS 
+snippet42 EXPR(687366=0xa7d06) ABS 
+snippet41 EXPR(687354=0xa7cfa) ABS 
+snippet40 EXPR(687323=0xa7cdb) ABS 
+snippet39 EXPR(687309=0xa7ccd) ABS 
+snippet38 EXPR(687293=0xa7cbd) ABS 
+snippet37 EXPR(687276=0xa7cac) ABS 
+snippet36 EXPR(687215=0xa7c6f) ABS 
+snippet35 EXPR(687206=0xa7c66) ABS 
+snippet34 EXPR(687198=0xa7c5e) ABS 
+snippet33 EXPR(687191=0xa7c57) ABS 
+snippet32 EXPR(687136=0xa7c20) ABS 
+snippet31 EXPR(687124=0xa7c14) ABS 
+snippet30 EXPR(687114=0xa7c0a) ABS 
+snippet29 EXPR(687105=0xa7c01) ABS 
+snippet28 EXPR(687049=0xa7bc9) ABS 
+snippet27 EXPR(687036=0xa7bbc) ABS 
+snippet26 EXPR(687024=0xa7bb0) ABS 
+snippet25 EXPR(687013=0xa7ba5) ABS 
+snippet24 EXPR(686951=0xa7b67) ABS 
+snippet23 EXPR(686942=0xa7b5e) ABS 
+snippet22 EXPR(686929=0xa7b51) ABS 
+snippet21 EXPR(686921=0xa7b49) ABS 
+snippet20 EXPR(686874=0xa7b1a) ABS 
+snippet19 EXPR(686868=0xa7b14) ABS 
+snippet18 EXPR(686859=0xa7b0b) ABS 
+snippet17 EXPR(686851=0xa7b03) ABS 
+snippet16 EXPR(686803=0xa7ad3) ABS 
+snippet15 EXPR(686798=0xa7ace) ABS 
+snippet14 EXPR(686791=0xa7ac7) ABS 
+snippet13 EXPR(686781=0xa7abd) ABS 
+snippet12 EXPR(686730=0xa7a8a) ABS 
+snippet11 EXPR(686710=0xa7a76) ABS 
+snippet10 EXPR(686690=0xa7a62) ABS 
+snippet9 EXPR(686670=0xa7a4e) ABS 
+snippet8 EXPR(686663=0xa7a47) ABS 
+snippet7 EXPR(686656=0xa7a40) ABS 
+snippet6 EXPR(686646=0xa7a36) ABS 
+snippet5 EXPR(686639=0xa7a2f) ABS 
+snippet4 EXPR(686629=0xa7a25) ABS 
+snippet3 EXPR(686622=0xa7a1e) ABS 
+snippet2 EXPR(686615=0xa7a17) ABS 
+snippet1 EXPR(686600=0xa7a08) ABS 
+special8 EXPR(685964=0xa778c) ABS 
+special7 EXPR(685915=0xa775b) ABS 
+special6 EXPR(685909=0xa7755) ABS 
+special5 EXPR(685903=0xa774f) ABS 
+special4 EXPR(685897=0xa7749) ABS 
+special3 EXPR(685843=0xa7713) ABS 
+special2_t_noContinue EXPR(685720=0xa7698) ABS 
+special2_p5 EXPR(685683=0xa7673) ABS 
+special2_t_noSave EXPR(685631=0xa763f) UNUSED ABS 
+special2_t_continueQuestion EXPR(685631=0xa763f) ABS 
+special2_p4 EXPR(685593=0xa7619) ABS 
+special2_t_saveQuestion EXPR(685564=0xa75fc) ABS 
+special2_p3 EXPR(685441=0xa7581) ABS 
+special2_t_notEnoughMoney EXPR(685443=0xa7583) ABS 
+special2_p2 EXPR(685434=0xa757a) ABS 
+special2_t_doNotStay EXPR(685784=0xa76d8) ABS 
+special2_p1 EXPR(685427=0xa7573) ABS 
 special2 EXPR(685269=0xa74d5) ABS 
 special1_yes EXPR(685043=0xa73f3) UNUSED ABS 
 special1_notEnoughGold EXPR(685123=0xa7443) ABS 
@@ -8119,9 +8435,9 @@ cc_textWhite EXPR(384=0x180) EQU
 cc_textOrange EXPR(416=0x1a0) EQU 
 cc_text EXPR(1=0x1) EQU 
 cc_close EXPR(0=0x0) EQU 
-staffRoll EXPR(688552=0xa81a8) ABS 
+staffRoll EXPR(689024=0xa8380) ABS 
 @Tiles_Loop EXPR(675224=0xa4d98) ABS 
-tileData_theEnd_de EXPR(701416=0xab3e8) ABS 
+tileData_theEnd_de EXPR(701888=0xab5c0) ABS 
 textDot EXPR(675187=0xa4d73) UNUSED ABS 
 textFoundThe EXPR(675168=0xa4d60) UNUSED ABS 
 textGold EXPR(675170=0xa4d62) ABS 
@@ -8129,17 +8445,17 @@ textFound EXPR(675169=0xa4d61) ABS
 magic1 EXPR(684876=0xa734c) ABS 
 base_PointerTable_Magic EXPR(684864=0xa7340) ABS 
 writePlanemap_Loop EXPR(675106=0xa4d22) ABS 
-planeMapB EXPR(693300=0xa9434) ABS 
+planeMapB EXPR(693772=0xa960c) ABS 
 writePlanemapB EXPR(675076=0xa4d04) UNUSED ABS 
 writePlanemap EXPR(675100=0xa4d1c) ABS 
-planeMapA EXPR(689204=0xa8434) ABS 
+planeMapA EXPR(689676=0xa860c) ABS 
 CARG EXPR(0=0x0) INTERNAL 
 writePlanemapA EXPR(675056=0xa4cf0) UNUSED ABS 
-newSpriteTable_continue EXPR(689175=0xa8417) ABS 
-newSpriteTable_newGame EXPR(689154=0xa8402) ABS 
-newSpriteTable_pressStart EXPR(689133=0xa83ed) ABS 
-newSpriteTable_arrow EXPR(689196=0xa842c) ABS 
-newSpriteTable_logo EXPR(689022=0xa837e) ABS 
+newSpriteTable_continue EXPR(689647=0xa85ef) ABS 
+newSpriteTable_newGame EXPR(689626=0xa85da) ABS 
+newSpriteTable_pressStart EXPR(689605=0xa85c5) ABS 
+newSpriteTable_arrow EXPR(689668=0xa8604) ABS 
+newSpriteTable_logo EXPR(689494=0xa8556) ABS 
 ret_bypassSpriteTableAddress EXPR(675048=0xa4ce8) ABS 
 setNewSpriteTable_continue EXPR(675042=0xa4ce2) ABS 
 setNewSpriteTable_newGame EXPR(675034=0xa4cda) ABS 
@@ -8148,22 +8464,22 @@ setNewSpriteTable_arrow EXPR(675018=0xa4cca) ABS
 setNewSpriteTable_logo EXPR(675010=0xa4cc2) ABS 
 mitem2 EXPR(675295=0xa4ddf) ABS 
 base_PointerTable_MenuItems EXPR(675272=0xa4dc8) ABS 
-newTitleTxtGFX_pack3 EXPR(700569=0xab099) ABS 
-newTitleTxtGFX_pack2 EXPR(700304=0xaaf90) ABS 
-newTitleTxtGFX_pack1 EXPR(700003=0xaae63) ABS 
-newLogoGFX_pack6 EXPR(699316=0xaabb4) ABS 
-newLogoGFX_pack5 EXPR(698948=0xaaa44) ABS 
-newLogoGFX_pack4 EXPR(698614=0xaa8f6) ABS 
-newLogoGFX_pack3 EXPR(698253=0xaa78d) ABS 
-newLogoGFX_pack2 EXPR(697847=0xaa5f7) ABS 
-newLogoGFX_pack1 EXPR(697396=0xaa434) ABS 
-newExitGFX_pack EXPR(699447=0xaac37) ABS 
-fontGFX_pack_de EXPR(700785=0xab171) ABS 
-fontGFX_pack_c EXPR(701188=0xab304) ABS 
-base_PointerTable_SpecialDialogues EXPR(685648=0xa7650) ABS 
+newTitleTxtGFX_pack3 EXPR(701041=0xab271) ABS 
+newTitleTxtGFX_pack2 EXPR(700776=0xab168) ABS 
+newTitleTxtGFX_pack1 EXPR(700475=0xab03b) ABS 
+newLogoGFX_pack6 EXPR(699788=0xaad8c) ABS 
+newLogoGFX_pack5 EXPR(699420=0xaac1c) ABS 
+newLogoGFX_pack4 EXPR(699086=0xaaace) ABS 
+newLogoGFX_pack3 EXPR(698725=0xaa965) ABS 
+newLogoGFX_pack2 EXPR(698319=0xaa7cf) ABS 
+newLogoGFX_pack1 EXPR(697868=0xaa60c) ABS 
+newExitGFX_pack EXPR(699919=0xaae0f) ABS 
+fontGFX_pack_de EXPR(701257=0xab349) ABS 
+fontGFX_pack_c EXPR(701660=0xab4dc) ABS 
+base_PointerTable_SpecialDialogues EXPR(686120=0xa7828) ABS 
 base_PointerTable_Names EXPR(683696=0xa6eb0) ABS 
 base_PointerTable_Items EXPR(684068=0xa7024) ABS 
-base_PointerTable_Snippets EXPR(685664=0xa7660) ABS 
+base_PointerTable_Snippets EXPR(686136=0xa7838) ABS 
 base_PointerTable_Dialogues EXPR(675348=0xa4e14) ABS 
 tilemap_toBeContinued EXPR(112282=0x1b69a) UNUSED ABS 
 tilemap_theEnd EXPR(112154=0x1b61a) ABS 

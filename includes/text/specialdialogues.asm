@@ -32,22 +32,82 @@ special1_notEnoughGold:
 
 
 special2:
-    dc.b "Hier wird noch an",cc_newline,"Special 2 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0A,$02,cc_speed,$06,cc_margin,$02
+    dc.b    "Willkommen in",cc_newline,"meiner Pension.",cc_wait
+    dc.b    cc_newline,cc_newline
+    dc.b    "Ich kann Dir ein",cc_newline,"bequemes Bett",cc_newline,"anbieten.",cc_wait
+    dc.b    cc_newline,cc_newline
+    dc.b    "Das Zimmer kostet",$02,$0C,$05,cc_newline,"f",ue,"r eine Nacht.",cc_wait
+    dc.b    cc_newline,cc_newline
+    dc.b    "M",oe,"chtest Du bei",cc_newline,"uns ",ue,"bernachten?"
+    dc.b    $0C,$00
+    dc.b    $0B,$02,$03,$08
+special2_p1:
+    dc.w    special2_t_doNotStay-special2_p1 ; FE D6
+    dc.b    cc_newline,cc_speed,$06
+    dc.b    $0B,$03
+special2_p2:
+    dc.w    special2_t_notEnoughMoney-special2_p2 ; 00 09
+    dc.b    $0B,$07
+    dc.b    $0B,$15,$06
+special2_p3:
+    dc.w    special2_t_saveQuestion-special2_p3 ; 00 5B
+special2_t_notEnoughMoney:
+    dc.b    cc_newline,"Oh, Du kannst",cc_newline,"es Dir gerade",cc_newline,"nicht leisten?",cc_wait
+    dc.b    cc_newline,"Das ist schon okay.",cc_newline,cc_newline,cc_wait
+    dc.b    cc_newline,"Bezahle einfach",cc_newline,"so viel, wie Du",cc_newline,"entbehren kannst."
+    dc.b    $0B,$10 
+    dc.b    $0B,$15
+special2_t_saveQuestion:
+    dc.b    cc_newline,"M",oe,"chtest Du",cc_newline,"speichern?"
+    dc.b    $0C,$00
+    dc.b    $0B,$02,$03,$08
+special2_p4:
+    dc.w    special2_t_continueQuestion-special2_p4 ; 00 1A
+    dc.b    cc_speed,$06
+    dc.b    $09,$0B,$0B
+    dc.b    "Dein Spiel",cc_newline,"wurde gespeichert.",cc_newline,cc_wait
+special2_t_noSave:
+special2_t_continueQuestion:
+    dc.b    cc_speed,$06
+    dc.b    cc_newline,cc_newline,"Wirst Du Deine",cc_newline,"Reise am Morgen",cc_newline,"fortsetzen?"
+    dc.b    $0C,$00,$0B,$02,$03,$08
+special2_p5:
+    dc.w    special2_t_noContinue-special2_p5 ; 00 27
+    dc.b    cc_newline,cc_speed,$06
+    dc.b    "Gute Nacht,",cc_newline,"erhol Dich gut!",cc_newline,cc_wait
+    dc.b    $0B,$0D,cc_close
+special2_t_noContinue:
+    dc.b    cc_newline,cc_speed,$06
+    dc.b    "Wie schade,",cc_newline,"aber wir sehen",cc_newline,"uns wieder, ja?",cc_wait
+    dc.b    cc_newline,"Gute Nacht.",cc_newline,cc_newline,cc_wait
+    dc.b    $0B,$0C,cc_close
+special2_t_doNotStay:
+    dc.b    cc_newline,cc_speed,$06
+    dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders überlegst.",cc_wait,cc_close
 
 special3:
-    dc.b "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Special 3 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 special4:
-    dc.b "Hier wird noch an",cc_newline,"Special 4 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$19,$18,$10,$20,$00
 
 special5:
-    dc.b "Hier wird noch an",cc_newline,"Special 5 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$19,$19,$11,$20,$00
 
 special6:
-    dc.b "Hier wird noch an",cc_newline,"Special 6 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$19,$1A,$12,$20,$00
 
 special7:
-    dc.b "Hier wird noch an",cc_newline,"Special 7 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $05,$0B,$22,$03,$08,$0B,$20,$0B,$32,$02,$0B,$1F,$00,$0B,$32,$05,$03,$00,$0B,$1E,$01,$02,$10,$20,$0B,$1F,$01,$02,$20,$11,$20,$0B,$1F,$02,$02,$20,$12,$20,$0B,$1F,$03,$0B,$21,$0B,$18,$1E,$0B,$20,$00
 
 special8:
-    dc.b "Hier wird noch an",cc_newline,"Special 8 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_newline,cc_lock
+    dc.b    "Dies ist die",cc_newline,"Melodie f",ue,"r die",cc_newline,"erste T",ue,"r."
+    dc.b    $0B,$0A,$00,$0B,$1B,$0C,$08,$0F,$02
+    dc.b    "Die n",ae,"chste Melodie",cc_newline,oe,"ffnet die",cc_newline,"zweite T",ue,"r."
+    dc.b    $0B,$0A,$01,$0B,$1B,$0C,$09,$0F,$02
+    dc.b    "Die letzte Melodie",cc_newline,oe,"ffnet die",cc_newline,"dritte T",ue,"r."
+    dc.b    $0B,$0A,$02,$0B,$1B,$0C,$0A,$0F,$02,$08,$05,$09,$00 
+    
+    dc.b    $00
