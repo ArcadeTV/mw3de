@@ -238,45 +238,49 @@ tilemap_toBeContinued:
     ; Replace GFX data pointers:
     ; Font:
     org     $4100C
-    dc.l    fontGFX_pack_c+$02000000        ; was 02 041F23
+    dc.l    fontGFX_pack_c+$02000000                ; was 02 041F23
     org     $4101C
-    dc.l    fontGFX_pack_de+$02000000       ; was 02 0423FA
+    dc.l    fontGFX_pack_de+$02000000               ; was 02 0423FA
 
     ; Exit Sign:
-    org     $412E0                          ; was 02 056476
-    dc.l    newExitGFX_pack+$02000000       ; was 02 0691F5
+    org     $412E0                                  ; was 02 056476
+    dc.l    newExitGFX_pack+$02000000               ; was 02 0691F5
+
+    ; Alsedo Inn Sign:
+    org     $4134C
+    dc.l    newInnSign_Alsedo_GFX_pack+$02000000    ; was 02 05906B
 
     ; Logo:
     org     $4155C
-    dc.l    newLogoGFX_pack1+$02000000      ; was 02 068930
+    dc.l    newLogoGFX_pack1+$02000000              ; was 02 068930
 
     org     $41560
-    dc.l    newLogoGFX_pack2+$02000000      ; was 02 068ADA
+    dc.l    newLogoGFX_pack2+$02000000              ; was 02 068ADA
 
     org     $41564
-    dc.l    newLogoGFX_pack3+$02000000      ; was 02 068C8A
+    dc.l    newLogoGFX_pack3+$02000000              ; was 02 068C8A
 
     org     $41568
-    dc.l    newLogoGFX_pack4+$02000000      ; was 02 068E5C
+    dc.l    newLogoGFX_pack4+$02000000              ; was 02 068E5C
 
     org     $4156C
-    dc.l    newLogoGFX_pack5+$02000000      ; was 02 068FEC
+    dc.l    newLogoGFX_pack5+$02000000              ; was 02 068FEC
 
     org     $41570
-    dc.l    newLogoGFX_pack6+$02000000      ; was 02 0691F5
+    dc.l    newLogoGFX_pack6+$02000000              ; was 02 0691F5
 
     ; Titlescreen Text GFX: Press Start Button, New Game, Continue and Arrow
     org     $41598                
-    dc.l    newTitleTxtGFX_pack1+$02000000  ; was 02 06A2C9
+    dc.l    newTitleTxtGFX_pack1+$02000000          ; was 02 06A2C9
 
     org     $4159C 
-    dc.l    newTitleTxtGFX_pack2+$02000000  ; was 02 06A3F5
+    dc.l    newTitleTxtGFX_pack2+$02000000          ; was 02 06A3F5
 
     org     $415A0 
-    dc.l    newTitleTxtGFX_pack3+$02000000  ; was 02 06A4FE
+    dc.l    newTitleTxtGFX_pack3+$02000000          ; was 02 06A4FE
 
     ; Replace Sprite Table Values for re-positioning:
-    org     $A0E4C                          ; Sprite Table for Copyright Stuff
+    org     $A0E4C                                  ; Sprite Table for Copyright Stuff
           ; ss: size, 
           ; ff: flag+1st id-nybble
           ; ii: 2nd id-nybble

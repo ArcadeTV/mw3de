@@ -313,7 +313,7 @@ text55_p2:
 text55_welcome:
     dc.b    "Willkommen bei",cc_newline,cc_text,orange,"Kishera",cc_text,white,".",cc_newline,cc_wait
     dc.b    "Schau Dich",cc_newline,"in Ruhe um.",cc_newline,cc_wait,cc_newline
-    dc.b    "Wenn Du Fragen",cc_newline,"zu unseren",cc_newline,"Artikeln hast,",cc_newline,cc_wait
+    dc.b    "Wenn Du Fragen",cc_newline,"zu unseren",cc_newline,"Artikeln hast,",cc_wait,cc_newline
     dc.b    "stelle Dich",cc_newline,"davor und",cc_newline,"schau nach oben.",cc_wait,cc_close
 text55_thankYou:
     dc.b    "Herzlichen Dank!",cc_wait,cc_close
@@ -651,7 +651,8 @@ text95_iceCastle:
 
 
 text96: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 96 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_lock,$04,$03,$0C,$62,$20,$0C,$5F,$21,$0B,$18,$1E
+    dc.b    cc_wait,cc_close
 
 
 text97: 
@@ -671,7 +672,7 @@ text100:
 
 
 text101:
-    dc.b    "Hier wird noch an",cc_newline,"Text 101 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0E,$05,$0F,$01,$00
 
 
 text102:
