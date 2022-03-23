@@ -7,7 +7,7 @@ textData_Dialogues:
 
 ; First textbox that pops up automatically upon game start in the house
 text1: 
-    dc.b $0B,$11,$10
+    dc.b    $0B,$11,$10
 text1_p1:
     dc.w    text1_respawn-text1_p1
     dc.b    cc_speed,$06,$0A,$01,cc_margin,$01,cc_lock
@@ -23,147 +23,147 @@ text1_respawn:
 
 ; First sign after leaving the house
 text2: 
-    dc.b $03,$08,$04,$02,"Willkommen in",$02,$04,$07,$0C,$54,$20,$0C,$67,$21,$20,cc_wait
-    dc.b cc_close
+    dc.b    $03,$08,$04,$02,"Willkommen in",$02,$04,$07,$0C,$54,$20,$0C,$67,$21,$20,cc_wait
+    dc.b    cc_close
 
 
 ; Old lady in the tree
 text3: 
-    dc.b $0C,$06,$0B,$12,$36
+    dc.b    $0C,$06,$0B,$12,$36
 text3_pointer1:
-    dc.w text3_target1-text3_pointer1
-    dc.b $0B,$14,$36,"Wieder einmal ist",cc_newline,"unsere Welt bedroht.",cc_newline,cc_wait
-    dc.b "Die Prinzessin wurde",cc_newline,"aus Schlo",$F6," Purapril",cc_newline,"entf",ue,"hrt.",cc_wait,cc_newline,cc_newline
-    dc.b "Du solltest besser",cc_newline,"vorsichtig sein.",cc_newline,cc_wait,cc_newline
-    dc.b "Hier, ein ",$0B,$0A,$2A,$0C,$02,cc_newline,"und ein ",$0B,$08,$FF,$0B,$0A,$20,$0C,$02,$0B,$08,$FF,".",cc_newline,cc_wait
-    dc.b "Nimm sie mit Dir.",cc_wait
-    dc.b cc_newline,cc_newline,"Du mu",$F6,"t jederzeit",cc_newline,"bereit sein,",cc_newline,"Magie einzusetzen!",cc_wait,cc_close
+    dc.w    text3_target1-text3_pointer1
+    dc.b    $0B,$14,$36,"Wieder einmal ist",cc_newline,"unsere Welt bedroht.",cc_newline,cc_wait
+    dc.b    "Die Prinzessin wurde",cc_newline,"aus Schlo",$F6," Purapril",cc_newline,"entf",ue,"hrt.",cc_wait,cc_newline,cc_newline
+    dc.b    "Du solltest besser",cc_newline,"vorsichtig sein.",cc_newline,cc_wait,cc_newline
+    dc.b    "Hier, ein ",$0B,$0A,$2A,$0C,$02,cc_newline,"und ein ",$0B,$08,$FF,$0B,$0A,$20,$0C,$02,$0B,$08,$FF,".",cc_newline,cc_wait
+    dc.b    "Nimm sie mit Dir.",cc_wait
+    dc.b    cc_newline,cc_newline,"Du mu",$F6,"t jederzeit",cc_newline,"bereit sein,",cc_newline,"Magie einzusetzen!",cc_wait,cc_close
 text3_target1:
-    dc.b "Worauf wartest Du?",cc_newline,"Setz Dich in",cc_newline,"Bewegung!",cc_wait,cc_close
+    dc.b    "Worauf wartest Du?",cc_newline,"Setz Dich in",cc_newline,"Bewegung!",cc_wait,cc_close
 
 
 text4:
-    dc.b $0B,$14,$03,$04,$02,"Alsedo,",cc_fast,cc_margin,$04,"das Dorf der Feen.",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$02,"Alsedo,",cc_fast,cc_margin,$04,"das Dorf der Feen.",cc_wait,cc_close
 
 
 ; Purapril Castle Entrance
 text5: 
-    dc.b $0B,$14,$03,$04,$02,$0C,$5A," ",$0C,$45,$02,$04,$02,"Eingang",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$02,$0C,$5A," ",$0C,$45,$02,$04,$02,"Eingang",cc_wait,cc_close
 
 
 text6: 
-    dc.b "Hier wird noch an",cc_newline,"Text 6 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 6 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text7: 
-    dc.b "Hier wird noch an",cc_newline,"Text 7 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 7 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text8: 
-    dc.b "Hier wird noch an",cc_newline,"Text 8 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 8 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text9: 
-    dc.b "Hier wird noch an",cc_newline,"Text 9 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 9 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text10: 
-    dc.b "Hier wird noch an",cc_newline,"Text 10 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 10 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text11: 
-    dc.b "Hier wird noch an",cc_newline,"Text 11 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 11 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text12: 
-    dc.b "Hier wird noch an",cc_newline,"Text 12 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 12 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text13: 
-    dc.b "Hier wird noch an",cc_newline,"Text 13 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 13 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
     ; Alsedo Shop: Spear
 text14: 
-    dc.b $0B,$0A,$06,$0F,$00,cc_close
+    dc.b    $0B,$0A,$06,$0F,$00,cc_close
 
 
 text15: 
-    dc.b "Hier wird noch an",cc_newline,"Text 15 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 15 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text16: 
-    dc.b "Hier wird noch an",cc_newline,"Text 16 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 16 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text17: 
-    dc.b "Hier wird noch an",cc_newline,"Text 17 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 17 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text18: 
-    dc.b "Hier wird noch an",cc_newline,"Text 18 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 18 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text19: 
-    dc.b "Hier wird noch an",cc_newline,"Text 19 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 19 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
     ; Alsedo Shop: Chain Mail
 text20: 
-    dc.b $0B,$0A,$0D,$0F,$00,cc_close
+    dc.b    $0B,$0A,$0D,$0F,$00,cc_close
 
 
 text21: 
-    dc.b "Hier wird noch an",cc_newline,"Text 21 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 21 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text22: 
-    dc.b "Hier wird noch an",cc_newline,"Text 22 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 22 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text23: 
-    dc.b "Hier wird noch an",cc_newline,"Text 23 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 23 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text24: 
-    dc.b "Hier wird noch an",cc_newline,"Text 24 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 24 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text25: 
-    dc.b "Hier wird noch an",cc_newline,"Text 25 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 25 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text26: 
-    dc.b "Hier wird noch an",cc_newline,"Text 26 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 26 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text27: 
-    dc.b "Hier wird noch an",cc_newline,"Text 27 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 27 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
     ; Alsedo Shop: Shield
 text28: 
-    dc.b $0B,$0A,$16,$0F,$00,cc_close
+    dc.b    $0B,$0A,$16,$0F,$00,cc_close
 
 
 text29: 
-    dc.b "Hier wird noch an",cc_newline,"Text 29 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 29 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text30: 
-    dc.b "Hier wird noch an",cc_newline,"Text 30 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 30 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text31: 
-    dc.b "Hier wird noch an",cc_newline,"Text 31 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 31 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text32: 
-    dc.b "Hier wird noch an",cc_newline,"Text 32 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 32 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text33: 
-    dc.b "Hier wird noch an",cc_newline,"Text 33 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 33 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 ; First shop in a tree when looking at leather boots
@@ -172,27 +172,27 @@ text34:
 
 
 text35: 
-    dc.b "Hier wird noch an",cc_newline,"Text 35 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 35 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text36: 
-    dc.b "Hier wird noch an",cc_newline,"Text 36 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 36 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text37: 
-    dc.b "Hier wird noch an",cc_newline,"Text 37 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 37 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text38: 
-    dc.b "Hier wird noch an",cc_newline,"Text 38 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 38 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text39: 
-    dc.b "Hier wird noch an",cc_newline,"Text 39 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 39 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text40: 
-    dc.b "Hier wird noch an",cc_newline,"Text 40 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 40 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 ; Found Ocarina
@@ -205,81 +205,81 @@ text41:
 
 
 text42: 
-    dc.b "Hier wird noch an",cc_newline,"Text 41 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 41 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text43: 
-    dc.b $0B,$0A,$2B,$0F,$00,$00
+    dc.b    $0B,$0A,$2B,$0F,$00,$00
 
 
 text44: 
-    dc.b "Hier wird noch an",cc_newline,"Text 44 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 44 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text45: 
-    dc.b "Hier wird noch an",cc_newline,"Text 45 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 45 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text46: 
-    dc.b "Hier wird noch an",cc_newline,"Text 46 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 46 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text47: 
-    dc.b "Hier wird noch an",cc_newline,"Text 47 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 47 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text48: 
-    dc.b "Hier wird noch an",cc_newline,"Text 48 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 48 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text49: 
-    dc.b "Hier wird noch an",cc_newline,"Text 49 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 49 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text50: 
 text50_t1:
-    dc.b $0C,$06,$0B,$13,$10,$0B,$12,$39
+    dc.b    $0C,$06,$0B,$13,$10,$0B,$12,$39
 text50_p2:
-    dc.w text50_t3-text50_p2
-    dc.b cc_jump
+    dc.w    text50_t3-text50_p2
+    dc.b    cc_jump
 text50_p1:
-    dc.w text50_t2-text50_p1
+    dc.w    text50_t2-text50_p1
 text50_t3:
-    dc.b $0C,$65,$20,$74,$6F,$20,$0C,$5A,cc_newline,$0C,$45,$2E,cc_wait,cc_newline,cc_newline
-    dc.b $53,$74,$61,$79,$20,$61,$73,$20,$0C,$A1,$20,$61,$73,$20,$0C,$E6,cc_newline,$0C,$A0,$2E,cc_newline,cc_wait,cc_close
+    dc.b    $0C,$65,$20,$74,$6F,$20,$0C,$5A,cc_newline,$0C,$45,$2E,cc_wait,cc_newline,cc_newline
+    dc.b    $53,$74,$61,$79,$20,$61,$73,$20,$0C,$A1,$20,$61,$73,$20,$0C,$E6,cc_newline,$0C,$A0,$2E,cc_newline,cc_wait,cc_close
 text50_t2:
     ;                                       Purapril
-    dc.b "Dies ist das Schlo",ss,cc_newline,cc_text,orange,$0C,$5A,cc_text,white,"!",cc_wait,cc_newline,cc_newline
+    dc.b    "Dies ist das Schlo",ss,cc_newline,cc_text,orange,$0C,$5A,cc_text,white,"!",cc_wait,cc_newline,cc_newline
     ; Entry is prohibited
-    dc.b "     Eintritt",cc_newline,"     verboten!",cc_newline,cc_wait,cc_newline
+    dc.b    "     Eintritt",cc_newline,"     verboten!",cc_newline,cc_wait,cc_newline
     ; Go away!
-    dc.b "    Geh weiter!",cc_newline,cc_wait,cc_close
+    dc.b    "    Geh weiter!",cc_newline,cc_wait,cc_close
 
 
 text51: 
-    dc.b "Hier wird noch an",cc_newline,"Text 51 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 51 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 ; Castle Guards #1
 text52: 
-    dc.b $0B,$11,$10
+    dc.b    $0B,$11,$10
 text52_p1:
-    dc.w text52_t1-text52_p1 ; set pointer.w to target 1
-    dc.b cc_jump
+    dc.w    text52_t1-text52_p1 ; set pointer.w to target 1
+    dc.b    cc_jump
 text52_p2:
-    dc.w text50_t1-text52_p2 ; set pointer.w to (negative) target 2
-    dc.b $0C,$06
+    dc.w    text50_t1-text52_p2 ; set pointer.w to (negative) target 2
+    dc.b    $0C,$06
 text52_t1: ; target 1
-    dc.b cc_margin,$02,cc_speed,$06,"Ich habe Dir gesagt,",cc_newline,"niemand darf das",cc_newline,"Schloss betreten.",cc_wait,cc_newline,cc_newline
-    dc.b "    Spreche ich",cc_newline,"    undeutlich?",cc_newline,cc_wait,cc_close
+    dc.b    cc_margin,$02,cc_speed,$06,"Ich habe Dir gesagt,",cc_newline,"niemand darf das",cc_newline,"Schloss betreten.",cc_wait,cc_newline,cc_newline
+    dc.b    "    Spreche ich",cc_newline,"    undeutlich?",cc_newline,cc_wait,cc_close
 
 
 text53: 
-    dc.b "Hier wird noch an",cc_newline,"Text 53 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 53 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text54: 
-    dc.b $0B,$0E,$01,$0F,$01,$00
+    dc.b    $0B,$0E,$01,$0F,$01,$00
 
 
 text55: 
@@ -403,13 +403,13 @@ text62_thanks:
 
 ; Alsedo Inn: Good morning message after resting
 text63: 
-    dc.b $0C,$06,$0B,$11,$10
+    dc.b    $0C,$06,$0B,$11,$10
 text63_p1:
-    dc.w text63_t1-text63_p1
-    dc.b "Guten Morgen.",cc_newline,"Na, hast Du",cc_newline,"gut geschlafen?",cc_wait,cc_newline,cc_newline
-    dc.b "Viel Gl",ue,"ck",cc_newline,"auf Deinem Weg.",cc_newline,cc_wait,cc_close
+    dc.w    text63_t1-text63_p1
+    dc.b    "Guten Morgen.",cc_newline,"Na, hast Du",cc_newline,"gut geschlafen?",cc_wait,cc_newline,cc_newline
+    dc.b    "Viel Gl",ue,"ck",cc_newline,"auf Deinem Weg.",cc_newline,cc_wait,cc_close
 text63_t1:
-    dc.b $54,$68,$61,$74,$20,$0C,$E0,$20,$0C,$7B,$2E,$05,$09,$09,$0C,$68,$20,$73,$68,$6F,$75,$6C,$64,$6E,$27,$74,$20,$0C,$CF,$09,$63,$68,$61,$6E,$63,$65,$73,$20,$0C,$A0,$20,$0C,$D2,$21,$09,$05,$09,$0C,$57,$20,$62,$65,$20,$0C,$A8,$09,$63,$61,$72,$65,$66,$75,$6C,$21,$09,$05,$00
+    dc.b    $54,$68,$61,$74,$20,$0C,$E0,$20,$0C,$7B,$2E,$05,$09,$09,$0C,$68,$20,$73,$68,$6F,$75,$6C,$64,$6E,$27,$74,$20,$0C,$CF,$09,$63,$68,$61,$6E,$63,$65,$73,$20,$0C,$A0,$20,$0C,$D2,$21,$09,$05,$09,$0C,$57,$20,$62,$65,$20,$0C,$A8,$09,$63,$61,$72,$65,$66,$75,$6C,$21,$09,$05,$00
 
 ; Sonia, havin the Ocarina
 text64: 
@@ -424,7 +424,7 @@ text64_p1:
     dc.b    "Nimm sie an Dich",cc_newline,"und benutze sie!",cc_newline,cc_wait,cc_newline
     dc.b    "Ich werde Dich nun",cc_newline,"die Melodien",cc_newline,"lehren.",cc_wait,cc_newline,cc_newline
     dc.b    "H",oe,"re gut zu!",cc_newline,cc_newline,cc_wait,cc_newline
-    dc.b    $0F,$07
+    dc.b    $0F,$07 ; play music notes
     dc.b    "Denkst Du,",cc_newline,"Du hast die",cc_newline,"Melodien behalten?",cc_wait,cc_newline,cc_newline
     dc.b    "Spiele die ",cc_text,orange,"Okarina",cc_text,white,cc_newline,"in der H",oe,"hle.",cc_newline,cc_wait,cc_newline,cc_newline
     dc.b    "Wir sind Dir sehr",cc_newline,"dankbar f",ue,"r Deine",cc_newline,"Hilfe.",cc_wait,cc_close
@@ -433,7 +433,7 @@ text64_forgotten:
     dc.b    "Ein Mustersch",ue,"ler",cc_newline,"bist Du ja",cc_newline,"nicht gerade.",cc_wait,cc_newline,cc_newline
     dc.b    "Lass uns",cc_newline,"noch einmal",cc_newline,"zusammen ",ue,"ben.",cc_wait,cc_newline,cc_newline
     dc.b    "Es geht los!",cc_newline,cc_newline,cc_wait
-    dc.b    $0F,$07
+    dc.b    $0F,$07 ; play music notes
     dc.b    "Kannst Du sie jetzt",cc_newline,"auswendig spielen?",cc_newline,cc_wait,cc_newline,cc_newline
     dc.b    "Wenn Du die",cc_newline,"Melodien wieder",cc_newline,"vergi",ss,"t,",cc_wait,cc_newline
     dc.b    "komm zu mir",cc_newline,"und wir ",ue,"ben",cc_newline,"noch einmal.",cc_wait
@@ -451,276 +451,291 @@ text64_last:
 
 
 text65: 
-    dc.b "Hier wird noch an",cc_newline,"Text 65 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 65 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text66: 
-    dc.b "Hier wird noch an",cc_newline,"Text 66 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 66 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text67: 
-    dc.b "Hier wird noch an",cc_newline,"Text 67 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 67 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text68: 
-    dc.b "Hier wird noch an",cc_newline,"Text 68 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 68 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text69: 
-    dc.b "Hier wird noch an",cc_newline,"Text 69 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 69 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text70: 
-    dc.b "Hier wird noch an",cc_newline,"Text 70 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 70 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text71: 
-    dc.b "Hier wird noch an",cc_newline,"Text 71 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 71 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text72: 
-    dc.b "Hier wird noch an",cc_newline,"Text 72 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 72 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text73: 
-    dc.b "Hier wird noch an",cc_newline,"Text 73 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 73 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text74: 
-    dc.b "Hier wird noch an",cc_newline,"Text 74 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 74 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text75: 
-    dc.b "Hier wird noch an",cc_newline,"Text 75 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 75 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 ; First shop, talking to the owner:
 text76: 
-    dc.b $03,$06,$0A,$01,$04,$01
-    dc.b "Wir hatten seit",cc_newline,"Jahren keinen Kunden",cc_newline,"mehr hier.",cc_wait,cc_newline,cc_newline
-    dc.b "Du bist gerade",cc_newline,"erst aufgebrochen?",cc_newline,cc_wait,"Pa",ss," gut auf Dich auf!",cc_wait,cc_newline,cc_newline
-    dc.b "Hoffentlich hast",cc_newline,"Du keine Scheu",cc_newline,"vor "
-    dc.w cc_textOrange
-    dc.b "Quallen."
-    dc.w cc_textWhite
-    dc.b cc_wait,cc_close
+    dc.b    $03,$06,$0A,$01,$04,$01
+    dc.b    "Wir hatten seit",cc_newline,"Jahren keinen Kunden",cc_newline,"mehr hier.",cc_wait,cc_newline,cc_newline
+    dc.b    "Du bist gerade",cc_newline,"erst aufgebrochen?",cc_newline,cc_wait,"Pa",ss," gut auf Dich auf!",cc_wait,cc_newline,cc_newline
+    dc.b    "Hoffentlich hast",cc_newline,"Du keine Scheu",cc_newline,"vor "
+    dc.w    cc_textOrange
+    dc.b    "Quallen."
+    dc.w    cc_textWhite
+    dc.b    cc_wait,cc_close
 
 
 text77: 
-    dc.b "Hier wird noch an",cc_newline,"Text 77 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 77 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text78: 
-    dc.b "Hier wird noch an",cc_newline,"Text 78 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 78 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text79: 
-    dc.b "Hier wird noch an",cc_newline,"Text 79 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 79 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text80: 
-    dc.b "Hier wird noch an",cc_newline,"Text 80 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 80 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text81: 
-    dc.b "Hier wird noch an",cc_newline,"Text 81 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 81 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text82: 
-    dc.b "Hier wird noch an",cc_newline,"Text 82 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 82 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text83: 
-    dc.b "Hier wird noch an",cc_newline,"Text 83 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 83 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text84: 
-    dc.b "Hier wird noch an",cc_newline,"Text 84 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 84 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text85: 
-    dc.b "Hier wird noch an",cc_newline,"Text 85 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 85 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text86: 
-    dc.b "Hier wird noch an",cc_newline,"Text 86 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 86 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text87: 
-    dc.b "Hier wird noch an",cc_newline,"Text 87 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 87 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text88: 
-    dc.b "Hier wird noch an",cc_newline,"Text 88 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 88 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text89: 
-    dc.b "Hier wird noch an",cc_newline,"Text 89 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 89 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text90: 
-    dc.b "Hier wird noch an",cc_newline,"Text 90 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 90 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text91: 
-    dc.b "Hier wird noch an",cc_newline,"Text 91 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 91 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text92: 
-    dc.b "Hier wird noch an",cc_newline,"Text 92 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 92 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text93: 
-    dc.b "Hier wird noch an",cc_newline,"Text 93 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 93 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text94: 
-    dc.b "Hier wird noch an",cc_newline,"Text 94 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 94 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text95: 
-    dc.b "Hier wird noch an",cc_newline,"Text 95 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 95 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text96: 
-    dc.b "Hier wird noch an",cc_newline,"Text 96 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 96 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text97: 
-    dc.b "Hier wird noch an",cc_newline,"Text 97 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 97 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text98: 
-    dc.b "Hier wird noch an",cc_newline,"Text 98 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 98 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text99: 
-    dc.b "Hier wird noch an",cc_newline,"Text 99 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 99 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text100:
-    dc.b "Hier wird noch an",cc_newline,"Text 100 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 100 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text101:
-    dc.b "Hier wird noch an",cc_newline,"Text 101 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 101 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text102:
-    dc.b "Hier wird noch an",cc_newline,"Text 102 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 102 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text103:
-    dc.b "Hier wird noch an",cc_newline,"Text 103 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 103 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text104:
-    dc.b "Hier wird noch an",cc_newline,"Text 104 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 104 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text105:
-    dc.b "Hier wird noch an",cc_newline,"Text 105 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 105 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text106:
-    dc.b "Hier wird noch an",cc_newline,"Text 106 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 106 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text107:
-    dc.b "Hier wird noch an",cc_newline,"Text 107 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 107 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text108:
-    dc.b "Hier wird noch an",cc_newline,"Text 108 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 108 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text109:
-    dc.b "Hier wird noch an",cc_newline,"Text 109 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 109 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text110:
-    dc.b "Hier wird noch an",cc_newline,"Text 110 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 110 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text111:
-    dc.b "Hier wird noch an",cc_newline,"Text 111 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 111 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text112:
-    dc.b "Hier wird noch an",cc_newline,"Text 112 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 112 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text113:
-    dc.b "Hier wird noch an",cc_newline,"Text 113 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 113 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text114:
-    dc.b "Hier wird noch an",cc_newline,"Text 114 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 114 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text115:
-    dc.b "Hier wird noch an",cc_newline,"Text 115 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 115 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text116:
-    dc.b "Hier wird noch an",cc_newline,"Text 116 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 116 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text117:
-    dc.b "Hier wird noch an",cc_newline,"Text 117 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 117 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text118:
-    dc.b "Hier wird noch an",cc_newline,"Text 118 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 118 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text119:
-    dc.b "Hier wird noch an",cc_newline,"Text 119 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 119 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text120:
-    dc.b "Hier wird noch an",cc_newline,"Text 120 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 120 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text121:
-    dc.b "Hier wird noch an",cc_newline,"Text 121 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 121 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text122:
-    dc.b "Hier wird noch an",cc_newline,"Text 122 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 122 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text123:
-    dc.b "Hier wird noch an",cc_newline,"Text 123 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 123 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text124:
-    dc.b "Hier wird noch an",cc_newline,"Text 124 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 124 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text125:
-    dc.b "Hier wird noch an",cc_newline,"Text 125 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 125 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text126:
-    dc.b "Hier wird noch an",cc_newline,"Text 126 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 126 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text127:
-    dc.b "Hier wird noch an",cc_newline,"Text 127 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 127 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text128:
-    dc.b "Hier wird noch an",cc_newline,"Text 128 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-
+    dc.b    cc_lock
+    dc.b    "Willkommen zu Hause,",cc_newline
+    dc.b    cc_text,orange,"Shion",cc_text,white,"!",cc_newline,cc_wait,cc_newline,
+    dc.b    "Ich bin so froh,",cc_newline,"dass Du wohlauf bist.",cc_newline,cc_wait,cc_newline,
+    dc.b    "Ich werde Dich",cc_newline,"nie vergessen,"cc_wait,cc_newline,
+    dc.b    "niemals."
+    dc.b    $0C,$83,$2E
+    dc.b    $0B,$18,$48
+    dc.b    cc_close
 
 text129:
-    dc.b "Hier wird noch an",cc_newline,"Text 129 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_lock
+    dc.b    "Achtung, das Kind",cc_newline,"ist in Gefahr!",cc_wait,cc_close
 
 
 text130:
-    dc.b "Hier wird noch an",cc_newline,"Text 130 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_lock
+    dc.b    "   LEBENSGEFAHR!",cc_newline
+    dc.b    "Wüstengebiet voraus.",cc_wait,cc_close
 
 
 text131: 
-    dc.b "Hier wird noch an",cc_newline,"Text 131 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_lock
+    dc.b    "Jeder der kleiner",cc_newline,"als dieses",cc_newline,"Schild ist,",cc_newline
+    dc.b    "wird es nicht",cc_newline,"bewegen können.",cc_wait,cc_close
+
+
+    dc.b    cc_close
