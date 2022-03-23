@@ -283,7 +283,20 @@ text54:
 
 
 text55: 
-    dc.b "Hier wird noch an",cc_newline,"Text 55 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$11,$17
+text55_p1:
+    dc.w    text55_welcome-text55_p1 ; 00 36
+    dc.b    "Oh, es tut mir leid, aber unser Lager ist leer."
+    dc.b    $0B,$11,$1E
+text55_p2:
+    dc.w    text55_thankYou-text55_p2 ; 00 4B
+text55_welcome:
+    dc.b    "Willkommen bei",cc_newline,cc_text,orange,"Kishera",cc_text,white,".",cc_newline,cc_wait
+    dc.b    "Schau Dich",cc_newline,"in Ruhe um.",cc_newline,cc_wait,cc_newline
+    dc.b    "Wenn Du Fragen",cc_newline,"zu unseren",cc_newline,"Artikeln hast,",cc_newline,cc_wait
+    dc.b    "stelle Dich",cc_newline,"davor und",cc_newline,"schau nach oben.",cc_wait,cc_close
+text55_thankYou:
+    dc.b    "Herzlichen Dank!",cc_wait,cc_close
 
 
 ; Alsedo Medicine Shop Felissimo, Keeper:
@@ -356,11 +369,24 @@ text59:
 
 
 text60: 
-    dc.b "Hier wird noch an",cc_newline,"Text 60 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Hier wird noch an",cc_newline,"Text 60 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text61: 
-    dc.b "Hier wird noch an",cc_newline,"Text 61 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$12,$37
+text61_p1:
+    dc.w    text61_t2-text61_p1 ; 00 8D
+    dc.b    $0B,$11,$26
+text61_p2:
+    dc.w    text61_t1-text61_p2 ; 00 5F
+    dc.b    "Wenn man einen",cc_newline,"Speer benutzt,",cc_wait,cc_newline
+    dc.b    "kann man nicht",cc_newline,"gleichzeitig ein",cc_newline,"Schild halten.",cc_wait,cc_newline
+    dc.b    "Dies sollte man bei",cc_newline,"der Wahl einer",cc_newline,"Waffe bedenken.",cc_wait,cc_close
+text61_t1:
+    dc.b    "Ist ",cc_text,orange,"K",oe,"nigin",cc_newline,"Eleanora",cc_text,white," nicht",cc_newline,"zauberhaft?",cc_wait,cc_close
+text61_t2:
+    dc.b    cc_text,orange,"K",oe,"nigin Eleanora",cc_text,white,cc_newline,"hat nach Dir",cc_newline,"gefragt.",cc_wait,cc_newline
+    dc.b    "Warum gehst Du",cc_newline,"nicht zu ihr?",cc_wait,cc_close
 
 
 ; Alsedo Medicine Shop Felissimo, Customer:
