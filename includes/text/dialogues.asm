@@ -52,35 +52,55 @@ text5:
 
 
 text6: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 6 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$01
+    dc.b    "Maugham W",ue,"ste"
+    dc.b    $02,$04,$01
+    dc.b    "Betreten auf",cc_newline,"eigene Gefahr!"
+    dc.b    cc_wait,cc_close
 
 
 text7: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 7 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$02
+    dc.b    "Lilypad,"
+    dc.b    $02,$04,$04
+    dc.b    "das Zwergendorf"
+    dc.b    cc_wait,cc_close
 
 
 text8: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 8 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$02
+    dc.b    "Begonia,"
+    dc.b    $02,$04,$04
+    dc.b    "das Drachendorf"
+    dc.b    cc_wait,cc_close
 
 
 text9: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 9 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$01
+    dc.b    "Childam,"
+    dc.b    $02,$04,$02
+    dc.b    "das Schattendorf"
+    dc.b    cc_wait,cc_close
 
 
 text10: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 10 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$14,$03,$04,$02
+    dc.b    "Purapril,"
+    dc.b    $02,$04,$04
+    dc.b    "das Aqua-Kapitol"
+    dc.b    cc_wait,cc_close
 
 
 text11: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 11 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$01,$0F,$00,cc_close
 
 
 text12: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 12 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$02,$0F,$00,cc_close
 
 
 text13: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 13 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$04,$0F,$00,cc_close
 
 
     ; Alsedo Shop: Spear
@@ -89,23 +109,23 @@ text14:
 
 
 text15: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 15 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$08,$0F,$00,cc_close
 
 
 text16: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 16 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$09,$0F,$00,$00
 
 
 text17: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 17 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$0A,$0F,$00,$00
 
 
 text18: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 18 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$0B,$0F,$00,$00
 
 
 text19: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 19 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$0C,$0F,$00,$00
 
 
     ; Alsedo Shop: Chain Mail
@@ -114,31 +134,31 @@ text20:
 
 
 text21: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 21 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$0E,$0F,$00,$00
 
 
 text22: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 22 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$10,$0F,$00,$00
 
 
 text23: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 23 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$11,$0F,$00,$00
 
 
 text24: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 24 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$12,$0F,$00,$00
 
 
 text25: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 25 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$13,$0F,$00,$00
 
 
 text26: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 26 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$14,$0F,$00,$00
 
 
 text27: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 27 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$15,$0F,$00,$00
 
 
     ; Alsedo Shop: Shield
@@ -147,23 +167,23 @@ text28:
 
 
 text29: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 29 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$18,$0F,$00,$00
 
 
 text30: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 30 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$19,$0F,$00,$00
 
 
 text31: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 31 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$1A,$0F,$00,$00
 
 
 text32: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 32 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$1B,$0F,$00,$00
 
 
 text33: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 33 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$1C,$0F,$00,$00
 
 
 ; First shop in a tree when looking at leather boots
@@ -172,27 +192,27 @@ text34:
 
 
 text35: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 35 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$20,$0F,$00,$00
 
 
 text36: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 36 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$21,$0F,$00,$00
 
 
 text37: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 37 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$23,$0F,$00,$00
 
 
 text38: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 38 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$64,$0F,$00,$00
 
 
 text39: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 39 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$25,$0F,$00,$00
 
 
 text40: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 40 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$2A,$0F,$00,$00
 
 
 ; Found Ocarina
@@ -205,7 +225,7 @@ text41:
 
 
 text42: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 41 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$29,$0F,$00,$00
 
 
 text43: 
@@ -213,27 +233,27 @@ text43:
 
 
 text44: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 44 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$2C,$0F,$00,$00
 
 
 text45: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 45 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$2D,$0F,$00,$00
 
 
 text46: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 46 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$2E,$0F,$00,$00
 
 
 text47: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 47 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0E,$02,$0F,$01,$00
 
 
 text48: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 48 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$12,$0F,$00,$00
 
 
 text49: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 49 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0A,$22,$0F,$00,$00
 
 
 text50: 
@@ -337,17 +357,22 @@ text57_p3:
 
 
 ; Queen Eleanora:
+; 0C 06 0B 12 5E (00 07) 0B 12 37 (04 99) 0B 2F (00 D3) 0B 1D 0B 12 5E (05 34) 0B 13 26
 text58: 
     dc.b    $0C,$06,$0B,$12,$5E
 text58_p1:
-    dc.w    text58_t1-text58_p1  
-    dc.b    $0B,$12,$37,$04,$99
+    dc.w    text58_t1-text58_p1 ; 00 07
+    dc.b    $0B,$12,$37
+text58_p2:
+    dc.w    text65-text58_p2 ; 04 99
 text58_t1:
     dc.b    $0B,$2F
-text58_p2:
-    dc.w    text58_t2-text58_p2  
+text58_p3:
+    dc.w    text58_isPriscillaHelping-text58_p3  
     dc.b    $0B,$1D
-    dc.b    $0B,$12,$5E,$05,$34
+    dc.b    $0B,$12,$5E
+text58_p4:
+    dc.w    text65_howsItGoing-text58_p4 ; 05 34
     dc.b    $0B,$13,$26
     dc.b    "Ich bin",cc_newline,cc_text,orange,"K",oe,"nigin Eleanora",cc_text,white,".",cc_newline,cc_wait
     dc.b    "Die Monster kommen",cc_newline,"aus der H",oe,"hle",cc_newline,"hinter dem Dorf.",cc_wait
@@ -356,9 +381,10 @@ text58_p2:
     dc.b    cc_newline,"Sie ist klein, aber",cc_newline,"sie wird an Deiner",cc_newline,"Seite k",ae,"mpfen.",cc_wait
     dc.b    cc_newline,cc_newline,"Sobald Du ",cc_text,orange,"Alsedo",cc_text,white,cc_newline," verl",ae,"sst,",cc_wait
     dc.b    cc_newline,"wird sie zu mir",cc_newline,"zur",ue,"ckkehren.",cc_newline,cc_wait,cc_close
-text58_t2:
+text58_isPriscillaHelping:
     dc.b    "Ist Priscilla",cc_newline,"eine Hilfe?",cc_newline
     dc.b    cc_wait,cc_close
+
 
 ; Sonia after visiting Queen Eleanora:
 text59: 
@@ -398,7 +424,7 @@ text62_p1:
     dc.b    "frage ",cc_text,orange,"Sonia",cc_text,white,".",cc_newline,"Sie kennt sich",cc_newline,"dort gut aus.",cc_wait,cc_close
 text62_thanks:
     dc.b    "Das Dorf",cc_newline,"ist befreit.",cc_wait,cc_newline,cc_newline
-    dc.b    "Wir alle sind",cc_newline,"Dir sehr dankbar.",cc_newline,cc_close
+    dc.b    "Wir alle sind",cc_newline,"Dir sehr dankbar.",cc_newline,cc_wait,cc_close
 
 
 ; Alsedo Inn: Good morning message after resting
@@ -451,8 +477,19 @@ text64_last:
 
 
 text65: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 65 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-
+    dc.b    $0B,$1D,$0B,$14,$5E
+    dc.b    "Ich danke Dir im",cc_newline,"Namen der Feen.",cc_newline,cc_wait,cc_newline
+    dc.b    "In ",cc_text,orange,"Alsedo",cc_text,white," ist",cc_newline,"wieder Frieden",cc_newline,"eingekehrt.",cc_wait,cc_newline,cc_newline
+    dc.b    "Gehe durch den",cc_newline,"gro",ss,"en Baum,",cc_wait,cc_newline
+    dc.b    "so wirst Du",cc_newline,cc_text,orange,"Purapril",cc_text,white," erreichen.",cc_wait,cc_newline,cc_newline
+    dc.b    "Solltest Du jemals",cc_newline,"die Hilfe der",cc_newline,"Feen ben",oe,"tigen,",cc_wait,cc_newline
+    dc.b    "komme zur",ue,"ck und",cc_newline,"sprich mit mir.",cc_wait,cc_newline
+    dc.b    "Ich stehe ewig",cc_newline,"in Deiner Schuld.",cc_newline,cc_wait,cc_close
+text65_howsItGoing:
+    dc.b    "Wie ergeht es Dir",cc_newline,"auf Deiner Reise?",cc_newline,cc_wait
+    dc.b    "Deine Hilfe wird",cc_newline,"noch an anderen",cc_newline,"Orten ben",oe,"tigt.",cc_wait,cc_newline,cc_newline
+    dc.b    "Gehe jetzt",cc_wait,cc_newline,cc_newline
+    dc.b    "und tue was in",cc_newline,"Deiner Macht steht,",cc_newline,"um sie zu befreien.",cc_wait,cc_close
 
 text66: 
     dc.b    "Hier wird noch an",cc_newline,"Text 66 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -543,7 +580,10 @@ text85:
 
 
 text86: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 86 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06
+    dc.b    "Ich wurde hier",cc_newline,"gefangen gehalten.",cc_newline,cc_wait,cc_newline
+    dc.b    "Bitte folge mir",cc_newline,"in den Thronsaal.",cc_newline,cc_wait,cc_newline
+    dc.b    "Ich m",oe,"chte Dir",cc_newline,"geb",ue,"hrend danken.",cc_newline,cc_wait,cc_close
 
 
 text87: 
@@ -579,7 +619,35 @@ text94:
 
 
 text95: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 95 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$12,$3F
+text95_p1:
+    dc.w    text95_safeJourney-text95_p1 ; 00 BC
+    dc.b    $0B,$14,$5B
+    dc.b    "Mein Name ist",cc_newline,cc_text,orange,"  Shiela Purapril.",cc_text,white,cc_newline,cc_wait,cc_newline
+    dc.b    "Ich danke Dir",cc_newline,"f",ue,"r meine Rettung.",cc_newline,cc_wait,cc_newline
+    dc.b    "Ich h",oe,"rte von",cc_newline,"Deiner Reise",cc_wait,cc_newline
+    dc.b    "und dass Du Dich",cc_newline,"den Monstern",cc_newline,"entgegenstelltest.",cc_wait,cc_newline,cc_newline
+    dc.b    "Daher bitte ich Dich,",cc_newline,"in das Dorf",cc_newline,cc_text,orange,"Lilypad",cc_text,white," zu gehen.",cc_wait,cc_newline,cc_newline
+    dc.b    "Deine Bem",ue,"hungen",cc_newline,"sollen nicht",cc_newline,"umsonst sein.",cc_wait,cc_newline,cc_newline
+    dc.b    "Achte auf Dich und",cc_newline,"sei Dir der Gefahr",cc_newline,"durch die Monster",cc_newline,"stets bewu",ss,"t.",cc_wait,cc_newline,cc_newline
+    dc.b    "Ich danke Dir",cc_newline,"noch einmal.",cc_newline,cc_wait,cc_close
+    dc.b    $0B,$12,$42
+text95_p2:
+    dc.w    text95_safeJourney-text95_p2 ; 00 49
+    dc.b    $0C,$61,$20,$0C,$E6,$20,$0C,$6B,$2E,$05
+text95_safeJourney:
+    dc.b    "Ich hoffe, Du",cc_newline,"hattest eine",cc_newline,"sichere Reise.",cc_wait,cc_newline,cc_newline
+    dc.b    "Man sagt, Du",cc_newline,"seist der Held",cc_newline,"aus der Legende.",cc_wait,cc_close
+text95_desert:
+    dc.b    $0B,$12,$44
+text95_p3:
+    dc.w    text95_iceCastle-text95_p3; 00 38
+    dc.b    "Ist es wahr,",cc_newline,"dass Du die W",ue,"ste",cc_newline,"durchquert hast?"
+    dc.b    "Das ist",cc_newline,"in der Tat",cc_newline,"bemerkenswert.",cc_wait,cc_close
+text95_iceCastle:
+    dc.b    "Ich h",oe,"rte, Du bist",cc_newline,"im Eisschlo",ss,cc_newline,"gewesen.",cc_wait,cc_newline
+    dc.b    "Sei bitte sehr,",cc_newline,"sehr vorsichtig!",cc_newline,cc_wait
+    dc.b    "Ich mache mir gro",ss,"e",cc_newline,"Sorgen um Dich.",cc_newline,cc_wait,cc_close
 
 
 text96: 
@@ -707,15 +775,23 @@ text126:
 
 
 text127:
-    dc.b    "Hier wird noch an",cc_newline,"Text 127 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_lock
+    dc.b    $0A,$02
+    dc.b    cc_speed,$06
+    dc.b    cc_margin,$02
+    dc.b    "Und so endet eine",cc_newline
+    dc.b    "weitere Episode der",cc_newline
+    dc.b    "Abenteuer von ",cc_newline
+    dc.b    cc_text,orange,"Wonder Boy",cc_text,white
+    dc.b    $0B,$18,$48
 
 
 text128:
     dc.b    cc_lock
     dc.b    "Willkommen zu Hause,",cc_newline
-    dc.b    cc_text,orange,"Shion",cc_text,white,"!",cc_newline,cc_wait,cc_newline,
-    dc.b    "Ich bin so froh,",cc_newline,"dass Du wohlauf bist.",cc_newline,cc_wait,cc_newline,
-    dc.b    "Ich werde Dich",cc_newline,"nie vergessen,"cc_wait,cc_newline,
+    dc.b    cc_text,orange,"Shion",cc_text,white,"!",cc_newline,cc_wait,cc_newline
+    dc.b    "Ich bin so froh,",cc_newline,"dass Du wohlauf bist.",cc_newline,cc_wait,cc_newline
+    dc.b    "Ich werde Dich",cc_newline,"nie vergessen,",cc_wait,cc_newline
     dc.b    "niemals."
     dc.b    $0C,$83,$2E
     dc.b    $0B,$18,$48
@@ -729,13 +805,13 @@ text129:
 text130:
     dc.b    cc_lock
     dc.b    "   LEBENSGEFAHR!",cc_newline
-    dc.b    "Wüstengebiet voraus.",cc_wait,cc_close
+    dc.b    "W",ue,"stengebiet voraus.",cc_wait,cc_close
 
 
 text131: 
     dc.b    cc_lock
     dc.b    "Jeder der kleiner",cc_newline,"als dieses",cc_newline,"Schild ist,",cc_newline
-    dc.b    "wird es nicht",cc_newline,"bewegen können.",cc_wait,cc_close
+    dc.b    "wird es nicht",cc_newline,"bewegen k",oe,"nnen.",cc_wait,cc_close
 
 
     dc.b    cc_close

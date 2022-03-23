@@ -775,7 +775,9 @@ customers.
 I've collected
 these items on my
 many journeys. It's
-locked. I had been
+locked. 
+
+I had been
 taken prisoner by
 the monsters.
 
