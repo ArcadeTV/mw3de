@@ -286,13 +286,14 @@ text55:
     dc.b "Hier wird noch an",cc_newline,"Text 55 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Alsedo Medicine Shop Felissimo, Keeper:
 text56: 
     dc.b    $0C,$06,$0B,$11,$17
-text56_p1
+text56_p1:
     dc.w    text56_welcome-text56_p1 ; 00 3B
     dc.b    "Derzeit sind unsere",cc_newline,"Regale leider leer,",cc_newline,cc_wait,cc_newline
     dc.b    "aber wir haben",cc_newline,"bereits neue",cc_newline,"Ware bestellt.",cc_wait,cc_newline,cc_newline
-    dc.b    "Komm doch später",cc_newline,"noch einmal",cc_newline,"bei uns vorbei.",cc_wait,cc_close
+    dc.b    "Komm doch sp",ae,"ter",cc_newline,"noch einmal",cc_newline,"bei uns vorbei.",cc_wait,cc_close
 text56_welcome:
     dc.b    $0B,$11,$1E
 text56_p2:
@@ -362,8 +363,16 @@ text61:
     dc.b "Hier wird noch an",cc_newline,"Text 61 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Alsedo Medicine Shop Felissimo, Customer:
 text62: 
-    dc.b "Hier wird noch an",cc_newline,"Text 62 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$12,$37
+text62_p1:
+    dc.w    text62_thanks-text62_p1 ; 00 3B
+    dc.b    "Wenn Du etwas ",ue,"ber",cc_newline,"die H",oe,"hlen",cc_newline,"wissen m",oe,"chtest,",cc_wait,cc_newline
+    dc.b    "frage ",cc_text,orange,"Sonia",cc_text,white,".",cc_newline,"Sie kennt sich",cc_newline,"dort gut aus.",cc_wait,cc_close
+text62_thanks:
+    dc.b    "Das Dorf",cc_newline,"ist befreit.",cc_wait,cc_newline,cc_newline
+    dc.b    "Wir alle sind",cc_newline,"Dir sehr dankbar.",cc_newline,cc_close
 
 
 ; Alsedo Inn: Good morning message after resting

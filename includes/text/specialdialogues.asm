@@ -21,7 +21,7 @@ special1_pntr_notEnoughGold:
     dc.w    special1_notEnoughGold-special1_pntr_notEnoughGold 
     dc.b    $0B,$07,$0B,$08,$FF,$0B,$09
 special1_yes:
-    dc.b    cc_newline,"Danke sehr.",cc_wait,cc_close
+    dc.b    cc_newline,"Danke sehr.",cc_newline,cc_newline,cc_wait,cc_close
 special1_no:
     dc.b    cc_speed,$06,cc_newline,cc_newline,"Nein?",cc_newline,"Das ist aber schade.",cc_newline,cc_wait
     dc.b    cc_newline,"Naja, vielleicht",cc_newline,"n",ae,"chstes Mal.",cc_newline,cc_wait,cc_close
