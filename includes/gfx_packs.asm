@@ -60,3 +60,5 @@ newInnSign_Purapril_GFX_pack:
     incbin "includes/bin/gfx/pack11.cbin" ; Purapril
 newInnSign_Lilypad_GFX_pack:
     incbin "includes/bin/gfx/pack12.cbin" ; Lilypad
+newInnSign_Begonia_GFX_pack:
+    incbin "includes/bin/gfx/pack13.cbin" ; Begonia

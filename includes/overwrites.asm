@@ -246,9 +246,6 @@ tilemap_toBeContinued:
     org     $412E0                                  ; was 02 056476
     dc.l    newExitGFX_pack+$02000000               ; was 02 0691F5
 
-    ; Alsedo Inn Sign:
-    org     $4134C
-    dc.l    newInnSign_Alsedo_GFX_pack+$02000000    ; was 02 05906B
 
     ; Purapril Inn Sign:
     org     $410DC
@@ -257,6 +254,14 @@ tilemap_toBeContinued:
     ; Lilypad Inn Sign:
     org     $41220
     dc.l    newInnSign_Lilypad_GFX_pack+$02000000   ; was 02 051A1E
+
+    ; Alsedo Inn Sign:
+    org     $4134C
+    dc.l    newInnSign_Alsedo_GFX_pack+$02000000    ; was 02 05906B
+
+    ; Begonia Inn Sign:
+    org     $41470
+    dc.l    newInnSign_Begonia_GFX_pack+$02000000   ; was 02 061EF0
 
 
     ; Logo:
