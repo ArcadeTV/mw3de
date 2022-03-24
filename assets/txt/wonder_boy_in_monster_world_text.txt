@@ -210,25 +210,9 @@ enter the castle.
 Did I speak too
 fast for you?
 
-Looks like we're
-sold out of
-everything.
-
-Come on back some
-other time.
-
-Welcome to Bacchus,
-a store with a
-reputation for good
-service.
-
-We have great
-confidence in the
-products we sell.
-
-Use this item
-wisely!
-
+Looks like we're sold out of everything. Come on back some other time. 
+Welcome to Bacchus, a store with a reputation for good service. We have great confidence in the products we sell. 
+Use this item wisely! 
 Oh, I'm terribly
 sorry.
 
@@ -608,19 +592,9 @@ and return safely!
 We're counting on
 you!
 
-I'm terribly sorry,
-but I seem to be
-out of stock.
-
-Welcome to Sundry.
-
-See anything you
-like? The
-Charmstone is...
-wait a minute!
-
-I'm not going to
-tell you that!
+I'm terribly sorry, but I seem to be out of stock. 
+Welcome to Sundry. See anything you like? 
+The Charmstone is... wait a minute! I'm not going to tell you that! 
 
 It's been years
 since we last had a
@@ -787,12 +761,7 @@ castle hall.
 I'd like to thank
 you.
 
-The gate to the
-castle has been
-opened.
-
-Why don't you go on
-inside?
+The gate to the castle has been opened. Why don't you go on inside? 
 
 If you have the
 Amulet, you can
@@ -1099,22 +1068,15 @@ Almighty Demon King!
 I've heard that the
 Sphinx in the
 Pyramid likes
-quizzes. If you
+quizzes. 
+
+If you
 have a certain
 special item, you
 can swim
-underwater. The
-star crest on this
-Bell Tower is the
-same as the
-insignia on the
-weapon of the
-legendary hero.
+underwater. 
 
-The princess told
-me this a long time
-ago.
-
+The star crest on this Bell Tower is the same as the insignia on the weapon of the legendary hero. The princess told me this a long time ago. 
 You're very strong.
 
 I hope one day I'll

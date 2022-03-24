@@ -294,9 +294,21 @@ text52_t1: ; target 1
     dc.b    "    Spreche ich",cc_newline,"    undeutlich?",cc_newline,cc_wait,cc_close
 
 
+; Bacchus Shop
+; Looks like we're sold out of everything. Come on back some other time. 
+; Welcome to Bacchus, a store with a reputation for good service. We have great confidence in the products we sell. 
 text53: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 53 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-
+    dc.b    $0C,$06,$0B,$11,$17
+text53_p1:
+    dc.w    text53_welcome-text53_p1 ; 00 34
+    dc.b    "Leider ist gerade",cc_newline,"alles ausverkauft.",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Da mu",ss,"t Du wohl",cc_newline,"sp",ae,"ter noch einmal",cc_newline,"wiederkommen.",cc_wait,cc_close
+text53_welcome:
+    dc.b    "Willkommen beim",cc_newline,"alten Bacchus.",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Wir sind bekannt",cc_newline,"f",ue,"r unseren",cc_newline,"guten Service.",cc_wait,cc_newline
+    dc.b    "In unsere Ware",cc_newline,"setzen wir",cc_newline,"vollstes Vertrauen.",cc_wait,cc_close
+text53_useWisely: ; todo
+    dc.b    "Setze diese Waffe",cc_newline,"weise ein!",cc_wait,cc_close
 
 text54: 
     dc.b    $0B,$0E,$01,$0F,$01,$00
@@ -527,8 +539,23 @@ text74:
     dc.b    "Hier wird noch an",cc_newline,"Text 74 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
-text75: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 75 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+; Purapril: Sundry Shop
+; I'm terribly sorry, but I seem to be out of stock. 
+; Welcome to Sundry. See anything you like? 
+; The Charmstone is... wait a minute! I'm not going to tell you that! 
+text75:
+    dc.b    $0C,$06,$0B,$11,$17
+text75_p1:
+    dc.w    text75_welcome-text75_p1 ; 00 27
+    dc.b    "Ich bin",cc_newline,"untröstlich,",cc_newline,"mein Herr,",cc_wait,cc_newline
+    dc.b    "aber es ist",cc_newline,"gerade alles",cc_newline,"ausverkauft.",cc_wait,cc_close
+text75_welcome:
+    dc.b    "Willkommen bei",cc_newline,"Sundry.",cc_wait,cc_newline,cc_newline
+    dc.b    "Haben Sie schon",cc_newline,"etwas ins Auge",cc_newline,"gefaßt, mein Herr?",cc_wait,cc_close
+text75_charmstone: ; todo
+    dc.b    "Der Charmstein ist",cc_wait,".",cc_wait,".",cc_wait,cc_newline,cc_newline
+    dc.b    "Hey, einen",cc_newline,"Moment mal,",cc_newline,"mein Herr.",cc_wait,cc_newline,cc_newline
+    dc.b    "Das werde ich",cc_newline,"Ihnen nicht",cc_newline,"verraten!",cc_wait,cc_close
 
 
 ; First shop, talking to the owner:
@@ -586,9 +613,12 @@ text86:
     dc.b    "Ich m",oe,"chte Dir",cc_newline,"geb",ue,"hrend danken.",cc_newline,cc_wait,cc_close
 
 
+; Maid#1 near Castle Hall:
+; The gate to the castle has been opened. Why don't you go on inside?
 text87: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 87 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
-
+    dc.b    $0C,$06
+    dc.b    $0B,$14,$3B
+    dc.b    "Das Tor zum Schlo",ss,cc_newline,"wurde ge",oe,"ffnet.",cc_newline,cc_wait,cc_close
 
 text88: 
     dc.b    "Hier wird noch an",cc_newline,"Text 88 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
@@ -699,16 +729,25 @@ text107:
     dc.b    "Hier wird noch an",cc_newline,"Text 107 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Maid in room before Bell Tower:
+; I've heard that the Sphinx in the Pyramid likes quizzes.
 text108:
-    dc.b    "Hier wird noch an",cc_newline,"Text 108 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06
+    dc.b    "Ich habe geh",oe,"rt, die",cc_newline,cc_text,orange,"Sphinx",cc_text,white," in der",cc_newline,"Pyramide mag R",ae,"tsel.",cc_wait,cc_close
 
-
+; Maid#2 near Castle Hall:
 text109:
     dc.b    "Hier wird noch an",cc_newline,"Text 109 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Maid near Bell Tower:
+; The star crest on this Bell Tower is the same as the insignia on the weapon of the legendary hero. 
+; The princess told me this a long time ago. 
 text110:
-    dc.b    "Hier wird noch an",cc_newline,"Text 110 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06
+    dc.b    "Man erkennt den",cc_newline,"Helden am Sternwappen",cc_newline,"auf seinem Schwert.",cc_wait,cc_newline
+    dc.b    "Es ist das gleiche,",cc_newline,"wie an unserem",cc_newline,"Glockenturm.",cc_wait,cc_newline,cc_newline
+    dc.b    "Die Prinzessin",cc_newline,"hat mir das vor",cc_newline,"langer Zeit erz",ae,"hlt.",cc_wait,cc_close
 
 
 text111:

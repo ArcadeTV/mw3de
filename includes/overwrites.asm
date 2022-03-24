@@ -250,6 +250,15 @@ tilemap_toBeContinued:
     org     $4134C
     dc.l    newInnSign_Alsedo_GFX_pack+$02000000    ; was 02 05906B
 
+    ; Purapril Inn Sign:
+    org     $410DC
+    dc.l    newInnSign_Purapril_GFX_pack+$02000000  ; was 02 047A13
+
+    ; Lilypad Inn Sign:
+    org     $41220
+    dc.l    newInnSign_Lilypad_GFX_pack+$02000000   ; was 02 051A1E
+
+
     ; Logo:
     org     $4155C
     dc.l    newLogoGFX_pack1+$02000000              ; was 02 068930
