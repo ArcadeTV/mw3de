@@ -176,35 +176,35 @@ base_PointerTable_Dialogues:
     
     ; #042: 00 04F6
     dc.b $08
-    dc.w text42-base_PointerTable_Dialogues 
+    dc.w text42-base_PointerTable_Dialogues     ; Purapril: Sundry Shop: Charmstone
     
     ; #043: 00 04FC
-    dc.b $00
-    dc.w text43-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text43-base_PointerTable_Dialogues     ; Shop Item
     
     ; #044: 00 0502
-    dc.b $00
-    dc.w text44-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text44-base_PointerTable_Dialogues     ; Shop Item
     
     ; #045: 00 0508
-    dc.b $00
-    dc.w text45-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text45-base_PointerTable_Dialogues     ; Shop Item
     
     ; #046: 00 050E
-    dc.b $00
-    dc.w text46-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text46-base_PointerTable_Dialogues     ; Shop Item
     
     ; #047: 00 0514
-    dc.b $00
-    dc.w text47-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text47-base_PointerTable_Dialogues     ; Shop Item
     
     ; #048: 00 051A
-    dc.b $00
-    dc.w text48-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text48-base_PointerTable_Dialogues     ; Shop Item
     
     ; #049: 00 0520
-    dc.b $00
-    dc.w text49-base_PointerTable_Dialogues 
+    dc.b $08
+    dc.w text49-base_PointerTable_Dialogues     ; Shop Item
     
     ; #050: 00 0526
     dc.b $00

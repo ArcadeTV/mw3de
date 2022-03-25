@@ -33,6 +33,7 @@
     org $8DE
 jumpBack:                                   ; only for Label
 
+
     ; CHEAT:
     ifne CHEAT_UNLGOLD
     org     $1882                           ; Cheat: Unl. Gold (do not decrease)
@@ -40,10 +41,16 @@ jumpBack:                                   ; only for Label
     nop
     endif
 
-    org     $1F74                           ; translate "Found XX Gold"
+
+    ; translate "Found XX Gold":
+    org     $1F74                           ; bypass "Found XX Gold" routine
     jmp     bypassFoundText
+    
     org     $1F8E
-sub_1F8E:
+sub_1F8E:                                   ; just a label
+
+    org     $1FA5                           ; move "Found XX Gold" 3 tiles left
+    dc.b    $3A ; was $40 (-3x size_w)
 
 
     ; CHEATS:

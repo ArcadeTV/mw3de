@@ -230,6 +230,7 @@ text41:
     dc.b    cc_wait,cc_close
 
 
+; Purapril: Sundry Shop: Charmstone
 text42: 
     dc.b    $0B,$0A,$29,$0F,$00,$00
 
