@@ -42,16 +42,27 @@ jumpBack:                                   ; only for Label
     endif
 
 
+    ; translate "Found the" (item):
+    org     $1F14                           ; disable the first part of sentence
+    nop
+    nop
+
+    org     $1F3A                           ; bypass address for second  part of sentence
+    jmp     bypassFoundItemText
+ret_bypassFoundItemText:                    ; only for label
+
+
     ; translate "Found XX Gold":
     org     $1F74                           ; bypass "Found XX Gold" routine
-    jmp     bypassFoundText
+    jmp     bypassFoundGoldText
     
     org     $1F8E
 sub_1F8E:                                   ; just a label
 
-    org     $1FA5                           ; move "Found XX Gold" 3 tiles left
-    dc.b    $3A ; was $40 (-3x size_w)      ; move.w d0,$40(a2): the displacement is the offset in the tilemap
 
+    org     $1F5C                           ; move "Found XX Gold" 3 tiles left
+    addi.w  #11,d0                          ; value is subtracted in the routine, was #5, plus 3xsize_w = #11
+    
 
     ; CHEATS:
     ifne CHEAT_99GOLD
@@ -133,29 +144,19 @@ jumpBackMenuTableAddress_Headline:
     ; move.l  #address,($8C7A).w
 
     org     $C4AC
-    dc.b    $21,$FC
-    dc.l    text_ShionPlaysOcarina_outOfContext ; was $2B56
-    dc.w    $8C7A
+    move.l  #text_ShionPlaysOcarina_outOfContext,($FFFF8C7A).w
 
     org     $C4D2
-    dc.b    $21,$FC
-    dc.l    text_ShionPlaysOcarina ; was $2B8F
-    dc.w    $8C7A
+    move.l  #text_ShionPlaysOcarina,($FFFF8C7A).w
 
     org     $C512
-    dc.b    $21,$FC
-    dc.l    text_ShionPlaysOcarina_youPlayBeautifully ; was $2BA9
-    dc.w    $8C7A
+    move.l  #text_ShionPlaysOcarina_youPlayBeautifully,($FFFF8C7A).w
 
     org     $C522
-    dc.b    $21,$FC
-    dc.l    text_ShionPlaysOcarina_notVeryWell ; was $2BC4
-    dc.w    $8C7A
+    move.l  #text_ShionPlaysOcarina_notVeryWell,($FFFF8C7A).w
 
     org     $C52C
-    dc.b    $21,$FC
-    dc.l    text_ShionPlaysOcarina_melodyNotRight ; was $2BE5
-    dc.w    $8C7A
+    move.l  #text_ShionPlaysOcarina_melodyNotRight,($FFFF8C7A).w
 
 
 

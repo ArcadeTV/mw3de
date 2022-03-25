@@ -71,26 +71,34 @@ writePlanemap_Loop:
 ; Bypass Menu Magic Item Names:
 
 bypassMenuMagicNames:
-    lea     base_PointerTable_Magic,a1
-    adda.w  (a1,d0.w),a1
-    jmp     ret_bypassMenuMagicNames
+    lea     base_PointerTable_Magic,a1      ; load custom address
+    adda.w  (a1,d0.w),a1                    ; Adopt original instruction
+    jmp     ret_bypassMenuMagicNames        ; return
 
 bypassMenuMagicNames_alt:
-    moveq   #0,d4
-    lea     magic1,a1
-    jmp     ret_bypassMenuMagicNames_alt
+    moveq   #0,d4                           ; Adopt original instruction
+    lea     magic1,a1                       ; load custom address
+    jmp     ret_bypassMenuMagicNames_alt    ; return
 
-; INGAME TEXT: FOUND XX GOLD.
 
-bypassFoundText:
-    lea     textFound,a0   ; "Found "
-    jsr    sub_1F8E
-    movea.l a1,a0
-    jsr    sub_1F8E
-    lea     textGold,a0  ; " GOLD."
-    jsr    sub_1F8E
-    unlk    a6
-    rts
+
+; INGAME TEXT: FOUND XX GOLD:
+
+bypassFoundGoldText:                        ; Order of instructions changed in favor of text flow:
+    lea     textFound,a0   ; "Found "       ; load custom address
+    jsr     sub_1F8E                        ; Adopt original instruction
+    movea.l a1,a0                           ; Adopt original instruction
+    jsr     sub_1F8E                        ; Adopt original instruction
+    lea     textGold,a0    ; " GOLD."       ; Adopt original instruction
+    jsr     sub_1F8E                        ; Adopt original instruction
+    unlk    a6                              ; Adopt original instruction
+    rts                                     ; Adopt original instruction / return
+
+bypassFoundItemText:
+    move.w  d1,d0
+    lea     textDot,a0
+    jmp     ret_bypassFoundItemText
+    
 
     align 2
 
@@ -103,6 +111,7 @@ textGold:
 textDot:
     dc.b    ' gefunden.',$00  
     dc.b    $00
+
 
 
 
