@@ -62,3 +62,5 @@ newInnSign_Lilypad_GFX_pack:
     incbin "includes/bin/gfx/pack12.cbin" ; Lilypad
 newInnSign_Begonia_GFX_pack:
     incbin "includes/bin/gfx/pack13.cbin" ; Begonia
+newInnSign_Childam_GFX_pack:
+    incbin "includes/bin/gfx/pack14.cbin" ; Childam

@@ -301,6 +301,10 @@ tilemap_toBeContinued:
     org     $4134C
     dc.l    newInnSign_Alsedo_GFX_pack+$02000000    ; was 02 05906B
 
+    ; Childam Inn Sign:
+    org     $4142C
+    dc.l    newInnSign_Childam_GFX_pack+$02000000   ; was 02 060049
+
     ; Begonia Inn Sign:
     org     $41470
     dc.l    newInnSign_Begonia_GFX_pack+$02000000   ; was 02 061EF0
