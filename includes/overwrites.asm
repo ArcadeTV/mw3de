@@ -221,6 +221,9 @@ tilemap_toBeContinued:
     org     $1CC14
     dc.l    base_PointerTable_Dialogues
 
+    org     $1CC18
+    dc.l    base_textBoxStyles  ; was 0001DD74
+
     org     $211CA
     dc.l    base_PointerTable_Snippets
     

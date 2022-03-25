@@ -42,6 +42,7 @@ text3_target1:
     dc.b    "Worauf wartest Du?",cc_newline,"Setz Dich in",cc_newline,"Bewegung!",cc_wait,cc_close
 
 
+; Alsedo Sign
 text4:
     dc.b    $0B,$14,$03,$04,$02,"Alsedo,",cc_fast,cc_margin,$04,"das Dorf der Feen.",cc_wait,cc_close
 
@@ -51,6 +52,7 @@ text5:
     dc.b    $0B,$14,$03,$04,$02,$0C,$5A," ",$0C,$45,$02,$04,$02,"Eingang",cc_wait,cc_close
 
 
+; Maugham Desert Sign
 text6: 
     dc.b    $0B,$14,$03,$04,$01
     dc.b    "Maugham W",ue,"ste"
@@ -59,6 +61,7 @@ text6:
     dc.b    cc_wait,cc_close
 
 
+; Lilypad Sign
 text7: 
     dc.b    $0B,$14,$03,$04,$02
     dc.b    "Lilypad,"
@@ -67,6 +70,7 @@ text7:
     dc.b    cc_wait,cc_close
 
 
+; Begonia Sign
 text8: 
     dc.b    $0B,$14,$03,$04,$02
     dc.b    "Begonia,"
@@ -75,6 +79,7 @@ text8:
     dc.b    cc_wait,cc_close
 
 
+; Childam Sign
 text9: 
     dc.b    $0B,$14,$03,$04,$01
     dc.b    "Childam,"
@@ -83,6 +88,7 @@ text9:
     dc.b    cc_wait,cc_close
 
 
+; Purapril Sign
 text10: 
     dc.b    $0B,$14,$03,$04,$02
     dc.b    "Purapril,"
@@ -103,7 +109,7 @@ text13:
     dc.b    $0B,$0A,$04,$0F,$00,cc_close
 
 
-    ; Alsedo Shop: Spear
+; Alsedo Shop: Spear
 text14: 
     dc.b    $0B,$0A,$06,$0F,$00,cc_close
 
@@ -722,11 +728,11 @@ text105:
 
 
 text106:
-    dc.b    "Hier wird noch an",cc_newline,"Text 106 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Text 106.",cc_wait,cc_close
 
 
 text107:
-    dc.b    "Hier wird noch an",cc_newline,"Text 107 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Text 107.",cc_wait,cc_close
 
 
 ; Maid in room before Bell Tower:
@@ -791,7 +797,7 @@ text120:
 
 
 text121:
-    dc.b    "Hier wird noch an",cc_newline,"Text 121 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Text 121.",cc_wait,cc_close
 
 
 text122:

@@ -26,13 +26,17 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
     include "includes/vars.asm"
     include "includes/macros.asm"
 
+
     ; PATCHED LOCATIONS:
     include "includes/overwrites.asm"
 
+
     org     $A4C80 ; Free Space in ROM from here --------------------------------------------------
+
 
     ; MAIN CODE:
     include "includes/main.asm"
+
 
     ; TEXT DATA:
     include "includes/text/control_codes.asm"
@@ -58,8 +62,14 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
 
     include "includes/text/credits.asm"
 
+
+    ; Modified Textbox Styles Table:
+    include "includes/data/textbox_styles.asm"
+
+
     ; Modified Sprite Tables:
     include "includes/sprite_tables.asm"
+
 
     ; GFX:
     include "includes/tilemaps.asm"
