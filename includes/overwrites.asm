@@ -65,24 +65,28 @@ sub_1F8E:                                   ; just a label
     
 
     ; CHEATS:
+    ;----------------------
     ifne CHEAT_99GOLD
     org     $8E46                           ; Cheat: Have more Gold upon New Game start
     dc.b    $0F,$42,$3F                     ; 1st Nybble: Starting location (0=Shion's House, 1=Alsedo, 2=Castle, 3=Lilypad ...),
                                             ; 2nd Nybble + 2 Bytes = 999999 Gold
     endif
-    ;
+    ;----------------------
     ifne CHEAT_HEARTS
     org     $8E4A                           ; Cheat: Have all Hearts upon New Game start
     dc.b    $8
     endif
-    ;
+    ;----------------------
     ifne CHEAT_INVINC
     org     $E0A4                           ; Cheat: Unl. Energy (do not decrease)
     nop
     nop 
     endif
     
-    ; BACKGROUND POSITION
+
+    ; TITLE SCREEN
+    ; BACKGROUND POSITION:
+    
     org     $70E6
     jmp     writePlanemaps
     ;rept    $B                              ; overwrite $70E6-$7102: ($1C/#28 bytes = $E/#14 words) - 6 Bytes for the JSR above
