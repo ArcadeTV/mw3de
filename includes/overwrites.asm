@@ -50,7 +50,7 @@ jumpBack:                                   ; only for Label
 sub_1F8E:                                   ; just a label
 
     org     $1FA5                           ; move "Found XX Gold" 3 tiles left
-    dc.b    $3A ; was $40 (-3x size_w)
+    dc.b    $3A ; was $40 (-3x size_w)      ; move.w d0,$40(a2): the displacement is the offset in the tilemap
 
 
     ; CHEATS:
@@ -124,6 +124,38 @@ jumpBackMenuTableAddress_Headline:
     dc.b    $F8,$F9,$00                     ; Replace AP (Attack Points) with custom icon
     dc.b    $FA,$FB,$00                     ; Replace DP (Defense Points) with custom icon
     dc.b    $FC,$FD,$00                     ; Replace SP (Speed Points) with custom icon
+
+
+    
+    ; Using the Ocarina:
+
+    ; Note: 21FC is a substitute because I could not get VASM to compile this correctly:
+    ; move.l  #address,($8C7A).w
+
+    org     $C4AC
+    dc.b    $21,$FC
+    dc.l    text_ShionPlaysOcarina_outOfContext ; was $2B56
+    dc.w    $8C7A
+
+    org     $C4D2
+    dc.b    $21,$FC
+    dc.l    text_ShionPlaysOcarina ; was $2B8F
+    dc.w    $8C7A
+
+    org     $C512
+    dc.b    $21,$FC
+    dc.l    text_ShionPlaysOcarina_youPlayBeautifully ; was $2BA9
+    dc.w    $8C7A
+
+    org     $C522
+    dc.b    $21,$FC
+    dc.l    text_ShionPlaysOcarina_notVeryWell ; was $2BC4
+    dc.w    $8C7A
+
+    org     $C52C
+    dc.b    $21,$FC
+    dc.l    text_ShionPlaysOcarina_melodyNotRight ; was $2BE5
+    dc.w    $8C7A
 
 
 

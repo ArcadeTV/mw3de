@@ -62,6 +62,8 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
 
     include "includes/text/credits.asm"
 
+    include "includes/text/ocarina.asm"
+
 
     ; Modified Textbox Styles Table:
     include "includes/data/textbox_styles.asm"

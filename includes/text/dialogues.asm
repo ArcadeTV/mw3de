@@ -598,7 +598,9 @@ text81:
 
 
 text82: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 82 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    cc_lock,cc_margin,$02
+    dc.b    "Der Mykonid!"
+    dc.b    $0B,$18,$1E,cc_wait,cc_close
 
 
 text83: 
