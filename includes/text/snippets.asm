@@ -51,23 +51,23 @@ snippet11:
 
 
 snippet12:
-    dc.b    "Welches war die",cc_newline,"erste Magie, die",cc_newline,"Du erhalten hast?",0
+    dc.b    "Welches war die",$02,"erste Magie, die",$02,"Du erhalten hast?",0
 
 
 snippet13:
-    dc.b    "Feuersturm"
+    dc.b    "Feuersturm",0
 
 
 snippet14:
-    dc.b    "Tornado"
+    dc.b    "Tornado",0
 
 
 snippet15:
-    dc.b    "Beben"
+    dc.b    "Beben",0
 
 
 snippet16:
-    dc.b    "Welchen Namen tr",ae,"gt",cc_newline,"die K",oe,"nigin des",cc_newline,"Elfendorfs?",0
+    dc.b    "Welchen Namen",$02,"tr",ae,"gt die K",oe,"nigin",$02,"des Elfendorfs?",0
 
 
 snippet17:
@@ -83,7 +83,7 @@ snippet19:
 
 
 snippet20:
-    dc.b    "Welches dieser",cc_newline,"Monster hast Du",cc_newline,"zuerst besiegt?",0
+    dc.b    "Welches dieser",$02,"Monster hast Du",$02,"zuerst besiegt?",0
 
 
 snippet21:
@@ -99,7 +99,7 @@ snippet23:
 
 
 snippet24:
-    dc.b    "Was hast Du",cc_newline,"erhalten, nachdem Du",cc_newline,"Gragg & Glagg,",cc_newline,"besiegt hast?",0
+    dc.b    "Was hast Du",$02,"erhalten, nachdem",$02,"Du Gragg & Glagg,",$02,"besiegt hast?",0
 
 
 snippet25:
@@ -115,7 +115,7 @@ snippet27:
 
 
 snippet28:
-    dc.b    "Was kannst Du nicht",cc_newline,"im Waffenladen vom",cc_newline,"Wanderer kaufen?",0
+    dc.b    "Was kannst Du",$02,"nicht im",$02,"Waffenladen",$02,"vom Wanderer",$02,"kaufen?",0
             
 
 snippet29:
@@ -131,7 +131,7 @@ snippet31:
 
 
 snippet32:
-    dc.b    "Wie lautet der Name",cc_newline,"vom Dorf, in dem",cc_newline,"die Zwerge leben?",0
+    dc.b    "Wie lautet der",$02,"Name von dem",$02,"Dorf, in dem die",$02,"Zwerge leben?",0
 
 
 snippet33:
@@ -147,23 +147,23 @@ snippet35:
 
 
 snippet36:
-    dc.b    "Welchen Schl",ue,"ssel",cc_newline,"ben",oe,"tigt man, um",cc_newline,"die Pyramide",cc_newline,"zu betreten?",0
+    dc.b    "Welchen Schl",ue,"ssel",$02,"ben",oe,"tigt man, um",$02,"die Pyramide",$02,"zu betreten?",0
 
 
 snippet37:
-    dc.b    "Sternenschl",ue,"ssel",0
+    dc.b    "Sternen",0
 
 
 snippet38:
-    dc.b    "Sonnenschl",ue,"ssel",0
+    dc.b    "Sonnen",0
 
 
 snippet39:
-    dc.b    "Mondschl",ue,"ssel",0
+    dc.b    "Mond",0
 
 
 snippet40:
-    dc.b    "Wieviel kostet ein",cc_newline,"Charmstein?",0
+    dc.b    "Wieviel kostet",$02,"ein Charmstein?",0
 
 
 snippet41:
@@ -179,7 +179,7 @@ snippet43:
 
 
 snippet44:
-    dc.b    "Welcher Gegenstand",cc_newline,"wird ben",oe,"tigt, um",cc_newline,"die Maugham-W",ue,"ste",cc_newline,"zu durchqueren?",0
+    dc.b    "Welcher",$02,"Gegenstand",$02,"wird ben",oe,"tigt, um",$02,"die Maugham-W",ue,"ste",$02,"zu durchqueren?",0
             
 
 snippet45:
@@ -195,7 +195,7 @@ snippet47:
 
 
 snippet48:
-    dc.b    "Welcher dieser",cc_newline,"L",ae,"den verkauft",cc_newline,"keine Waffen?",0
+    dc.b    "Welcher dieser",$02,"L",ae,"den verkauft",$02,"keine Waffen?",0
 
 
 snippet49:

@@ -42,6 +42,29 @@ jumpBack:                                   ; only for Label
     endif
 
 
+
+    ; translate Sphinx Quiz messages:
+    org     $1CEE
+    jmp     bypassSphinx_timesUp            ; Message: Time's up.
+    org     $1CF4
+ret_bypassSphinx_timesUp:                   ; only for Label
+
+    org     $1D14
+    jmp     bypassSphinx_incorrect          ; Message: Incorrect
+    org     $1D1A
+ret_bypassSphinx_incorrect:                 ; only for Label
+
+    org     $1D22
+    jmp     bypassSphinx_correct            ; Message: Correct
+    nop
+    org     $1D2A
+ret_bypassSphinx_correct:                   ; only for Label
+
+    org     $1D3E                           ; Move messages 2 chars left
+    move.w  #0,($FFFF8C9A).w                ; was #2
+
+
+
     ; translate "Found the" (item):
     org     $1F14                           ; disable the first part of sentence
     nop
@@ -143,9 +166,6 @@ jumpBackMenuTableAddress_Headline:
 
     
     ; Using the Ocarina:
-
-    ; Note: 21FC is a substitute because I could not get VASM to compile this correctly:
-    ; move.l  #address,($8C7A).w
 
     org     $C4AC
     move.l  #text_ShionPlaysOcarina_outOfContext,($FFFF8C7A).w

@@ -858,7 +858,9 @@ The princess is
 waiting. Make
 yourself at home.
 The door has been
-sealed. So you've
+sealed. 
+
+So you've
 arrived. As you may
 have guessed, I'm
 the Sphinx. I've
@@ -888,19 +890,27 @@ This is terrible.
 You missed every
 one!. Looks like
 the end of the line
-for you... How sad.
+for you... 
+
+How sad.
 You only got one
 right. I can't let
-you pass... This is
+you pass... 
+
+This is
 no good. You only
 got two correct.
 Come back and try
-again. Not bad, but
+again. 
+
+Not bad, but
 not good enough.
 You got 3 right.
 Try the quiz one
 more time. You're
-so close. You only
+so close. 
+
+You only
 missed one! I'll
 let you pass!
 That's fantastic!
@@ -909,6 +919,7 @@ right! As your
 reward, I bestow
 upon you Thunder
 Magic. You may pass.
+
 
 The Elder Dragon
 has something he

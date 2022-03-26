@@ -554,11 +554,11 @@ text75:
     dc.b    $0C,$06,$0B,$11,$17
 text75_p1:
     dc.w    text75_welcome-text75_p1 ; 00 27
-    dc.b    "Ich bin",cc_newline,"untröstlich,",cc_newline,"mein Herr,",cc_wait,cc_newline
+    dc.b    "Ich bin",cc_newline,"untr",oe,"stlich,",cc_newline,"mein Herr,",cc_wait,cc_newline
     dc.b    "aber es ist",cc_newline,"gerade alles",cc_newline,"ausverkauft.",cc_wait,cc_close
 text75_welcome:
     dc.b    "Willkommen bei",cc_newline,"Sundry.",cc_wait,cc_newline,cc_newline
-    dc.b    "Haben Sie schon",cc_newline,"etwas ins Auge",cc_newline,"gefaßt, mein Herr?",cc_wait,cc_close
+    dc.b    "Haben Sie schon",cc_newline,"etwas ins Auge",cc_newline,"gefasst, mein Herr?",cc_wait,cc_close
 text75_charmstone: ; todo
     dc.b    "Der Charmstein ist",cc_wait,".",cc_wait,".",cc_wait,cc_newline,cc_newline
     dc.b    "Hey, einen",cc_newline,"Moment mal,",cc_newline,"mein Herr.",cc_wait,cc_newline,cc_newline
@@ -645,8 +645,100 @@ text91:
     dc.b    "Hier wird noch an",cc_newline,"Text 91 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Sphinx quiz: 
+; 17 characters max per line, 5 lines total
+; line-break is 02 instead of 05 in this dialogue
+; $0B20 clears the box
 text92: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 92 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$23,cc_speed,$06,cc_lock
+    dc.b    "So, da bist Du.",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Du hast es Dir",$02,"vielleicht schon",$02,"dedacht, aber",$02
+    dc.b    "ich bin",$02,"die ",cc_text,orange,"Sphinx",cc_text,white,"!",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Ich habe eine",$02,"Schw",ae,"che f",ue,"r",$02,"R",ae,"tsel,",cc_wait
+    dc.b    $0b,$20
+    dc.b    "aber das hast Du",$02,"bestimmt schon",$02,"geh",oe,"rt.",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Ich sage Dir, was",$02,"nun geschieht.",$02
+    dc.b    "Wir spielen ein",$02,"kleines Spiel.",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Ich stelle Dir",$02,"einige Fragen.",$02
+    dc.b    "F",ue,"nf an der Zahl,",$02,"um genau zu sein.",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Beantwortest Du",$02,"alle korrekt,",$02
+    dc.b    "geht Deine",$02,"Reise weiter.",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Dann bef",oe,"rdere",$02,"ich Dich in eine",$02,"neue Welt.",cc_wait
+    dc.b    $0B,$20
+    dc.b    "Bist Du bereit?",cc_wait
+    dc.b    $0B,$20,cc_speed,$00
+    dc.b    "Hier kommt die",$02,"erste Frage."
+    dc.b    $0F,$06
+    dc.b    "Ich stelle jetzt",$02,"die zweite Frage."
+    dc.b    $0F,$06
+    dc.b    "Mal schauen,",$02,"ob Du die",$02,"dritte Frage",$02,"beantworten",$02,"kannst."
+    dc.b    $0F,$06
+    dc.b    "Die vierte Frage."
+    dc.b    $0F,$06
+    dc.b    "Es folgt die",$02,"letzte Frage."
+    dc.b    $0F,$06
+    dc.b    $0B,$20
+    dc.b    $0B,$24
+text92_p1:
+    dc.w    text92_noneCorrect-text92_p1    ; 00 0C
+text92_p2:
+    dc.w    text92_oneCorrect-text92_p2     ; 00 52
+text92_p3:
+    dc.w    text92_twoCorrect-text92_p3     ; 00 81
+text92_p4:
+    dc.w    text92_threeCorrect-text92_p4   ; 00 B5
+text92_p5:
+    dc.w    text92_fourCorrect-text92_p5    ; 00 F1
+text92_p6:
+    dc.w    text92_allCorrect-text92_p6     ; 01 22
+    
+text92_noneCorrect:
+    dc.b    "Das war",$02,"miserabel.",$02,"Hast Du etwa jede",$02,"Antwort geraten?",cc_wait
+    dc.b    $02,$02
+    dc.b    "Bedauernswert.",$02,$02,$02,$02,cc_wait,".",cc_wait,".",cc_wait
+    dc.b    cc_close
+text92_oneCorrect:
+    dc.b    "Eine einzige,",$02,"mickrige,",$02,"korrekte Antwort.",cc_wait
+    dc.b    $02,$02
+    dc.b    "So kommst Du",$02,"nicht an mir",$02,"vorbei...",cc_wait
+    dc.b    cc_close
+text92_twoCorrect:
+    dc.b    "Zwei richtige",$02,"Antworten reichen",$02,"leider nicht.",cc_wait
+    dc.b    $02,$02
+    dc.b    "Komm wieder und",$02,"versuche es",$02,"noch einmal!",cc_wait
+    dc.b    cc_close
+text92_threeCorrect:
+    dc.b    "Das war",$02,"nicht schlecht,",cc_wait,$02
+    dc.b    "aber auch nicht",$02,"gut genug.",$02,cc_wait
+    dc.b    $02,$02
+    dc.b    "Du hast",$02,"drei richtige",$02,"Antworten",$02,"gegeben.",$02,cc_wait
+    dc.b    $02,$02
+    dc.b    "Gib Dir M",ue,"he,",$02,"Du k",oe,"nntest es",$02,"noch schaffen.",$02,$02,cc_wait
+    dc.b    cc_close
+text92_fourCorrect:
+    dc.b    "Du hast FAST alle",$02,"Fragen korrekt",$02,"beantwortet.",$02,$02,cc_wait
+    dc.b    $02,$02
+    dc.b    "Ich bin kein",$02,"Spielverderber,",$02
+    dc.b    "also lasse",$02,"ich Dich",$02,"passieren.",cc_wait
+    dc.b    $02,$02
+    dc.b    cc_close
+text92_allCorrect:
+    dc.b    "Ich bin entz",ue,"ckt.",cc_wait
+    dc.b    $02,$02
+    dc.b    "Du hast",$02,"alle Fragen",$02,"korrekt",$02,"beantwortet.",$02,cc_wait
+    dc.b    $02,$02
+    dc.b    "M",oe,"ge die Magie",$02,"des Donners",$02,"Deine Belohnung",$02,"sein.",$02,cc_wait
+    dc.b    $02,$02
+    dc.b    "Du darfst",$02,"passieren.",$02,$02,$02,cc_wait
+    dc.b    $0F,$08
+    dc.b    cc_close
+
 
 
 text93: 

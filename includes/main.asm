@@ -98,20 +98,6 @@ bypassFoundItemText:
     move.w  d1,d0
     lea     textDot,a0
     jmp     ret_bypassFoundItemText
-    
-
-    align 2
-
-textFoundThe:
-    dc.b    $00
-textFound:
-    dc.b    $00
-textGold:
-    dc.b    ' Taler gefunden.',$00
-textDot:
-    dc.b    ' gefunden.',$00  
-    dc.b    $00
-
 
 
 
@@ -144,3 +130,22 @@ bypassstaffRoll:
     lea     staffRoll,a1                    ; change address in original instruction
     move.l  a1,($FFA3B6).l                  ; Adopt original instruction
     jmp     ret_bypassstaffRoll             ; return to game code
+
+
+
+; Sphinx Quiz Messages:
+
+bypassSphinx_timesUp:
+    lea     sphinx_timesUp,a2
+    moveq   #$35,d0
+    jmp     ret_bypassSphinx_timesUp
+
+bypassSphinx_incorrect:
+    lea     sphinx_incorrect,a2
+    moveq   #$35,d0
+    jmp     ret_bypassSphinx_correct
+
+bypassSphinx_correct:
+    lea     sphinx_correct,a2
+    addq.b  #1,($FFFF8CD3).w
+    jmp     ret_bypassSphinx_correct
