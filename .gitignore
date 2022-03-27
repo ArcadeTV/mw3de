@@ -1,6 +1,8 @@
 # Project specific --------------------------------------------------------------------------------
+!/roms/put_roms_here.txt
 /roms/*
-/_tmp/*
+!/tmp/empty.txt
+/tmp/*
 /traces
 /tests
 *.mkv

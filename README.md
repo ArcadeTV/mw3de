@@ -45,7 +45,7 @@ Compatibility  Works on real hardware with
 
 SourceROMs:    Wonder Boy in Monster World (USA, Europe).md (CRC 0D901482)
 
-Date:          2022-03-20
+Date:          2022-03-27
 
 Category:      Romhack / Translation
                
