@@ -1,4 +1,5 @@
 # Project specific --------------------------------------------------------------------------------
+/releases
 /roms/*
 !/roms/put_roms_here.txt
 /tmp/*
