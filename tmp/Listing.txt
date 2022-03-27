@@ -118,8 +118,8 @@ F04:0016           dc.b    "--> ArcadeTV <--"
                S04:000001C0:  2D 2D 3E 20 41 72 63 61 64 65 54 56 20 3C 2D 2D
 F04:0017           org     $1D0
 F04:0018           include "includes/version.asm"          ; include the generated file from build.bat
-F05:0001           dc.b " - 26.03.2022 - "
-               S05:000001D0:  20 2D 20 32 36 2E 30 33 2E 32 30 32 32 20 2D 20
+F05:0001           dc.b " - 2022-03-27 - "
+               S05:000001D0:  20 2D 20 32 30 32 32 2D 30 33 2D 32 37 20 2D 20
 F05:0002       
 F04:0019           org     $1E0                            ; Date is written upon building
 F04:0020           dc.b    "================"
@@ -10004,37 +10004,37 @@ S71  sega4c80
 
 
 Sources:
-F00  .\patch_de.asm
-F01  includes\constants.asm
-F02  includes\vars.asm
-F03  includes\macros.asm
-F04  includes\overwrites.asm
-F05  includes\version.asm
-F06  includes\main.asm
+F00  patch_de.asm
+F01  includes/constants.asm
+F02  includes/vars.asm
+F03  includes/macros.asm
+F04  includes/overwrites.asm
+F05  includes/version.asm
+F06  includes/main.asm
 F07  SetVRAMWrite
 F08  SetVRAMWrite
 F09  SetVRAMWrite
-F10  includes\text\control_codes.asm
-F11  includes\text\menu.asm
-F12  includes\text\pntrs_dialogues.asm
-F13  includes\text\dialogues.asm
-F14  includes\text\pntrs_names.asm
-F15  includes\text\names.asm
-F16  includes\text\pntrs_items.asm
-F17  includes\text\items.asm
-F18  includes\text\pntrs_magic.asm
-F19  includes\text\magic.asm
-F20  includes\text\specialdialogues.asm
-F21  includes\text\pntrs_specialdialogues.asm
-F22  includes\text\pntrs_snippets.asm
-F23  includes\text\snippets.asm
-F24  includes\text\credits.asm
-F25  includes\text\ocarina.asm
-F26  includes\text\messages.asm
-F27  includes\data\textbox_styles.asm
-F28  includes\sprite_tables.asm
-F29  includes\tilemaps.asm
-F30  includes\gfx_packs.asm
+F10  includes/text/control_codes.asm
+F11  includes/text/menu.asm
+F12  includes/text/pntrs_dialogues.asm
+F13  includes/text/dialogues.asm
+F14  includes/text/pntrs_names.asm
+F15  includes/text/names.asm
+F16  includes/text/pntrs_items.asm
+F17  includes/text/items.asm
+F18  includes/text/pntrs_magic.asm
+F19  includes/text/magic.asm
+F20  includes/text/specialdialogues.asm
+F21  includes/text/pntrs_specialdialogues.asm
+F22  includes/text/pntrs_snippets.asm
+F23  includes/text/snippets.asm
+F24  includes/text/credits.asm
+F25  includes/text/ocarina.asm
+F26  includes/text/messages.asm
+F27  includes/data/textbox_styles.asm
+F28  includes/sprite_tables.asm
+F29  includes/tilemaps.asm
+F30  includes/gfx_packs.asm
 
 
 Symbols:

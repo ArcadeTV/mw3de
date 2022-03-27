@@ -50,13 +50,21 @@ Date:          2022-03-20
 Category:      Romhack / Translation
                
 Source:        https://github.com/ArcadeTV/mw3de
+
 ```
 
 ### How to build from source
 
+#### Windows
+
 On Windows/x64 just execute the `build.bat` file that is provided within the repository.
 
 You may want to install `tools\vcredist_x86.exe` as a dependency for some commandline tools if you run into an error.
+
+
+#### Mac and Unix
+
+Make the shell script executable by typing `chmod +x build.sh`, then run the script with `./build.sh`
 
 ---
 
