@@ -2,10 +2,11 @@
 /releases
 /roms/*
 !/roms/put_roms_here.txt
+/tests
 /tmp/*
 !/tmp/empty.txt
+/tools
 /traces
-/tests
 *.mkv
 *.mp4
 *.avi
