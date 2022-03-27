@@ -1,11 +1,11 @@
-## Wonderboy V German Translation Project
+## Wonderboy V Translation Project
 _This a work-in-progress_
 
 This project started at www.circuit-board.de with the help of these awesome people.
 
 - Please see the current [Todo List](https://github.com/ArcadeTV/mw3de/blob/main/info/TODO.md)
 - Report any issues [here](https://github.com/ArcadeTV/mw3de/issues)
-- See [commits](https://github.com/ArcadeTV/mw3de/commits/main) for main branch for a brief changelog.
+- See [commits](https://github.com/ArcadeTV/mw3de/commits/main) in main branch for a brief changelog.
 
 ---
 
