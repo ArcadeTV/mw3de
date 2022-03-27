@@ -13,7 +13,7 @@ This project started at www.circuit-board.de with the help of these awesome peop
 
 You need:
 - [x] The [latest release](https://github.com/ArcadeTV/mw3de/releases/latest) from the releases tab. <br>Extract the .bps patch file.
-- [x] The ROM "Wonder Boy in Monster World (USA, Europe).md"<br>(CRC 0D901482)
+- [x] The ROM "Wonder Boy in Monster World (USA, Europe).md"<br>(CRC 1592F5B0)
 - [x] [flips](https://dl.smwcentral.net/11474/floating.zip) to apply the patch file to your ROM.
 
 1. Open flips.exe
@@ -31,25 +31,28 @@ You need:
 |__|__|_| |___|__,|___|___| |_|  \___/ 
                              
 
-Title:         German translation, Romhack
-               Wonder Boy in Monster World - Monster World III
-System:        SEGA GENESIS / MEGA DRIVE
+Title:          German translation, Romhack
+                Wonder Boy in Monster World - Monster World III
+System:         SEGA GENESIS / MEGA DRIVE
                
 
-Compatibility  Works on real hardware with 
-               MEGA Everdrive Pro, 
-               MegaSD* or 
-               any other (Flash or Repro) Cart
-               mister*
-               as well as most emulators
+Compatibility:  Works on real hardware with 
+                MEGA Everdrive Pro, 
+                MegaSD* or 
+                any other (Flash or Repro) Cart
+                mister*
+                as well as most emulators
 
-SourceROMs:    Wonder Boy in Monster World (USA, Europe).md (CRC 0D901482)
+SourceROMs:     Wonder Boy in Monster World (USA, Europe).md (CRC 0D901482)
+                CRC32: 1592F5B0
+                MD5: EDBA0BDB192D47712EDBE0097F885F40
+                SHA-1: 87A968F773C7E807E647C0737132457B06B78276
 
-Date:          2022-03-27
+Date:           2022-03-27
 
-Category:      Romhack / Translation
+Category:       Romhack / Translation
                
-Source:        https://github.com/ArcadeTV/mw3de
+Source:         https://github.com/ArcadeTV/mw3de
 
 ```
 
