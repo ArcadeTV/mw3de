@@ -674,177 +674,94 @@ It appears that my job is done. Now, your final battle will no doubt be fierce, 
 
 
 
-To
-enter the volcano,
-you must enter the
-room on the other
-side of this door,
-but in order to
-enter, you must
-have the following
-items: the Pygmy
-Sword, Pygmy Armor,
-Pygmy Shield, and
-Pygmy Boots.
+To enter the volcano, you must enter the room on the other side of this door, but in order to enter, you must have the following items: the Pygmy Sword, Pygmy Armor, Pygmy Shield, and Pygmy Boots. 
+You have satisfied the requirements. You may enter. 
+One of the items is missing. Continue your search. 
+You need two more items. Continue your search. 
+You have only one of the four you need. Continue your search. 
+You have yet to find even one of the items. You must find all four.  
 
-You have satisfied
-the requirements.
-You may enter. One
-of the items is
-missing. Continue
-your search. You
-need two more
-items. Continue
-your search. You
-have only one of
-the four you need.
-Continue your
-search. You have
-yet to find even
-one of the items.
-You must find all
-four. Gragg &
-Glagg! The Ice
-Bomber! The Tyrant
-Dragon! The
-Almighty Demon King!
+
+Gragg & Glagg! 
+
+The Ice Bomber! 
+
+The Tyrant Dragon! 
+
+The Almighty Demon King!
 
 I've heard that the
 Sphinx in the
 Pyramid likes
 quizzes. 
 
-If you
-have a certain
-special item, you
-can swim
-underwater. 
+If you have a certain special item, you can swim underwater.  
 
 The star crest on this Bell Tower is the same as the insignia on the weapon of the legendary hero. The princess told me this a long time ago. 
-You're very strong.
 
-I hope one day I'll
-be so strong. It is
-said that there's a
-shrine at the
-bottom of the
 
-sea, but no one's
-ever been able to
-find the entrance.
-I am the Prince of
-DarkWorld, and you
-must be the
-legendary hero.
+You're very strong. 
+I hope one day I'll be so strong. 
+It is said that there's a shrine at the bottom of the sea, but no one's ever been able to find the entrance. 
 
-I was under the
-control of Biomeka,
-a deadly creature
-from outer space,
-but I'm alright now.
 
-Thank you for
-coming to my aid....
+I am the Prince of DarkWorld, and you must be the legendary hero. 
+I was under the control of Biomeka, a deadly creature from outer space, but I'm alright now. 
+Thank you for coming to my aid.... 
 
-Some hero. Is that
-the best you can do?
 
+Some hero. Is that the best you can do?
 Well, watch this!
-Not too bad, eh?
-Now, let's see if
-you've got what it
-takes.
 
-You're really going
-to go,aren't you...
 
-Can't you stay with
-me?
+Not too bad, eh? Now, let's see if you've got what it takes. 
 
-No, you're the
-legendary hero.
 
-You must go.
 
-Be sure to come
-back safely.
+You're really going to go,aren't you... Can't you stay with me? No, you're the legendary hero. You must go. Be sure to come back safely. I'll be waiting right here for you. 
 
-I'll be waiting
-right here for you.
 
-There's a
-convenient slot....
-Shion inserts the
-Gold Gem.
-
-The Gem doesn't fit!
+There's a convenient slot.... 
+Shion inserts the Gold Gem. 
+The Gem doesn't fit! 
 
 Shion inserts the
 Blue Gem.
 
-A secret lies in
-the surface of the
-walls of Ice Castle.
+A secret lies in the surface of the walls of Ice Castle.
 
-Do you know where
-the prince went? I
-think he's gone to
-Nightmare Castle.
-He's probably
-attempting to
-collect the
-legendary weapons.
+Do you know where the prince went? I think he's gone to Nightmare Castle. He's probably attempting to collect the legendary weapons. It looks as though he's got all but one of them...  
 
-It looks as though
-he's got all but
-one of them... It's
-sealed. You can
-ride a jellyfish!
+It's sealed. 
+
+You can ride a jellyfish!
+
+
 The monsters have
 come and made this
 their home, so no
 one may enter!
-Finally, the long,
-treacherous journey
-has reached its end.
 
-None of the people
-in Monster World
-will ever forget
-what they've been
-through, nor will
-they forget the
-hero who gave their
-lives back to them.
 
-The story of
-Shion's valiant
-struggle will no
-doubt be passed on
-from generation to
-generation.
+Finally, the long, treacherous journey has reached its end. 
 
-And so ends another
-episode in the
-adventures of
-"Wonder Boy".
 
-Welcome home,
-Shion. I'm so happy
-you made it back
-safely. I don't
-think I'll ever
-forget you... ever.
+None of the people in Monster World will ever forget what they've been through, nor will they forget the hero who gave their lives back to them. 
 
-The dwarf child is
-in danger!
 
-Danger! The desert
-lies ahead!
+The story of Shion's valiant struggle will no doubt be passed on from generation to generation. 
 
-Anyone shorter than
-this sign will not
-be able to move it.
+
+And so ends another episode in the adventures of "Wonder Boy". 
+
+
+Welcome home, Shion. I'm so happy you made it back safely. I don't think I'll ever forget you... ever. 
+
+The dwarf child is in danger!
+
+Danger! The desert lies ahead!
+
+Anyone shorter than this sign will not be able to move it. 
 
 YES NO gold
                                                          //Sphinx Questions SQ1

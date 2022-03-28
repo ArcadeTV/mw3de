@@ -936,22 +936,28 @@ text102:
     dc.b    "Hier wird noch an",cc_newline,"Text 102 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; To enter the volcano, you must enter the room on the other side of this door, but in order to enter, you must have the following items: the Pygmy Sword, Pygmy Armor, Pygmy Shield, and Pygmy Boots. 
+; You have satisfied the requirements. You may enter. 
+; One of the items is missing. Continue your search. 
+; You need two more items. Continue your search. 
+; You have only one of the four you need. Continue your search. 
+; You have yet to find even one of the items. You must find all four.  
 text103:
     dc.b    "Hier wird noch an",cc_newline,"Text 103 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; Gragg & Glagg!
 text104:
     dc.b    "Hier wird noch an",cc_newline,"Text 104 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; The Ice Bomber! 
 text105:
     dc.b    "Hier wird noch an",cc_newline,"Text 105 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; The Tyrant Dragon! 
 text106:
     dc.b    "Text 106.",cc_wait,cc_close
 
-
+; The Almighty Demon King!
 text107:
     dc.b    "Text 107.",cc_wait,cc_close
 
@@ -963,6 +969,7 @@ text108:
     dc.b    "Ich habe geh",oe,"rt, die",cc_newline,cc_text,orange,"Sphinx",cc_text,white," in der",cc_newline,"Pyramide mag R",ae,"tsel.",cc_wait,cc_close
 
 ; Maid#2 near Castle Hall:
+; If you have a certain special item, you can swim underwater.  
 text109:
     dc.b    "Hier wird noch an",cc_newline,"Text 109 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
@@ -977,70 +984,95 @@ text110:
     dc.b    "Die Prinzessin",cc_newline,"hat mir das vor",cc_newline,"langer Zeit erz",ae,"hlt.",cc_wait,cc_close
 
 
+; You're very strong. 
+; I hope one day I'll be so strong. 
+; It is said that there's a shrine at the bottom of the sea, but no one's ever been able to find the entrance. 
 text111:
     dc.b    "Hier wird noch an",cc_newline,"Text 111 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; I am the Prince of DarkWorld, and you must be the legendary hero. 
+; I was under the control of Biomeka, a deadly creature from outer space, but I'm alright now. 
+; Thank you for coming to my aid.... 
 text112:
     dc.b    "Hier wird noch an",cc_newline,"Text 112 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Some hero. Is that the best you can do?
+; Well, watch this!
 text113:
     dc.b    "Hier wird noch an",cc_newline,"Text 113 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Not too bad, eh? Now, let's see if you've got what it takes. 
 text114:
     dc.b    "Hier wird noch an",cc_newline,"Text 114 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; You're really going to go,aren't you... Can't you stay with me? 
+; No, you're the legendary hero. You must go. Be sure to come back safely. I'll be waiting right here for you. 
 text115:
     dc.b    "Hier wird noch an",cc_newline,"Text 115 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; There's a convenient slot.... 
+; Shion inserts the Gold Gem. 
+; The Gem doesn't fit! 
 text116:
     dc.b    "Hier wird noch an",cc_newline,"Text 116 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Shion inserts the Blue Gem.
 text117:
     dc.b    "Hier wird noch an",cc_newline,"Text 117 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; A secret lies in the surface of the walls of Ice Castle.
 text118:
     dc.b    "Hier wird noch an",cc_newline,"Text 118 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Do you know where the prince went? 
+; I think he's gone to Nightmare Castle. 
+; He's probably attempting to collect the legendary weapons. 
+; It looks as though he's got all but one of them...  
 text119:
     dc.b    "Hier wird noch an",cc_newline,"Text 119 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; It's sealed. 
 text120:
     dc.b    "Hier wird noch an",cc_newline,"Text 120 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; You can ride a jellyfish!
 text121:
     dc.b    "Text 121.",cc_wait,cc_close
 
 
+; The monsters have come and made this their home, so no one may enter! 
 text122:
     dc.b    "Hier wird noch an",cc_newline,"Text 122 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+
+; Finally, the long, treacherous journey has reached its end. 
 text123:
     dc.b    "Hier wird noch an",cc_newline,"Text 123 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; None of the people in Monster World will ever forget what they've been through, 
 text124:
     dc.b    "Hier wird noch an",cc_newline,"Text 124 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; nor will they forget the hero who gave their lives back to them. 
 text125:
     dc.b    "Hier wird noch an",cc_newline,"Text 125 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; The story of Shion's valiant struggle will no doubt be passed on from generation to generation. 
 text126:
     dc.b    "Hier wird noch an",cc_newline,"Text 126 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
-
+; And so ends another episode in the adventures of "Wonder Boy". 
 text127:
     dc.b    cc_lock
     dc.b    $0A,$02
@@ -1052,7 +1084,8 @@ text127:
     dc.b    cc_text,orange,"Wonder Boy",cc_text,white
     dc.b    $0B,$18,$48
 
-
+; Welcome home, Shion. I'm so happy you made it back safely. 
+; I don't think I'll ever forget you... ever. 
 text128:
     dc.b    cc_lock
     dc.b    "Willkommen zu Hause,",cc_newline
@@ -1064,17 +1097,21 @@ text128:
     dc.b    $0B,$18,$48
     dc.b    cc_close
 
+
+; The dwarf child is in danger!
 text129:
     dc.b    cc_lock
     dc.b    "Achtung, das Kind",cc_newline,"ist in Gefahr!",cc_wait,cc_close
 
 
+; Danger! The desert lies ahead!
 text130:
     dc.b    cc_lock
     dc.b    "   LEBENSGEFAHR!",cc_newline
     dc.b    "W",ue,"stengebiet voraus.",cc_wait,cc_close
 
 
+; Anyone shorter than this sign will not be able to move it. 
 text131: 
     dc.b    cc_lock
     dc.b    "Jeder der kleiner",cc_newline,"als dieses",cc_newline,"Schild ist,",cc_newline
