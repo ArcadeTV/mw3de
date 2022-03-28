@@ -898,20 +898,26 @@ text96:
     dc.b    cc_lock,$04,$03,$0C,$62,$20,$0C,$5F,$21,$0B,$18,$1E
     dc.b    cc_wait,cc_close
 
+
 ; The Bracelet has begun to glow. 
-; The seal is broken. 
 text97: 
     dc.b    "Hier wird noch an",cc_newline,"Text 97 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; The seal is broken. 
 text98: 
     dc.b    "Hier wird noch an",cc_newline,"Text 98 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Forgive me, but we seem to be sold out. Please come again. 
+; Thank you for coming. This is the weapon shop known as Labyrinth. 
+; Thank you very much. What an excellent choice! 
 text99: 
     dc.b    "Hier wird noch an",cc_newline,"Text 99 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; It looks like I'm a storekeeper with nothing to sell! Ha, ha, ha, ha... 
+; Well, come on in. Take your time. 
 text100:
     dc.b    "Hier wird noch an",cc_newline,"Text 100 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
@@ -920,6 +926,12 @@ text101:
     dc.b    $0B,$0E,$05,$0F,$01,$00
 
 
+; You're the legendary hero I've heard so much about. 
+; The item you're looking for is in Ice Castle. Be warned-it's a frightening place. 
+; Take Shabo with you, in case you need help. The Old Axe, in its original form, is of no use to you. 
+; You'd better return to Begonia and see the Blacksmith. 
+; You're finally starting to look like a hero. 
+; It appears that my job is done. Now, your final battle will no doubt be fierce, but I'm confident that you'll triumph and that will be allowed to return to our land.  
 text102:
     dc.b    "Hier wird noch an",cc_newline,"Text 102 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
