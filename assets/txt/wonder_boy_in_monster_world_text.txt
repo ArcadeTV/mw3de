@@ -604,23 +604,11 @@ upon you Thunder
 Magic. You may pass.
 
 
-The Elder Dragon
-has something he
-wishes to discuss
-with you.
+The Elder Dragon has something he wishes to discuss with you. Please go to him now. 
+Only one bearing the Ancient Axe can enter the volcano. 
+I saw someone carring the Fire- Urn and preparing to enter the volcano.  
 
-Please go to him
-now.
-
-Only one bearing
-the Ancient Axe can
-enter the volcano.
-I saw someone
-carring the Fire-
-Urn and preparing
-to enter the
-volcano. The shop
-is closed.
+The shop is closed.
 
 I'm Shiela Purapril.
 
@@ -663,10 +651,11 @@ Be very, very
 careful.
 
 I worry about you.
-The Sphinx! The
-Bracelet has begun
-to glow. The seal
-is broken.
+
+The Sphinx! 
+
+The Bracelet has begun to glow. The seal is broken. 
+
 
 Forgive me, but we
 seem to be sold
