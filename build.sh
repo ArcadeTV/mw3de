@@ -16,12 +16,14 @@ if [[ -f "./roms/Wonder Boy in Monster World (T-German).md" ]]; then
 fi
 echo "Deleted old ROM file">./tmp/build.log
 
+
 # -----------------------------------------------------------------------------------------------
 # create version file
 cat << EOF >>./tmp/build.log
     dc.b " - $(date +%Y-%m-%d) - "
 EOF
 echo "Set version to $(date +%Y-%m-%d)">>./tmp/build.log
+
 
 # -----------------------------------------------------------------------------------------------
 # copy unmodified ROM and apply padding
