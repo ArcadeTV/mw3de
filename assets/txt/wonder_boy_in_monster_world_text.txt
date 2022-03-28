@@ -196,12 +196,8 @@ Entry is prohibited.
 
 Go away!
 
-I hear that peace
-has returned to
-Alsedo. It appears
-that the village of
-Alsedo is being
-attacked.
+I hear that peace has returned to Alsedo.
+It appears that the village of Alsedo is being attacked. 
 
 I just told you
 that no one may

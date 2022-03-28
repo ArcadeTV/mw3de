@@ -283,8 +283,20 @@ text50_t2:
     dc.b    "    Geh weiter!",cc_newline,cc_wait,cc_close
 
 
+
+;I hear that peace has returned to Alsedo.
+;It appears that the village of Alsedo is being attacked. 
 text51: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 51 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$12,$39
+text51_p1:
+    dc.w    text51_AlsedoBeingAttacked-text51_p1 ; 00 05
+    dc.b    cc_jump
+text51_p2:
+    dc.w    text51_AlsedoBeingAttacked-text51_p2 ; 00 20
+text51_PeaceHasReturned:
+    dc.b    "Ich h",oe,"rte, dass",cc_newline,"Alsedo wieder",cc_newline,"friedlich ist.",cc_wait,cc_close
+text51_AlsedoBeingAttacked:
+    dc.b    "Es scheint, dass",cc_newline,"das Dorf Alsedo",cc_newline,"angegriffen wird.",cc_wait,cc_close
 
 
 ; Castle Guards #1
@@ -414,7 +426,7 @@ text59:
 
 
 text60: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 60 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0E,$03,$0F,$01,$00
 
 
 text61: 
@@ -511,15 +523,40 @@ text65_howsItGoing:
     dc.b    "und tue was in",cc_newline,"Deiner Macht steht,",cc_newline,"um sie zu befreien.",cc_wait,cc_close
 
 text66: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 66 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0B,$0E,$04,$0F,$01,$00
 
 
+; Oh oh, looks like everything's gone. Come around again sometime.
+; Buy something, will you? If you don't, I'll start breathing fire!
+; Oh, thank you. You're rolling in dough,aren't you?
 text67: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 67 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$11,$17
+text67_p1:
+    dc.w    text67_buySomething-text67_p1 ; 00 2F
+    dc.b    "Oh oh, ich bin",cc_newline,"leider v",oe,"llig",cc_newline,"gepl",ue,"ndert.",cc_wait,cc_newline,cc_newline
+    dc.b    "Komm doch",cc_newline,"sp",ae,"ter noch",cc_newline,"einmal rein.",cc_wait,cc_close
+text67_buySomething:
+    dc.b    $0B,$11,$1E
+text67_p2:
+    dc.w    text67_thankYou-text67_p2 ; 00 3C
+    dc.b    "Nun kauf",cc_newline,"endlich etwas!",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Es k",oe,"nnte sein,",cc_newline,"dass ich sonst",cc_newline,"Feuer speie.",cc_wait,cc_close
+text67_thankYou:
+    dc.b    "Oh, danke.",cc_newline,"Du schwimmst wohl",cc_newline,"in Geld, was?",cc_wait,cc_close
 
 
+
+; What? I've got nothing to sell! I guess the shop is closed now...
+; Find anything you like?
 text68: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 68 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06,$0B,$11,$17
+text68_p1:
+    dc.w    text68_findAnything-text68_p1 ; 00 36
+    dc.b    "Ich habe nichts",cc_newline,"zu verkaufen!",cc_wait,cc_newline,cc_newline
+    dc.b    "Der Laden",cc_newline,"ist geschlossen...",cc_wait,cc_close
+text68_findAnything:
+    dc.b    "Gefällt Dir etwas?",cc_newline,cc_newline,cc_wait,cc_close
+
 
 
 text69: 
