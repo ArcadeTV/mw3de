@@ -2,6 +2,18 @@
 CLS
 
 REM -----------------------------------------------------------------------------------------------
+REM Check Source ROM
+
+IF EXIST ".\roms\Wonder Boy in Monster World (USA, Europe).md" (
+	.\tools\win\checkhash.exe ".\roms\Wonder Boy in Monster World (USA, Europe).md" 6B2AC36F624F914AD26E32BAA87D1253AEA9DCFC13D2A5842ECDD2BD4A7A43B9 > NUL && echo Source ROM passed file check. || echo Incorrect Source Rom. Aborting. && exit /b
+) ELSE (
+	echo Source ROM not found. Aborting.
+  exit /b
+)
+
+
+
+REM -----------------------------------------------------------------------------------------------
 REM delete any old versions
 
 if exist ".\roms\Wonder Boy in Monster World (T-German).md" (
@@ -20,7 +32,7 @@ set CUR_HH=%time:~0,2%
 if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
 set VERSION=%CUR_YYYY%%CUR_MM%%CUR_DD%-%CUR_HH%%CUR_NN%%CUR_SS%
 echo     dc.b " - %date% - ">.\includes\version.asm
-echo Set version to %VERSION%>>.\tmp\build.log
+echo Set version to %date%>>.\tmp\build.log
 
 
 REM -----------------------------------------------------------------------------------------------
@@ -44,7 +56,7 @@ REM remove tmp file
 
 if exist ".\roms\padded_rom.bin" (
   DEL ".\roms\padded_rom.bin" 
-  echo Deleted old ROM file>>.\tmp\build.log
+  echo Deleted temp padded ROM file>>.\tmp\build.log
 )
 
 
