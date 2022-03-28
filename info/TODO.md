@@ -37,7 +37,6 @@ _Dated 2022-03-25_
         - [x] Gold found
         - [x] Items found
     - [x] Credits
-        - [ ] Fix font used in staff roll for custom characters
 - [x] Prettify text positions
     - [X] Menu Items
     - [x] Ingame Messages
