@@ -12,6 +12,9 @@
     org     $16C                            ; Modify Game Title in Header
     dc.b    "Deutsch"
 
+    org     $1A4                            ; Adjust to 8MBIT ROM size 00FFFFFF (was 6MBIT 00BFFFFF)
+    dc.l    $FFFFFF
+
     org     $1C0
     dc.b    "--> ArcadeTV <--"
     org     $1D0
@@ -19,6 +22,8 @@
     org     $1E0                            ; Date is written upon building
     dc.b    "================"
 
+    org     $1F0
+    dc.b    "JUE"                           ; All Regions allowed
 
     ; SRAM FIX
     org     $1B2
