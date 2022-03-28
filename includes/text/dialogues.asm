@@ -559,26 +559,50 @@ text68_findAnything:
 
 
 
+; I would create a sword from the Old Axe, but a necessary item to do so has been stolen from me. With the Fire-Urn, I can create a sword from the Old Axe. It will take some time. 
+; The Elder Dragon was calling for you a while ago so why don't you go and see him? 
+; It's not ready yet. Please wait just a little longer. It's finished! Here you go. Use its legendary powers and save Monster World for us! 
 text69: 
     dc.b    "Hier wird noch an",cc_newline,"Text 69 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; One of the children of my village has been kidnapped. I don't want to see anyone. Do me a favor and just go away. 
+; Please... You're the one who saved the child? I am eternally grateful to you. 
+; You're a hero. Now you should meet Poseidon. He is in a perpetual sleep at the bottom of the sea. In order to swim underwater, you need Poseidon's Trident. Unfortunately, the monsters have gotten their claws on it... 
+; You found the Trident! Now you're able to swim underwater. Go find Poseidon! 
 text70: 
     dc.b    "Hier wird noch an",cc_newline,"Text 70 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Looks like I'm a storekeeper with nothing to sell! HA, HA, HA, HA... 
+; Welcome to Gooningle's. I may not have the best shop in the land, but there's not a friendlier store keeper around! 
+; Now that's a fine piece, isn't it?
 text71: 
     dc.b    "Hier wird noch an",cc_newline,"Text 71 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; I'm terribly sorry, but I seem to be out of stock. 
+; Welcome to Drapnell sundry goods. 
+; Thank you. Be sure to use magic carefully. 
 text72: 
     dc.b    "Hier wird noch an",cc_newline,"Text 72 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Rise and shine! 
+; You're wasting precious daylight! 
+; Get enough rest? Good! Good luck to you! 
+; Boy, that was a close call. Better keep your eyes open. 
 text73: 
     dc.b    "Hier wird noch an",cc_newline,"Text 73 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; At last you've come. I knew you would appear before too long. Now, you must search for the Old Axe hidden in Ice World. To get to Ice World, you'll need this special Bracelet. 
+; Shion takes the Bracelet. 
+; I already gave you the Bracelet. 
+; So, you've managed to get your hands on the Old Axe. The Blacksmith will give you all the details. 
+; This boy is my grandson. Take him with you, for I belive he can be of some help. You must hurry. Find the Old Axe and then return to me. 
+; The deciding battle is now at hand. After receiving the Legendary Sword from the Blacksmith, go to the Bell Tower at Purapril Castle and point the sword toward the sky. 
+; Emerge victorious and return safely! We're counting on you! 
 text74: 
     dc.b    "Hier wird noch an",cc_newline,"Text 74 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
@@ -614,44 +638,75 @@ text76:
     dc.b    cc_wait,cc_close
 
 
+; Maugham Desert is a forbidding place. 
+; It is said that one who wears the Oasis Boots can cross the desert. 
+; It looks like the store over there is open. 
 text77: 
     dc.b    "Hier wird noch an",cc_newline,"Text 77 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; I know of a dwarf village deep in the woods that lie ahead. I believe it's called Lilypad. 
+; The well at Purapril Castle is connected to the sea by an underground waterway. 
+; It's only a rumor, but I've heard of a house that's hidden somewhere in town. 
 text78: 
     dc.b    "Hier wird noch an",cc_newline,"Text 78 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; My younger brother, Hotta, has been taken by the monsters. What am I going to do? The monsters have a den just beyond the village. Could they be holding Hotta there? 
+; You're the one who saved my brother! He wants to go with you. You know, he just may be able to help you. Don't go too far, though... 
+; My brother seems to have grown very fond of you. Please take him out again sometime. 
+; Thank you again for your help. Has my brother been able to help you at all? He's very good at finding hidden rooms, you know. 
 text79: 
     dc.b    "Hier wird noch an",cc_newline,"Text 79 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
 text80: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 80 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $03,$06,$04,$04,$0B,$0A,$05,$0C,$02,$0B,$08,$05,$0B,$09,cc_wait,cc_close
 
 
+; You've done well to find this place, but I'm afraid I don't speak to anyone not holding a Charmstone. 
+; How about trading your Charmstone for this Heart? 
+; Oh, you will trade. How about that! Come back anytime, friend. 
+; No deal, eh? Well, come on back some other time. 
+; Oh, sorry. Your Heart supply can't get any larger. 
+; If you have two Charmstones, I can increase your magical powers. 
+; How about trading me those two Charmstones for some new magic? 
+; Oh, you will trade! Great! Come on by anytime you're in the area. 
+; Oh, well. Can't win'em all. Hope to see you again. 
+; Oh, my mistake. You can't handle any more magic. Sorry about that.  
 text81: 
     dc.b    "Hier wird noch an",cc_newline,"Text 81 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; The Myconid!
 text82: 
     dc.b    cc_lock,cc_margin,$02
     dc.b    "Der Mykonid!"
     dc.b    $0B,$18,$1E,cc_wait,cc_close
 
 
+; It looks like the store is closed. 
 text83: 
     dc.b    "Hier wird noch an",cc_newline,"Text 83 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Sold out? I'm not surprised. 
+; Guess it's time to head out and collect some more weapons. 
+; Hey, come on in and help us celebrate the Grand Opening of our shop. 
+; This is Wanderer, the finest weapon shop in the land. 
+; Back again, eh? 
+; Nothing but the best for my customers. 
+; I've collected these items on my many journeys.  
 text84: 
     dc.b    "Hier wird noch an",cc_newline,"Text 84 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; It's locked
 text85: 
     dc.b    "Hier wird noch an",cc_newline,"Text 85 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; Sheila Purapril after the rescue:
 text86: 
     dc.b    $0C,$06
     dc.b    "Ich wurde hier",cc_newline,"gefangen gehalten.",cc_newline,cc_wait,cc_newline
@@ -666,18 +721,35 @@ text87:
     dc.b    $0B,$14,$3B
     dc.b    "Das Tor zum Schlo",ss,cc_newline,"wurde ge",oe,"ffnet.",cc_newline,cc_wait,cc_close
 
+
+; If you have the Amulet, you can find the shrine at the bottom of the sea. 
+; Let me have your Ocarina and I'll tell you where to find the Amulet. What do you say? 
+; There's a door hidden amidst four palm trees. From there you should be able to find the Amulet. 
+; Oh, that's too bad. If you need my help, drop by again. 
+; Did you forget what I told you? OK. Find four palm trees, then find the door that's hidden amidst them. Good luck. 
+; If you have the Amulet, the shrine will appear right before your eyes. 
+; So you're the legendary hero! Now maybe my father will be able to get a decent night's sleep. 
 text88: 
     dc.b    "Hier wird noch an",cc_newline,"Text 88 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; You're here at last. The legendary hero. The Elder Dragon is waiting for you. Before you meet him, though, visit the Sphinx to increase your strength. There's a Pyramid just beyond the Maugham Desert. 
+; An item that will help you cross the desert is hidden somewhere in this shrine. Find it and then go see the Sphinx. 
+; What are you dilly- dallying about for? Many people await your help. 
+; I'm going back to sleep. 
+; He's already in a deep sleep. 
 text89: 
     dc.b    "Hier wird noch an",cc_newline,"Text 89 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; The princess has returned safely. I'm so relieved. 
+; The princess is waiting. 
+; Make yourself at home. 
 text90: 
     dc.b    "Hier wird noch an",cc_newline,"Text 90 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; The door has been sealed. 
 text91: 
     dc.b    "Hier wird noch an",cc_newline,"Text 91 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
@@ -777,11 +849,14 @@ text92_allCorrect:
     dc.b    cc_close
 
 
-
+; The Elder Dragon has something he wishes to discuss with you. Please go to him now. 
+; Only one bearing the Ancient Axe can enter the volcano. 
+; I saw someone carring the Fire- Urn and preparing to enter the volcano.  
 text93: 
     dc.b    "Hier wird noch an",cc_newline,"Text 93 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
 
+; The shop is closed.
 text94: 
     dc.b    "Hier wird noch an",cc_newline,"Text 94 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
@@ -818,11 +893,13 @@ text95_iceCastle:
     dc.b    "Ich mache mir gro",ss,"e",cc_newline,"Sorgen um Dich.",cc_newline,cc_wait,cc_close
 
 
+; The Sphinx!
 text96: 
     dc.b    cc_lock,$04,$03,$0C,$62,$20,$0C,$5F,$21,$0B,$18,$1E
     dc.b    cc_wait,cc_close
 
-
+; The Bracelet has begun to glow. 
+; The seal is broken. 
 text97: 
     dc.b    "Hier wird noch an",cc_newline,"Text 97 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
 
