@@ -559,11 +559,43 @@ text68_findAnything:
 
 
 
-; I would create a sword from the Old Axe, but a necessary item to do so has been stolen from me. With the Fire-Urn, I can create a sword from the Old Axe. It will take some time. 
+; I would create a sword from the Old Axe, but a necessary item to do so has been stolen from me. 
+; With the Fire-Urn, I can create a sword from the Old Axe. It will take some time. 
 ; The Elder Dragon was calling for you a while ago so why don't you go and see him? 
-; It's not ready yet. Please wait just a little longer. It's finished! Here you go. Use its legendary powers and save Monster World for us! 
+; It's not ready yet. Please wait just a little longer. 
+; It's finished! Here you go. 
+; Use its legendary powers and save Monster World for us! 
 text69: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 69 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    $0C,$06
+    dc.b    $0B,$17,$00
+text69_p1:
+    dc.w    text69_useItsPowers-text69_p1 ; 01 47
+    dc.b    $0B,$12,$4E
+text69_p2:
+    dc.w    text69_finished-text69_p2 ; 01 24
+    dc.b    $0B,$12,$4D
+text69_p3:
+    dc.w    text69_notReadyYet-text69_p3 ; 00 F1
+    dc.b    $0B,$17,$39
+text69_p4:
+    dc.w    text69_withFireUrn-text69_p4 ; 00 55
+    dc.b    "Ich k",oe,"nnte ein feines",cc_newline,"Schwert aus der alten",cc_newline,"Axt schmieden,",cc_wait,cc_newline
+    dc.b    "aber etwas das ich",cc_newline,"daf",ue,"r ben",oe,"tige",cc_newline,"wurde mir gestohlen.",cc_wait,cc_close
+text69_withFireUrn:
+    dc.b    $0B,$14,$4D
+    dc.b    "Mit der Feuer-Urne",cc_newline,"kann ich die alte Axt",cc_newline,"einschmelzen,",cc_wait,cc_newline
+    dc.b    "um ein Schwert",cc_newline,"daraus zu schmieden.",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Es wird aber",cc_newline,"eine Weile dauern.",cc_newline,cc_wait,cc_newline,cc_newline
+    dc.b    "Der Drachen",ae,"lteste",cc_newline,"hatte bereits nach",cc_newline,"Dir verlangt.",cc_wait,cc_newline
+    dc.b    "Geh zu ihm",cc_newline,"w",ae,"hrend ich arbeite.",cc_newline,cc_wait,cc_close
+text69_notReadyYet:
+    dc.b    "Ich bin noch nicht",cc_newline,"fertig. Du mu",ss,"t Dich",cc_newline,"noch etwas gedulden.",cc_wait,cc_close
+text69_finished:
+    dc.b    "Es ist fertig!",cc_newline,"Bitte sehr.",cc_newline,cc_wait
+    dc.b    $0B,$08,$00,$05,$00
+text69_useItsPowers:
+    dc.b    "Dieses Schwert ist",cc_newline,"sehr m",ae,"chtig.",cc_newline,cc_wait,cc_newline
+    dc.b    "Benutze es und werde",cc_newline,"der legend",ae,"re Held,",cc_newline,"der uns alle rettet!",cc_wait,cc_close
 
 
 ; One of the children of my village has been kidnapped. I don't want to see anyone. Do me a favor and just go away. 
