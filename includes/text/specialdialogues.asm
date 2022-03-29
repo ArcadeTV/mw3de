@@ -89,6 +89,7 @@ special2_t_doNotStay:
     dc.b    "Besuche uns wieder,",cc_newline,"falls Du es Dir",cc_newline,"anders ",ue,"berlegst.",cc_wait,cc_close
 
 
+; Sonia, teaching ocarina melodies
 special3:
     dc.b    cc_newline,cc_newline
     dc.b    $0B,$1C
