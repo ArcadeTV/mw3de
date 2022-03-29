@@ -1079,7 +1079,7 @@ text120:
 
 ; You can ride a jellyfish!
 text121:
-    dc.b    "Text 121.",cc_wait,cc_close
+    dc.b    " Keine Angst vor Quallen!",cc_wait,cc_close
 
 
 ; The monsters have come and made this their home, so no one may enter! 

@@ -43,7 +43,7 @@ Compatibility:  Works on real hardware with
                 mister*
                 as well as most emulators
 
-SourceROMs:     Wonder Boy in Monster World (USA, Europe).md (CRC 0D901482)
+SourceROMs:     Wonder Boy in Monster World (USA, Europe).md
                 CRC32: 1592F5B0
                 MD5: EDBA0BDB192D47712EDBE0097F885F40
                 SHA-1: 87A968F773C7E807E647C0737132457B06B78276
