@@ -92,6 +92,11 @@ sub_1F8E:                                   ; just a label
     addi.w  #11,d0                          ; value is subtracted in the routine, was #5, plus 3xsize_w = #11
     
 
+    ;org     $4A74                           ; set initial GMode
+    ;jmp     ($4CE2).l                       ; 4CEC,4CE2("Md"): Title; 4CB8,4F9C: SEGA; 4DCA: Game, 4D90: Demo; 
+
+
+
     ; CHEATS:
     ;----------------------
     ifne CHEAT_99GOLD

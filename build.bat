@@ -25,12 +25,6 @@ if exist ".\roms\Wonder Boy in Monster World (T-German).md" (
 REM -----------------------------------------------------------------------------------------------
 REM create version file
 
-set CUR_YYYY=%date:~10,4%
-set CUR_MM=%date:~4,2%
-set CUR_DD=%date:~7,2%
-set CUR_HH=%time:~0,2%
-if %CUR_HH% lss 10 (set CUR_HH=0%time:~1,1%)
-set VERSION=%CUR_YYYY%%CUR_MM%%CUR_DD%-%CUR_HH%%CUR_NN%%CUR_SS%
 echo     dc.b " - %date% - ">.\includes\version.asm
 echo Set version to %date%>>.\tmp\build.log
 
@@ -65,5 +59,13 @@ REM fix the checksum in the header
 
 .\tools\win\fixheader.exe ".\roms\Wonder Boy in Monster World (T-German).md"
 echo fixed header checksum>>.\tmp\build.log
+
+
+
+REM -----------------------------------------------------------------------------------------------
+REM create bps patchfile
+
+.\tools\win\flips.exe --create ".\roms\Wonder Boy in Monster World (USA, Europe).md" ".\roms\Wonder Boy in Monster World (T-German).md" ".\roms\Wonder Boy in Monster World (T-German, ArcadeTV, WIPv%date%).bps"
+
 
 echo done!

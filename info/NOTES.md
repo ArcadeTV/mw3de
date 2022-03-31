@@ -267,3 +267,33 @@ Trace:
 
 00:70F4  45 FA  LEA     $02D6(PC),A2
 6B64 puts tilemap data from D7 into VDP data port!
+
+#### Main Loop
+
+GM SEGA:  006F8A
+GM TITLE: 004D1C
+
+### Game Modes
+is set in ROM:$50F0 -> RAM:$FF804C
+
+| Description          | Mode | ModeAddress | jmpGMode  | absolute  |
+| :------------------- | :--- | :---------- | :-------- | :-------- |
+| ?                    | Kedm | 4F54        | 50D4      |           |
+| SEGA                 | Ksmt | 4CC4        | 50D4,50E2 | 4CB8,4F9C |
+| Title with animation | Ktmt | 4D14        | 50D4      | 4CEC      |
+| Game start           | Kgmt | 507C        | 50D4      | 4DCA      |
+| Demo                 | Kdym | 4DDE        | 50D4      | 4D90      |
+| Demo                 | Ktm3 | 4D52        | 50E2      | 4D3E      |
+| ?                    | Kmnu | 4DA4        | 50E2      | 4D6C?     |
+|                      |      |             |           |           |
+
+```
+    movea.l #ModeAddress,a1
+    jmp (jmpGMode)
+```
+or
+```
+    org     $4A74 ; set initial GMode
+    jmp     (absolute).l
+
+```
