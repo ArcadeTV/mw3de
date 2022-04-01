@@ -23,7 +23,9 @@ vdp_control                 equ $00C00004
 vdp_data                    equ $00C00000
 
 ; VDP commands
-vdp_cmd_vram_write          equ $40000000
+vdp_cmd_vram_write		    equ $40000000
+vdp_cmd_cram_write		    equ $C0000000
+vdp_cmd_vsram_write		    equ $40000010
 
 ; VDP memory addresses
 vram_addr_tiles             equ $0000
@@ -36,3 +38,21 @@ locSpriteTable_newGame      equ $A18A8
 locSpriteTable_continue     equ $A18B8
 locSpriteTable_pressStart   equ $A18C8
 locSpriteTable_arrow        equ $A18E7
+
+; Z80 addresses
+z80_ram:		        equ $A00000	; start of Z80 RAM
+z80_dac3_pitch:		    equ $A000EA
+z80_dac_status:		    equ $A01FFD
+z80_dac_sample:		    equ $A01FFF
+z80_ram_end:		    equ $A02000	; end of non-reserved Z80 RAM
+z80_version:		    equ $A10001
+z80_port_1_data:	    equ $A10002
+z80_port_1_control:	    equ $A10008
+z80_port_2_control:	    equ $A1000A
+z80_expansion_control:	equ $A1000C
+z80_bus_request:	    equ $A11100
+z80_reset:		        equ $A11200
+ym2612_a0:		        equ $A04000
+ym2612_d0:		        equ $A04001
+ym2612_a1:		        equ $A04002
+ym2612_d1:		        equ $A04003

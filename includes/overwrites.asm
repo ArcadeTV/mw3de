@@ -1,7 +1,10 @@
 ; =================================================================================================
 ; OVERWRITES
 ; =================================================================================================
-    
+    ; VECTORS
+    org     $78                             ; Hijack Vertical Interrupt Routine
+    dc.l    v_int 
+
     ; HEADER
     org     $13F                            ; Modify Game Title in Header
     dc.b    "German"
@@ -93,9 +96,17 @@ sub_1F8E:                                   ; just a label
     
 
     ;org     $4A74                           ; set initial GMode
-    ;jmp     ($4CE2).l                       ; 4CEC,4CE2("Md"): Title; 4CB8,4F9C: SEGA; 4DCA: Game, 4D90: Demo; 
+    ;jmp     ($4D90).l                       ; 4CEC,4CE2("Md"): Title; 4CB8,4F9C: SEGA; 4DCA: Game, 4D90: Demo; 
 
+    org     $4CBA
+    ;dc.l    GM_Kwst
 
+    org     $4D00                           ; GMode after SEGA
+    ;dc.l    GM_Kwst
+
+    org     $6FFC
+    jsr     westone 
+    nop 
 
     ; CHEATS:
     ;----------------------

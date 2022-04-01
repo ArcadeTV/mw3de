@@ -36,6 +36,7 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
 
     ; MAIN CODE:
     include "includes/main.asm"
+    include "includes/vint.asm"
 
 
     ; TEXT DATA:
@@ -78,3 +79,4 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
     ; GFX:
     include "includes/tilemaps.asm"
     include "includes/gfx_packs.asm"
+    include "includes/westone_logo.asm"
