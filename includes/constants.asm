@@ -56,3 +56,25 @@ ym2612_a0:		        equ $A04000
 ym2612_d0:		        equ $A04001
 ym2612_a1:		        equ $A04002
 ym2612_d1:		        equ $A04003
+
+; Gamepad/IO port addresses.
+pad_ctrl_a              equ $00A10009   ; IO port A control port
+pad_ctrl_b              equ $00A1000B   ; IO port B control port
+pad_data_a              equ $00A10003   ; IO port A data port
+pad_data_b              equ $00A10005   ; IO port B data port
+
+; Pad read latch, for fetching second byte from data port
+pad_byte_latch          equ $40
+
+; Gamepad button bits
+pad_button_up           equ $00
+pad_button_down         equ $01
+pad_button_left         equ $02
+pad_button_right        equ $03
+pad_button_a            equ $0C
+pad_button_b            equ $04
+pad_button_c            equ $05
+pad_button_start        equ $0D
+
+; All gamepad button bits (for masking)
+pad_button_all          equ $303F

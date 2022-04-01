@@ -104,6 +104,10 @@ sub_1F8E:                                   ; just a label
     org     $4D00                           ; GMode after SEGA
     ;dc.l    GM_Kwst
 
+    org     $4D80                           ; kill sprites at the bottom after entering titlescreen for interaction
+    jmp     killSprites
+ret_killSprites
+
     org     $71E0
     jmp     bypass_checkInput
     org     $71E6 

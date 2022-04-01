@@ -101,6 +101,7 @@ westone:
 
     ;jmp     infLoop
 
+    jsr     PAD_InitPads
 
 infLoop:
     jsr     WaitVBlank 
@@ -109,6 +110,10 @@ infLoop:
     cmpi.l  #$150,d0
     bcc.s   jmp_SEGA
     move.l  d0,($FFFF1984).l
+
+    jsr     PAD_ReadPadA
+    btst    #pad_button_start,d7
+    bne.w   abort_westone
     bra.s   infLoop
 
 
@@ -180,6 +185,12 @@ SendVRAMWriteAddress:
     move.l  d2,vdp_control
 	move.l 	(sp)+,d3
 	rts
+
+
+abort_westone:                                      ; jump when start is pressed
+    moveq   #$FFFFFFFF,d0                           ; stop logo jingle sound
+    jsr     ($366)
+    jmp     jmp_SEGA
 
 
 palette_westone:

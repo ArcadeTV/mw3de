@@ -48,7 +48,7 @@ Entry is at 4101C-4101F: 02_0423FA
 | 2336     | Tiles        | For Plane B: Dragon                    |
 | 6D9E     | Tiles        | For Plane B: Dragon, first pack: 65CC6 |
 | 6BCE     | Tiles        | For Sprites: Logo, first pack: 4155C   |
-| 5596     | Sprite Table | Logo in vram D000 from FF2800          |
+| 5596     | Sprite Table | Sprites in vram D000 from FF2800       |
 
 
  

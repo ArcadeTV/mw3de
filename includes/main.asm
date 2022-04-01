@@ -255,7 +255,81 @@ musicID_reset_max:
 musicIDs:
     dc.b    $14,$01,$00,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$0B,$0C,$0D,$0E,$0F,$10,$11,$12,$15,$17,$16
     even
+musicTitle1:
+    dc.b    "        < #1: Titel >         ",0
+musicTitle2:
+    dc.b    "      < #2: Der Anfang >      ",0
+musicTitle3:
+    dc.b    "    < #3: Die Pilz-Höhle >    ",0
+musicTitle4:
+    dc.b    "       < #4: Songname >       ",0
+musicTitle5:
+    dc.b    "       < #5: Songname >       ",0
+musicTitle6:
+    dc.b    "       < #6: Songname >       ",0
+musicTitle7:
+    dc.b    "       < #7: Songname >       ",0
+musicTitle8:
+    dc.b    "       < #8: Songname >       ",0
+musicTitle9:
+    dc.b    "       < #9: Songname >       ",0
+musicTitle10:
+    dc.b    "       < #10: Songname >       ",0
+musicTitle11:
+    dc.b    "       < #11: Songname >       ",0
+musicTitle12:
+    dc.b    "       < #12: Songname >       ",0
+musicTitle13:
+    dc.b    "       < #13: Songname >       ",0
+musicTitle14:
+    dc.b    "       < #14: Songname >       ",0
+musicTitle15:
+    dc.b    "       < #15: Songname >       ",0
+musicTitle16:
+    dc.b    "       < #16: Songname >       ",0
+musicTitle17:
+    dc.b    "       < #17: Songname >       ",0
+musicTitle18:
+    dc.b    "       < #18: Songname >       ",0
+musicTitle19:
+    dc.b    "       < #19: Songname >       ",0
+musicTitle20:
+    dc.b    "       < #20: Songname >       ",0
+musicTitle21:
+    dc.b    "       < #21: Songname >       ",0
+musicTitle22:
+    dc.b    "       < #22: Songname >       ",0
+musicTitle23:
+    dc.b    "       < #23: Songname >       ",0
+musicTitle24:
+    dc.b    "       < #24: Songname >       ",0
 
+titleTable:
+    dc.l    musicTitle1
+    dc.l    musicTitle2
+    dc.l    musicTitle3
+    dc.l    musicTitle4
+    dc.l    musicTitle5
+    dc.l    musicTitle6
+    dc.l    musicTitle7
+    dc.l    musicTitle8
+    dc.l    musicTitle9
+    dc.l    musicTitle10
+    dc.l    musicTitle11
+    dc.l    musicTitle12
+    dc.l    musicTitle13
+    dc.l    musicTitle14
+    dc.l    musicTitle15
+    dc.l    musicTitle16
+    dc.l    musicTitle17
+    dc.l    musicTitle18
+    dc.l    musicTitle19
+    dc.l    musicTitle20
+    dc.l    musicTitle21
+    dc.l    musicTitle22
+    dc.l    musicTitle23
+    dc.l    musicTitle24
+    
 ;showTrackInfo:
 ;    move.w #$8300+($A000>>10),($c00004).l
 ;    SetVRAMWrite $A000 
@@ -264,4 +338,59 @@ musicIDs:
 ;    move.w  #$20C4,vdp_data
 ;    dbra    d3,.loop
 ;    rts 
-    
+
+
+killSprites:
+    SetVRAMWrite $3C00
+    move.l  #((32*32)/2),d0
+.loop1
+    move.b  #0,vdp_data
+    dbra    d0,.loop1
+
+    SetVRAMWrite $5860
+    move.l  #((13*32)/2),d0
+.loop2a 
+    move.b  #0,vdp_data
+    dbra    d0,.loop2a
+
+    SetVRAMWrite $5A60
+    move.l  #((12*32)/2),d0
+.loop2b 
+    move.b  #0,vdp_data
+    dbra    d0,.loop2b
+
+
+    SetVRAMWrite $74A0
+    move.l  #((27*32)/2),d0
+.loop3 
+    move.b  #0,vdp_data
+    dbra    d0,.loop3
+
+    dc.b    $22,$7C,$00,$00,$4D,$A4 ; movea.l #aKmnu,a1
+    jmp     ret_killSprites
+
+;==============================================================
+; Joypad/Controllers Routines
+;==============================================================
+
+PAD_InitPads:
+    move.b #pad_byte_latch,pad_ctrl_a
+    move.b #pad_byte_latch,pad_ctrl_b
+    rts
+
+PAD_ReadPadA:
+    ; Returns: d7 (word) - pad A state in format 00SA0000 00CBRLDU
+    move.b  #$00,pad_data_a
+    nop
+    nop
+    move.b  pad_data_a,d7
+    lsl.w   #$08,d7
+    move.b  #pad_byte_latch,pad_data_a
+    nop
+    nop
+    move.b  pad_data_a,d7
+    neg.w   d7
+    subq.w  #$01,d7
+    andi.w  #pad_button_all,d7
+    move.l  d7,($FFFF1996).l
+    rts
