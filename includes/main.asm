@@ -152,3 +152,116 @@ bypassSphinx_correct:
 
 
 
+bypass_checkInput:
+    bsr.w   checkInput_Left
+    bsr.w   checkInput_Right
+    bsr.w   checkStartBtn
+    bne.s   jmp_7224
+    jmp     (ret_bypass_checkInput)
+jmp_7224:
+    jmp     ($7224)
+
+bypass_checkInputWithSRAM:
+    bsr.w   checkInput_Left
+    bsr.w   checkInput_Right
+    bsr.w   checkStartBtn
+    beq.s   jmp_71FC
+    jmp     (ret_bypass_checkInputWithSRAM)
+jmp_71FC:
+    jmp     ($71FC)
+
+
+;513C 
+;#0 -> up
+;#1 -> down
+;#2 -> left
+;#3 -> right
+;#4 -> btn_B
+;#5 -> btn_C
+;#6 -> btn_A
+;#7 -> Start
+checkStartBtn:
+    move.b  ($FFFF8A7D).w,d0
+    bpl.s   loc_5156
+    lea     ($FFFF8A81).w,a0
+    andi.b  #$7F,d0
+    beq.s   loc_5150
+    lea     ($FFFF8A84).w,a0
+loc_5150:
+    btst    #7,(a0)
+    bra.s   locret_516E
+loc_5156:
+    moveq   #$FFFFFF80,d0
+    btst    #7,($FFFF8A81).w
+    bne.s   pressed_Start
+    btst    #7,($FFFF8A84).w
+    beq.s   locret_516E
+    moveq   #$FFFFFF81,d0
+pressed_Start:
+    move.b  d0,($FFFF8A7D).w
+locret_516E:
+    rts
+
+
+checkInput_Left:
+    btst    #2,($FFFF8A81).w
+    bne.s   pressed_Left
+    bra.w   locret
+checkInput_Right:
+    btst    #3,($FFFF8A81).w
+    bne.s   pressed_Right
+    bra.w   locret
+pressed_Left:
+    bsr.w   musicLeft
+    bra.w   locret
+pressed_Right:
+    bsr.w   musicRight
+locret:
+    rts
+
+
+TRACKS equ 24
+
+musicRight:
+    movem.l d0-d1/a0-a1,-(sp)
+    cmpi.b  #TRACKS-1,($FFFF1970)
+    bcc.w   musicID_reset_min
+    addi.b  #1,($FFFF1970)
+    move.b  ($FFFF1970),d0
+    bra.w   musicPlayAndReturn
+musicLeft:
+    movem.l d0-d3/a0-a1,-(sp)
+    tst.b   ($FFFF1970)
+    beq.w   musicID_reset_max
+    subi.b  #1,($FFFF1970)
+musicPlayAndReturn:
+    move.b  ($FFFF1970),d0
+    lea     musicIDs,a0
+    move.b  (a0,d0),d1
+    move.l  d1,d0
+    jsr     ($366)
+    ;jsr     showTrackInfo
+    movem.l (sp)+,d0-d3/a0-a1
+    rts 
+
+musicID_reset_min:
+    move.b  0,($FFFF1970)
+    bra.w   musicPlayAndReturn
+musicID_reset_max:
+    move.b  #TRACKS-1,($FFFF1970)
+    bra.w   musicPlayAndReturn
+
+
+musicIDs:
+    dc.b    $14,$01,$00,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$0B,$0C,$0D,$0E,$0F,$10,$11,$12,$15,$17,$16
+    even
+
+;showTrackInfo:
+;    move.w #$8300+($A000>>10),($c00004).l
+;    SetVRAMWrite $A000 
+;    move.l #2048-1,d3 
+;.loop 
+;    move.w  #$20C4,vdp_data
+;    dbra    d3,.loop
+;    rts 
+    

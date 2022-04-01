@@ -75,6 +75,10 @@ westone:
 	dbra    d1,@Map_Logo_Loop_cols		    
 
 
+    ; play sound:
+    moveq   #$13,d0
+    jsr     ($366)
+
 
     ; fadeIn Westone palette:
 
@@ -91,7 +95,6 @@ westone:
     dbra   d1,.ldpal
 
 
-
     ; setup vdp
     ;move.w #$8014,($c00004).l
     ;move.w #$8164,($c00004).l
@@ -103,7 +106,7 @@ infLoop:
     jsr     WaitVBlank 
     move.l  ($FFFF1984).l,d0 
     addi.l  #1,d0 
-    cmpi.l  #$80,d0
+    cmpi.l  #$150,d0
     bcc.s   jmp_SEGA
     move.l  d0,($FFFF1984).l
     bra.s   infLoop

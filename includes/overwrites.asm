@@ -104,6 +104,16 @@ sub_1F8E:                                   ; just a label
     org     $4D00                           ; GMode after SEGA
     ;dc.l    GM_Kwst
 
+    org     $71E0
+    jmp     bypass_checkInput
+    org     $71E6 
+ret_bypass_checkInput:
+
+    org     $71EC
+    jmp     bypass_checkInputWithSRAM
+    org     $71F2
+ret_bypass_checkInputWithSRAM:
+
     org     $6FFC
     jsr     westone 
     nop 

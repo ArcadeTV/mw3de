@@ -299,3 +299,35 @@ or
     jmp     (absolute).l
 
 ```
+
+### Music
+
+```
+moveq   #ID,d0
+jsr     ($366)
+```
+
+- 00 - Cave 1, Mushroom cave
+- 01 - Beginning music
+- 02 - Lilypad and Childam
+- 03 - Sky, before sky fortress
+- 04 - Desert
+- 05 - Castle and outside the castle in the beginning
+- 06 - Pyramid
+- 07 - Cave after Queen Eleanora
+- 08 - Generic boss theme used by Gragg & Glagg, Ice Bomber,
+- 09 - Jungle music before beating the tribe
+- 0A - Alsedo, and the underwater temple
+- 0B - Eleanora
+- 0C - Beach areas
+- 0D - Jungle, normal
+- 0E - Boss theme used by Tyrant Dragon
+- 0F - Begonia
+- 10 - Generic boss theme used by Mushroom boss, Sphinx, Almighty Demon King, and final boss
+- 11 - Sky castle
+- 12 - Underwater areas, ice areas
+- 13 - Unknown jingle
+- 14 - Title screen
+- 15 - Spaceship
+- 16 - End credits
+- 17 - Final dungeon
