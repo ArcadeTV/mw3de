@@ -3,7 +3,7 @@
 **Translation (DE) / ROMHACK**
 
 ## -== Todo List ==-
-_Dated 2022-03-25_
+_Dated 2022-04-03_
 
 ---
 
@@ -45,6 +45,6 @@ _Dated 2022-03-25_
 
 ### Extras
 
-- [ ] Create Sound Test
+- [x] Create Sound Test
 - [ ] Transplant prettier SEGA logo from Golden Axe
-- [ ] Implement a Westone logo screen before title
+- [x] Implement a Westone logo screen before title
