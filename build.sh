@@ -52,4 +52,8 @@ fi
 ./tools/mac/fixheader "./roms/Wonder Boy in Monster World (T-German).md"
 
 
+# -----------------------------------------------------------------------------------------------
+# create bps patch file
+./tools/mac/flips --create "./roms/Wonder Boy in Monster World (USA, Europe).md" "./roms/Wonder Boy in Monster World (T-German).md" "./roms/Wonder Boy in Monster World (T-German, ArcadeTV, WIPv$(date +%Y-%m-%d)).bps"
+
 echo "done!"
