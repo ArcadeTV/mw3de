@@ -37,6 +37,8 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
     ; MAIN CODE:
     include "includes/main.asm"
     include "includes/vint.asm"
+    include "includes/joypad.asm"
+    include "includes/soundtest.asm"
 
 
     ; TEXT DATA:
@@ -66,6 +68,8 @@ CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
     include "includes/text/ocarina.asm"
     
     include "includes/text/messages.asm"
+
+    include "includes/data/music_tracks.asm"
 
 
     ; Modified Textbox Styles Table:

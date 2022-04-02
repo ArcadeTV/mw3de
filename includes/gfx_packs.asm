@@ -64,3 +64,11 @@ newInnSign_Begonia_GFX_pack:
     incbin "includes/bin/gfx/pack13.cbin" ; Begonia
 newInnSign_Childam_GFX_pack:
     incbin "includes/bin/gfx/pack14.cbin" ; Childam
+
+
+; Font for SoundTest:
+
+font:
+    incbin "includes/bin/gfx/font.bin"
+
+    even

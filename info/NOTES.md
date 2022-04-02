@@ -276,18 +276,18 @@ GM TITLE: 004D1C
 ### Game Modes
 is set in ROM:$50F0 -> RAM:$FF804C
 
-| Description                             | Mode | ModeAddress | jmpGMode  | absolute  |
-| :-------------------------------------- | :--- | :---------- | :-------- | :-------- |
-| Ending                                  | Kedm | 4F54        | 50D4      |           |
-| SEGA Logo                               | Ksmt | 4CC4        | 50D4,50E2 | 4CB8,4F9C |
-| Title with animation                    | Ktmt | 4D14        | 50D4      | 4CEC      |
-| Game start                              | Kgmt | 507C        | 50D4      | 4DCA      |
-| Demo Game                               | Kdym | 4DDE        | 50D4      | 4D90      |
-| Title Music Start                       | Ktm3 | 4D52        | 50E2      | 4D3E      |
-| Title after pressing Start > New Game   | Kmnu | 4DA4        | 50E2      | 4D6C?     |
-| Title after pressing Start in SEGA Mode | Ktm2 | 4D64        | 50D4      |           |
-|                                         | Keds | 4FC8        |           |           |
-|                                         | Kcol | 5608        |           |           |
+| Description                             | Mode | ModeAddress | jmpGMode  | absolute   |
+| :-------------------------------------- | :--- | :---------- | :-------- | :--------- |
+| Ending                                  | Kedm | 4F54        | 50D4      |            |
+| SEGA Logo                               | Ksmt | 4CC4        | 50D4,50E2 | 4CB8,4F9C  |
+| Title with animation                    | Ktmt | 4D14        | 50D4      | 4CEC       |
+| Game start                              | Kgmt | 507C        | 50D4      | 4DCA       |
+| Demo Game                               | Kdym | 4DDE        | 50D4      | 4D90       |
+| Title Music Start                       | Ktm3 | 4D52        | 50E2      | 4D3E       |
+| Title after pressing Start > New Game   | Kmnu | 4DA4        | 50E2      | 4D86,4D6C? |
+| Title after pressing Start in SEGA Mode | Ktm2 | 4D64        | 50D4      |            |
+|                                         | Keds | 4FC8        |           |            |
+|                                         | Kcol | 5608        |           |            |
 
 ```
     movea.l #ModeAddress,a1
