@@ -16,6 +16,11 @@ if [[ -f "./roms/Wonder Boy in Monster World (T-German).md" ]]; then
 fi
 echo "Deleted old ROM file">./tmp/build.log
 
+find ./roms/ -maxdepth 1 -type f -name "*.zip" -delete 
+echo "Deleted any old ZIP file(s)">./tmp/build.log
+
+find ./roms/ -maxdepth 1 -type f -name "*.bps" -delete
+echo "Deleted any old BPS file(s)">./tmp/build.log
 
 # -----------------------------------------------------------------------------------------------
 # create version file
@@ -55,5 +60,11 @@ fi
 # -----------------------------------------------------------------------------------------------
 # create bps patch file
 ./tools/mac/flips --create "./roms/Wonder Boy in Monster World (USA, Europe).md" "./roms/Wonder Boy in Monster World (T-German).md" "./roms/Wonder Boy in Monster World (T-German, ArcadeTV, WIPv$(date +%Y-%m-%d)).bps"
+
+
+# -----------------------------------------------------------------------------------------------
+# compress bps to zip for easy sharing
+zip -X ./roms/mw3-de_wip$(date +%Y-%m-%d).zip ./roms/*.bps
+
 
 echo "done!"
