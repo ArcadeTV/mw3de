@@ -107,7 +107,7 @@ sub_1F8E:                                   ; just a label
     org     $4D80                           ; kill sprites at the bottom after entering titlescreen for interaction
     jmp     killSprites
 ret_killSprites
-
+    
     org     $71E0
     jmp     bypass_checkInput
     org     $71E6 
@@ -360,6 +360,10 @@ tilemap_toBeContinued:
     ; Alsedo Inn Sign:
     org     $4134C
     dc.l    newInnSign_Alsedo_GFX_pack+$02000000    ; was 02 05906B
+
+    ; GAME OVER:
+    org     $413FC
+    dc.l    GameOver_GFX_pack+$02000000             ; was 02 05D47B
 
     ; Childam Inn Sign:
     org     $4142C

@@ -143,8 +143,8 @@ item45:
 item46:    
     dc.b    "Hi-Potion",0
 
-item47:    
-    dc.b    $FB,$CF,$FE,$E4,$00
+item47:     ; Rod, japanese leftover $FB,$CF,$FE,$E4,$00
+    dc.b    "Stab",0
 
 item48:    
     dc.b    "Lampe",0
@@ -153,13 +153,19 @@ item49:
     dc.b    "Amulett",0
 
 item50:    
-    dc.b    "Sonnenschl",ue,"ssel",0
+    dc.b    "Sonnen"
+    dc.w    SunKey
+    dc.b    0
 
 item51:    
-    dc.b    "Mondschl",ue,"ssel",0
+    dc.b    "Mond"
+    dc.w    MoonKey
+    dc.b    0
 
 item52:    
-    dc.b    "Sternenschl",ue,"ssel",0
+    dc.b    "Stern"
+    dc.w    StarKey
+    dc.b    0
 
 item53:    
     dc.b    "Goldstein",0
@@ -171,7 +177,7 @@ item55:
     dc.b    "Alte Axt",0
 
 item56:    
-    dc.b    "Feuer Urne",0
+    dc.b    "Tiegel",0
 
 item57:    
     dc.b    "Armreif",0

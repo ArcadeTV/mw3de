@@ -583,7 +583,7 @@ text69_p4:
     dc.b    "aber etwas das ich",cc_newline,"daf",ue,"r ben",oe,"tige",cc_newline,"wurde mir gestohlen.",cc_wait,cc_close
 text69_withFireUrn:
     dc.b    $0B,$14,$4D
-    dc.b    "Mit der Feuer-Urne",cc_newline,"kann ich die alte Axt",cc_newline,"einschmelzen,",cc_wait,cc_newline
+    dc.b    "Mit meinem Tiegel",cc_newline,"kann ich die alte",cc_newline,"Axt einschmelzen,",cc_wait,cc_newline
     dc.b    "um ein Schwert",cc_newline,"daraus zu schmieden.",cc_newline,cc_wait,cc_newline,cc_newline
     dc.b    "Es wird aber",cc_newline,"eine Weile dauern.",cc_newline,cc_wait,cc_newline,cc_newline
     dc.b    "Der Drachen",ae,"lteste",cc_newline,"hatte bereits nach",cc_newline,"Dir verlangt.",cc_wait,cc_newline

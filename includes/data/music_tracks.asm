@@ -5,7 +5,7 @@
 
 
 musicIDs:
-    dc.b    $14,$01,$0C,$05,$0A,$00,$08,$02,$0B,$07,$09,$0D,$0D,$12,$04,$06,$0E,$0D,$03,$11,$15,$16,$17,$54
+    dc.b    $14,$01,$0C,$05,$0A,$00,$08,$02,$0B,$07,$09,$0D,$0E,$12,$04,$06,$0F,$10,$03,$11,$15,$16,$17,$54
 
     even
 
@@ -33,9 +33,9 @@ musicTitle10:
 musicTitle11:
     dc.b    "       < # Lilypad Wald >       ",0                            ; ID: 09 
 musicTitle12:
-    dc.b    "          < # Boss 2 >          ",0                            ; ID: 0D 
+    dc.b    "         < # Dschungel >        ",0                            ; ID: 0D
 musicTitle13:
-    dc.b    "         < # Dschungel >        ",0                            ; ID: 0D 
+    dc.b    "          < # Boss 2 >          ",0                            ; ID: 0E 
 musicTitle14:
     dc.b    "        < # Unterwasser >       ",0                            ; ID: 12 
 musicTitle15:
@@ -43,9 +43,9 @@ musicTitle15:
 musicTitle16:
     dc.b    "         < # Pyramide >         ",0                            ; ID: 06 
 musicTitle17:
-    dc.b    "    < # D",uml_O,"rfliche Kl",uml_A,"nge 3 >    ",0            ; ID: 0E 
+    dc.b    "    < # D",uml_O,"rfliche Kl",uml_A,"nge 3 >    ",0            ; ID: 0F
 musicTitle18:
-    dc.b    "          < # Boss 3 >          ",0                            ; ID: 0D 
+    dc.b    "          < # Boss 3 >          ",0                            ; ID: 10 
 musicTitle19:
     dc.b    "          < # Himmel >          ",0                            ; ID: 03 
 musicTitle20:

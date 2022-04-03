@@ -37,9 +37,9 @@ newTitleTxtGFX_pack3:
 ; Custom Characters:
 
 fontGFX_pack_de:
-    incbin "includes/bin/gfx/font_de_umlaute.cbin"
+    incbin "includes/bin/gfx/font_de_umlaute.cbin"  ; Custom localized chars and icons
 fontGFX_pack_c:
-    incbin "includes/bin/gfx/font_c.cbin"
+    incbin "includes/bin/gfx/font_c.cbin"           ; changed character "c" because it looked like "e"
 
     align 2
 
@@ -65,6 +65,13 @@ newInnSign_Begonia_GFX_pack:
 newInnSign_Childam_GFX_pack:
     incbin "includes/bin/gfx/pack14.cbin" ; Childam
 
+
+; GAME OVER
+
+GameOver_GFX_pack:
+    incbin "includes/bin/gfx/pack15.cbin"
+
+    even
 
 ; Font for SoundTest:
 

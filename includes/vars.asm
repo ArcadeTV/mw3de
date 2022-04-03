@@ -2,6 +2,15 @@
 ; VARIABLES
 ; =================================================================================================
 
+; Locations
+
+locSpriteTable_logo         equ $A0E00
+locSpriteTable_newGame      equ $A18A8
+locSpriteTable_continue     equ $A18B8
+locSpriteTable_pressStart   equ $A18C8
+locSpriteTable_arrow        equ $A18E7
+
+
 ; German Chars (Umlaute)
 
 cAE                     equ $F0 ; Ä
@@ -30,3 +39,10 @@ tilecount_toBeContinued equ 53
 ; Sound Test
 
 TRACKS                  equ 24
+
+
+; Key Icons
+
+SunKey                  equ $E0E1
+MoonKey                 equ $E2E3
+StarKey                 equ $E4E5

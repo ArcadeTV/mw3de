@@ -18,7 +18,7 @@
 CHEAT_99GOLD  = 0                   ; Have 999999 Gold
 CHEAT_UNLGOLD = 0                   ; Gold is not decreased upon purchases
 CHEAT_HEARTS  = 0                   ; Have all hearts
-CHEAT_INVINC  = 1                   ; Energy is not decreased upon getting hit
+CHEAT_INVINC  = 0                   ; Energy is not decreased upon getting hit
 
 ; =================================================================================================
 
