@@ -20,7 +20,14 @@ if exist ".\roms\Wonder Boy in Monster World (T-German).md" (
   DEL ".\roms\Wonder Boy in Monster World (T-German).md"
   echo Deleted old ROM file>.\tmp\build.log
 )
-
+if exist .\roms\*.zip (
+  DEL .\roms\*.zip
+  echo Deleted old ZIP file>.\tmp\build.log
+)
+if exist .\roms\*.bps (
+  DEL .\roms\*.bps
+  echo Deleted old BPS file>.\tmp\build.log
+)
 
 REM -----------------------------------------------------------------------------------------------
 REM create version file
@@ -66,6 +73,14 @@ REM ----------------------------------------------------------------------------
 REM create bps patchfile
 
 .\tools\win\flips.exe --create ".\roms\Wonder Boy in Monster World (USA, Europe).md" ".\roms\Wonder Boy in Monster World (T-German).md" ".\roms\Wonder Boy in Monster World (T-German, ArcadeTV, WIPv%date%).bps"
+
+
+REM -----------------------------------------------------------------------------------------------
+REM create zip from the bps file
+
+cd /D roms
+..\tools\win\7z.exe a mw3-de_wip(%date%).zip *.bps>>..\tmp\build.log
+cd /D ..
 
 
 echo done!
