@@ -50,18 +50,20 @@ You need:
 
 ## How to build from source
 
-1. Clone the repository `git clone https://github.com/ArcadeTV/mw3de.git`.
-2. `Change Directory` into the cloned repository `cd mw3de`.
-3. Clone the tools-repository into a subfolder `git clone https://github.com/ArcadeTV/tools.git`
-4. Copy your source rom `Wonder Boy in Monster World (USA, Europe).md` (CRC: 1592F5B0) into the `mw3de/roms` subfolder.
+_Open a commandline/terminal_
+
+1. Clone the repository:<br>`git clone https://github.com/ArcadeTV/mw3de.git`.
+2. `Change Directory` into the cloned repository:<br>`cd mw3de`.
+3. Clone the tools-repository into a subfolder:<br>`git clone https://github.com/ArcadeTV/tools.git`
+4. Copy your source rom `Wonder Boy in Monster World (USA, Europe).md` (CRC: 1592F5B0)<br>into the `mw3de/roms` subfolder.
 5. Run the `build` script.
-6. Look inside your `roms` subfolder and find the ready patched rom and bps file.
+6. Look inside your `roms` subfolder<br>to find the ready patched rom and bps file.
 
 #### Notes for Windows Users
 
 On Windows/x64 just execute the `build.bat` file that is provided within the repository after setting up your directory with repo, tools and rom.
 
-You may want to install `tools\vcredist_x86.exe` as a dependency for some commandline tools if you run into an error.
+You may want to install `tools\win\vcredist_x86.exe` as a dependency for some commandline tools if you run into an error.
 
 
 #### Mac and Unix
