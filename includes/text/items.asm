@@ -132,16 +132,16 @@ item42:
     dc.b    "Elixier",0
 
 item43:    
-    dc.b    "Heiltrank",0 ; Medicine
+    dc.b    "Heiltrank",0 ; Medicine (+1 Heart)
 
 item44:    
-    dc.b    "Medizin",0 ; Potion
+    dc.b    "Medizin",0 ; Potion (+3 Heart)
 
 item45:    
-    dc.b    "Tonikum",0 ; Holy Water
+    dc.b    "Tonikum",0 ; Holy Water (+5 Heart)
 
 item46:    
-    dc.b    "Wundermittel",0 ; Hi-Potion
+    dc.b    "Wundermittel",0 ; Hi-Potion (All Heart)
 
 item47:     ; Rod, japanese leftover $FB,$CF,$FE,$E4,$00
     dc.b    "Stab",0
