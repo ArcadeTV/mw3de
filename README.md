@@ -55,7 +55,7 @@ You need:
 3. Clone the tools-repository into a subfolder `git clone https://github.com/ArcadeTV/tools.git`
 4. Copy your source rom `Wonder Boy in Monster World (USA, Europe).md` (CRC: 1592F5B0) into the `mw3de/roms` subfolder.
 5. Run the `build` script.
-
+6. Look inside your `roms` subfolder and find the ready patched rom and bps file.
 
 #### Notes for Windows Users
 
