@@ -59,14 +59,14 @@ _Open a commandline/terminal_
 5. Run the `build` script.
 6. Look inside your `roms` subfolder<br>to find the ready patched rom and bps file.
 
-#### Notes for Windows Users
+### Notes for Windows Users
 
 On Windows/x64 just type `build.bat` if you are using the *regular CMD/CommandPrompt*<br>or type `./build.bat` if you're using *PowerShell* after setting up your directory with repo, tools and rom.
 
 You may want to install `tools\win\vcredist_x86.exe` as a dependency for some commandline tools if you run into an error.
 
 
-#### Mac and Unix
+### Mac and Unix
 
 Make the shell script and tools executable by typing `chmod +x build.sh`, then run the script with `./build.sh`
 
