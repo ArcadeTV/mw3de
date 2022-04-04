@@ -364,7 +364,7 @@ text56_p2:
     dc.w    text56_useWithCaution-text56_p2 ; 00 31
     dc.b    "Willkommen bei",cc_newline,"Felissimo.",cc_newline,cc_wait,cc_newline
     dc.b    "Wir haben Heiltr",ae,"nke",cc_newline,"im Angebot.",cc_newline,cc_wait
-    dc.b    "Sie f",ue,"llen",cc_newline,"ein Herz mit",cc_newline,"frischer Energie.",cc_close
+    dc.b    "Sie f",ue,"llen",cc_newline,"ein Herz mit",cc_newline,"frischer Energie.",cc_wait,cc_close
 text56_useWithCaution:
     dc.b    "Verwende Heiltr",ae,"nke",cc_newline,"mit Sorgfalt!",cc_wait,cc_close
 
