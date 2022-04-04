@@ -1,15 +1,39 @@
 ## Wonderboy V Translation Project
 _This a work-in-progress_
 
-This project started at www.circuit-board.de with the help of these awesome people.
+
+This project started at [www.circuit-board.de](www.circuit-board.de) with the help of some awesome people.
 
 - Please see the current [Todo List](https://github.com/ArcadeTV/mw3de/blob/main/info/TODO.md)
 - Report any issues [here](https://github.com/ArcadeTV/mw3de/issues)
 - See [commits](https://github.com/ArcadeTV/mw3de/commits/main) in main branch for a brief changelog.
 
+--- 
+
+### Title:
+German translation, Romhack
+for Wonder Boy in Monster World - Monster World III
+
+### System:
+SEGA GENESIS / MEGA DRIVE
+
+### Compatibility:  
+Works on real hardware with 
+- MEGA Everdrive Pro, 
+- MegaSD* or 
+- any other (Flash or Repro) Cart
+- miSTer
+- most emulators
+
+### Source ROM:     
+- Wonder Boy in Monster World (USA, Europe).md
+- CRC32: 1592F5B0
+- MD5: EDBA0BDB192D47712EDBE0097F885F40
+- SHA-1: 87A968F773C7E807E647C0737132457B06B78276
+
 ---
 
-#### How to use the patch:
+## How to use the bps patch:
 
 You need:
 - [x] The [latest release](https://github.com/ArcadeTV/mw3de/releases/latest) from the releases tab. <br>Extract the .bps patch file.
@@ -24,70 +48,22 @@ You need:
 
 ---
 
-```
- _____               _     _____ _____ 
-|  _  |___ ___ ___ _| |___|_   _|  |  |
-|     |  _|  _| .'| . | -_| | | |  |  |
-|__|__|_| |___|__,|___|___| |_|  \___/ 
-                             
+## How to build from source
 
-Title:          German translation, Romhack
-                Wonder Boy in Monster World - Monster World III
-System:         SEGA GENESIS / MEGA DRIVE
-               
+1. Clone the repository `git clone https://github.com/ArcadeTV/mw3de.git`.
+2. `Change Directory` into the cloned repository `cd mw3de`.
+3. Clone the tools-repository into a subfolder `git clone https://github.com/ArcadeTV/tools.git`
+4. Copy your source rom `Wonder Boy in Monster World (USA, Europe).md` (CRC: 1592F5B0) into the `mw3de/roms` subfolder.
+5. Run the `build` script.
 
-Compatibility:  Works on real hardware with 
-                MEGA Everdrive Pro, 
-                MegaSD* or 
-                any other (Flash or Repro) Cart
-                mister*
-                as well as most emulators
 
-SourceROMs:     Wonder Boy in Monster World (USA, Europe).md
-                CRC32: 1592F5B0
-                MD5: EDBA0BDB192D47712EDBE0097F885F40
-                SHA-1: 87A968F773C7E807E647C0737132457B06B78276
+#### Notes for Windows Users
 
-Date:           2022-03-27
-
-Category:       Romhack / Translation
-               
-Source:         https://github.com/ArcadeTV/mw3de
-
-```
-
-### How to build from source
-
-#### Windows
-
-On Windows/x64 just execute the `build.bat` file that is provided within the repository.
+On Windows/x64 just execute the `build.bat` file that is provided within the repository after setting up your directory with repo, tools and rom.
 
 You may want to install `tools\vcredist_x86.exe` as a dependency for some commandline tools if you run into an error.
 
 
 #### Mac and Unix
 
-Make the shell script executable by typing `chmod +x build.sh`, then run the script with `./build.sh`
-
----
-
-### Tools included
-
-* [VASM](http://sun.hasenbraten.de/vasm/) (**[vasmm68k_mot_win32.exe](http://www.alphatron.co.uk/vasm/)**) <- Win-compiled by Rob
-* **[fixheader.exe](https://github.com/sonicretro/s2disasm/raw/master/win32/fixheader.exe)** which fixes the ROM’ internal checksum in the header and prevents red-screen lockups
-* furrtek's [rompadder](http://furrtek.free.fr/noclass/neogeo/pad.c)
-
-
-
-#### Optional Tools (for coding and asset creation)
-
-* [Visual Studio Code](https://code.visualstudio.com/)
-  * [Motorola 68000 Assembly Extension](https://marketplace.visualstudio.com/items?itemName=clcxce.motorola-68k-assembly)
-* [Imagenesis4000](http://devster.monkeeh.com/sega/imagenesis/)
-* Aseprite
-
----
-
-### Thanks in no particular order
-
-**RedScorpion** (ASM help), **saturnu** (tech. support), **n00b** (grammar and spell checking), **Big Evil Corporation** (Tutorials), **Hugues Johnson** (Tutorials), **Markey Jester** (Tutorials), **krikzz** (Mega Everdrive Flashcarts)
+Make the shell script and tools executable by typing `chmod +x build.sh`, then run the script with `./build.sh`
