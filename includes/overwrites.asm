@@ -368,7 +368,7 @@ tilemap_toBeContinued:
     ; POTIONS 1/2:
     ; Medicine (1 Heart) and Potion (3 Hearts):
     org     $41404
-    dc.l    Potions_GFX_pack1+$02000000             ; was 01 05DAF0
+    dc.l    Potions_GFX_pack1+$01000000             ; was 01 05DAF0
 
     ; Childam Inn Sign:
     org     $4142C
@@ -410,7 +410,7 @@ tilemap_toBeContinued:
     ; POTIONS 1/2:
     ; Holy Water (5 Hearts) and Hi-Potion (All Hearts):
     org     $415C0
-    dc.l    Potions_GFX_pack2+$02000000             ; was 01 06B192
+    dc.l    Potions_GFX_pack2+$01000000             ; was 01 06B192
 
 
     ; Replace Sprite Table Values for re-positioning:
