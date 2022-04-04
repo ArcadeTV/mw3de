@@ -53,7 +53,7 @@ You need:
 _Open a commandline/terminal_
 
 1. Clone the repository:<br>`git clone https://github.com/ArcadeTV/mw3de.git`.
-2. `Change Directory` into the cloned repository:<br>`cd mw3de`.
+2. Navigate into the cloned repository:<br>`cd mw3de`.
 3. Clone the tools-repository into a subfolder:<br>`git clone https://github.com/ArcadeTV/tools.git`
 4. Copy your source rom `Wonder Boy in Monster World (USA, Europe).md` (CRC: 1592F5B0)<br>into the `mw3de/roms` subfolder.
 5. Run the `build` script.
