@@ -32,8 +32,9 @@ if exist .\roms\*.bps (
 REM -----------------------------------------------------------------------------------------------
 REM create version file
 
-echo     dc.b " - %date% - ">.\includes\version.asm
-echo Set version to %date%>>.\tmp\build.log
+set VERSION=%date:/=.%
+echo     dc.b " - %VERSION% - ">.\includes\version.asm
+echo Set version to %VERSION%>>.\tmp\build.log
 
 
 REM -----------------------------------------------------------------------------------------------
@@ -72,14 +73,14 @@ echo fixed header checksum>>.\tmp\build.log
 REM -----------------------------------------------------------------------------------------------
 REM create bps patchfile
 
-.\tools\win\flips.exe --create ".\roms\Wonder Boy in Monster World (USA, Europe).md" ".\roms\Wonder Boy in Monster World (T-German).md" ".\roms\Wonder Boy in Monster World (T-German, ArcadeTV, WIPv%date%).bps"
+.\tools\win\flips.exe --create ".\roms\Wonder Boy in Monster World (USA, Europe).md" ".\roms\Wonder Boy in Monster World (T-German).md" ".\roms\Wonder Boy in Monster World (T-German, ArcadeTV, WIPv%VERSION%).bps"
 
 
 REM -----------------------------------------------------------------------------------------------
 REM create zip from the bps file
 
 cd /D roms
-..\tools\win\7z.exe a mw3-de_wip(%date%).zip *.bps>>..\tmp\build.log
+..\tools\win\7z.exe a mw3-de_wip(%VERSION%).zip *.bps>>..\tmp\build.log
 cd /D ..
 
 
