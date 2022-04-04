@@ -69,3 +69,19 @@ You may want to install `tools\win\vcredist_x86.exe` as a dependency for some co
 #### Mac and Unix
 
 Make the shell script and tools executable by typing `chmod +x build.sh`, then run the script with `./build.sh`
+
+---
+
+## Build Options
+
+### Cheats
+
+Open the file `patch_de.asm` and see the available options at the top of the page:
+
+To enable a cheat set the desired variable to 1 and save the file.
+Be aware that the file may be overwritten upon pulling updates.
+
+- *CHEAT_99GOLD*: Have 999999 Gold
+- *CHEAT_UNLGOLD*: Gold is not decreased upon purchases
+- *CHEAT_HEARTS*: Have all hearts
+- *CHEAT_INVINC*: Energy is not decreased upon getting hit
