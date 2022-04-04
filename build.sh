@@ -7,24 +7,29 @@ if [[ -f "./roms/Wonder Boy in Monster World (USA, Europe).md" ]]; then
 else
 	echo -e "echo Source ROM not found. Aborting." && exit 1
 fi
-
+echo "Starting to build...">./tmp/build.log
 
 # -----------------------------------------------------------------------------------------------
 # delete any old versions
+if [[ -f "./includes/version.asm" ]]; then
+	rm "./includes/version.asm"
+	echo "Deleted old version.asm file">>./tmp/build.log
+fi
+
 if [[ -f "./roms/Wonder Boy in Monster World (T-German).md" ]]; then
 	rm "./roms/Wonder Boy in Monster World (T-German).md"
+	echo "Deleted old ROM file">>./tmp/build.log
 fi
-echo "Deleted old ROM file">./tmp/build.log
 
 find ./roms/ -maxdepth 1 -type f -name "*.zip" -delete 
-echo "Deleted any old ZIP file(s)">./tmp/build.log
+echo "Deleted any old ZIP file(s)">>./tmp/build.log
 
 find ./roms/ -maxdepth 1 -type f -name "*.bps" -delete
-echo "Deleted any old BPS file(s)">./tmp/build.log
+echo "Deleted any old BPS file(s)">>./tmp/build.log
 
 # -----------------------------------------------------------------------------------------------
 # create version file
-cat << EOF >>./tmp/build.log
+cat << EOF >>./includes/version.asm
     dc.b " - $(date +%Y-%m-%d) - "
 EOF
 echo "Set version to $(date +%Y-%m-%d)">>./tmp/build.log
