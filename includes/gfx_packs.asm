@@ -2,7 +2,7 @@
     
     align 2
 
-; New Logo:
+; New Logo: (Type 02=compressed)
 
 newLogoGFX_pack1:
     incbin "includes/bin/gfx/pack1.cbin"
@@ -18,13 +18,13 @@ newLogoGFX_pack6:
     incbin "includes/bin/gfx/pack6.cbin"
 
 
-; Exit Sign:
+; Exit Sign: (Type 02=compressed)
 
 newExitGFX_pack:
     incbin "includes/bin/gfx/exitsign.cbin"
 
 
-; Title Screen Text:
+; Title Screen Text: (Type 02=compressed)
 
 newTitleTxtGFX_pack1:
     incbin "includes/bin/gfx/pack7.cbin"
@@ -52,7 +52,7 @@ tileData_theEnd_de:
 tileData_theEnd_de_end:
 
 
-; Inn Signs:
+; Inn Signs: (Type 02=compressed)
 
 newInnSign_Alsedo_GFX_pack:
     incbin "includes/bin/gfx/pack10.cbin" ; Alsedo
@@ -66,12 +66,25 @@ newInnSign_Childam_GFX_pack:
     incbin "includes/bin/gfx/pack14.cbin" ; Childam
 
 
-; GAME OVER
+; GAME OVER (Type 02=compressed)
 
 GameOver_GFX_pack:
     incbin "includes/bin/gfx/pack15.cbin"
 
     even
+
+
+
+; Potions (Type 01=uncompressed)
+
+Potions_GFX_pack1:
+    incbin "includes/bin/gfx/pack16.bin" ; Medicine, Potion
+Potions_GFX_pack2:
+    incbin "includes/bin/gfx/pack17.bin" ; Holy Water, Hi-Potion
+
+    even
+
+
 
 ; Font for SoundTest:
 

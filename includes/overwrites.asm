@@ -365,6 +365,11 @@ tilemap_toBeContinued:
     org     $413FC
     dc.l    GameOver_GFX_pack+$02000000             ; was 02 05D47B
 
+    ; POTIONS 1/2:
+    ; Medicine (1 Heart) and Potion (3 Hearts):
+    org     $41404
+    dc.l    Potions_GFX_pack1+$02000000             ; was 01 05DAF0
+
     ; Childam Inn Sign:
     org     $4142C
     dc.l    newInnSign_Childam_GFX_pack+$02000000   ; was 02 060049
@@ -372,7 +377,6 @@ tilemap_toBeContinued:
     ; Begonia Inn Sign:
     org     $41470
     dc.l    newInnSign_Begonia_GFX_pack+$02000000   ; was 02 061EF0
-
 
     ; Logo:
     org     $4155C
@@ -402,6 +406,12 @@ tilemap_toBeContinued:
 
     org     $415A0 
     dc.l    newTitleTxtGFX_pack3+$02000000          ; was 02 06A4FE
+
+    ; POTIONS 1/2:
+    ; Holy Water (5 Hearts) and Hi-Potion (All Hearts):
+    org     $415C0
+    dc.l    Potions_GFX_pack2+$02000000             ; was 01 06B192
+
 
     ; Replace Sprite Table Values for re-positioning:
     org     $A0E4C                                  ; Sprite Table for Copyright Stuff
