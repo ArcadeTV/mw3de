@@ -20,6 +20,8 @@ _Dated 2022-04-03_
     - [x] Childam
 - [x] Modify the exit sign so that the word `EXIT` is no longer in it
 - [x] Translate the outro gfx `the end` and `to be continued`
+- [x] Translate the GAME OVER gfx
+- [ ] De-localize the different Potions and make them more distinguishable
 
 ---
 
