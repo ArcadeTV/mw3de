@@ -61,7 +61,7 @@ _Open a commandline/terminal_
 
 #### Notes for Windows Users
 
-On Windows/x64 just execute the `build.bat` file that is provided within the repository after setting up your directory with repo, tools and rom.
+On Windows/x64 just type `build.bat` if you are using the *regular CMD/CommandPrompt*<br>or type `./build.bat` if you're using *PowerShell* after setting up your directory with repo, tools and rom.
 
 You may want to install `tools\win\vcredist_x86.exe` as a dependency for some commandline tools if you run into an error.
 
