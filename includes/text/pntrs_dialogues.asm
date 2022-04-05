@@ -347,7 +347,7 @@ base_PointerTable_Dialogues:
     dc.w text84-base_PointerTable_Dialogues 
     
     ; #085: 03 1E5D
-    dc.b $03
+    dc.b $09
     dc.w text85-base_PointerTable_Dialogues 
     
     ; #086: 00 1E6D

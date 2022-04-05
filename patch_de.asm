@@ -3,24 +3,7 @@
 ; #                            Wonder Boy in Monster World (USA, Europe)                          #
 ; #                           for SEGA GENESIS - v0.1 2022-03-12, ArcadeTV                        #
 ; #################################################################################################
-; =================================================================================================
-; CHANGELOG
-; =================================================================================================
-; v1.1 : 2022-03-11
-; - Moved planes A and B down a bit
-; - Moved copyright text and icons down a bit
-;
-; v1.0 : 2022-03-09
-; - Draw an entirely new logo on the title screen
-; #################################################################################################
 
-; CHEATS:_______0: Cheat disabled, 1: Cheats enabled
-CHEAT_99GOLD  = 0                   ; Have 999999 Gold
-CHEAT_UNLGOLD = 0                   ; Gold is not decreased upon purchases
-CHEAT_HEARTS  = 0                   ; Have all hearts
-CHEAT_INVINC  = 0                   ; Energy is not decreased upon getting hit
-
-; =================================================================================================
 
     include "includes/constants.asm"
     include "includes/vars.asm"
@@ -28,6 +11,7 @@ CHEAT_INVINC  = 0                   ; Energy is not decreased upon getting hit
 
 
     ; PATCHED LOCATIONS:
+    include "includes/cheats.asm"
     include "includes/overwrites.asm"
 
 

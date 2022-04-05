@@ -173,52 +173,52 @@ text28:
 
 
 text29: 
-    dc.b    $0B,$0A,$18,$0F,$00,$00
+    dc.b    $0B,$0A,$18,$0F,$00,cc_close
 
 
 text30: 
-    dc.b    $0B,$0A,$19,$0F,$00,$00
+    dc.b    $0B,$0A,$19,$0F,$00,cc_close
 
 
 text31: 
-    dc.b    $0B,$0A,$1A,$0F,$00,$00
+    dc.b    $0B,$0A,$1A,$0F,$00,cc_close
 
 
 text32: 
-    dc.b    $0B,$0A,$1B,$0F,$00,$00
+    dc.b    $0B,$0A,$1B,$0F,$00,cc_close
 
 
 text33: 
-    dc.b    $0B,$0A,$1C,$0F,$00,$00
+    dc.b    $0B,$0A,$1C,$0F,$00,cc_close
 
 
 ; First shop in a tree when looking at leather boots
 text34: 
-    dc.b $0B,$0A,$1D,$0F,$00,$00
+    dc.b    $0B,$0A,$1D,$0F,$00,cc_close
 
 
 text35: 
-    dc.b    $0B,$0A,$20,$0F,$00,$00
+    dc.b    $0B,$0A,$20,$0F,$00,cc_close
 
 
 text36: 
-    dc.b    $0B,$0A,$21,$0F,$00,$00
+    dc.b    $0B,$0A,$21,$0F,$00,cc_close
 
 
 text37: 
-    dc.b    $0B,$0A,$23,$0F,$00,$00
+    dc.b    $0B,$0A,$23,$0F,$00,cc_close
 
 
 text38: 
-    dc.b    $0B,$0A,$64,$0F,$00,$00
+    dc.b    $0B,$0A,$64,$0F,$00,cc_close
 
 
 text39: 
-    dc.b    $0B,$0A,$25,$0F,$00,$00
+    dc.b    $0B,$0A,$25,$0F,$00,cc_close
 
 
 text40: 
-    dc.b    $0B,$0A,$2A,$0F,$00,$00
+    dc.b    $0B,$0A,$2A,$0F,$00,cc_close
 
 
 ; Found Ocarina
@@ -443,8 +443,8 @@ text61_p2:
 text61_t1:
     dc.b    "Ist ",cc_text,orange,"K",oe,"nigin",cc_newline,"Eleanora",cc_text,white," nicht",cc_newline,"zauberhaft?",cc_wait,cc_close
 text61_t2:
-    dc.b    cc_text,orange,"K",oe,"nigin Eleanora",cc_text,white,cc_newline,"hat nach Dir",cc_newline,"gefragt.",cc_wait,cc_newline
-    dc.b    "Warum gehst Du",cc_newline,"nicht zu ihr?",cc_wait,cc_close
+    dc.b    cc_text,orange,"K",oe,"nigin Eleanora",cc_text,white,cc_newline,"hat nach Dir",cc_newline,"gefragt.",cc_wait,cc_newline,cc_newline
+    dc.b    "Warum gehst Du",cc_newline,"nicht zu ihr?",cc_newline,cc_wait,cc_close
 
 
 ; Alsedo Medicine Shop Felissimo, Customer:
@@ -736,7 +736,7 @@ text84:
 
 ; It's locked
 text85: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 85 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    " Es ist abgeschlossen!",cc_wait,cc_close
 
 
 ; Sheila Purapril after the rescue:
@@ -784,7 +784,7 @@ text90:
 
 ; The door has been sealed. 
 text91: 
-    dc.b    "Hier wird noch an",cc_newline,"Text 91 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Die Tür ist verriegelt.",cc_wait,cc_close
 
 
 ; Sphinx quiz: 
@@ -1075,7 +1075,7 @@ text119:
 
 ; It's sealed. 
 text120:
-    dc.b    "Hier wird noch an",cc_newline,"Text 120 gearbeitet.",cc_newline,"Verschwinde!",cc_wait,cc_close
+    dc.b    "Text 120",cc_wait,cc_close
 
 
 ; You can ride a jellyfish!

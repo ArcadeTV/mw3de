@@ -42,14 +42,6 @@
 jumpBack:                                   ; only for Label
 
 
-    ; CHEAT:
-    ifne CHEAT_UNLGOLD
-    org     $1882                           ; Cheat: Unl. Gold (do not decrease)
-    nop
-    nop
-    endif
-
-
 
     ; translate Sphinx Quiz messages:
     org     $1CEE
@@ -94,7 +86,6 @@ sub_1F8E:                                   ; just a label
     org     $1F5C                           ; move "Found XX Gold" 3 tiles left
     addi.w  #11,d0                          ; value is subtracted in the routine, was #5, plus 3xsize_w = #11
     
-
     ;org     $4A74                           ; set initial GMode
     ;jmp     ($4D90).l                       ; 4CEC,4CE2("Md"): Title; 4CB8,4F9C: SEGA; 4DCA: Game, 4D90: Demo; 
 
@@ -121,25 +112,6 @@ ret_bypass_checkInputWithSRAM:
     org     $6FFC
     jsr     westone 
     nop 
-
-    ; CHEATS:
-    ;----------------------
-    ifne CHEAT_99GOLD
-    org     $8E46                           ; Cheat: Have more Gold upon New Game start
-    dc.b    $0F,$42,$3F                     ; 1st Nybble: Starting location (0=Shion's House, 1=Alsedo, 2=Castle, 3=Lilypad ...),
-                                            ; 2nd Nybble + 2 Bytes = 999999 Gold
-    endif
-    ;----------------------
-    ifne CHEAT_HEARTS
-    org     $8E4A                           ; Cheat: Have all Hearts upon New Game start
-    dc.b    $8
-    endif
-    ;----------------------
-    ifne CHEAT_INVINC
-    org     $E0A4                           ; Cheat: Unl. Energy (do not decrease)
-    nop
-    nop 
-    endif
     
 
     ; TITLE SCREEN

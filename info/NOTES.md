@@ -263,6 +263,15 @@ Trace:
 0F: 32x32
 
 
+##### Adding Sprite Tables / Menu Options
+
+In GameMode "Kmnu" (from 71C6)
+Sprite Maps are loaded every run in main loop ($80E)
+from FF2800 to VRAM Sprite Table $D000-$D27F
+Arrow Y Position is in FFC910.w
+A18E7-A18EC: (-> Arrow Spritemap in ROM)
+Arrow Parameters in FF8B30..
+
 #### Tilemaps:
 
 00:70F4  45 FA  LEA     $02D6(PC),A2
