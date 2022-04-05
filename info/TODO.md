@@ -3,7 +3,7 @@
 **Translation (DE) / ROMHACK**
 
 ## -== Todo List ==-
-_Dated 2022-04-04_
+_Dated 2022-04-05_
 
 ---
 
@@ -21,7 +21,7 @@ _Dated 2022-04-04_
 - [x] Modify the exit sign so that the word `EXIT` is no longer in it
 - [x] Translate the outro gfx `the end` and `to be continued`
 - [x] Translate the GAME OVER gfx
-- [ ] De-localize the different Potions and make them more distinguishable
+- [x] De-localize the different Potions and make them more distinguishable
 
 ---
 
@@ -48,5 +48,5 @@ _Dated 2022-04-04_
 ### Extras
 
 - [x] Create Sound Test
-- [ ] Transplant prettier SEGA logo from Golden Axe
 - [x] Implement a Westone logo screen before title
+- [ ] Transplant prettier SEGA logo from Golden Axe
