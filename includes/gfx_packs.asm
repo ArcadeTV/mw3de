@@ -106,3 +106,10 @@ Potions_GFX_pack2:
 font:
     incbin "includes/bin/gfx/font.bin"
     even
+
+
+; Sound Test Mainmenu Option GFX:
+
+SoundTestTiledata:
+    incbin "includes/bin/gfx/soundTest_tiledata(26).bin"
+    even

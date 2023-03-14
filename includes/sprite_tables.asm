@@ -97,3 +97,19 @@ newSpriteTable_arrow:
         ; ˅   ˅   ˅   ˅   ˅
     dc.b $05,$64,$12,$ED,$F9 ; 4 Tiles, 16x16
     dc.b $FF
+
+
+SpriteTable_soundtest:
+        ; ss: size, 
+        ; ff: flag+1st id-nybble
+        ; ii: 2nd id-nybble
+        ; xx: xpos
+        ; yy: ypos
+        ; ----------------------
+        ; ss, ff, ii, xx, yy
+        ; ˅   ˅   ˅   ˅   ˅
+    dc.b $01,$64,$80,$CD,$FB ; 2 Tiles, 8x16
+    dc.b $0D,$64,$82,$D5,$FB ; 8 Tiles, 32x16 
+    dc.b $0D,$64,$89,$F5,$FB ; 8 Tiles, 32x16
+    dc.b $0D,$64,$91,$15,$FB ; 8 Tiles, 32x16
+    dc.b $FF

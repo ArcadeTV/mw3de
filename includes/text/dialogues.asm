@@ -11,9 +11,24 @@ text1:
 text1_p1:
     dc.w    text1_respawn-text1_p1
     dc.b    cc_speed,$06,$0A,$01,cc_margin,$01,cc_lock
-    dc.b    cc_text,orange,$0C,$54," ",$0C,$67,cc_text,white," war",cc_newline,"einst ein friedvoller",cc_newline,"Ort."
+            ; Monster World war 
+            ; einst ein friedvoller
+            ; Ort, -
+            ; doch der Frieden 
+            ; wurde gestört, als
+            ; die Monster das Land -
+            ; wie eine Armee
+            ; überfielen. --
+            ; Ein junger Mann -
+            ; namens Shion gelobte, -
+            ; sie zu besiegen --
+            ; und seinem Land -
+            ; den Frieden -
+            ; zurückzubringen. ---
+
+    dc.b    cc_text,orange,$0C,$54," ",$0C,$67,cc_text,white," war",cc_newline,"einst ein friedvoller",cc_newline,"Ort,"
     dc.b    cc_wait,cc_newline,cc_newline,cc_newline
-    dc.b    "Doch der Frieden",cc_newline,"wurde gest",oe,"rt, als",cc_newline,"die Monster das Land",cc_wait,cc_newline
+    dc.b    "doch der Frieden",cc_newline,"wurde gest",oe,"rt, als",cc_newline,"die Monster das Land",cc_wait,cc_newline
     dc.b    "wie eine Armee",cc_newline,ue,"berfielen.",cc_wait,cc_newline,cc_newline,cc_newline
     dc.b    "Ein junger Mann",cc_newline,"namens ",$01,$A0,$0E,$00,$01,$80," gelobte,",cc_newline,"sie zu besiegen",cc_wait,cc_newline
     dc.b    "und seinem Land",cc_newline,"den Frieden",cc_newline,"zur",ue,"ckzubringen.",cc_wait

@@ -141,6 +141,8 @@ killSprites:
     lea     musicTitle1,a0
     jsr     showTrackInfo
 
+    jsr     loadSoundTestTiledata
+
     ; jmp back:
     dc.b    $22,$7C,$00,$00,$4D,$A4 ; movea.l #aKmnu,a1
     jmp     ret_killSprites
@@ -149,7 +151,7 @@ killSprites:
 loadFont:
     SetVRAMWrite $8400
     lea     font,a1
-    move.l  #((96*32)/size_long),d0
+    move.l  #((96*32)/size_long)-1,d0
 lfloop:
     move.l  (a1)+,vdp_data
     dbra    d0,lfloop
@@ -170,3 +172,11 @@ showTrackInfoLoop:
      rts
 
 
+loadSoundTestTiledata:
+    lea     SoundTestTiledata,a0
+    move.l  #((26*32)/size_long)-1,d0
+    SetVRAMWrite $9000
+stloop:
+    move.l  (a1)+,vdp_data
+    dbra    d0,stloop
+    rts
